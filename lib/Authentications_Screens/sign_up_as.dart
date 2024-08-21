@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:herhealthconnect/Authentications_Screens/sign_up.dart';
-
 import '../Components/Image/ImageView.dart';
 import '../Components/Image/Model/ImageConfig.dart';
 import '../assets/app_image.dart';
@@ -30,7 +29,7 @@ class _SignUpAsScreenState extends State<SignUpAsScreen>{
                 ),
               ),
             ),
-            SizedBox(height: 20,width: 20,),
+            const SizedBox(height: 20,width: 20,),
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: IconButton(
@@ -54,7 +53,7 @@ class _SignUpAsScreenState extends State<SignUpAsScreen>{
                         color: Colors.black,
                       ),
                     ),
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
                     ElevatedButton(
                       onPressed: () {
                         Navigator.push(
@@ -81,7 +80,7 @@ class _SignUpAsScreenState extends State<SignUpAsScreen>{
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const SignUpScreen()),
+                          MaterialPageRoute(builder: (context) =>  const SignUpScreen()),
                         );
 
                       },

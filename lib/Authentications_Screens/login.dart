@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:herhealthconnect/Authentications_Screens/forgot_password.dart';
 import 'package:herhealthconnect/Authentications_Screens/phone_number.dart';
 import 'package:herhealthconnect/Authentications_Screens/sign_up.dart';
 
@@ -106,7 +107,11 @@ class _LoginPageState extends State<LoginPage> {
                   const Spacer(),
                   TextButton(
                     onPressed: () {
-                      // Forgot password functionality
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) =>  const ForgotPassword ()),
+                      );
+
                     },
                     child: const Text('Forgot password'),
                   ),
@@ -117,7 +122,7 @@ class _LoginPageState extends State<LoginPage> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) =>  const PhoneNumberScreen ()),
+                    MaterialPageRoute(builder: (context) =>  const ForgotPassword ()),
                   );
                 },
                 style: ElevatedButton.styleFrom(
