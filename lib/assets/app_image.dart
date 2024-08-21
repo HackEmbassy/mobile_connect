@@ -4,5 +4,6 @@ class AppImage {
   static const String closeOutlined = 'assets/images/back.png';
   static const String welcomebg = 'assets/images/welcome_bg.png';
   static const String applogo = 'assets/images/app_logo.png';
+  static const String kyclogo = 'assets/images/kyc_logo.png';
   
 }
