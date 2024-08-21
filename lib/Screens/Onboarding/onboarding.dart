@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'; // Import the package
 
+import '../../Authentications_Screens/sign_up_as.dart';
 import '../../Components/Image/ImageView.dart';
 import '../../Components/Image/Model/ImageConfig.dart';
 import '../../assets/app_image.dart';
@@ -254,7 +255,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     // Navigate to the next screen or home screen
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => CustomizeInterestsScreen()),
+                      MaterialPageRoute(builder: (context) => SignUpAsScreen()),
                     );
                   },
                   style: ElevatedButton.styleFrom(

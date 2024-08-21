@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:herhealthconnect/Authentications_Screens/sign_up_as.dart';
 import 'package:herhealthconnect/Components/Image/ImageView.dart';
 import 'package:herhealthconnect/Components/Image/Model/ImageConfig.dart';
 import 'package:herhealthconnect/Screens/Onboarding/welcome_screen.dart';
@@ -40,12 +41,16 @@ class _SplashScreenState extends State<SplashScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           // Make sure to affix the right logo image below
-          ImageView(
-            imageConfig: ImageConfig(
-              imageURL: AppImage.logowhite,
-              imageType: ImageType.asset,
+          SizedBox(
+            width: 10,
+            height: 10,
+            child: ImageView(
+              imageConfig: ImageConfig(
+                imageURL: AppImage.logo,
+                imageType: ImageType.asset,
+              ),
             ),
-          )
+          ),
         ],
       ),
     );
