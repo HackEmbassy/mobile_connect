@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../Components/Image/ImageView.dart';
 import '../../Components/Image/Model/ImageConfig.dart';
 import '../../assets/app_image.dart';
+import 'kyc.dart';
 
 class CustomizeInterestsScreen extends StatefulWidget {
   @override
@@ -134,7 +135,11 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
             Center(
               child: ElevatedButton(
                 onPressed: () {
-                  // Handle continue button press
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) =>   PersonalInformation()),
+                  );
+// Handle continue button press
                 },
                 child: Text('CONTINUE'),
                 style: ElevatedButton.styleFrom(

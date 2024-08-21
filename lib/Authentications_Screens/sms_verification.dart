@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../Components/Image/ImageView.dart';
 import '../Components/Image/Model/ImageConfig.dart';
+import '../Screens/kyc/kyc_1.dart';
 import '../assets/app_image.dart';
 import 'login.dart';
 
@@ -113,7 +114,10 @@ class PhoneVerificationScreen extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                  // Implement continue button action
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CustomizeInterestsScreen()),
+                  );// Implement continue button action
                 },
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(vertical: 16.0),
