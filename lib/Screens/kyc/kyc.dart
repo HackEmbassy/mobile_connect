@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:herhealthconnect/congrats_page.dart';
-import 'Components/Image/ImageView.dart';
-import 'Components/Image/Model/ImageConfig.dart';
-import 'assets/app_image.dart';
+import 'package:herhealthconnect/Screens/kyc/congrats_page.dart';
+import '../../Components/Image/ImageView.dart';
+import '../../Components/Image/Model/ImageConfig.dart';
+import '../../assets/app_image.dart';
 
 class PersonalInformation extends StatefulWidget {
   const PersonalInformation({super.key});

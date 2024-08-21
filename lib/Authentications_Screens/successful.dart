@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:herhealthconnect/kyc.dart';
+import 'package:herhealthconnect/Screens/kyc/kyc.dart';
 
 import '../Components/Image/ImageView.dart';
 import '../Components/Image/Model/ImageConfig.dart';
+import '../Screens/kyc/kyc_1.dart';
 import '../assets/app_image.dart';
 
 class ResetSuccessfulScreen extends StatelessWidget {
@@ -54,7 +55,7 @@ class ResetSuccessfulScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) =>   const PersonalInformation()),
+                    MaterialPageRoute(builder: (context) =>   CustomizeInterestsScreen()),
                   );
 
                 },

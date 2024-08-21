@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../Components/Image/ImageView.dart';
 import '../Components/Image/Model/ImageConfig.dart';
+import '../Screens/kyc/kyc_1.dart';
 import '../assets/app_image.dart';
 import 'login.dart';
 
@@ -112,7 +113,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     // Sign Up Button
                     ElevatedButton(
                       onPressed: () {
-                        // Action for sign-up button
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) =>   CustomizeInterestsScreen()),
+                        );// Action for sign-up button
                       },
                       style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.black, backgroundColor: Colors.white,

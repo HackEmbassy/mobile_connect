@@ -1,15 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'; // Import the package
 
+import '../../Authentications_Screens/sign_up_as.dart';
 import '../../Components/Image/ImageView.dart';
 import '../../Components/Image/Model/ImageConfig.dart';
 import '../../assets/app_image.dart';
+import '../kyc/kyc_1.dart';
 
-class OnboardingScreen extends StatelessWidget {
+class OnboardingScreen extends StatefulWidget {
   OnboardingScreen({super.key});
 
+  @override
+  _OnboardingScreenState createState() => _OnboardingScreenState();
+}
+
+class _OnboardingScreenState extends State<OnboardingScreen> {
   // PageController to manage the pages
   final PageController _pageController = PageController();
+
+  // Track the current page index
+  int _currentPage = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -46,6 +56,11 @@ class OnboardingScreen extends StatelessWidget {
           Expanded(
             child: PageView(
               controller: _pageController,
+              onPageChanged: (index) {
+                setState(() {
+                  _currentPage = index;
+                });
+              },
               children: [
                 // First page
                 Center(
@@ -180,11 +195,12 @@ class OnboardingScreen extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                ElevatedButton(
+                _currentPage < 2 // If the current page is not the last one
+                    ? ElevatedButton(
                   onPressed: () {
-                    // Navigate to the next screen
+                    // Navigate to the next page
                     _pageController.nextPage(
-                      duration: Duration(milliseconds: 300),
+                      duration: const Duration(milliseconds: 300),
                       curve: Curves.easeInOut,
                     );
                   },
@@ -205,10 +221,16 @@ class OnboardingScreen extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                ),
-                ElevatedButton(
+                )
+                    : SizedBox.shrink(), // Hide the NEXT button on the last page
+                _currentPage < 2 // If the current page is not the last one
+                    ? ElevatedButton(
                   onPressed: () {
-                    // Navigate to the next screen
+                    // Skip and navigate to the home screen or other
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => CustomizeInterestsScreen()),
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
@@ -227,6 +249,32 @@ class OnboardingScreen extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+                )
+                    : ElevatedButton(
+                  onPressed: () {
+                    // Navigate to the next screen or home screen
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SignUpAsScreen()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                      side: const BorderSide(color: Colors.black87),
+                    ),
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.black87,
+                    elevation: 2,
+                  ),
+                  child: const Text(
+                    "CONTINUE",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -236,4 +284,3 @@ class OnboardingScreen extends StatelessWidget {
     );
   }
 }
-

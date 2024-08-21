@@ -6,6 +6,7 @@ import 'package:herhealthconnect/Authentications_Screens/sign_up.dart';
 
 import '../Components/Image/ImageView.dart';
 import '../Components/Image/Model/ImageConfig.dart';
+import '../Screens/kyc/kyc_1.dart';
 import '../assets/app_image.dart';
 
 class LoginPage extends StatefulWidget {
@@ -122,7 +123,7 @@ class _LoginPageState extends State<LoginPage> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) =>  const ForgotPassword ()),
+                    MaterialPageRoute(builder: (context) =>   CustomizeInterestsScreen()),
                   );
                 },
                 style: ElevatedButton.styleFrom(
