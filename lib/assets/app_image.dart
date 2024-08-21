@@ -5,7 +5,8 @@ class AppImage {
   static const String applogo = 'assets/images/app_logo.png';
   static const String mail = 'assets/images/mail.png';
   static const String security = 'assets/images/security.png';
-
-
+  static const String welcomebg = 'assets/images/welcome_bg.png';
+  // static const String applogo = 'assets/images/app_logo.png';
+  
 
 }

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:herhealthconnect/Authentications_Screens/sign_up_as.dart';
 import 'package:herhealthconnect/Components/Image/ImageView.dart';
 import 'package:herhealthconnect/Components/Image/Model/ImageConfig.dart';
+import 'package:herhealthconnect/Screens/Onboarding/welcome_screen.dart';
 import 'package:herhealthconnect/assets/app_colors.dart';
 import 'package:herhealthconnect/assets/app_image.dart';
 
@@ -23,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   route() {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const SignUpAsScreen()));
+        context, MaterialPageRoute(builder: (context) => const WelcomeScreen()));
   }
 
   timer() {
