@@ -6,5 +6,4 @@ class AppImage {
 
   static const String welcomebg = 'assets/images/welcome_bg.png';
   // static const String applogo = 'assets/images/app_logo.png';
-  
 }

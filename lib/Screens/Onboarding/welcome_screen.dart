@@ -18,7 +18,8 @@ class WelcomeScreen extends StatelessWidget {
             child: ImageView(
               imageConfig: ImageConfig(
                 imageURL: AppImage.welcomebg, // Your image path
-                imageType: ImageType.asset,   // Specify if it's an asset or a network image
+                imageType: ImageType
+                    .asset, // Specify if it's an asset or a network image
               ),
             ),
           ),
@@ -62,10 +63,10 @@ class WelcomeScreen extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => OnboardingScreen()),
+                        MaterialPageRoute(
+                            builder: (context) => OnboardingScreen()),
                       );
                     },
-
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(vertical: 15),
                       shape: RoundedRectangleBorder(
@@ -75,7 +76,8 @@ class WelcomeScreen extends StatelessWidget {
                       backgroundColor: Colors.white,
                       foregroundColor: Colors.black87,
                       elevation: 2,
-                      minimumSize: const Size(double.infinity, 50), // Make the button full-width
+                      minimumSize: const Size(
+                          double.infinity, 50), // Make the button full-width
                     ),
                     child: const Text(
                       "LET'S START",

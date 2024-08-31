@@ -1,13 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:herhealthconnect/Authentications_Screens/sign_up_as.dart';
+import 'package:herhealthconnect/Components/Button/ButtonWidget.dart';
+import 'package:herhealthconnect/Components/Button/Model/ButtonConfig.dart';
+import 'package:herhealthconnect/assets/app_colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'; // Import the package
 
 import '../../Components/Image/ImageView.dart';
 import '../../Components/Image/Model/ImageConfig.dart';
 import '../../assets/app_image.dart';
 
-class OnboardingScreen extends StatelessWidget {
+class OnboardingScreen extends StatefulWidget {
   OnboardingScreen({super.key});
 
+  @override
+  State<OnboardingScreen> createState() => _OnboardingScreenState();
+}
+
+class _OnboardingScreenState extends State<OnboardingScreen> {
   // PageController to manage the pages
   final PageController _pageController = PageController();
 
@@ -59,7 +69,9 @@ class OnboardingScreen extends StatelessWidget {
                           shape: BoxShape.circle,
                         ),
                         child: Center(
-                          child: Icon(Icons.image, size: 75, color: Colors.grey[400]), // Reduced icon size
+                          child: Icon(Icons.image,
+                              size: 75,
+                              color: Colors.grey[400]), // Reduced icon size
                         ),
                       ),
                       const SizedBox(height: 30),
@@ -96,7 +108,9 @@ class OnboardingScreen extends StatelessWidget {
                           shape: BoxShape.circle,
                         ),
                         child: Center(
-                          child: Icon(Icons.image, size: 75, color: Colors.grey[400]), // Reduced icon size
+                          child: Icon(Icons.image,
+                              size: 75,
+                              color: Colors.grey[400]), // Reduced icon size
                         ),
                       ),
                       const SizedBox(height: 30),
@@ -135,7 +149,9 @@ class OnboardingScreen extends StatelessWidget {
                             shape: BoxShape.circle,
                           ),
                           child: Center(
-                            child: Icon(Icons.image, size: 75, color: Colors.grey[400]), // Reduced icon size
+                            child: Icon(Icons.image,
+                                size: 75,
+                                color: Colors.grey[400]), // Reduced icon size
                           ),
                         ),
                       ),
@@ -167,7 +183,8 @@ class OnboardingScreen extends StatelessWidget {
           SmoothPageIndicator(
             controller: _pageController, // Attach the PageController
             count: 3, // Number of pages
-            effect: WormEffect( // Customize the indicator effect
+            effect: const WormEffect(
+              // Customize the indicator effect
               dotWidth: 10.0,
               dotHeight: 10.0,
               spacing: 16.0,
@@ -176,58 +193,94 @@ class OnboardingScreen extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+            padding:
+                const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                ElevatedButton(
-                  onPressed: () {
-                    // Navigate to the next screen
-                    _pageController.nextPage(
-                      duration: Duration(milliseconds: 300),
-                      curve: Curves.easeInOut,
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                      side: const BorderSide(color: Colors.black87),
-                    ),
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.black87,
-                    elevation: 2,
-                  ),
-                  child: const Text(
-                    "NEXT",
-                    style: TextStyle(
+                ButtonWidget(
+                  config: ButtonConfig(
+                      text: "NEXT",
                       fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                      fontWeight: FontWeight.w500,
+                      textColor: AppColors.black,
+                      onPressed: () {
+                        _pageController.nextPage(
+                          duration: const Duration(milliseconds: 300),
+                          curve: Curves.easeInOut,
+                        );
+                      },
+                      radius: 30.r,
+                      buttonOutlinedColor: AppColors.black,
+                      buttonColor: AppColors.white,
+                      width: 100.w,
+                      height: 40),
                 ),
-                ElevatedButton(
-                  onPressed: () {
-                    // Navigate to the next screen
-                  },
-                  style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                      side: const BorderSide(color: Colors.black87),
-                    ),
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.black87,
-                    elevation: 2,
-                  ),
-                  child: const Text(
-                    "SKIP",
-                    style: TextStyle(
+                // ElevatedButton(
+                //   onPressed: () {
+                //     // Navigate to the next screen
+
+                //   },
+                //   style: ElevatedButton.styleFrom(
+                //     padding: const EdgeInsets.symmetric(
+                //         vertical: 15, horizontal: 40),
+                //     shape: RoundedRectangleBorder(
+                //       borderRadius: BorderRadius.circular(30),
+                //       side: const BorderSide(color: Colors.black87),
+                //     ),
+                //     backgroundColor: Colors.white,
+                //     foregroundColor: Colors.black87,
+                //     elevation: 2,
+                //   ),
+                //   child: const Text(
+                //     "NEXT",
+                //     style: TextStyle(
+                //       fontSize: 18,
+                //       fontWeight: FontWeight.bold,
+                //     ),
+                //   ),
+                // ),
+                ButtonWidget(
+                  config: ButtonConfig(
+                      text: "SKIP",
                       fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                      fontWeight: FontWeight.w500,
+                      textColor: AppColors.black,
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const SignUpAsScreen()));
+                      },
+                      radius: 30.r,
+                      buttonOutlinedColor: AppColors.black,
+                      buttonColor: AppColors.white,
+                      width: 100.w,
+                      height: 40),
                 ),
+                // ElevatedButton(
+                //   onPressed: () {
+                //     // Navigate to the next screen
+                //   },
+                //   style: ElevatedButton.styleFrom(
+                //     padding: const EdgeInsets.symmetric(
+                //         vertical: 15, horizontal: 40),
+                //     shape: RoundedRectangleBorder(
+                //       borderRadius: BorderRadius.circular(30),
+                //       side: const BorderSide(color: Colors.black87),
+                //     ),
+                //     backgroundColor: Colors.white,
+                //     foregroundColor: Colors.black87,
+                //     elevation: 2,
+                //   ),
+                //   child: const Text(
+                //     "SKIP",
+                //     style: TextStyle(
+                //       fontSize: 18,
+                //       fontWeight: FontWeight.bold,
+                //     ),
+                //   ),
+                // ),
               ],
             ),
           ),
@@ -236,4 +289,3 @@ class OnboardingScreen extends StatelessWidget {
     );
   }
 }
-

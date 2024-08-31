@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:herhealthconnect/Components/TextView/Models/TextViewConfig.dart';
 
-
 import '../../assets/app_colors.dart';
 import '../Gap.dart';
 import '../TextView/TextView.dart';

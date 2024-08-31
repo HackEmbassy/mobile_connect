@@ -1,5 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:herhealthconnect/Components/Button/ButtonWidget.dart';
+import 'package:herhealthconnect/Components/Button/Model/ButtonConfig.dart';
+import 'package:herhealthconnect/Components/Gap.dart';
 
 import '../Components/Image/ImageView.dart';
 import '../Components/Image/Model/ImageConfig.dart';
@@ -18,37 +22,38 @@ class PhoneVerificationScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(
-              height: 40.97,
-              width: 140.62,
-              child: ImageView(
-                imageConfig: ImageConfig(
-                  imageURL: AppImage.applogo,
-                  imageType: ImageType.asset,
-                ),
+            const Gap(
+              height: 40,
+            ),
+            ImageView(
+              imageConfig: ImageConfig(
+                height: 40.97,
+                width: 140.62,
+                imageURL: AppImage.applogo,
+                imageType: ImageType.asset,
               ),
             ),
-            const SizedBox(height: 60),
-            Row(
-              children: [
-                IconButton(
-                  icon: const Icon(Icons.arrow_back_ios_new_rounded),
-                  onPressed: () {
-                  },
-                ),
-              ],
+            const Gap(height: 20),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: IconButton(
+                icon: const Icon(Icons.arrow_back_ios_new_rounded),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
             ),
-            const SizedBox(height: 16.0),
+            const Gap(height: 16.0),
             const Text(
               'We just sent you an SMS',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 8.0),
+            const Gap(height: 8.0),
             Text(
               'Enter the security code we sent to ********234',
               style: TextStyle(fontSize: 14, color: Colors.grey[600]),
             ),
-            const SizedBox(height: 24.0),
+            const Gap(height: 24.0),
             // Security Code Fields
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -70,27 +75,30 @@ class PhoneVerificationScreen extends StatelessWidget {
                 );
               }),
             ),
+            const Gap(
+              height: 15,
+            ),
             const Row(
               children: [
                 Text(
                   'Send a new code',
                   style: TextStyle(
-                    color: Colors.white30,
+                    color: Colors.black,
                   ),
                 ),
               ],
             ),
-            const SizedBox(height: 16.0),
+            const Gap(height: 16.0),
             Center(
               child: RichText(
                 text: TextSpan(
                   text: 'Already have an account? ',
-                  style: const TextStyle(color: Colors.white30),
+                  style: const TextStyle(color: Colors.black),
                   children: [
                     TextSpan(
                       text: 'Log in',
                       style: const TextStyle(
-                        color: Colors.white30,
+                        color: Colors.black,
                         fontWeight: FontWeight.bold,
                       ),
                       recognizer: TapGestureRecognizer()
@@ -99,7 +107,7 @@ class PhoneVerificationScreen extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => LoginPage(),
+                              builder: (context) => const LoginPage(),
                             ),
                           );
                         },
@@ -109,33 +117,26 @@ class PhoneVerificationScreen extends StatelessWidget {
               ),
             ),
             const Spacer(),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  // Implement continue button action
-                },
-                style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(vertical: 16.0),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(25.0),
-                    side: const BorderSide(color: Colors.black, width: 2),
-                  ),
-                  backgroundColor: Colors.white,
-                ),
-                child: const Text(
-                  'CONTINUE',
-                  style: TextStyle(fontSize: 16),
-                ),
+            ButtonWidget(
+              config: ButtonConfig(
+                text: "Continue".toUpperCase(),
+                onPressed: () {},
+                height: 48,
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
+                radius: 25.0.r,
+                textColor: Colors.black,
+                buttonColor: Colors.white,
+                buttonOutlinedColor: Colors.black,
               ),
             ),
-            const SizedBox(height: 20.0),
+            const Gap(height: 20.0),
             Container(
               height: 2,
               width: 80,
               color: Colors.black,
             ),
-            const SizedBox(height: 16.0),
+            const Gap(height: 16.0),
           ],
         ),
       ),

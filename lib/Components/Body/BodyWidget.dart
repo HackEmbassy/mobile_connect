@@ -8,7 +8,6 @@ import 'package:herhealthconnect/Components/TextView/TextView.dart';
 import 'package:herhealthconnect/assets/app_colors.dart';
 import 'package:herhealthconnect/assets/app_image.dart';
 
-
 import 'Model/BodyConfig.dart';
 
 class BodyWidget extends StatelessWidget {
