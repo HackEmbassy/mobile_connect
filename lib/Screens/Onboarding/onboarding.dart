@@ -6,9 +6,11 @@ import 'package:herhealthconnect/Components/Button/Model/ButtonConfig.dart';
 import 'package:herhealthconnect/assets/app_colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'; // Import the package
 
+import '../../Authentications_Screens/sign_up_as.dart';
 import '../../Components/Image/ImageView.dart';
 import '../../Components/Image/Model/ImageConfig.dart';
 import '../../assets/app_image.dart';
+import '../kyc/kyc_1.dart';
 
 class OnboardingScreen extends StatefulWidget {
   OnboardingScreen({super.key});
@@ -20,6 +22,9 @@ class OnboardingScreen extends StatefulWidget {
 class _OnboardingScreenState extends State<OnboardingScreen> {
   // PageController to manage the pages
   final PageController _pageController = PageController();
+
+  // Track the current page index
+  int _currentPage = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -56,6 +61,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           Expanded(
             child: PageView(
               controller: _pageController,
+              onPageChanged: (index) {
+                setState(() {
+                  _currentPage = index;
+                });
+              },
               children: [
                 // First page
                 Center(

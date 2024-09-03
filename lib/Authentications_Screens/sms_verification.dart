@@ -7,6 +7,7 @@ import 'package:herhealthconnect/Components/Gap.dart';
 
 import '../Components/Image/ImageView.dart';
 import '../Components/Image/Model/ImageConfig.dart';
+import '../Screens/kyc/kyc_1.dart';
 import '../assets/app_image.dart';
 import 'login.dart';
 
