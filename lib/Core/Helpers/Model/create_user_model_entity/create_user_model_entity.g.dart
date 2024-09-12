@@ -16,6 +16,9 @@ CreateUserModelEntity _$CreateUserModelEntityFromJson(
       gender: json['gender'] as String?,
       state: json['state'] as String?,
       city: json['city'] as String?,
+      phone: json['phone'] as String?,
+      latitude: json['latitude'] as String?,
+      longitude: json['longitude'] as String?,
     );
 
 Map<String, dynamic> _$CreateUserModelEntityToJson(
@@ -28,4 +31,7 @@ Map<String, dynamic> _$CreateUserModelEntityToJson(
       'gender': instance.gender,
       'state': instance.state,
       'city': instance.city,
+      'phone': instance.phone,
+      'latitude': instance.latitude,
+      'longitude': instance.longitude,
     };

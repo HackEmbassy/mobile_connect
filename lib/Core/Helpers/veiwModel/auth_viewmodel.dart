@@ -12,7 +12,7 @@ class AuthViewmodel extends BaseViewModel {
   final repositoryImply = AuthRepoImpl();
   bool? _isLoading;
   bool? get isLoading => _isLoading;
-    GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   // CreateUserModelEntity? get createUserInput => _createUserInput;
   // CreateUserModelEntity? _createUserInput;

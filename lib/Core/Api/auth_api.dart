@@ -4,9 +4,9 @@ import 'package:herhealthconnect/Core/Network/UrlPath.dart';
 import 'package:injectable/injectable.dart';
 import '../CoreFolder/app.locator.dart';
 import '../CoreFolder/app.logger.dart';
-@lazySingleton
 
-class AuthApi{
+@lazySingleton
+class AuthApi {
   final logger = getLogger('AuthApi');
   final _service = locator<NetworkService>();
 

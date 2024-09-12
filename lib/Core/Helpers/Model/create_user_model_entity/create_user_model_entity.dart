@@ -11,6 +11,9 @@ class CreateUserModelEntity {
   String? gender;
   String? state;
   String? city;
+  String? phone;
+  String? latitude;
+  String? longitude;
 
   CreateUserModelEntity({
     this.fullName,
@@ -20,6 +23,9 @@ class CreateUserModelEntity {
     this.gender,
     this.state,
     this.city,
+    this.phone,
+    this.latitude,
+    this.longitude,
   });
 
   factory CreateUserModelEntity.fromJson(Map<String, dynamic> json) {

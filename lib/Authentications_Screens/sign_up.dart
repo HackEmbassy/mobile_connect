@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:herhealthconnect/Components/Button/ButtonWidget.dart';
 import 'package:herhealthconnect/Components/Button/Model/ButtonConfig.dart';
 import 'package:herhealthconnect/Components/Gap.dart';
@@ -26,19 +27,72 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
+  @override
+  void initState() {
+    super.initState();
+    _getCurrentLocation();
+  }
+
+  String _locationMessage = "";
   final fullname = TextEditingController();
   final email = TextEditingController();
   final password = TextEditingController();
   final age = TextEditingController();
   final state = TextEditingController();
   final city = TextEditingController();
+  final phone = TextEditingController();
   final gender = TextEditingController();
   bool _isPasswordVisible = false;
+  String? long, latitude;
+
+  Future<void> _getCurrentLocation() async {
+    bool serviceEnabled;
+    LocationPermission permission;
+
+    // Test if location services are enabled.
+    serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    if (!serviceEnabled) {
+      setState(() {
+        _locationMessage = "Location services are disabled.";
+      });
+      return;
+    }
+
+    permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        setState(() {
+          _locationMessage = "Location permissions are denied";
+        });
+        return;
+      }
+    }
+
+    if (permission == LocationPermission.deniedForever) {
+      setState(() {
+        _locationMessage = "Location permissions are permanently denied.";
+      });
+      return;
+    }
+
+    Position position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high);
+    setState(() {
+      _locationMessage = "${position.longitude},${position.latitude}";
+      long = position.longitude.toString();
+      latitude = position.latitude.toString();
+    });
+    print(_locationMessage);
+  }
+
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<AuthViewmodel>.reactive(
         disposeViewModel: false,
-        onViewModelReady: (model) {},
+        onViewModelReady: (model) {
+          _getCurrentLocation();
+        },
         viewModelBuilder: () => locator<AuthViewmodel>(),
         builder: (_, model, __) {
           return Scaffold(
@@ -119,7 +173,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             TextFormField(
                               obscureText: !_isPasswordVisible,
                               controller: password,
-                              validator: FieldValidator.validatePass(),
+                              validator:
+                                  FieldValidator.validatePassword(password),
                               decoration: InputDecoration(
                                 prefixIcon: const Icon(Icons.lock_outline),
                                 suffixIcon: IconButton(
@@ -143,6 +198,69 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 ),
                               ),
                             ),
+                            const Gap(height: 15),
+                            TextFormField(
+                              controller: age,
+                              validator: FieldValidator.validateString(),
+                              decoration: InputDecoration(
+                                prefixIcon: const Icon(Icons.person_2_outlined),
+                                labelText: 'Age',
+                                filled: true,
+                                fillColor: Colors.grey[200],
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                  borderSide: BorderSide.none,
+                                ),
+                              ),
+                            ),
+                            const Gap(height: 15),
+                            TextFormField(
+                              controller: state,
+                              validator: FieldValidator.validateString(),
+                              decoration: InputDecoration(
+                                prefixIcon:
+                                    const Icon(Icons.location_on_outlined),
+                                labelText: 'State',
+                                filled: true,
+                                fillColor: Colors.grey[200],
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                  borderSide: BorderSide.none,
+                                ),
+                              ),
+                            ),
+                            const Gap(height: 15),
+                            TextFormField(
+                              controller: city,
+                              validator: FieldValidator.validateString(),
+                              decoration: InputDecoration(
+                                prefixIcon:
+                                    const Icon(Icons.location_on_outlined),
+                                labelText: 'City',
+                                filled: true,
+                                fillColor: Colors.grey[200],
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                  borderSide: BorderSide.none,
+                                ),
+                              ),
+                            ),
+                            const Gap(height: 15),
+                            TextFormField(
+                              controller: phone,
+                              validator: FieldValidator.validateString(),
+                              decoration: InputDecoration(
+                                prefixIcon:
+                                    const Icon(Icons.location_on_outlined),
+                                labelText: 'Phone Number',
+                                filled: true,
+                                fillColor: Colors.grey[200],
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                  borderSide: BorderSide.none,
+                                ),
+                              ),
+                            ),
                             const Gap(height: 30),
                             // Sign Up Button
                             ButtonWidget(
@@ -152,14 +270,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               onPressed: () {
                                 if (model.formKey.currentState!.validate()) {
                                   model.signUpUser(CreateUserModelEntity(
-                                    fullName: fullname.text,
-                                    age: 19,
-                                    city: "Aba",
-                                    gender: "Female",
-                                    state: "Abia",
-                                    email: email.text,
-                                    password: password.text,
-                                  ));
+                                      fullName: fullname.text,
+                                      age: int.parse(age.text),
+                                      city: city.text,
+                                      gender: "Female",
+                                      state: state.text,
+                                      email: email.text,
+                                      password: password.text,
+                                      phone: phone.text,
+                                      longitude: long.toString(),
+                                      latitude: latitude.toString()));
                                 }
                               },
                               height: 50,

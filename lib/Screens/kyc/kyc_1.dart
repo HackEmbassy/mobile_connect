@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:herhealthconnect/Components/Gap.dart';
+import 'package:herhealthconnect/Components/TextView/Models/TextViewConfig.dart';
+import 'package:herhealthconnect/Components/TextView/TextView.dart';
 
 import '../../Components/Image/ImageView.dart';
 import '../../Components/Image/Model/ImageConfig.dart';
@@ -6,7 +10,10 @@ import '../../assets/app_image.dart';
 import 'kyc.dart';
 
 class CustomizeInterestsScreen extends StatefulWidget {
+  const CustomizeInterestsScreen({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _CustomizeInterestsScreenState createState() =>
       _CustomizeInterestsScreenState();
 }
@@ -26,14 +33,14 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
         border: Border.all(color: Colors.grey),
       ),
       child: value
-          ? Center(
-        child: Icon(
-          Icons.check,
-          color: Colors.grey,
-          size: 16.0,
-        ),
-      )
-          : SizedBox.shrink(),
+          ? const Center(
+              child: Icon(
+                Icons.check,
+                color: Colors.grey,
+                size: 16.0,
+              ),
+            )
+          : const SizedBox.shrink(),
     );
   }
 
@@ -41,7 +48,7 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -58,98 +65,98 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
                     ),
                   ),
                 ),
-                SizedBox(width: 8),
-                Column(
+                const SizedBox(width: 8),
+                const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [],
                 ),
               ],
             ),
             IconButton(
-              icon: Icon(Icons.arrow_back_ios),
+              icon: const Icon(Icons.arrow_back_ios),
               color: Colors.black,
               onPressed: () {
                 // Handle back button press
               },
             ),
-            Text(
-              'What will you love to use HerHealth for today?',
-              style: TextStyle(
+            TextView(
+              config: TextViewConfig(
+                text: "What will you love to use HerHealth for today?",
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 16),
-            Text(
-              'Customize your interests',
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.grey,
-              ),
+            const Gap(height: 16),
+            TextView(
+              config: TextViewConfig(
+                  text: "Customize your interests",
+                  fontSize: 16,
+                  color: Colors.grey),
             ),
-            SizedBox(height: 16),
+            const Gap(height: 16),
             _buildInterestItem(
               'Schedule Health Appointments',
               'Quickly and easily book a session with a gynecologist, obstetrician, fitness coach, or dietitian',
               scheduleHealthAppointments,
-                  (value) {
+              (value) {
                 setState(() {
                   scheduleHealthAppointments = value!;
                 });
               },
             ),
-            SizedBox(height: 16),
+            const Gap(height: 16),
             _buildInterestItem(
               'Track Menstrual Cycle',
               'Track and manage your menstrual cycle with ease',
               trackMenstrualCycle,
-                  (value) {
+              (value) {
                 setState(() {
                   trackMenstrualCycle = value!;
                 });
               },
             ),
-            SizedBox(height: 16),
+            const Gap(height: 16),
             _buildInterestItem(
               'Improve Physical Fitness',
               'Follow personalized workout plans and access workout tutorials and fitness tips recommended by your fitness coach.',
               improvePhysicalFitness,
-                  (value) {
+              (value) {
                 setState(() {
                   improvePhysicalFitness = value!;
                 });
               },
             ),
-            SizedBox(height: 16),
+            const Gap(height: 16),
             _buildInterestItem(
               'Maintain a Healthy Diet',
               'Get personalized meal plans and access nutritional advice to maintain a balanced and healthy diet.',
               maintainHealthyDiet,
-                  (value) {
+              (value) {
                 setState(() {
                   maintainHealthyDiet = value!;
                 });
               },
             ),
-            Spacer(),
+            const Spacer(),
             Center(
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) =>   PersonalInformation()),
+                    MaterialPageRoute(
+                        builder: (context) => const PersonalInformation()),
                   );
 // Handle continue button press
                 },
-                child: Text('CONTINUE'),
                 style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.symmetric(horizontal: 80, vertical: 16),
-                  textStyle: TextStyle(
-                    fontSize: 18,
-                  ),
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 80.w, vertical: 16.h),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
+                ),
+                child: TextView(
+                  config: TextViewConfig(text: 'CONTINUE', fontSize: 14.sp),
                 ),
               ),
             ),
@@ -159,7 +166,8 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
     );
   }
 
-  Widget _buildInterestItem(String title, String subtitle, bool value, Function(bool?) onChanged) {
+  Widget _buildInterestItem(
+      String title, String subtitle, bool value, Function(bool?) onChanged) {
     return Row(
       children: [
         GestureDetector(
@@ -168,30 +176,31 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
           },
           child: _buildCircularCheckbox(value),
         ),
-        SizedBox(width: 16),
+        const Gap(width: 16),
         SizedBox(
           width: 50, // Set the desired width
           height: 50,
           child: ImageView(
             imageConfig: ImageConfig(
               imageURL: AppImage.kyclogo, // Your image path
-              imageType: ImageType.asset,   // Specify if it's an asset or a network image
+              imageType: ImageType
+                  .asset, // Specify if it's an asset or a network image
             ),
           ),
         ),
-        SizedBox(width: 16),
+        const Gap(width: 16),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                title,
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-              ),
-              Text(
-                subtitle,
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
-              ),
+              TextView(
+                  config: TextViewConfig(
+                      text: title, fontSize: 16, fontWeight: FontWeight.bold)),
+              TextView(
+                  config: TextViewConfig(
+                      text: subtitle,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold)),
             ],
           ),
         ),

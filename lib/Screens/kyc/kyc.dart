@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:herhealthconnect/Screens/kyc/congrats_page.dart';
 import '../../Components/Image/ImageView.dart';
@@ -15,7 +17,8 @@ class _PersonalInformationState extends State<PersonalInformation> {
   String _gender = 'Female';
   DateTime? _selectedDate;
   final TextEditingController _dobController = TextEditingController();
-  final TextEditingController _healthHistoryController = TextEditingController();
+  final TextEditingController _healthHistoryController =
+      TextEditingController();
 
   @override
   void dispose() {
@@ -34,7 +37,8 @@ class _PersonalInformationState extends State<PersonalInformation> {
     if (pickedDate != null && pickedDate != _selectedDate) {
       setState(() {
         _selectedDate = pickedDate;
-        _dobController.text = "${_selectedDate!.day}/${_selectedDate!.month}/${_selectedDate!.year}";
+        _dobController.text =
+            "${_selectedDate!.day}/${_selectedDate!.month}/${_selectedDate!.year}";
       });
     }
   }
@@ -44,7 +48,8 @@ class _PersonalInformationState extends State<PersonalInformation> {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: SingleChildScrollView( // Makes the content scrollable
+        child: SingleChildScrollView(
+          // Makes the content scrollable
           child: Center(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -156,7 +161,8 @@ class _PersonalInformationState extends State<PersonalInformation> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Health History (Optional)', style: TextStyle(fontSize: 16)),
+                    Text('Health History (Optional)',
+                        style: TextStyle(fontSize: 16)),
                   ],
                 ),
                 const SizedBox(height: 2),
@@ -176,7 +182,7 @@ class _PersonalInformationState extends State<PersonalInformation> {
                   child: Text(
                     'By selecting Agree and Continue, I have reviewed and agreed to the Terms of Service and acknowledged the Privacy Notice.',
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 12,color: Colors.black54),
+                    style: TextStyle(fontSize: 12, color: Colors.black54),
                   ),
                 ),
                 Row(
@@ -186,14 +192,16 @@ class _PersonalInformationState extends State<PersonalInformation> {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) =>   const CongratsPage()),
+                            MaterialPageRoute(
+                                builder: (context) => const CongratsPage()),
                           );
                         },
                         style: ElevatedButton.styleFrom(
                           padding: const EdgeInsets.symmetric(vertical: 16),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
-                            side: const BorderSide(color: Colors.black, width: 2),
+                            side:
+                                const BorderSide(color: Colors.black, width: 2),
                           ),
                         ),
                         child: const Text(

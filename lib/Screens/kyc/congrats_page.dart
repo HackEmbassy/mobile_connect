@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 
 class CongratsPage extends StatefulWidget {
@@ -36,7 +38,8 @@ class _CongratsPageState extends State<CongratsPage> {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 50), // Adds space between text and button
+                const SizedBox(
+                    height: 50), // Adds space between text and button
                 SizedBox(
                   width: double.infinity,
                   child: OutlinedButton(
