@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'book_a_session_2.dart';
-
-class BookSessionScreen extends StatelessWidget {
-  const BookSessionScreen({Key? key}) : super(key: key);
+class ProfessionalBookSessionScreen extends StatelessWidget {
+  const ProfessionalBookSessionScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -128,10 +126,7 @@ class BookSessionScreen extends StatelessWidget {
                               ),
                               ElevatedButton(
                                 onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (context) => BookingScreen()),
-                                  );// Handle view more action
+                                  // Handle view more action
                                 },
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: Colors.white,

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import '../../Components/Image/ImageView.dart';
-import '../../Components/Image/Model/ImageConfig.dart';
-import '../../assets/app_image.dart';
-import 'check_your_mail.dart';
+import '../../../Components/Image/ImageView.dart';
+import '../../../Components/Image/Model/ImageConfig.dart';
+import '../../../assets/app_image.dart';
+//import '../../Authentications_Screens/check_your_mail.dart';
+import 'Professional_check_your_mail.dart';
 
-class ForgotPassword extends StatelessWidget {
-  const ForgotPassword({super.key});
+class ProfessionalForgotPassword extends StatelessWidget {
+  const ProfessionalForgotPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +67,7 @@ class ForgotPassword extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) =>   CheckInboxScreen()),
+                    MaterialPageRoute(builder: (context) =>   const ProfessionalCheckInboxScreen()),
                   );
                 },
                 style: ElevatedButton.styleFrom(

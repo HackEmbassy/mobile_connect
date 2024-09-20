@@ -1,20 +1,20 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import '../../Components/Image/ImageView.dart';
-import '../../Components/Image/Model/ImageConfig.dart';
-import '../../assets/app_image.dart';
-//import '../kyc/kyc_1.dart';
-import '../Screens/kyc/kyc_1.dart';
-import 'login.dart';
+import 'package:herhealthconnect/Screens/Professional_Side/Authentications_Screens/Professional_login.dart';
+import 'package:herhealthconnect/Screens/Professional_Side/Authentications_Screens/Professional_phone_number.dart';
+import '../../../Components/Image/ImageView.dart';
+import '../../../Components/Image/Model/ImageConfig.dart';
+import '../../../assets/app_image.dart';
+//import '../../Authentications_Screens/login.dart';
+import '../../kyc/kyc_1.dart';
 
-class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({super.key});
+class ProfessionalSignUpScreen extends StatefulWidget {
+  const ProfessionalSignUpScreen({super.key});
 
   @override
-  _SignUpScreenState createState() => _SignUpScreenState();
+  _ProfessionalSignUpScreenState createState() => _ProfessionalSignUpScreenState();
 }
-class _SignUpScreenState extends State<SignUpScreen> {
+class _ProfessionalSignUpScreenState extends State<ProfessionalSignUpScreen> {
   bool _isPasswordVisible = false;
   @override
   Widget build(BuildContext context) {
@@ -115,7 +115,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) =>    CustomizeInterestsScreen()),
+                          MaterialPageRoute(builder: (context) =>   const ProfessionalPhoneNumberScreen()),
                         );// Action for sign-up button
                       },
                       style: ElevatedButton.styleFrom(
@@ -180,7 +180,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => LoginPage(),
+                                      builder: (context) => const ProfessionalLoginPage(),
                                     ),
                                   );
                                 },

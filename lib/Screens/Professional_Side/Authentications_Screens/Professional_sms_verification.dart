@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:herhealthconnect/Authentications_Screens/sms_verification.dart';
-//import 'package:herhealthconnect/Screens/Authentications_Screens/sms_verification.dart';
-import '../../Components/Image/ImageView.dart';
-import '../../Components/Image/Model/ImageConfig.dart';
-import '../../assets/app_image.dart';
-
-
-class PhoneNumberScreen extends StatelessWidget {
-  const PhoneNumberScreen({super.key});
+import 'package:herhealthconnect/Screens/Professional_Side/kyc1%20profession_selection.dart';
+import 'package:herhealthconnect/Screens/Professional_Side/kyc2%20professional_information.dart';
+import '../../../Components/Image/ImageView.dart';
+import '../../../Components/Image/Model/ImageConfig.dart';
+import '../../../assets/app_image.dart';
+class ProfessionalPhoneVerificationScreen extends StatelessWidget {
+  const ProfessionalPhoneVerificationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -23,7 +21,7 @@ class PhoneNumberScreen extends StatelessWidget {
               width: 140.62,
               child: ImageView(
                 imageConfig: ImageConfig(
-                  imageURL: AppImage.logo,
+                  imageURL: AppImage.applogo,
                   imageType: ImageType.asset,
                 ),
               ),
@@ -34,73 +32,67 @@ class PhoneNumberScreen extends StatelessWidget {
                 IconButton(
                   icon: const Icon(Icons.arrow_back_ios_new_rounded),
                   onPressed: () {
-                    Navigator.pop(context);
                   },
                 ),
               ],
             ),
-            const SizedBox(height: 32.0),
-            // Enter Phone Number
+            const SizedBox(height: 16.0),
             const Text(
-              'Enter your phone number',
+              'We just sent you an SMS',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8.0),
             Text(
-              'You will receive a code to confirm your identity',
+              'Enter the security code we sent to ********234',
               style: TextStyle(fontSize: 14, color: Colors.grey[600]),
             ),
             const SizedBox(height: 24.0),
+            // Security Code Fields
             Row(
-              children: [
-                // Country Code
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  child: Row(
-                    children: [
-                      Icon(Icons.flag, color: Colors.grey[600]),
-                      const SizedBox(width: 8.0),
-                      const Text('+234', style: TextStyle(fontSize: 16)),
-                    ],
-                  ),
-                ),
-                const SizedBox(width: 16.0),
-                // Phone Number Field
-                Expanded(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: List.generate(6, (index) {
+                return SizedBox(
+                  width: 40.0,
                   child: TextField(
-                    keyboardType: TextInputType.phone,
+                    keyboardType: TextInputType.number,
+                    textAlign: TextAlign.center,
+                    maxLength: 1,
                     decoration: InputDecoration(
-                      hintText: '8056750798',
+                      counterText: "",
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8.0),
-                        borderSide: const BorderSide(color: Colors.white30),
+                        borderSide: const BorderSide(color: Colors.grey),
                       ),
-                      contentPadding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
                     ),
+                  ),
+                );
+              }),
+            ),
+            const Row(
+              children: [
+                Text(
+                  'Send a new code',
+                  style: TextStyle(
+                    color: Colors.white30,
                   ),
                 ),
               ],
             ),
             const Spacer(),
-            // Continue Button
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) =>  const PhoneVerificationScreen()),
-                  );
+                    MaterialPageRoute(builder: (context) => const ProfessionSelectionPage()),
+                  );// Implement continue button action
                 },
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(vertical: 16.0),
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(25.0),
-                      side: const BorderSide(color: Colors.black, width: 2)
+                    borderRadius: BorderRadius.circular(25.0),
+                    side: const BorderSide(color: Colors.black, width: 2),
                   ),
                   backgroundColor: Colors.white,
                 ),
@@ -116,7 +108,7 @@ class PhoneNumberScreen extends StatelessWidget {
               width: 80,
               color: Colors.black,
             ),
-            const SizedBox(height: 20.0),
+            const SizedBox(height: 16.0),
           ],
         ),
       ),

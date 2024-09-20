@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:herhealthconnect/Authentications_Screens/set_new_password.dart';
-//import 'package:herhealthconnect/Screens/Authentications_Screens/set_new_password.dart';
-import '../../Components/Image/ImageView.dart';
-import '../../Components/Image/Model/ImageConfig.dart';
-import '../../assets/app_image.dart';
+//import 'package:herhealthconnect/Screens/Professional_Side/Authentications_Screens/professional_set_new_password.dart';
+import '../../../Components/Image/ImageView.dart';
+import '../../../Components/Image/Model/ImageConfig.dart';
+import '../../../assets/app_image.dart';
+//import 'Professional_set_new_password.dart';
+import 'package:herhealthconnect/Screens/Professional_Side/Authentications_Screens/Professional_set_new_password.dart';
+//import 'package:herhealthconnect/Screens/Professional_Side/Authentications_Screens/professional_set_new_password.dart;
 
-class CheckInboxScreen extends StatelessWidget {
-  const CheckInboxScreen({super.key});
+class ProfessionalCheckInboxScreen extends StatelessWidget {
+  const ProfessionalCheckInboxScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +38,7 @@ class CheckInboxScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) =>   const NewPasswordScreen()),
+                      MaterialPageRoute(builder: (context) =>  ProfessionalNewPasswordScreen()),
                     );
                   },
                 ),

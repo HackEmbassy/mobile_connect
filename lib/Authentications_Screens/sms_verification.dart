@@ -1,10 +1,10 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
-import '../Components/Image/ImageView.dart';
-import '../Components/Image/Model/ImageConfig.dart';
+import '../../Components/Image/ImageView.dart';
+import '../../Components/Image/Model/ImageConfig.dart';
+import '../../assets/app_image.dart';
+//import '../kyc/kyc_1.dart';
 import '../Screens/kyc/kyc_1.dart';
-import '../assets/app_image.dart';
 import 'login.dart';
 
 class PhoneVerificationScreen extends StatelessWidget {

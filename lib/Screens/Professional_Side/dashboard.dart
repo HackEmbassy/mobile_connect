@@ -1,38 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:herhealthconnect/Screens/User_Dashboard/add_period.dart';
-import 'package:herhealthconnect/Screens/User_Dashboard/analysis.dart';
-import 'package:herhealthconnect/Screens/User_Dashboard/calendar.dart';
-import 'package:herhealthconnect/Screens/User_Dashboard/profile.dart';
-import 'package:herhealthconnect/Screens/User_Dashboard/record.dart';
-import 'package:herhealthconnect/Screens/User_Dashboard/user_homescreen.dart';
+import 'package:herhealthconnect/Screens/Professional_Side/event_details.dart';
+import 'package:herhealthconnect/Screens/Professional_Side/event_week.dart';
 
-import 'book_a_session.dart';
-import 'menstrual_tracking.dart';
-import 'calendar.dart';
-import 'newsfeed.dart';
-import 'record.dart';
-import 'analysis.dart';
-import 'add_period.dart';
+import 'Professional_book a session.dart';
+import 'Professional_home_page.dart';
+import 'calender.dart';
+import 'chat.dart';
+import 'event_list.dart';
 
-class UserDashboard extends StatefulWidget {
+class ProfessionalDashboard extends StatefulWidget {
   @override
-  _UserDashboardState createState() => _UserDashboardState();
+  _ProfessionalDashboardState createState() => _ProfessionalDashboardState();
 }
 
-class _UserDashboardState extends State<UserDashboard> {
+class _ProfessionalDashboardState extends State<ProfessionalDashboard> {
   int _selectedIndex = 0; // Track the selected index
 
   // Define the screens based on the index
-  static  List<Widget> _screens = <Widget>[
-    HomeScreen(),         // Screen 0 - Home
-    BookSessionScreen(),   // Screen 1 - Book a session
-    MenstrualTrackingScreen(),
-    CalendarScreen(), // Add other screens here if needed
-    RecordScreen(),
-    AddPeriodScreen(),
-    AnalysisScreen(),
-    NewsFeedScreen(),
-    ProfileScreen(),
+  static  final List<Widget> _screens = <Widget>[
+    const ProfessionalHomePage(),         // Screen 0 - Home
+    const ProfessionalBookSessionScreen(),   // Screen 1 - Book a session
+    const ProfessionalCalendarEventScreen(),
+    const ProfessionalCalendarScreen(), // Add other screens here if needed
+    const ProfessionalEventDetailsScreen(),
+    const ProfessionalEventListScreen(),
+    const ProfessionalChatScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -58,15 +50,15 @@ class _UserDashboardState extends State<UserDashboard> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.people_outline),
-            label: "Book a session",
+            label: "Appointments",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.calendar_today),
-            label: "Menstrual Tracking",
+            label: "Client",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.newspaper),
-            label: "Newsfeed",
+            label: "Calender",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
@@ -77,10 +69,3 @@ class _UserDashboardState extends State<UserDashboard> {
     );
   }
 }
-
-
-
-
-
-
-

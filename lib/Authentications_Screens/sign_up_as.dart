@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:herhealthconnect/Authentications_Screens/sign_up.dart';
-import '../Components/Image/ImageView.dart';
-import '../Components/Image/Model/ImageConfig.dart';
-import '../assets/app_image.dart';
+
+import '../../Components/Image/ImageView.dart';
+import '../../Components/Image/Model/ImageConfig.dart';
+import '../../assets/app_image.dart';
+import '../Screens/Professional_Side/Authentications_Screens/Professional_sign_up.dart';
+
+
 
 class SignUpAsScreen extends StatefulWidget {
   const SignUpAsScreen({super.key});
@@ -80,16 +84,16 @@ class _SignUpAsScreenState extends State<SignUpAsScreen>{
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) =>  const SignUpScreen()),
+                          MaterialPageRoute(builder: (context) =>   const ProfessionalSignUpScreen()),
                         );
 
                       },
                       style: ElevatedButton.styleFrom(
-                        foregroundColor: Colors.black, backgroundColor: Colors.white, // Text and border color
+                        foregroundColor: Colors.black, backgroundColor: Colors.white,
                         padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20), // Rounded corners
-                          side: const BorderSide(color: Colors.black, width: 2), // Border color
+                          borderRadius: BorderRadius.circular(20),
+                          side: const BorderSide(color: Colors.black, width: 2),
                         ),
                       ),
                       child: const Text(

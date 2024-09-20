@@ -42,8 +42,8 @@ class _SplashScreenState extends State<SplashScreen> {
         children: [
           // Make sure to affix the right logo image below
           SizedBox(
-            width: 10,
-            height: 10,
+            width: 50,
+            height: 50,
             child: ImageView(
               imageConfig: ImageConfig(
                 imageURL: AppImage.logo,

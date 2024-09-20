@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:herhealthconnect/Authentications_Screens/successful.dart';
 //import 'package:herhealthconnect/Screens/Authentications_Screens/successful.dart';
 
-import '../../Components/Image/ImageView.dart';
-import '../../Components/Image/Model/ImageConfig.dart';
-import '../../assets/app_image.dart';
-class NewPasswordScreen extends StatefulWidget {
-  const NewPasswordScreen({super.key});
+import '../../../Components/Image/ImageView.dart';
+import '../../../Components/Image/Model/ImageConfig.dart';
+import '../../../assets/app_image.dart';
+import 'Professional_successful.dart';
+class ProfessionalNewPasswordScreen extends StatefulWidget {
+  const ProfessionalNewPasswordScreen({super.key});
 
   @override
-  _NewPasswordScreenState createState() => _NewPasswordScreenState();
+  _ProfessionalNewPasswordScreenState createState() => _ProfessionalNewPasswordScreenState();
 }
 
-class _NewPasswordScreenState extends State<NewPasswordScreen> {
+class _ProfessionalNewPasswordScreenState extends State<ProfessionalNewPasswordScreen> {
   bool _isPasswordVisible = false;
   bool _isConfirmPasswordVisible = false;
 
@@ -132,7 +132,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) =>   const ResetSuccessfulScreen()),
+                    MaterialPageRoute(builder: (context) =>   const ProfessionalResetSuccessfulScreen()),
                   );
                 },
                 style: ElevatedButton.styleFrom(

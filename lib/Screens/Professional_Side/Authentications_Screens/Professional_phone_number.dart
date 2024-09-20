@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:herhealthconnect/Authentications_Screens/sms_verification.dart';
 //import 'package:herhealthconnect/Screens/Authentications_Screens/sms_verification.dart';
-import '../../Components/Image/ImageView.dart';
-import '../../Components/Image/Model/ImageConfig.dart';
-import '../../assets/app_image.dart';
+import '../../../Components/Image/ImageView.dart';
+import '../../../Components/Image/Model/ImageConfig.dart';
+import '../../../assets/app_image.dart';
+import 'Professional_sms_verification.dart';
 
-
-class PhoneNumberScreen extends StatelessWidget {
-  const PhoneNumberScreen({super.key});
+class ProfessionalPhoneNumberScreen extends StatelessWidget {
+  const ProfessionalPhoneNumberScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +92,7 @@ class PhoneNumberScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) =>  const PhoneVerificationScreen()),
+                    MaterialPageRoute(builder: (context) =>  const ProfessionalPhoneVerificationScreen()),
                   );
                 },
                 style: ElevatedButton.styleFrom(

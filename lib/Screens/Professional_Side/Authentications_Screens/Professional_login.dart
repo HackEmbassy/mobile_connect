@@ -1,22 +1,23 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:herhealthconnect/Authentications_Screens/sign_up.dart';
 //import 'package:herhealthconnect/Screens/Authentications_Screens/sign_up.dart';
-import '../../Components/Image/ImageView.dart';
-import '../../Components/Image/Model/ImageConfig.dart';
-import '../../assets/app_image.dart';
-// '../kyc/kyc_1.dart';
-import '../Screens/kyc/kyc_1.dart';
-import 'forgot_password.dart';
+import 'package:herhealthconnect/Screens/Professional_Side/Authentications_Screens/Professional_sign_up.dart';
+import 'package:herhealthconnect/Screens/Professional_Side/Professional_home_page.dart';
+import '../../../Components/Image/ImageView.dart';
+import '../../../Components/Image/Model/ImageConfig.dart';
+import '../../../assets/app_image.dart';
+//import '../../Authentications_Screens/forgot_password.dart';
+import '../../kyc/kyc_1.dart';
+import 'Professional_forgot_password.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class ProfessionalLoginPage extends StatefulWidget {
+  const ProfessionalLoginPage({super.key});
 
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _ProfessionalLoginPageState createState() => _ProfessionalLoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _ProfessionalLoginPageState extends State<ProfessionalLoginPage> {
   bool _isPasswordVisible = false;
 
   @override
@@ -110,7 +111,7 @@ class _LoginPageState extends State<LoginPage> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) =>  const ForgotPassword ()),
+                        MaterialPageRoute(builder: (context) =>  const ProfessionalForgotPassword ()),
                       );
 
                     },
@@ -123,7 +124,7 @@ class _LoginPageState extends State<LoginPage> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) =>    CustomizeInterestsScreen()),
+                    MaterialPageRoute(builder: (context) =>   const ProfessionalHomePage()),
                   );
                 },
                 style: ElevatedButton.styleFrom(
@@ -178,7 +179,7 @@ class _LoginPageState extends State<LoginPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) =>  SignUpScreen(),
+                              builder: (context) => const ProfessionalSignUpScreen(),
                             ),
                           );
                         },
