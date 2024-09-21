@@ -1,16 +1,13 @@
-// ignore_for_file: library_private_types_in_public_api
-
 import 'package:flutter/material.dart';
-import '../User_Dashboard/user_dashboard.dart';
 
-class CongratsPage extends StatefulWidget {
-  const CongratsPage({super.key});
+class ProfessionalCongratsPage extends StatefulWidget {
+  const ProfessionalCongratsPage({super.key});
 
   @override
-  _CongratsPageState createState() => _CongratsPageState();
+  _ProfessionalCongratsPageState createState() => _ProfessionalCongratsPageState();
 }
 
-class _CongratsPageState extends State<CongratsPage> {
+class _ProfessionalCongratsPageState extends State<ProfessionalCongratsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,23 +29,19 @@ class _CongratsPageState extends State<CongratsPage> {
                 ),
                 const SizedBox(height: 16),
                 const Text(
-                  'Thank you for taking your time to create\n an account with us. Now this is the fun part, let’s explore the app',
+                  'Thank you for taking your time to create account with us. Now this is the fun part, let’s explore the app',
                   style: TextStyle(
                     fontSize: 16,
                     color: Colors.black54,
                   ),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(
-                    height: 50), // Adds space between text and button
+                const SizedBox(height: 50), // Adds space between text and button
                 SizedBox(
                   width: double.infinity,
                   child: OutlinedButton(
                     onPressed: () {
-                     Navigator.push(
-                       context,
-                       MaterialPageRoute(builder: (context) => UserDashboard()),
-                     ); // Add your navigation logic here
+                      // Add your navigation logic here
                     },
                     style: OutlinedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(vertical: 16.0),

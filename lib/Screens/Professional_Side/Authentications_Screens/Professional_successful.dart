@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:herhealthconnect/Screens/Professional_Side/Professional_home_page.dart';
 
-import '../../Components/Image/ImageView.dart';
-import '../../Components/Image/Model/ImageConfig.dart';
-import '../../assets/app_image.dart';
-import '../Screens/kyc/kyc_1.dart';
-//import '../kyc/kyc_1.dart';
-
-class ResetSuccessfulScreen extends StatelessWidget {
-  const ResetSuccessfulScreen({super.key});
+import '../../../Components/Image/ImageView.dart';
+import '../../../Components/Image/Model/ImageConfig.dart';
+import '../../../assets/app_image.dart';
+class ProfessionalResetSuccessfulScreen extends StatelessWidget {
+  const ProfessionalResetSuccessfulScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +53,7 @@ class ResetSuccessfulScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) =>    CustomizeInterestsScreen()),
+                    MaterialPageRoute(builder: (context) =>   const ProfessionalHomePage()),
                   );
                 },
                 style: ElevatedButton.styleFrom(

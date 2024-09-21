@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:herhealthconnect/Authentications_Screens/check_your_mail.dart';
-
-import '../Components/Image/ImageView.dart';
-import '../Components/Image/Model/ImageConfig.dart';
-import '../assets/app_image.dart';
+import '../../Components/Image/ImageView.dart';
+import '../../Components/Image/Model/ImageConfig.dart';
+import '../../assets/app_image.dart';
+import 'check_your_mail.dart';
 
 class ForgotPassword extends StatelessWidget {
   const ForgotPassword({super.key});

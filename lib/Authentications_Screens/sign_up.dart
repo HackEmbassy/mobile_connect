@@ -11,11 +11,11 @@ import 'package:herhealthconnect/Core/Helpers/Model/create_user_model_entity/cre
 import 'package:herhealthconnect/Core/Helpers/veiwModel/auth_viewmodel.dart';
 import 'package:herhealthconnect/assets/app_colors.dart';
 import 'package:stacked/stacked.dart';
-
-import '../Components/Image/ImageView.dart';
-import '../Components/Image/Model/ImageConfig.dart';
+import '../../Components/Image/ImageView.dart';
+import '../../Components/Image/Model/ImageConfig.dart';
+import '../../assets/app_image.dart';
+//import '../kyc/kyc_1.dart';
 import '../Screens/kyc/kyc_1.dart';
-import '../assets/app_image.dart';
 import 'login.dart';
 
 class SignUpScreen extends StatefulWidget {

@@ -4,11 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:herhealthconnect/Components/Button/ButtonWidget.dart';
 import 'package:herhealthconnect/Components/Button/Model/ButtonConfig.dart';
 import 'package:herhealthconnect/Components/Gap.dart';
-
-import '../Components/Image/ImageView.dart';
-import '../Components/Image/Model/ImageConfig.dart';
+import '../../Components/Image/ImageView.dart';
+import '../../Components/Image/Model/ImageConfig.dart';
+import '../../assets/app_image.dart';
+//import '../kyc/kyc_1.dart';
 import '../Screens/kyc/kyc_1.dart';
-import '../assets/app_image.dart';
 import 'login.dart';
 
 class PhoneVerificationScreen extends StatelessWidget {
