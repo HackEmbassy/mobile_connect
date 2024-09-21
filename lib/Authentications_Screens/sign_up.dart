@@ -50,7 +50,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
     LocationPermission permission;
 
     // Test if location services are enabled.
-    serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    try{
+      serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {
       setState(() {
         _locationMessage = "Location services are disabled.";
@@ -84,6 +85,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
       latitude = position.latitude.toString();
     });
     print(_locationMessage);
+    }
+    catch(e){
+      print(e.toString());
+
+    }
   }
 
   @override
