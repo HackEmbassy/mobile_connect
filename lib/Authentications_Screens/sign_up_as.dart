@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:herhealthconnect/Authentications_Screens/sign_up.dart';
 import 'package:herhealthconnect/Components/Gap.dart';
+import 'package:herhealthconnect/Screens/Professional_Side/Authentications_Screens/Professional_sign_up.dart';
 import 'package:herhealthconnect/assets/app_colors.dart';
 
 import '../Components/Image/ImageView.dart';
