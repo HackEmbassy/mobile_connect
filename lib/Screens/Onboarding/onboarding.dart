@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'; // Import the package
 
-import '../../Authentications_Screens/sign_up_as.dart';
+//import '../../Authentications_Screens/sign_up_as.dart';
 import '../../Components/Image/ImageView.dart';
 import '../../Components/Image/Model/ImageConfig.dart';
 import '../../assets/app_image.dart';
+import '../Authentications_Screens/sign_up_as.dart';
 import '../kyc/kyc_1.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -37,8 +38,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SizedBox(
-                        width: 180, // Set the desired width
-                        height: 180, // Set the desired height
+                        width: 200, // Set the desired width
+                        height: 200, // Set the desired height
                         child: ImageView(
                           imageConfig: ImageConfig(
                             imageURL: AppImage.applogo,
@@ -66,15 +67,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 Center(
                   child: Column(
                     children: [
-                      Container(
-                        width: 300, // Width of the circular container
-                        height: 300, // Height of the circular container
-                        decoration: BoxDecoration(
-                          color: Colors.grey[200],
-                          shape: BoxShape.circle,
-                        ),
-                        child: Center(
-                          child: Icon(Icons.image, size: 75, color: Colors.grey[400]), // Reduced icon size
+                      SizedBox(
+                        width: 350, // Set the desired width
+                        height: 350, // Set the desired height
+                        child: ImageView(
+                          imageConfig: ImageConfig(
+                            imageURL: AppImage.onboarding,
+                            imageType: ImageType.asset,
+                          ),
                         ),
                       ),
                       const SizedBox(height: 30),
@@ -103,15 +103,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 Center(
                   child: Column(
                     children: [
-                      Container(
-                        width: 300, // Width of the circular container
-                        height: 300, // Height of the circular container
-                        decoration: BoxDecoration(
-                          color: Colors.grey[200],
-                          shape: BoxShape.circle,
-                        ),
-                        child: Center(
-                          child: Icon(Icons.image, size: 75, color: Colors.grey[400]), // Reduced icon size
+                      SizedBox(
+                        width: 350, // Set the desired width
+                        height: 350, // Set the desired height
+                        child: ImageView(
+                          imageConfig: ImageConfig(
+                            imageURL: AppImage.onboarding,
+                            imageType: ImageType.asset,
+                          ),
                         ),
                       ),
                       const SizedBox(height: 30),
@@ -142,15 +141,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                        child: Container(
-                          width: 300, // Width of the circular container
-                          height: 300, // Height of the circular container
-                          decoration: BoxDecoration(
-                            color: Colors.grey[200],
-                            shape: BoxShape.circle,
-                          ),
-                          child: Center(
-                            child: Icon(Icons.image, size: 75, color: Colors.grey[400]), // Reduced icon size
+                        child: SizedBox(
+                          width: 350, // Set the desired width
+                          height: 350, // Set the desired height
+                          child: ImageView(
+                            imageConfig: ImageConfig(
+                              imageURL: AppImage.onboarding,
+                              imageType: ImageType.asset,
+                            ),
                           ),
                         ),
                       ),
@@ -229,7 +227,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     // Skip and navigate to the home screen or other
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => CustomizeInterestsScreen()),
+                      MaterialPageRoute(builder: (context) => SignUpAsScreen()),
                     );
                   },
                   style: ElevatedButton.styleFrom(

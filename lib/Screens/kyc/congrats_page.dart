@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../User_Dashboard/user_dashboard.dart';
 
 class CongratsPage extends StatefulWidget {
   const CongratsPage({super.key});
@@ -42,17 +41,14 @@ class _CongratsPageState extends State<CongratsPage> {
                   width: double.infinity,
                   child: OutlinedButton(
                     onPressed: () {
-                     Navigator.push(
-                       context,
-                       MaterialPageRoute(builder: (context) => UserDashboard()),
-                     ); // Add your navigation logic here
+                      // Add your navigation logic here
                     },
                     style: OutlinedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(vertical: 16.0),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30.0),
                       ),
-                      side: const BorderSide(color: Colors.black87, width: 1.5),
+                      side: const BorderSide(color: Colors.blue, width: 1.5),
                     ),
                     child: const Text(
                       'GET STARTED!',

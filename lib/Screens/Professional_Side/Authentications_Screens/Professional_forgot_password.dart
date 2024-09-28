@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../Components/Image/ImageView.dart';
 import '../../../Components/Image/Model/ImageConfig.dart';
 import '../../../assets/app_image.dart';
-//import '../../Authentications_Screens/check_your_mail.dart';
+import '../../Authentications_Screens/check_your_mail.dart';
 import 'Professional_check_your_mail.dart';
 
 class ProfessionalForgotPassword extends StatelessWidget {

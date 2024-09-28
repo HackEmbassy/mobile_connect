@@ -241,7 +241,7 @@ class ProfessionalHomePage extends StatelessWidget {
                 ),
                 const SizedBox(height: 60), // Adjusted to accommodate the overlay card
                 const Text(
-                  "Your Clients",
+                  "Our Experts",
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
