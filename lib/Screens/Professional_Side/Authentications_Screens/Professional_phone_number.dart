@@ -54,7 +54,8 @@ class ProfessionalPhoneNumberScreen extends StatelessWidget {
               children: [
                 // Country Code
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 12.0, vertical: 8.0),
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.grey),
                     borderRadius: BorderRadius.circular(8.0),
@@ -78,7 +79,8 @@ class ProfessionalPhoneNumberScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(8.0),
                         borderSide: const BorderSide(color: Colors.white30),
                       ),
-                      contentPadding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
+                      contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 16.0, vertical: 12.0),
                     ),
                   ),
                 ),
@@ -92,15 +94,16 @@ class ProfessionalPhoneNumberScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) =>  const ProfessionalPhoneVerificationScreen()),
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const ProfessionalPhoneVerificationScreen()),
                   );
                 },
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(vertical: 16.0),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(25.0),
-                      side: const BorderSide(color: Colors.black, width: 2)
-                  ),
+                      side: const BorderSide(color: Colors.black, width: 2)),
                   backgroundColor: Colors.white,
                 ),
                 child: const Text(

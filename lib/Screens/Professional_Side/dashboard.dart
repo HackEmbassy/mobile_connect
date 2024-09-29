@@ -17,9 +17,9 @@ class _ProfessionalDashboardState extends State<ProfessionalDashboard> {
   int _selectedIndex = 0; // Track the selected index
 
   // Define the screens based on the index
-  static  final List<Widget> _screens = <Widget>[
-    const ProfessionalHomePage(),         // Screen 0 - Home
-    const ProfessionalBookSessionScreen(),   // Screen 1 - Book a session
+  static final List<Widget> _screens = <Widget>[
+    const ProfessionalHomePage(), // Screen 0 - Home
+    const ProfessionalBookSessionScreen(), // Screen 1 - Book a session
     const ProfessionalCalendarEventScreen(),
     const ProfessionalCalendarScreen(), // Add other screens here if needed
     const ProfessionalEventDetailsScreen(),
@@ -36,13 +36,14 @@ class _ProfessionalDashboardState extends State<ProfessionalDashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _screens[_selectedIndex], // Display the screen based on selected index
+      body: _screens[
+          _selectedIndex], // Display the screen based on selected index
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.black87,
         unselectedItemColor: Colors.grey[600],
         currentIndex: _selectedIndex, // Highlight the currently selected item
-        onTap: _onItemTapped,         // Handle tap events to switch screens
+        onTap: _onItemTapped, // Handle tap events to switch screens
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

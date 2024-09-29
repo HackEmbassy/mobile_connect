@@ -5,10 +5,12 @@ class ProfessionalCalendarScreen extends StatefulWidget {
   const ProfessionalCalendarScreen({super.key});
 
   @override
-  _ProfessionalCalendarScreenState createState() => _ProfessionalCalendarScreenState();
+  _ProfessionalCalendarScreenState createState() =>
+      _ProfessionalCalendarScreenState();
 }
 
-class _ProfessionalCalendarScreenState extends State<ProfessionalCalendarScreen> {
+class _ProfessionalCalendarScreenState
+    extends State<ProfessionalCalendarScreen> {
   DateTime selectedDay = DateTime.now();
   DateTime focusedDay = DateTime.now();
   Map<DateTime, List<String>> events = {
@@ -93,9 +95,9 @@ class _ProfessionalCalendarScreenState extends State<ProfessionalCalendarScreen>
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: _getEventsForDay(selectedDay)
                     .map((event) => Padding(
-                  padding: const EdgeInsets.all(2.0),
-                  child: Text(event),
-                ))
+                          padding: const EdgeInsets.all(2.0),
+                          child: Text(event),
+                        ))
                     .toList(),
               ),
             ),

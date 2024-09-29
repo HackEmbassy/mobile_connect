@@ -92,12 +92,16 @@ class _SignUpAsScreenState extends State<SignUpAsScreen> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) =>   const ProfessionalSignUpScreen()),
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const ProfessionalSignUpScreen()),
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        foregroundColor: Colors.black, backgroundColor: Colors.white,
-                        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                        foregroundColor: Colors.black,
+                        backgroundColor: Colors.white,
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 40, vertical: 15),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20),
                           side: const BorderSide(color: Colors.black, width: 2),

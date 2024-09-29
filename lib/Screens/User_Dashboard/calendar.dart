@@ -37,7 +37,8 @@ class CalendarScreen extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Icon(Icons.calendar_today_outlined, color: Colors.black),
+                            Icon(Icons.calendar_today_outlined,
+                                color: Colors.black),
                             Text(
                               "Sep 2024",
                               style: TextStyle(
@@ -45,7 +46,8 @@ class CalendarScreen extends StatelessWidget {
                                   fontSize: 16,
                                   color: Colors.black),
                             ),
-                            SizedBox(width: 24), // placeholder to align center text
+                            SizedBox(
+                                width: 24), // placeholder to align center text
                           ],
                         ),
                         SizedBox(height: 16),
@@ -54,7 +56,7 @@ class CalendarScreen extends StatelessWidget {
                             TableRow(
                               children: List.generate(
                                 7,
-                                    (index) => Center(
+                                (index) => Center(
                                   child: Text(
                                     ['S', 'M', 'T', 'W', 'T', 'F', 'S'][index],
                                     style: TextStyle(color: Colors.black),
@@ -65,9 +67,17 @@ class CalendarScreen extends StatelessWidget {
                             TableRow(
                               children: List.generate(
                                 7,
-                                    (index) => Center(
+                                (index) => Center(
                                   child: Text(
-                                    ['25', '26', '27', '28', '29', '30', '1'][index],
+                                    [
+                                      '25',
+                                      '26',
+                                      '27',
+                                      '28',
+                                      '29',
+                                      '30',
+                                      '1'
+                                    ][index],
                                     style: TextStyle(
                                         color: index >= 2 && index <= 4
                                             ? Colors.white
@@ -79,7 +89,7 @@ class CalendarScreen extends StatelessWidget {
                             TableRow(
                               children: List.generate(
                                 7,
-                                    (index) => Center(
+                                (index) => Center(
                                   child: CircleAvatar(
                                     backgroundColor: index >= 0 && index <= 2
                                         ? Colors.pinkAccent
@@ -99,7 +109,7 @@ class CalendarScreen extends StatelessWidget {
                             TableRow(
                               children: List.generate(
                                 7,
-                                    (index) => Center(
+                                (index) => Center(
                                   child: CircleAvatar(
                                     backgroundColor: index >= 1 && index <= 5
                                         ? Colors.purple.shade100
@@ -119,7 +129,7 @@ class CalendarScreen extends StatelessWidget {
                             TableRow(
                               children: List.generate(
                                 7,
-                                    (index) => Center(
+                                (index) => Center(
                                   child: CircleAvatar(
                                     backgroundColor: index == 6
                                         ? Colors.purpleAccent.shade100
@@ -139,7 +149,7 @@ class CalendarScreen extends StatelessWidget {
                             TableRow(
                               children: List.generate(
                                 7,
-                                    (index) => Center(
+                                (index) => Center(
                                   child: CircleAvatar(
                                     backgroundColor: Colors.transparent,
                                     radius: 18,
@@ -158,8 +168,11 @@ class CalendarScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             _buildLegendItem('Period', Colors.pink),
-                            _buildLegendItem('Predicted Period', Colors.pinkAccent.shade100, isDotted: true),
-                            _buildLegendItem('Fertile Window', Colors.purpleAccent.shade100),
+                            _buildLegendItem(
+                                'Predicted Period', Colors.pinkAccent.shade100,
+                                isDotted: true),
+                            _buildLegendItem(
+                                'Fertile Window', Colors.purpleAccent.shade100),
                           ],
                         ),
                       ],
@@ -195,7 +208,8 @@ class CalendarScreen extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: TextField(
-                        decoration: InputDecoration.collapsed(hintText: "Enter note here"),
+                        decoration: InputDecoration.collapsed(
+                            hintText: "Enter note here"),
                       ),
                     ),
                   ),
@@ -205,10 +219,14 @@ class CalendarScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      _buildMoodIcon(Icons.sentiment_dissatisfied_rounded, Colors.yellow.shade700),
-                      _buildMoodIcon(Icons.sentiment_neutral_rounded, Colors.grey),
-                      _buildMoodIcon(Icons.sentiment_very_dissatisfied_rounded, Colors.blue),
-                      _buildMoodIcon(Icons.sentiment_very_satisfied_rounded, Colors.yellowAccent),
+                      _buildMoodIcon(Icons.sentiment_dissatisfied_rounded,
+                          Colors.yellow.shade700),
+                      _buildMoodIcon(
+                          Icons.sentiment_neutral_rounded, Colors.grey),
+                      _buildMoodIcon(Icons.sentiment_very_dissatisfied_rounded,
+                          Colors.blue),
+                      _buildMoodIcon(Icons.sentiment_very_satisfied_rounded,
+                          Colors.yellowAccent),
                     ],
                   ),
                 ],
@@ -238,9 +256,9 @@ class CalendarScreen extends StatelessWidget {
       children: [
         isDotted
             ? CustomPaint(
-          size: Size(20, 2),
-          painter: DashedLinePainter(color: color),
-        )
+                size: Size(20, 2),
+                painter: DashedLinePainter(color: color),
+              )
             : CircleAvatar(radius: 5, backgroundColor: color),
         SizedBox(width: 8),
         Text(text, style: TextStyle(color: Colors.grey)),

@@ -9,7 +9,6 @@ import '../../Components/Image/ImageView.dart';
 import '../../Components/Image/Model/ImageConfig.dart';
 import '../../assets/app_image.dart';
 
-
 class PhoneNumberScreen extends StatelessWidget {
   const PhoneNumberScreen({super.key});
 

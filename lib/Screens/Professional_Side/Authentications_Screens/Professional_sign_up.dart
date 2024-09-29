@@ -12,8 +12,10 @@ class ProfessionalSignUpScreen extends StatefulWidget {
   const ProfessionalSignUpScreen({super.key});
 
   @override
-  _ProfessionalSignUpScreenState createState() => _ProfessionalSignUpScreenState();
+  _ProfessionalSignUpScreenState createState() =>
+      _ProfessionalSignUpScreenState();
 }
+
 class _ProfessionalSignUpScreenState extends State<ProfessionalSignUpScreen> {
   bool _isPasswordVisible = false;
   @override
@@ -37,7 +39,8 @@ class _ProfessionalSignUpScreenState extends State<ProfessionalSignUpScreen> {
               ),
               const SizedBox(height: 40), // Space for the status bar
               IconButton(
-                icon: const Icon(Icons.arrow_back_ios_new_rounded, color: Colors.black),
+                icon: const Icon(Icons.arrow_back_ios_new_rounded,
+                    color: Colors.black),
                 onPressed: () {
                   // Action for back button
                 },
@@ -88,7 +91,7 @@ class _ProfessionalSignUpScreenState extends State<ProfessionalSignUpScreen> {
                       obscureText: !_isPasswordVisible,
                       decoration: InputDecoration(
                         prefixIcon: const Icon(Icons.lock_outline),
-                        suffixIcon:  IconButton(
+                        suffixIcon: IconButton(
                           icon: Icon(
                             _isPasswordVisible
                                 ? Icons.visibility
@@ -115,11 +118,14 @@ class _ProfessionalSignUpScreenState extends State<ProfessionalSignUpScreen> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) =>   const ProfessionalPhoneNumberScreen()),
-                        );// Action for sign-up button
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const ProfessionalPhoneNumberScreen()),
+                        ); // Action for sign-up button
                       },
                       style: ElevatedButton.styleFrom(
-                        foregroundColor: Colors.black, backgroundColor: Colors.white,
+                        foregroundColor: Colors.black,
+                        backgroundColor: Colors.white,
                         padding: const EdgeInsets.symmetric(
                             horizontal: 120, vertical: 15),
                         shape: RoundedRectangleBorder(
@@ -180,7 +186,8 @@ class _ProfessionalSignUpScreenState extends State<ProfessionalSignUpScreen> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => const ProfessionalLoginPage(),
+                                      builder: (context) =>
+                                          const ProfessionalLoginPage(),
                                     ),
                                   );
                                 },
@@ -197,7 +204,6 @@ class _ProfessionalSignUpScreenState extends State<ProfessionalSignUpScreen> {
                       color: Colors.black,
                     ),
                     const SizedBox(height: 10),
-
                   ],
                 ),
               ),

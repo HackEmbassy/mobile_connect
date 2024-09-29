@@ -54,7 +54,8 @@ class HomeScreen extends StatelessWidget {
               ),
               Stack(
                 children: [
-                  Icon(Icons.notifications_none, color: Colors.black87, size: 30),
+                  Icon(Icons.notifications_none,
+                      color: Colors.black87, size: 30),
                   Positioned(
                     right: 0,
                     child: Container(
@@ -85,7 +86,8 @@ class HomeScreen extends StatelessWidget {
                   decoration: InputDecoration(
                     hintText: "Search something",
                     hintStyle: TextStyle(
-                      fontWeight: FontWeight.w300, // Lighter font weight for hint
+                      fontWeight:
+                          FontWeight.w300, // Lighter font weight for hint
                     ),
                     prefixIcon: Icon(Icons.search, color: Colors.grey[600]),
                     fillColor: Colors.grey[200],
@@ -128,7 +130,8 @@ class HomeScreen extends StatelessWidget {
                           const SizedBox(height: 20),
                           Row(
                             children: const [
-                              Icon(Icons.calendar_today_outlined, color: Colors.white, size: 20),
+                              Icon(Icons.calendar_today_outlined,
+                                  color: Colors.white, size: 20),
                               SizedBox(width: 10),
                               Text(
                                 "22 October, 2024",
@@ -142,7 +145,8 @@ class HomeScreen extends StatelessWidget {
                           const SizedBox(height: 15),
                           Row(
                             children: const [
-                              Icon(Icons.access_time, color: Colors.white, size: 20),
+                              Icon(Icons.access_time,
+                                  color: Colors.white, size: 20),
                               SizedBox(width: 10),
                               Text(
                                 "08:00AM - 10:30AM",
@@ -239,7 +243,8 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 60), // Adjusted to accommodate the overlay card
+                const SizedBox(
+                    height: 60), // Adjusted to accommodate the overlay card
                 const Text(
                   "Our Experts",
                   style: TextStyle(
@@ -253,10 +258,10 @@ class HomeScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: List.generate(
                     4,
-                        (index) => const CircleAvatar(
+                    (index) => const CircleAvatar(
                       radius: 40,
-                      backgroundImage:
-                      NetworkImage('https://via.placeholder.com/150'), // Expert image
+                      backgroundImage: NetworkImage(
+                          'https://via.placeholder.com/150'), // Expert image
                     ),
                   ),
                 ),

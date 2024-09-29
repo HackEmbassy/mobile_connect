@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-
-class  ProfessionalEventListScreen extends StatefulWidget {
+class ProfessionalEventListScreen extends StatefulWidget {
   const ProfessionalEventListScreen({super.key});
 
   @override
-  _ProfessionalEventListScreenState createState() => _ProfessionalEventListScreenState();
+  _ProfessionalEventListScreenState createState() =>
+      _ProfessionalEventListScreenState();
 }
 
-class _ProfessionalEventListScreenState extends State<ProfessionalEventListScreen> {
+class _ProfessionalEventListScreenState
+    extends State<ProfessionalEventListScreen> {
   DateTime _selectedDay = DateTime.now();
   DateTime _focusedDay = DateTime.now();
 
@@ -27,7 +28,8 @@ class _ProfessionalEventListScreenState extends State<ProfessionalEventListScree
     // Convert the list of events into a map of DateTime and List<Event>
     _events = {};
     for (var event in _eventsList) {
-      DateTime eventDay = DateTime(event.date.year, event.date.month, event.date.day);
+      DateTime eventDay =
+          DateTime(event.date.year, event.date.month, event.date.day);
       if (_events[eventDay] == null) {
         _events[eventDay] = [];
       }
@@ -62,7 +64,7 @@ class _ProfessionalEventListScreenState extends State<ProfessionalEventListScree
           ),
           const SizedBox(height: 16.0),
           ..._getEventsForDay(_selectedDay).map(
-                (event) => ListTile(
+            (event) => ListTile(
               title: Text(event.title),
               tileColor: Colors.blue.shade100,
             ),

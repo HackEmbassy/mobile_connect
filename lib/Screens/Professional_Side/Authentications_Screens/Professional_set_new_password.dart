@@ -5,14 +5,17 @@ import '../../../Components/Image/ImageView.dart';
 import '../../../Components/Image/Model/ImageConfig.dart';
 import '../../../assets/app_image.dart';
 import 'Professional_successful.dart';
+
 class ProfessionalNewPasswordScreen extends StatefulWidget {
   const ProfessionalNewPasswordScreen({super.key});
 
   @override
-  _ProfessionalNewPasswordScreenState createState() => _ProfessionalNewPasswordScreenState();
+  _ProfessionalNewPasswordScreenState createState() =>
+      _ProfessionalNewPasswordScreenState();
 }
 
-class _ProfessionalNewPasswordScreenState extends State<ProfessionalNewPasswordScreen> {
+class _ProfessionalNewPasswordScreenState
+    extends State<ProfessionalNewPasswordScreen> {
   bool _isPasswordVisible = false;
   bool _isConfirmPasswordVisible = false;
 
@@ -41,8 +44,7 @@ class _ProfessionalNewPasswordScreenState extends State<ProfessionalNewPasswordS
               children: [
                 IconButton(
                   icon: const Icon(Icons.arrow_back_ios_new_outlined),
-                  onPressed: () {
-                  },
+                  onPressed: () {},
                 ),
               ],
             ),
@@ -75,7 +77,9 @@ class _ProfessionalNewPasswordScreenState extends State<ProfessionalNewPasswordS
                 prefixIcon: const Icon(Icons.lock_outline),
                 suffixIcon: IconButton(
                   icon: Icon(
-                    _isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                    _isPasswordVisible
+                        ? Icons.visibility
+                        : Icons.visibility_off,
                   ),
                   onPressed: () {
                     setState(() {
@@ -113,8 +117,7 @@ class _ProfessionalNewPasswordScreenState extends State<ProfessionalNewPasswordS
                   ),
                   onPressed: () {
                     setState(() {
-                      _isConfirmPasswordVisible =
-                      !_isConfirmPasswordVisible;
+                      _isConfirmPasswordVisible = !_isConfirmPasswordVisible;
                     });
                   },
                 ),
@@ -132,7 +135,9 @@ class _ProfessionalNewPasswordScreenState extends State<ProfessionalNewPasswordS
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) =>   const ProfessionalResetSuccessfulScreen()),
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const ProfessionalResetSuccessfulScreen()),
                   );
                 },
                 style: ElevatedButton.styleFrom(

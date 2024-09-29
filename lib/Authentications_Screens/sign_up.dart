@@ -8,6 +8,7 @@ import 'package:herhealthconnect/Components/Gap.dart';
 import 'package:herhealthconnect/Core/AppUtils/Form_Validator.dart';
 import 'package:herhealthconnect/Core/CoreFolder/app.locator.dart';
 import 'package:herhealthconnect/Core/Helpers/Model/create_user_model_entity/create_user_model_entity.dart';
+import 'package:herhealthconnect/Core/Helpers/Model/user_model_entity/user_model_entity.dart';
 import 'package:herhealthconnect/Core/Helpers/veiwModel/auth_viewmodel.dart';
 import 'package:herhealthconnect/assets/app_colors.dart';
 import 'package:stacked/stacked.dart';
@@ -50,45 +51,43 @@ class _SignUpScreenState extends State<SignUpScreen> {
     LocationPermission permission;
 
     // Test if location services are enabled.
-    try{
+    try {
       serviceEnabled = await Geolocator.isLocationServiceEnabled();
-    if (!serviceEnabled) {
-      setState(() {
-        _locationMessage = "Location services are disabled.";
-      });
-      return;
-    }
-
-    permission = await Geolocator.checkPermission();
-    if (permission == LocationPermission.denied) {
-      permission = await Geolocator.requestPermission();
-      if (permission == LocationPermission.denied) {
+      if (!serviceEnabled) {
         setState(() {
-          _locationMessage = "Location permissions are denied";
+          _locationMessage = "Location services are disabled.";
         });
         return;
       }
-    }
 
-    if (permission == LocationPermission.deniedForever) {
+      permission = await Geolocator.checkPermission();
+      if (permission == LocationPermission.denied) {
+        permission = await Geolocator.requestPermission();
+        if (permission == LocationPermission.denied) {
+          setState(() {
+            _locationMessage = "Location permissions are denied";
+          });
+          return;
+        }
+      }
+
+      if (permission == LocationPermission.deniedForever) {
+        setState(() {
+          _locationMessage = "Location permissions are permanently denied.";
+        });
+        return;
+      }
+
+      Position position = await Geolocator.getCurrentPosition(
+          desiredAccuracy: LocationAccuracy.high);
       setState(() {
-        _locationMessage = "Location permissions are permanently denied.";
+        _locationMessage = "${position.longitude},${position.latitude}";
+        long = position.longitude.toString();
+        latitude = position.latitude.toString();
       });
-      return;
-    }
-
-    Position position = await Geolocator.getCurrentPosition(
-        desiredAccuracy: LocationAccuracy.high);
-    setState(() {
-      _locationMessage = "${position.longitude},${position.latitude}";
-      long = position.longitude.toString();
-      latitude = position.latitude.toString();
-    });
-    print(_locationMessage);
-    }
-    catch(e){
+      print(_locationMessage);
+    } catch (e) {
       print(e.toString());
-
     }
   }
 
@@ -275,17 +274,18 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               loading: model.isLoading ?? false,
                               onPressed: () {
                                 if (model.formKey.currentState!.validate()) {
-                                  model.signUpUser(CreateUserModelEntity(
-                                      fullName: fullname.text,
-                                      age: int.parse(age.text),
-                                      city: city.text,
-                                      gender: "Female",
-                                      state: state.text,
-                                      email: email.text,
-                                      password: password.text,
-                                      phone: phone.text,
-                                      longitude: long.toString(),
-                                      latitude: latitude.toString()));
+                                  model.signUpUser(UserModelEntity(
+                                    fullName: fullname.text,
+                                    age: int.parse(age.text),
+                                    city: city.text,
+                                    gender: "female",
+                                    state: state.text,
+                                    email: email.text,
+                                    password: password.text,
+                                    phone: "+234${phone.text}",
+                                    longitude: double.parse(long!),
+                                    latitude: double.parse(latitude!),
+                                  ));
                                 }
                               },
                               height: 50,

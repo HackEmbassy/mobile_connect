@@ -4,7 +4,8 @@ class ProfessionalCongratsPage extends StatefulWidget {
   const ProfessionalCongratsPage({super.key});
 
   @override
-  _ProfessionalCongratsPageState createState() => _ProfessionalCongratsPageState();
+  _ProfessionalCongratsPageState createState() =>
+      _ProfessionalCongratsPageState();
 }
 
 class _ProfessionalCongratsPageState extends State<ProfessionalCongratsPage> {
@@ -36,7 +37,8 @@ class _ProfessionalCongratsPageState extends State<ProfessionalCongratsPage> {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 50), // Adds space between text and button
+                const SizedBox(
+                    height: 50), // Adds space between text and button
                 SizedBox(
                   width: double.infinity,
                   child: OutlinedButton(

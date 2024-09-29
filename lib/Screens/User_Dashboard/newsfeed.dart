@@ -61,8 +61,10 @@ class NewsFeedScreen extends StatelessWidget {
               NewsCard(
                 author: 'Ryan Browne',
                 title:
-                'Crypto investors should be prepared to lose all their money, BOE governor says',
-                subtitle: '“I’m going to say this very bluntly again,” he added. “Buy them only if you’re prepared to lose all your money.”', date: '',
+                    'Crypto investors should be prepared to lose all their money, BOE governor says',
+                subtitle:
+                    '“I’m going to say this very bluntly again,” he added. “Buy them only if you’re prepared to lose all your money.”',
+                date: '',
               ),
               SizedBox(height: 16),
               CategoryChips(),
@@ -70,13 +72,15 @@ class NewsFeedScreen extends StatelessWidget {
               NewsCard(
                 author: 'Matt Villano',
                 title: '5 things to know about the conundrum of lupus',
-                date: 'Sunday, 9 May 2021', subtitle: '',
+                date: 'Sunday, 9 May 2021',
+                subtitle: '',
               ),
               SizedBox(height: 8),
               NewsCard(
                 author: 'Zain Korsgaard',
                 title: '4 ways families can ease anxiety together',
-                date: 'Sunday, 9 May 2021', subtitle: '',
+                date: 'Sunday, 9 May 2021',
+                subtitle: '',
               ),
             ],
           ),
@@ -118,7 +122,11 @@ class NewsCard extends StatelessWidget {
   final String subtitle;
   final String date;
 
-  NewsCard({required this.author, required this.title, required this.subtitle, required this.date});
+  NewsCard(
+      {required this.author,
+      required this.title,
+      required this.subtitle,
+      required this.date});
 
   @override
   Widget build(BuildContext context) {

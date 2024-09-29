@@ -1,14 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'create_user_model_entity.dart';
+part of 'user_model_entity.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-CreateUserModelEntity _$CreateUserModelEntityFromJson(
-        Map<String, dynamic> json) =>
-    CreateUserModelEntity(
+UserModelEntity _$UserModelEntityFromJson(Map<String, dynamic> json) =>
+    UserModelEntity(
       fullName: json['fullName'] as String?,
       email: json['email'] as String?,
       password: json['password'] as String?,
@@ -21,8 +20,7 @@ CreateUserModelEntity _$CreateUserModelEntityFromJson(
       longitude: (json['longitude'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$CreateUserModelEntityToJson(
-        CreateUserModelEntity instance) =>
+Map<String, dynamic> _$UserModelEntityToJson(UserModelEntity instance) =>
     <String, dynamic>{
       'fullName': instance.fullName,
       'email': instance.email,

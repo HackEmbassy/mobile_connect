@@ -71,14 +71,13 @@ class RecordScreen extends StatelessWidget {
                     SizedBox(height: 8),
                     CircleAvatar(
                       radius: 18,
-                      backgroundColor:
-                      (index == 4) ? Colors.purple[100] : Colors.transparent,
+                      backgroundColor: (index == 4)
+                          ? Colors.purple[100]
+                          : Colors.transparent,
                       child: Text(
                         '${9 + index}',
                         style: TextStyle(
-                          color: (index == 4)
-                              ? Colors.purple
-                              : Colors.black,
+                          color: (index == 4) ? Colors.purple : Colors.black,
                         ),
                       ),
                     ),
@@ -173,7 +172,10 @@ class RecordScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildInfoBox({required IconData icon, required String title, required String subtitle}) {
+  Widget _buildInfoBox(
+      {required IconData icon,
+      required String title,
+      required String subtitle}) {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(

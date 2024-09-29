@@ -42,9 +42,7 @@ class _ProfessionSelectionPageState extends State<ProfessionSelectionPage> {
             const SizedBox(height: 8),
             const Row(
               mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text('1 of 5 ')
-              ],
+              children: [Text('1 of 5 ')],
             ),
             const SizedBox(height: 5),
             Text(
@@ -84,7 +82,8 @@ class _ProfessionSelectionPageState extends State<ProfessionSelectionPage> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => ProfessionalInfoScreen(profession: profession),
+            builder: (context) =>
+                ProfessionalInfoScreen(profession: profession),
           ),
         );
       },
@@ -92,14 +91,18 @@ class _ProfessionSelectionPageState extends State<ProfessionSelectionPage> {
         width: double.infinity,
         padding: const EdgeInsets.symmetric(vertical: 18),
         decoration: BoxDecoration(
-          color: selectedProfession == profession ? Colors.blue[900] : Colors.blueGrey[300],
+          color: selectedProfession == profession
+              ? Colors.blue[900]
+              : Colors.blueGrey[300],
           borderRadius: BorderRadius.circular(8),
         ),
         child: Center(
           child: Text(
             profession,
             style: TextStyle(
-              color: selectedProfession == profession ? Colors.blueGrey : Colors.blueGrey,
+              color: selectedProfession == profession
+                  ? Colors.blueGrey
+                  : Colors.blueGrey,
               fontSize: 16,
               fontWeight: FontWeight.bold,
             ),
@@ -109,4 +112,3 @@ class _ProfessionSelectionPageState extends State<ProfessionSelectionPage> {
     );
   }
 }
-

@@ -122,7 +122,6 @@ class AnalysisScreen extends StatelessWidget {
           ),
         ),
       ),
-
     );
   }
 
@@ -251,5 +250,3 @@ class AnalysisScreen extends StatelessWidget {
     );
   }
 }
-
-

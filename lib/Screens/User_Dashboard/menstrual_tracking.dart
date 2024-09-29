@@ -86,8 +86,9 @@ class _MenstrualTrackingScreenState extends State<MenstrualTrackingScreen> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => AddPeriodScreen()),
-                      );// Add period button logic
+                        MaterialPageRoute(
+                            builder: (context) => AddPeriodScreen()),
+                      ); // Add period button logic
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
@@ -168,9 +169,12 @@ class _MenstrualTrackingScreenState extends State<MenstrualTrackingScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                _buildBottomIcon(context, 'assets/images/calendar_icon.png', 'CALENDAR', Colors.red, CalendarScreen()),
-                _buildBottomIcon(context, 'assets/images/record_icon.png', 'RECORD', Colors.black87, RecordScreen()),
-                _buildBottomIcon(context, 'assets/images/analysis_icon.png', 'ANALYSIS', Colors.black87, AnalysisScreen()),
+                _buildBottomIcon(context, 'assets/images/calendar_icon.png',
+                    'CALENDAR', Colors.red, CalendarScreen()),
+                _buildBottomIcon(context, 'assets/images/record_icon.png',
+                    'RECORD', Colors.black87, RecordScreen()),
+                _buildBottomIcon(context, 'assets/images/analysis_icon.png',
+                    'ANALYSIS', Colors.black87, AnalysisScreen()),
               ],
             ),
           ),

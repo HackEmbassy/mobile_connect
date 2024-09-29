@@ -61,7 +61,8 @@ class BookSessionScreen extends StatelessWidget {
                             children: [
                               CircleAvatar(
                                 radius: 30,
-                                backgroundImage: AssetImage('assets/doctor.png'), // Replace with actual image
+                                backgroundImage: AssetImage(
+                                    'assets/doctor.png'), // Replace with actual image
                               ),
                               const SizedBox(width: 10),
                               Expanded(
@@ -107,7 +108,8 @@ class BookSessionScreen extends StatelessWidget {
                             children: [
                               Row(
                                 children: const [
-                                  Icon(Icons.star, color: Colors.amber, size: 20),
+                                  Icon(Icons.star,
+                                      color: Colors.amber, size: 20),
                                   SizedBox(width: 5),
                                   Text(
                                     "4.5",
@@ -130,8 +132,9 @@ class BookSessionScreen extends StatelessWidget {
                                 onPressed: () {
                                   Navigator.push(
                                     context,
-                                    MaterialPageRoute(builder: (context) => BookingScreen()),
-                                  );// Handle view more action
+                                    MaterialPageRoute(
+                                        builder: (context) => BookingScreen()),
+                                  ); // Handle view more action
                                 },
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: Colors.white,

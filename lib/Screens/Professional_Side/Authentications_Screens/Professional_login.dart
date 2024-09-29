@@ -111,9 +111,10 @@ class _ProfessionalLoginPageState extends State<ProfessionalLoginPage> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) =>  const ProfessionalForgotPassword ()),
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                const ProfessionalForgotPassword()),
                       );
-
                     },
                     child: const Text('Forgot password'),
                   ),
@@ -124,13 +125,15 @@ class _ProfessionalLoginPageState extends State<ProfessionalLoginPage> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) =>   const ProfessionalHomePage()),
+                    MaterialPageRoute(
+                        builder: (context) => const ProfessionalHomePage()),
                   );
                 },
                 style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.black, backgroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 120, vertical: 15),
+                  foregroundColor: Colors.black,
+                  backgroundColor: Colors.white,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 120, vertical: 15),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                     side: const BorderSide(color: Colors.black, width: 2),
@@ -179,7 +182,8 @@ class _ProfessionalLoginPageState extends State<ProfessionalLoginPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const ProfessionalSignUpScreen(),
+                              builder: (context) =>
+                                  const ProfessionalSignUpScreen(),
                             ),
                           );
                         },

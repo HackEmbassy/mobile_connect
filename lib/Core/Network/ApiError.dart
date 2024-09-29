@@ -82,8 +82,10 @@ class ApiError {
                   extractDescriptionFromResponse(error.response);
             }
           } else if (dioError.response?.statusCode == 500) {
+            apiErrorModel = ApiErrorModel.fromJson(dioError.response?.data);
             if (dioError.response!.data.toString().isNotEmpty) {
-              errorDescription = dioError.response!.data;
+              errorDescription =
+                  apiErrorModel?.message.toString().toUpperCase();
               // print(dioError.response!.data.toString());
             } else {
               errorDescription =

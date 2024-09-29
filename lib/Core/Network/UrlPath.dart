@@ -9,5 +9,6 @@ class UrlConfig {
   static const String addPlan = 'api/v1/add-plan';
   static const String getPlan = 'api/v1/search?goal';
   static const String gethealthTip = 'api/v1/reproductive-health-tips/puberty';
-  static const String searchProfessionals = 'api/v1/search-professionals?specialty=gynecology&city=aba';
+  static const String searchProfessionals =
+      'api/v1/search-professionals?specialty=gynecology&city=aba';
 }

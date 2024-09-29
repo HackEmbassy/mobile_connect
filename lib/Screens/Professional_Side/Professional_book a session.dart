@@ -59,7 +59,8 @@ class ProfessionalBookSessionScreen extends StatelessWidget {
                             children: [
                               CircleAvatar(
                                 radius: 30,
-                                backgroundImage: AssetImage('assets/doctor.png'), // Replace with actual image
+                                backgroundImage: AssetImage(
+                                    'assets/doctor.png'), // Replace with actual image
                               ),
                               const SizedBox(width: 10),
                               Expanded(
@@ -105,7 +106,8 @@ class ProfessionalBookSessionScreen extends StatelessWidget {
                             children: [
                               Row(
                                 children: const [
-                                  Icon(Icons.star, color: Colors.amber, size: 20),
+                                  Icon(Icons.star,
+                                      color: Colors.amber, size: 20),
                                   SizedBox(width: 5),
                                   Text(
                                     "4.5",

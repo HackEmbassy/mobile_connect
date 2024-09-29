@@ -1,4 +1,5 @@
 import 'package:herhealthconnect/Core/Helpers/Model/create_user_model_entity/create_user_model_entity.dart';
+import 'package:herhealthconnect/Core/Helpers/Model/user_model_entity/user_model_entity.dart';
 import 'package:herhealthconnect/Core/Network/Network_Service.dart';
 import 'package:herhealthconnect/Core/Network/UrlPath.dart';
 import 'package:injectable/injectable.dart';
@@ -10,7 +11,7 @@ class AuthApi {
   final logger = getLogger('AuthApi');
   final _service = locator<NetworkService>();
 
-  Future register(CreateUserModelEntity createUser) async {
+  Future register(UserModelEntity createUser) async {
     try {
       final response = await _service.call(
           UrlConfig.register_user, RequestMethod.post,

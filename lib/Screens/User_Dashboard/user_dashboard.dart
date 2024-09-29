@@ -23,9 +23,9 @@ class _UserDashboardState extends State<UserDashboard> {
   int _selectedIndex = 0; // Track the selected index
 
   // Define the screens based on the index
-  static  List<Widget> _screens = <Widget>[
-    HomeScreen(),         // Screen 0 - Home
-    BookSessionScreen(),   // Screen 1 - Book a session
+  static List<Widget> _screens = <Widget>[
+    HomeScreen(), // Screen 0 - Home
+    BookSessionScreen(), // Screen 1 - Book a session
     MenstrualTrackingScreen(),
     CalendarScreen(), // Add other screens here if needed
     RecordScreen(),
@@ -44,13 +44,14 @@ class _UserDashboardState extends State<UserDashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _screens[_selectedIndex], // Display the screen based on selected index
+      body: _screens[
+          _selectedIndex], // Display the screen based on selected index
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.black87,
         unselectedItemColor: Colors.grey[600],
         currentIndex: _selectedIndex, // Highlight the currently selected item
-        onTap: _onItemTapped,         // Handle tap events to switch screens
+        onTap: _onItemTapped, // Handle tap events to switch screens
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -77,10 +78,3 @@ class _UserDashboardState extends State<UserDashboard> {
     );
   }
 }
-
-
-
-
-
-
-

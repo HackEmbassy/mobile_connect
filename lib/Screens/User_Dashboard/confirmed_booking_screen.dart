@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-
-
 class BookingSuccessPage extends StatelessWidget {
   const BookingSuccessPage({super.key});
 
@@ -28,7 +26,9 @@ class BookingSuccessPage extends StatelessWidget {
               backgroundColor: Colors.blue[800],
               child: const Icon(Icons.check, size: 50, color: Colors.white),
             ),
-            const SizedBox(height: 60,),
+            const SizedBox(
+              height: 60,
+            ),
 
             // Success Message
             const Text(
@@ -47,7 +47,9 @@ class BookingSuccessPage extends StatelessWidget {
               text: const TextSpan(
                 style: TextStyle(fontSize: 16, color: Colors.black),
                 children: <TextSpan>[
-                  TextSpan(text: 'Dear Kaka, you have successfully booked a session with '),
+                  TextSpan(
+                      text:
+                          'Dear Kaka, you have successfully booked a session with '),
                   TextSpan(
                       text: 'Dr. Richar Kandowen',
                       style: TextStyle(fontWeight: FontWeight.bold)),
@@ -59,8 +61,7 @@ class BookingSuccessPage extends StatelessWidget {
                   TextSpan(
                       text: '7th October by 02:00pm.',
                       style: TextStyle(fontWeight: FontWeight.bold)),
-                  TextSpan(
-                      text: ' You’ll get a reminder 1hr to the meeting.'),
+                  TextSpan(text: ' You’ll get a reminder 1hr to the meeting.'),
                 ],
               ),
             ),
@@ -72,11 +73,10 @@ class BookingSuccessPage extends StatelessWidget {
               children: [
                 // Add to Calendar Button
                 OutlinedButton(
-                  onPressed: () {
-
-                  },
+                  onPressed: () {},
                   style: OutlinedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 24, vertical: 12),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
                     ),
@@ -90,15 +90,15 @@ class BookingSuccessPage extends StatelessWidget {
                 // Go to Home Page Button
                 ElevatedButton(
                   onPressed: () {
-                  //   Navigator.push(
-                  //     context,
-                  //     MaterialPageRoute(builder: (context) => const ProfessionSelectionPage()),
-                  //   );
-                   },
+                    //   Navigator.push(
+                    //     context,
+                    //     MaterialPageRoute(builder: (context) => const ProfessionSelectionPage()),
+                    //   );
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue[800],
-                    padding:
-                    const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 24, vertical: 12),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
                     ),

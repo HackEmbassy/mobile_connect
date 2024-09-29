@@ -6,10 +6,13 @@ class ProfessionalServicesAndOpenHours extends StatefulWidget {
   const ProfessionalServicesAndOpenHours({super.key});
 
   @override
-  _ProfessionalServicesAndOpenHoursState createState() => _ProfessionalServicesAndOpenHoursState();
+  _ProfessionalServicesAndOpenHoursState createState() =>
+      _ProfessionalServicesAndOpenHoursState();
 }
 
-class _ProfessionalServicesAndOpenHoursState extends State<ProfessionalServicesAndOpenHours> with SingleTickerProviderStateMixin {
+class _ProfessionalServicesAndOpenHoursState
+    extends State<ProfessionalServicesAndOpenHours>
+    with SingleTickerProviderStateMixin {
   late TabController _tabController;
   bool showPickers = false;
 
@@ -76,13 +79,15 @@ class _ProfessionalServicesAndOpenHoursState extends State<ProfessionalServicesA
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) =>   const ProfessionalHomePage()),
+                      MaterialPageRoute(
+                          builder: (context) => const ProfessionalHomePage()),
                     );
-
                   },
                   style: ElevatedButton.styleFrom(
-                    foregroundColor: Colors.black, backgroundColor: Colors.white,
-                    padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 15),
+                    foregroundColor: Colors.black,
+                    backgroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 100, vertical: 15),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                       side: const BorderSide(color: Colors.black, width: 2),

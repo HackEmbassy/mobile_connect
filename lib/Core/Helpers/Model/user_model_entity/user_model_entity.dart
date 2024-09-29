@@ -1,9 +1,9 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'create_user_model_entity.g.dart';
+part 'user_model_entity.g.dart';
 
 @JsonSerializable()
-class CreateUserModelEntity {
+class UserModelEntity {
   String? fullName;
   String? email;
   String? password;
@@ -15,7 +15,7 @@ class CreateUserModelEntity {
   double? latitude;
   double? longitude;
 
-  CreateUserModelEntity({
+  UserModelEntity({
     this.fullName,
     this.email,
     this.password,
@@ -28,9 +28,9 @@ class CreateUserModelEntity {
     this.longitude,
   });
 
-  factory CreateUserModelEntity.fromJson(Map<String, dynamic> json) {
-    return _$CreateUserModelEntityFromJson(json);
+  factory UserModelEntity.fromJson(Map<String, dynamic> json) {
+    return _$UserModelEntityFromJson(json);
   }
 
-  Map<String, dynamic> toJson() => _$CreateUserModelEntityToJson(this);
+  Map<String, dynamic> toJson() => _$UserModelEntityToJson(this);
 }

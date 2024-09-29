@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ProfessionalEventDetailsScreen extends StatelessWidget {
-  const  ProfessionalEventDetailsScreen({super.key});
+  const ProfessionalEventDetailsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

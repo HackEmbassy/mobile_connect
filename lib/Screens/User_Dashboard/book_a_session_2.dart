@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:herhealthconnect/Screens/User_Dashboard/summary_booking.dart';
 
-
 class BookingScreen extends StatefulWidget {
   const BookingScreen({super.key});
 
@@ -45,14 +44,16 @@ class _BookingScreenState extends State<BookingScreen> {
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: ElevatedButton(
-              onPressed: selectedServiceIndex == -1 || selectedTimeSlotIndex == -1
+              onPressed: selectedServiceIndex == -1 ||
+                      selectedTimeSlotIndex == -1
                   ? null
                   : () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const BookingSummaryPage()),
-                );
-              },
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const BookingSummaryPage()),
+                      );
+                    },
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(vertical: 15),
                 backgroundColor: Colors.lightBlue,
@@ -197,8 +198,15 @@ class _BookingScreenState extends State<BookingScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-                            [index % 7], // Day of the week
+                            [
+                              'Sun',
+                              'Mon',
+                              'Tue',
+                              'Wed',
+                              'Thu',
+                              'Fri',
+                              'Sat'
+                            ][index % 7], // Day of the week
                             style: const TextStyle(fontSize: 10),
                           ),
                           Text(

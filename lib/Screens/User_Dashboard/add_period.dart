@@ -232,7 +232,8 @@ class _AddPeriodScreenState extends State<AddPeriodScreen> {
                 children: [
                   const Text(
                     "What type",
-                    style: TextStyle(fontWeight: FontWeight.bold, color: Colors.red),
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold, color: Colors.red),
                   ),
                   RadioListTile(
                     title: const Text("External Condom (Used by Men)"),
@@ -292,5 +293,3 @@ class _AddPeriodScreenState extends State<AddPeriodScreen> {
     );
   }
 }
-
-

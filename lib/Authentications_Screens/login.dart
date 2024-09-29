@@ -130,7 +130,7 @@ class _LoginPageState extends State<LoginPage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) =>  const PhoneNumberScreen()),
+                          builder: (context) => const PhoneNumberScreen()),
                     );
                   },
                   height: 48,
@@ -203,7 +203,7 @@ class _LoginPageState extends State<LoginPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) =>  SignUpScreen(),
+                              builder: (context) => SignUpScreen(),
                             ),
                           );
                         },

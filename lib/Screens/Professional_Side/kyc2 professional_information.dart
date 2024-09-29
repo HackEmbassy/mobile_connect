@@ -11,7 +11,8 @@ class ProfessionalInfoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView( // Wrapping everything inside a scroll view
+      body: SingleChildScrollView(
+        // Wrapping everything inside a scroll view
         child: Padding(
           padding: const EdgeInsets.all(24.0),
           child: Column(
@@ -70,9 +71,7 @@ class ProfessionalInfoScreen extends StatelessWidget {
               TextFormField(
                 decoration: const InputDecoration(
                   hintText: 'Eg. Dr., Coach',
-                  border: OutlineInputBorder(
-
-                  ),
+                  border: OutlineInputBorder(),
                 ),
               ),
               const SizedBox(height: 16),
@@ -133,18 +132,19 @@ class ProfessionalInfoScreen extends StatelessWidget {
               Center(
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(double.infinity, 50),
-                    backgroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                      side: const BorderSide(color: Colors.blueAccent, width: 1.5)
-                  ),
+                      minimumSize: const Size(double.infinity, 50),
+                      backgroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      side: const BorderSide(
+                          color: Colors.blueAccent, width: 1.5)),
                   onPressed: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const ProfessionalServicesAndOpenHours(),
+                        builder: (context) =>
+                            const ProfessionalServicesAndOpenHours(),
                       ),
                     );
                   },

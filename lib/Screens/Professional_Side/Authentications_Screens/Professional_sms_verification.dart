@@ -4,6 +4,7 @@ import 'package:herhealthconnect/Screens/Professional_Side/kyc2%20professional_i
 import '../../../Components/Image/ImageView.dart';
 import '../../../Components/Image/Model/ImageConfig.dart';
 import '../../../assets/app_image.dart';
+
 class ProfessionalPhoneVerificationScreen extends StatelessWidget {
   const ProfessionalPhoneVerificationScreen({super.key});
 
@@ -31,8 +32,7 @@ class ProfessionalPhoneVerificationScreen extends StatelessWidget {
               children: [
                 IconButton(
                   icon: const Icon(Icons.arrow_back_ios_new_rounded),
-                  onPressed: () {
-                  },
+                  onPressed: () {},
                 ),
               ],
             ),
@@ -85,8 +85,9 @@ class ProfessionalPhoneVerificationScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const ProfessionSelectionPage()),
-                  );// Implement continue button action
+                    MaterialPageRoute(
+                        builder: (context) => const ProfessionSelectionPage()),
+                  ); // Implement continue button action
                 },
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(vertical: 16.0),

@@ -5,6 +5,7 @@ import 'package:herhealthconnect/Authentications_Screens/successful.dart';
 import '../../Components/Image/ImageView.dart';
 import '../../Components/Image/Model/ImageConfig.dart';
 import '../../assets/app_image.dart';
+
 class NewPasswordScreen extends StatefulWidget {
   const NewPasswordScreen({super.key});
 
@@ -132,7 +133,8 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) =>   const ResetSuccessfulScreen()),
+                    MaterialPageRoute(
+                        builder: (context) => const ResetSuccessfulScreen()),
                   );
                 },
                 style: ElevatedButton.styleFrom(

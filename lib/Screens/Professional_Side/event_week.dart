@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+
 class ProfessionalCalendarEventScreen extends StatefulWidget {
   const ProfessionalCalendarEventScreen({super.key});
 
   @override
-  _ProfessionalCalendarEventScreenState createState() => _ProfessionalCalendarEventScreenState();
+  _ProfessionalCalendarEventScreenState createState() =>
+      _ProfessionalCalendarEventScreenState();
 }
 
-class _ProfessionalCalendarEventScreenState extends State<ProfessionalCalendarEventScreen> {
+class _ProfessionalCalendarEventScreenState
+    extends State<ProfessionalCalendarEventScreen> {
   DateTime selectedDay = DateTime(2023, 12, 26);
   List<Map<String, dynamic>> events = [
     {
@@ -126,7 +129,8 @@ class _ProfessionalCalendarEventScreenState extends State<ProfessionalCalendarEv
               itemBuilder: (context, index) {
                 var event = events[index];
                 return ListTile(
-                  contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  contentPadding:
+                      EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                   title: Text(
                     event['title'],
                     style: TextStyle(
@@ -138,9 +142,9 @@ class _ProfessionalCalendarEventScreenState extends State<ProfessionalCalendarEv
                     mainAxisSize: MainAxisSize.min,
                     children: event['icons']
                         .map<Widget>((icon) => Icon(
-                      icon,
-                      size: 18,
-                    ))
+                              icon,
+                              size: 18,
+                            ))
                         .toList(),
                   ),
                 );

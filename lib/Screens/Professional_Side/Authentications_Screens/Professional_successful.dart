@@ -4,6 +4,7 @@ import 'package:herhealthconnect/Screens/Professional_Side/Professional_home_pag
 import '../../../Components/Image/ImageView.dart';
 import '../../../Components/Image/Model/ImageConfig.dart';
 import '../../../assets/app_image.dart';
+
 class ProfessionalResetSuccessfulScreen extends StatelessWidget {
   const ProfessionalResetSuccessfulScreen({super.key});
 
@@ -53,7 +54,8 @@ class ProfessionalResetSuccessfulScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) =>   const ProfessionalHomePage()),
+                    MaterialPageRoute(
+                        builder: (context) => const ProfessionalHomePage()),
                   );
                 },
                 style: ElevatedButton.styleFrom(
