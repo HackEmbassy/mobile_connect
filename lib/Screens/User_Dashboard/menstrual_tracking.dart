@@ -34,9 +34,8 @@ class _MenstrualTrackingScreenState extends State<MenstrualTrackingScreen> {
             child: Container(
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [Color(0xff244599),Color(0xff0C1733)],
+                  colors: [Color(0xff244599), Color(0xff0C1733)],
                 ),
-
               ),
               padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
               child: Stack(
@@ -57,7 +56,12 @@ class _MenstrualTrackingScreenState extends State<MenstrualTrackingScreen> {
                     child: Text(
                       'RECORD',
                       textAlign: TextAlign.left,
-                      style: TextStyle(decoration: TextDecoration.none, fontSize: 20, color: Color(0xffffffff), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                      style: TextStyle(
+                          decoration: TextDecoration.none,
+                          fontSize: 20,
+                          color: Color(0xffffffff),
+                          fontFamily: 'NunitoSans-Bold',
+                          fontWeight: FontWeight.normal),
                       maxLines: 9999,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -67,14 +71,22 @@ class _MenstrualTrackingScreenState extends State<MenstrualTrackingScreen> {
                     width: 8.289,
                     top: 134,
                     height: 17.043,
-                    child: Image.asset('assets/images/image3_80214642.png', width: 8.289, height: 17.043,),
+                    child: Image.asset(
+                      'assets/images/image3_80214642.png',
+                      width: 8.289,
+                      height: 17.043,
+                    ),
                   ),
                   Positioned(
                     left: 113,
                     width: 8.289,
                     top: 134,
                     height: 17.043,
-                    child: Image.asset('assets/images/image4_80214645.png', width: 8.289, height: 17.043,),
+                    child: Image.asset(
+                      'assets/images/image4_80214645.png',
+                      width: 8.289,
+                      height: 17.043,
+                    ),
                   ),
                   const Positioned(
                     left: 124,
@@ -82,7 +94,12 @@ class _MenstrualTrackingScreenState extends State<MenstrualTrackingScreen> {
                     child: Text(
                       'Wed, 11 sept 2024',
                       textAlign: TextAlign.left,
-                      style: TextStyle(decoration: TextDecoration.none, fontSize: 16, color: Color(0xffffffff), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                      style: TextStyle(
+                          decoration: TextDecoration.none,
+                          fontSize: 16,
+                          color: Color(0xffffffff),
+                          fontFamily: 'NunitoSans-Bold',
+                          fontWeight: FontWeight.normal),
                       maxLines: 9999,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -92,18 +109,24 @@ class _MenstrualTrackingScreenState extends State<MenstrualTrackingScreen> {
                     width: 280,
                     top: 204,
                     height: 280,
-                    child: Image.asset('assets/images/image1_80214633.png', width: 280, height: 280,),
+                    child: Image.asset(
+                      'assets/images/image1_80214633.png',
+                      width: 280,
+                      height: 280,
+                    ),
                   ),
                   Positioned(
                     left: 61,
                     width: 268,
                     top: 210,
                     height: 268,
-                    child: Image.asset('assets/images/image2_80214634.png', width: 268, height: 268,),
+                    child: Image.asset(
+                      'assets/images/image2_80214634.png',
+                      width: 268,
+                      height: 268,
+                    ),
                   ),
-
-
-Positioned(
+                  Positioned(
                     left: 119,
                     width: 150,
                     top: 445,
@@ -113,12 +136,20 @@ Positioned(
                       height: 46,
                       decoration: BoxDecoration(
                         color: const Color(0xffffffff),
-                        border: Border.all(color: const Color(0xffffffff), width: 1.0118764638900757),
+                        border: Border.all(
+                            color: const Color(0xffffffff),
+                            width: 1.0118764638900757),
                         borderRadius: BorderRadius.circular(43),
-                        boxShadow: const [BoxShadow(color: const Color(0x3f000000), offset: Offset(0, 4), blurRadius: 4),],
+                        boxShadow: const [
+                          BoxShadow(
+                              color: const Color(0x3f000000),
+                              offset: Offset(0, 4),
+                              blurRadius: 4),
+                        ],
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 32, top: 5, right: 32, bottom: 5),
+                        padding: const EdgeInsets.only(
+                            left: 32, top: 5, right: 32, bottom: 5),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -127,15 +158,22 @@ Positioned(
                               child: const Text(
                                 'ADD PERIOD',
                                 textAlign: TextAlign.left,
-                                style: TextStyle(decoration: TextDecoration.none, fontSize: 13.125, color: Color(0xff484848), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                                style: TextStyle(
+                                    decoration: TextDecoration.none,
+                                    fontSize: 13.125,
+                                    color: Color(0xff484848),
+                                    fontFamily: 'NunitoSans-Bold',
+                                    fontWeight: FontWeight.normal),
                                 maxLines: 9999,
                                 overflow: TextOverflow.ellipsis,
                               ),
                               onTap: () {
                                 Navigator.push(
-                                              context,
-                                              MaterialPageRoute(builder: (context) => const AddPeriodScreen()),
-                                            );
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const AddPeriodScreen()),
+                                );
                               },
                             ),
                           ],
@@ -149,7 +187,12 @@ Positioned(
                     child: Text(
                       'OVULATION IN',
                       textAlign: TextAlign.left,
-                      style: TextStyle(decoration: TextDecoration.none, fontSize: 11.191, color: Color(0xffffffff), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                      style: TextStyle(
+                          decoration: TextDecoration.none,
+                          fontSize: 11.191,
+                          color: Color(0xffffffff),
+                          fontFamily: 'NunitoSans-Bold',
+                          fontWeight: FontWeight.normal),
                       maxLines: 9999,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -161,7 +204,12 @@ Positioned(
                     child: Text(
                       'low chance \nof getting pregnant',
                       textAlign: TextAlign.center,
-                      style: TextStyle(decoration: TextDecoration.none, fontSize: 11.191, color: Color(0xffffffff), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                      style: TextStyle(
+                          decoration: TextDecoration.none,
+                          fontSize: 11.191,
+                          color: Color(0xffffffff),
+                          fontFamily: 'NunitoSans-Bold',
+                          fontWeight: FontWeight.normal),
                       maxLines: 9999,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -172,7 +220,12 @@ Positioned(
                     child: Text(
                       '7 DAYS',
                       textAlign: TextAlign.left,
-                      style: TextStyle(decoration: TextDecoration.none, fontSize: 52.222, color: Color(0xffffffff), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                      style: TextStyle(
+                          decoration: TextDecoration.none,
+                          fontSize: 52.222,
+                          color: Color(0xffffffff),
+                          fontFamily: 'NunitoSans-Bold',
+                          fontWeight: FontWeight.normal),
                       maxLines: 9999,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -186,7 +239,8 @@ Positioned(
                       width: 100,
                       height: 1,
                       decoration: BoxDecoration(
-                        border: Border.all(color: const Color(0xffffffff), width: 1),
+                        border: Border.all(
+                            color: const Color(0xffffffff), width: 1),
                       ),
                     ),
                   ),
@@ -196,7 +250,12 @@ Positioned(
                     child: Text(
                       '28 SEP ',
                       textAlign: TextAlign.left,
-                      style: TextStyle(decoration: TextDecoration.none, fontSize: 15.762, color: Color(0xffffffff), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                      style: TextStyle(
+                          decoration: TextDecoration.none,
+                          fontSize: 15.762,
+                          color: Color(0xffffffff),
+                          fontFamily: 'NunitoSans-Bold',
+                          fontWeight: FontWeight.normal),
                       maxLines: 9999,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -209,7 +268,12 @@ Positioned(
                     child: Text(
                       '28 OCT',
                       textAlign: TextAlign.left,
-                      style: TextStyle(decoration: TextDecoration.none, fontSize: 15.76, color: Color(0xffffffff), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                      style: TextStyle(
+                          decoration: TextDecoration.none,
+                          fontSize: 15.76,
+                          color: Color(0xffffffff),
+                          fontFamily: 'NunitoSans-Bold',
+                          fontWeight: FontWeight.normal),
                       maxLines: 9999,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -222,7 +286,12 @@ Positioned(
                     child: Text(
                       'NEXT\n',
                       textAlign: TextAlign.left,
-                      style: TextStyle(decoration: TextDecoration.none, fontSize: 13.125, color: Color(0xffffffff), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                      style: TextStyle(
+                          decoration: TextDecoration.none,
+                          fontSize: 13.125,
+                          color: Color(0xffffffff),
+                          fontFamily: 'NunitoSans-Bold',
+                          fontWeight: FontWeight.normal),
                       maxLines: 9999,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -235,7 +304,12 @@ Positioned(
                     child: Text(
                       'NEXT\n',
                       textAlign: TextAlign.left,
-                      style: TextStyle(decoration: TextDecoration.none, fontSize: 13.125, color: Color(0xffffffff), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                      style: TextStyle(
+                          decoration: TextDecoration.none,
+                          fontSize: 13.125,
+                          color: Color(0xffffffff),
+                          fontFamily: 'NunitoSans-Bold',
+                          fontWeight: FontWeight.normal),
                       maxLines: 9999,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -248,7 +322,12 @@ Positioned(
                     child: Text(
                       'FERTILE',
                       textAlign: TextAlign.left,
-                      style: TextStyle(decoration: TextDecoration.none, fontSize: 13.125, color: Color(0xffffffff), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                      style: TextStyle(
+                          decoration: TextDecoration.none,
+                          fontSize: 13.125,
+                          color: Color(0xffffffff),
+                          fontFamily: 'NunitoSans-Bold',
+                          fontWeight: FontWeight.normal),
                       maxLines: 9999,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -261,7 +340,12 @@ Positioned(
                     child: Text(
                       'PERIOD',
                       textAlign: TextAlign.left,
-                      style: TextStyle(decoration: TextDecoration.none, fontSize: 13.125, color: Color(0xffffffff), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                      style: TextStyle(
+                          decoration: TextDecoration.none,
+                          fontSize: 13.125,
+                          color: Color(0xffffffff),
+                          fontFamily: 'NunitoSans-Bold',
+                          fontWeight: FontWeight.normal),
                       maxLines: 9999,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -275,7 +359,9 @@ Positioned(
                       width: 53,
                       height: 1,
                       decoration: BoxDecoration(
-                        border: Border.all(color: const Color(0xffffffff), width: 1.332830548286438),
+                        border: Border.all(
+                            color: const Color(0xffffffff),
+                            width: 1.332830548286438),
                       ),
                     ),
                   ),
@@ -288,7 +374,9 @@ Positioned(
                       width: 58,
                       height: 1,
                       decoration: BoxDecoration(
-                        border: Border.all(color: const Color(0xffffffff), width: 1.332830548286438),
+                        border: Border.all(
+                            color: const Color(0xffffffff),
+                            width: 1.332830548286438),
                       ),
                     ),
                   ),
@@ -403,9 +491,12 @@ Positioned(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                _buildBottomIcon(context, 'assets/images/calendar_icon.png', CalendarScreen()),
-                _buildBottomIcon(context, 'assets/images/record_icon.png', RecordScreen()),
-                _buildBottomIcon(context, 'assets/images/analysis_icon.png', AnalysisScreen()),
+                _buildBottomIcon(context, 'assets/images/calendar_icon.png',
+                    CalendarScreen()),
+                _buildBottomIcon(
+                    context, 'assets/images/record_icon.png', RecordScreen()),
+                _buildBottomIcon(context, 'assets/images/analysis_icon.png',
+                    AnalysisScreen()),
               ],
             ),
           ),
@@ -429,7 +520,8 @@ Positioned(
 //   }
 // }
 
-  Widget _buildBottomIcon(BuildContext context, String assetPath, Widget destinationScreen) {
+  Widget _buildBottomIcon(
+      BuildContext context, String assetPath, Widget destinationScreen) {
     return InkWell(
       onTap: () {
         Navigator.push(

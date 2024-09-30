@@ -42,7 +42,7 @@ class _ProfessionalLoginPageState extends State<ProfessionalLoginPage> {
               const SizedBox(height: 20),
               ShaderMask(
                 shaderCallback: (bounds) => const LinearGradient(
-                  colors: [Color(0xff244599),Color(0xff0C1733)],
+                  colors: [Color(0xff244599), Color(0xff0C1733)],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ).createShader(
@@ -110,22 +110,22 @@ class _ProfessionalLoginPageState extends State<ProfessionalLoginPage> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) =>  const ProfessionalForgotPassword ()),
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                const ProfessionalForgotPassword()),
                       );
-
                     },
                     child: ShaderMask(
                       shaderCallback: (bounds) => const LinearGradient(
-                        colors: [Color(0xff244599),Color(0xff0C1733)],
+                        colors: [Color(0xff244599), Color(0xff0C1733)],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ).createShader(
                         Rect.fromLTWH(0, 0, bounds.width, bounds.height),
                       ),
                       child: const Text(
-                          'Forgot password',
-                        style: TextStyle(
-                        ),
+                        'Forgot password',
+                        style: TextStyle(),
                       ),
                     ),
                   ),
@@ -133,9 +133,9 @@ class _ProfessionalLoginPageState extends State<ProfessionalLoginPage> {
               ),
               const SizedBox(height: 50),
               Container(
-                decoration:  BoxDecoration(
+                decoration: BoxDecoration(
                   gradient: const LinearGradient(
-                    colors: [Color(0xff244599),Color(0xff0C1733)],
+                    colors: [Color(0xff244599), Color(0xff0C1733)],
                   ),
                   borderRadius: BorderRadius.circular(20),
                 ),
@@ -143,22 +143,25 @@ class _ProfessionalLoginPageState extends State<ProfessionalLoginPage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) =>   const ProfessionalDashboard()),
-                    );// Action for sign-up button
+                      MaterialPageRoute(
+                          builder: (context) => const ProfessionalDashboard()),
+                    ); // Action for sign-up button
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.transparent, // Make background transparent
+                    backgroundColor:
+                        Colors.transparent, // Make background transparent
                     shadowColor: Colors.transparent,
                     padding: const EdgeInsets.symmetric(
                         horizontal: 120, vertical: 15),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
-                      side: const BorderSide(color: Color(0xFF3A6EA5), width: 2),
+                      side:
+                          const BorderSide(color: Color(0xFF3A6EA5), width: 2),
                     ),
                   ),
                   child: const Text(
                     'LOG IN',
-                    style: TextStyle(fontSize: 16,color: Colors.white),
+                    style: TextStyle(fontSize: 16, color: Colors.white),
                   ),
                 ),
               ),
@@ -209,7 +212,8 @@ class _ProfessionalLoginPageState extends State<ProfessionalLoginPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const ProfessionalSignUpScreen(),
+                              builder: (context) =>
+                                  const ProfessionalSignUpScreen(),
                             ),
                           );
                         },

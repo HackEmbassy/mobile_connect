@@ -31,7 +31,8 @@ class ProfessionalProfileScreen extends StatelessWidget {
                 SizedBox(height: 16),
                 CircleAvatar(
                   radius: 50,
-                  backgroundImage: AssetImage('assets/profile_image.jpg'), // Replace with your profile image
+                  backgroundImage: AssetImage(
+                      'assets/profile_image.jpg'), // Replace with your profile image
                 ),
                 SizedBox(height: 12),
                 Text(
@@ -71,8 +72,10 @@ class ProfessionalProfileScreen extends StatelessWidget {
               child: Column(
                 children: [
                   ProfileOption(icon: Icons.account_circle, label: 'Account'),
-                  ProfileOption(icon: Icons.notifications, label: 'Notification'),
-                  ProfileOption(icon: Icons.person, label: 'Personal Information'),
+                  ProfileOption(
+                      icon: Icons.notifications, label: 'Notification'),
+                  ProfileOption(
+                      icon: Icons.person, label: 'Personal Information'),
                   ProfileOption(icon: Icons.location_on, label: 'My Address'),
                   ProfileOption(icon: Icons.language, label: 'Language'),
                 ],
@@ -112,7 +115,8 @@ class ProfileOption extends StatelessWidget {
                 ),
               ),
             ),
-            Icon(Icons.arrow_forward_ios, size: 18, color: Colors.grey.shade700),
+            Icon(Icons.arrow_forward_ios,
+                size: 18, color: Colors.grey.shade700),
           ],
         ),
       ),

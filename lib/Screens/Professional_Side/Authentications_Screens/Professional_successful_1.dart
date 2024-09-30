@@ -5,6 +5,7 @@ import 'package:herhealthconnect/Screens/Professional_Side/Professional_home_pag
 import '../../../Components/Image/ImageView.dart';
 import '../../../Components/Image/Model/ImageConfig.dart';
 import '../../../assets/app_image.dart';
+
 class ProfessionalResetSuccessfulScreen extends StatelessWidget {
   const ProfessionalResetSuccessfulScreen({super.key});
 
@@ -16,7 +17,9 @@ class ProfessionalResetSuccessfulScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 200,),
+            SizedBox(
+              height: 200,
+            ),
             const Spacer(flex: 2),
             SizedBox(
               height: 251,
@@ -33,11 +36,10 @@ class ProfessionalResetSuccessfulScreen extends StatelessWidget {
             const Text(
               'Reset Successful!',
               style: TextStyle(
-                fontSize: 32,
-                fontWeight: FontWeight.w700,
-                color: Colors.black,
-                fontFamily: 'NunitoSans'
-              ),
+                  fontSize: 32,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.black,
+                  fontFamily: 'NunitoSans'),
             ),
             const SizedBox(height: 20),
             const Text(
@@ -49,11 +51,13 @@ class ProfessionalResetSuccessfulScreen extends StatelessWidget {
               ),
             ),
             const Spacer(flex: 3),
-            SizedBox(height: 100,),
+            SizedBox(
+              height: 100,
+            ),
             Container(
-              decoration:  BoxDecoration(
+              decoration: BoxDecoration(
                 gradient: const LinearGradient(
-                  colors: [Color(0xff244599),Color(0xff0C1733)],
+                  colors: [Color(0xff244599), Color(0xff0C1733)],
                 ),
                 borderRadius: BorderRadius.circular(20),
               ),
@@ -61,14 +65,16 @@ class ProfessionalResetSuccessfulScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) =>   const ProfessionalDashboard()),
-                  );// Action for sign-up button
+                    MaterialPageRoute(
+                        builder: (context) => const ProfessionalDashboard()),
+                  ); // Action for sign-up button
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.transparent, // Make background transparent
+                  backgroundColor:
+                      Colors.transparent, // Make background transparent
                   shadowColor: Colors.transparent,
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 150, vertical: 20),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 150, vertical: 20),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                     side: const BorderSide(color: Color(0xFF3A6EA5), width: 2),
@@ -76,7 +82,7 @@ class ProfessionalResetSuccessfulScreen extends StatelessWidget {
                 ),
                 child: const Text(
                   'LOG IN ',
-                  style: TextStyle(fontSize: 16,color: Colors.white),
+                  style: TextStyle(fontSize: 16, color: Colors.white),
                 ),
               ),
             ),

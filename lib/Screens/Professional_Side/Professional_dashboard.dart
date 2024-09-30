@@ -21,11 +21,11 @@ class _ProfessionalDashboardState extends State<ProfessionalDashboard> {
 
   // Define the screens based on the index
   static final List<Widget> _screens = <Widget>[
-    const ProfessionalHomePage(),         // Screen 0 - Home
-    const ProfessionalAppointmentsScreen(),   // Screen 1 - Book a session
+    const ProfessionalHomePage(), // Screen 0 - Home
+    const ProfessionalAppointmentsScreen(), // Screen 1 - Book a session
     const ProfessionalClientScreen(), // Screen 2 - Menstrual Tracking
     const ProfessionalCalendarScreen(), // Screen 3 - Newsfeed
-    const ProfessionalProfileScreen(),      // Screen 4 - Profile
+    const ProfessionalProfileScreen(), // Screen 4 - Profile
     const ProfessionalEventDetailsScreen(),
     const ProfessionalEventList(),
     const ProfessionalCalendarEventScreen(),
@@ -41,15 +41,15 @@ class _ProfessionalDashboardState extends State<ProfessionalDashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: IndexedStack(
-        index: _selectedIndex,  // Display the selected screen
-        children: _screens,     // Keep all screens loaded and switch between them
+        index: _selectedIndex, // Display the selected screen
+        children: _screens, // Keep all screens loaded and switch between them
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.black87,
         unselectedItemColor: Colors.grey[600],
         currentIndex: _selectedIndex, // Highlight the currently selected item
-        onTap: _onItemTapped,         // Handle tap events to switch screens
+        onTap: _onItemTapped, // Handle tap events to switch screens
         items: [
           BottomNavigationBarItem(
             icon: _buildIcon('assets/images/home.png', 0),

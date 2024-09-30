@@ -4,6 +4,7 @@ import '../../../Components/Image/ImageView.dart';
 import '../../../Components/Image/Model/ImageConfig.dart';
 import '../../../assets/app_image.dart';
 import 'Professional_set_new_password.dart';
+
 class ProfessionalCheckInboxScreen extends StatelessWidget {
   const ProfessionalCheckInboxScreen({super.key});
 
@@ -35,7 +36,9 @@ class ProfessionalCheckInboxScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) =>   const ProfessionalNewPasswordScreen()),
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const ProfessionalNewPasswordScreen()),
                     );
                   },
                 ),

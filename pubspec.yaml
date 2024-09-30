@@ -33,6 +33,7 @@ dependencies:
   
   cached_network_image: ^3.2.2
   flutter_screenutil: ^5.8.1
+  animations: ^2.0.7
   flutter_svg: ^2.0.6
   google_fonts: ^6.2.1
   image_cropper: ^7.0.4
@@ -97,9 +98,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images2/
-    - images/
-    - images2/
-    - images3/
+    - assets/images3/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

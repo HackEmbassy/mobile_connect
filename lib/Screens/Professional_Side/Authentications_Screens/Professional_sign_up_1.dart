@@ -10,8 +10,10 @@ class ProfessionalSignUpScreen extends StatefulWidget {
   const ProfessionalSignUpScreen({super.key});
 
   @override
-  _ProfessionalSignUpScreenState createState() => _ProfessionalSignUpScreenState();
+  _ProfessionalSignUpScreenState createState() =>
+      _ProfessionalSignUpScreenState();
 }
+
 class _ProfessionalSignUpScreenState extends State<ProfessionalSignUpScreen> {
   bool _isPasswordVisible = false;
   @override
@@ -38,7 +40,8 @@ class _ProfessionalSignUpScreenState extends State<ProfessionalSignUpScreen> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   IconButton(
-                    icon: const Icon(Icons.arrow_back_rounded, color: Colors.black),
+                    icon: const Icon(Icons.arrow_back_rounded,
+                        color: Colors.black),
                     onPressed: () {
                       // Action for back button
                     },
@@ -51,7 +54,7 @@ class _ProfessionalSignUpScreenState extends State<ProfessionalSignUpScreen> {
                     const SizedBox(height: 20),
                     ShaderMask(
                       shaderCallback: (bounds) => const LinearGradient(
-                        colors: [Color(0xff244599),Color(0xff0C1733)],
+                        colors: [Color(0xff244599), Color(0xff0C1733)],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ).createShader(
@@ -100,7 +103,7 @@ class _ProfessionalSignUpScreenState extends State<ProfessionalSignUpScreen> {
                       obscureText: !_isPasswordVisible,
                       decoration: InputDecoration(
                         prefixIcon: const Icon(Icons.lock_outline),
-                        suffixIcon:  IconButton(
+                        suffixIcon: IconButton(
                           icon: Icon(
                             _isPasswordVisible
                                 ? Icons.visibility
@@ -124,9 +127,9 @@ class _ProfessionalSignUpScreenState extends State<ProfessionalSignUpScreen> {
                     const SizedBox(height: 50),
                     // Sign Up Button
                     Container(
-                      decoration:  BoxDecoration(
+                      decoration: BoxDecoration(
                         gradient: const LinearGradient(
-                          colors: [Color(0xff244599),Color(0xff0C1733)],
+                          colors: [Color(0xff244599), Color(0xff0C1733)],
                         ),
                         borderRadius: BorderRadius.circular(20),
                       ),
@@ -134,22 +137,26 @@ class _ProfessionalSignUpScreenState extends State<ProfessionalSignUpScreen> {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) =>   const ProfessionalPhoneNumberScreen()),
-                          );// Action for sign-up button
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const ProfessionalPhoneNumberScreen()),
+                          ); // Action for sign-up button
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.transparent, // Make background transparent
+                          backgroundColor:
+                              Colors.transparent, // Make background transparent
                           shadowColor: Colors.transparent,
                           padding: const EdgeInsets.symmetric(
                               horizontal: 120, vertical: 15),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
-                            side: const BorderSide(color: Color(0xFF3A6EA5), width: 2),
+                            side: const BorderSide(
+                                color: Color(0xFF3A6EA5), width: 2),
                           ),
                         ),
                         child: const Text(
                           'SIGN UP',
-                          style: TextStyle(fontSize: 16,color: Colors.white),
+                          style: TextStyle(fontSize: 16, color: Colors.white),
                         ),
                       ),
                     ),
@@ -196,7 +203,7 @@ class _ProfessionalSignUpScreenState extends State<ProfessionalSignUpScreen> {
                             TextSpan(
                               text: 'Log in',
                               style: const TextStyle(
-                                color:Color(0xff26144B),
+                                color: Color(0xff26144B),
                                 fontWeight: FontWeight.bold,
                               ),
                               recognizer: TapGestureRecognizer()
@@ -205,7 +212,8 @@ class _ProfessionalSignUpScreenState extends State<ProfessionalSignUpScreen> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => const ProfessionalLoginPage(),
+                                      builder: (context) =>
+                                          const ProfessionalLoginPage(),
                                     ),
                                   );
                                 },
@@ -214,7 +222,6 @@ class _ProfessionalSignUpScreenState extends State<ProfessionalSignUpScreen> {
                         ),
                       ),
                     ),
-
                   ],
                 ),
               ),

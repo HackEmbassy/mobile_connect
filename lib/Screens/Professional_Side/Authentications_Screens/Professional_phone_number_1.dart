@@ -42,7 +42,7 @@ class ProfessionalPhoneNumberScreen extends StatelessWidget {
             // Enter Phone Number
             ShaderMask(
               shaderCallback: (bounds) => const LinearGradient(
-                colors: [Color(0xff244599),Color(0xff0C1733)],
+                colors: [Color(0xff244599), Color(0xff0C1733)],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ).createShader(
@@ -68,7 +68,8 @@ class ProfessionalPhoneNumberScreen extends StatelessWidget {
               children: [
                 // Country Code
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 12.0, vertical: 8.0),
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.lightBlue),
                     borderRadius: BorderRadius.circular(8.0),
@@ -92,7 +93,8 @@ class ProfessionalPhoneNumberScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(8.0),
                         borderSide: const BorderSide(color: Colors.lightBlue),
                       ),
-                      contentPadding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
+                      contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 16.0, vertical: 12.0),
                     ),
                   ),
                 ),
@@ -101,9 +103,9 @@ class ProfessionalPhoneNumberScreen extends StatelessWidget {
             const Spacer(),
             // Continue Button
             Container(
-              decoration:  BoxDecoration(
+              decoration: BoxDecoration(
                 gradient: const LinearGradient(
-                  colors: [Color(0xff244599),Color(0xff0C1733)],
+                  colors: [Color(0xff244599), Color(0xff0C1733)],
                 ),
                 borderRadius: BorderRadius.circular(20),
               ),
@@ -111,14 +113,17 @@ class ProfessionalPhoneNumberScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) =>   const ProfessionalPhoneVerificationScreen()),
-                  );// Action for sign-up button
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const ProfessionalPhoneVerificationScreen()),
+                  ); // Action for sign-up button
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.transparent, // Make background transparent
+                  backgroundColor:
+                      Colors.transparent, // Make background transparent
                   shadowColor: Colors.transparent,
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 120, vertical: 15),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 120, vertical: 15),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                     side: const BorderSide(color: Color(0xFF3A6EA5), width: 2),
@@ -126,7 +131,7 @@ class ProfessionalPhoneNumberScreen extends StatelessWidget {
                 ),
                 child: const Text(
                   'CONTINUE',
-                  style: TextStyle(fontSize: 16,color: Colors.white),
+                  style: TextStyle(fontSize: 16, color: Colors.white),
                 ),
               ),
             ),

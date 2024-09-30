@@ -108,9 +108,9 @@ class _LoginPageState extends State<LoginPage> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) =>  const ForgotPassword ()),
+                        MaterialPageRoute(
+                            builder: (context) => const ForgotPassword()),
                       );
-
                     },
                     child: const Text('Forgot password'),
                   ),
@@ -119,15 +119,16 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) =>    CustomizeInterestsScreen()),
-                  );
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(builder: (context) =>    CustomizeInterestsScreen()),
+                  // );
                 },
                 style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.black, backgroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 120, vertical: 15),
+                  foregroundColor: Colors.black,
+                  backgroundColor: Colors.white,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 120, vertical: 15),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                     side: const BorderSide(color: Colors.black, width: 2),

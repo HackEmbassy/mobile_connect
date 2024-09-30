@@ -85,7 +85,7 @@ class BodyWidget extends StatelessWidget {
 }
 
 class Loader extends StatelessWidget {
-  const Loader({super.key, this.size = 350});
+  const Loader({super.key, this.size = 150});
 
   final int? size;
 

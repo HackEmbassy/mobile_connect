@@ -39,7 +39,7 @@ class BookSessionScreen extends StatelessWidget {
                             height: 138,
                             decoration: BoxDecoration(
                               gradient: const LinearGradient(
-                                colors: [Color(0xff244599),Color(0xff0C1733)],
+                                colors: [Color(0xff244599), Color(0xff0C1733)],
                               ),
                               borderRadius: BorderRadius.circular(8),
                             ),
@@ -50,7 +50,12 @@ class BookSessionScreen extends StatelessWidget {
                           width: 80,
                           top: 8,
                           height: 96,
-                          child: Image.asset('images2/image1_9943712.png', width: 80, height: 96, fit: BoxFit.cover,),
+                          child: Image.asset(
+                            'assets/images2/image1_9943712.png',
+                            width: 80,
+                            height: 96,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                         const Positioned(
                           left: 109,
@@ -60,7 +65,12 @@ class BookSessionScreen extends StatelessWidget {
                           child: Text(
                             'Dr. Richar Kandowen',
                             textAlign: TextAlign.center,
-                            style: TextStyle(decoration: TextDecoration.none, fontSize: 16, color: Color(0xffffffff), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                            style: TextStyle(
+                                decoration: TextDecoration.none,
+                                fontSize: 16,
+                                color: Color(0xffffffff),
+                                fontFamily: 'NunitoSans-Bold',
+                                fontWeight: FontWeight.normal),
                             maxLines: 9999,
                             overflow: TextOverflow.ellipsis,
                           ),
@@ -71,7 +81,12 @@ class BookSessionScreen extends StatelessWidget {
                           child: Text(
                             'Obstetrician',
                             textAlign: TextAlign.center,
-                            style: TextStyle(decoration: TextDecoration.none, fontSize: 12, color: Color(0xffffffff), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                            style: TextStyle(
+                                decoration: TextDecoration.none,
+                                fontSize: 12,
+                                color: Color(0xffffffff),
+                                fontFamily: 'NunitoSans-Bold',
+                                fontWeight: FontWeight.normal),
                             maxLines: 9999,
                             overflow: TextOverflow.ellipsis,
                           ),
@@ -82,7 +97,12 @@ class BookSessionScreen extends StatelessWidget {
                           child: Text(
                             '116 Abayi, Aba, Abia State',
                             textAlign: TextAlign.center,
-                            style: TextStyle(decoration: TextDecoration.none, fontSize: 12, color: Color(0xffffffff), fontFamily: 'NunitoSans-SemiBold', fontWeight: FontWeight.normal),
+                            style: TextStyle(
+                                decoration: TextDecoration.none,
+                                fontSize: 12,
+                                color: Color(0xffffffff),
+                                fontFamily: 'NunitoSans-SemiBold',
+                                fontWeight: FontWeight.normal),
                             maxLines: 9999,
                             overflow: TextOverflow.ellipsis,
                           ),
@@ -102,7 +122,12 @@ class BookSessionScreen extends StatelessWidget {
                                 child: Text(
                                   '4.5',
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(decoration: TextDecoration.none, fontSize: 10, color: Color(0xffffffff), fontFamily: 'NunitoSans-SemiBold', fontWeight: FontWeight.normal),
+                                  style: TextStyle(
+                                      decoration: TextDecoration.none,
+                                      fontSize: 10,
+                                      color: Color(0xffffffff),
+                                      fontFamily: 'NunitoSans-SemiBold',
+                                      fontWeight: FontWeight.normal),
                                   maxLines: 9999,
                                   overflow: TextOverflow.ellipsis,
                                 ),
@@ -115,7 +140,12 @@ class BookSessionScreen extends StatelessWidget {
                                 child: Text(
                                   '(2k reviews)',
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(decoration: TextDecoration.none, fontSize: 8, color: Color(0xffffffff), fontFamily: 'NunitoSans-SemiBold', fontWeight: FontWeight.normal),
+                                  style: TextStyle(
+                                      decoration: TextDecoration.none,
+                                      fontSize: 8,
+                                      color: Color(0xffffffff),
+                                      fontFamily: 'NunitoSans-SemiBold',
+                                      fontWeight: FontWeight.normal),
                                   maxLines: 9999,
                                   overflow: TextOverflow.ellipsis,
                                 ),
@@ -125,7 +155,11 @@ class BookSessionScreen extends StatelessWidget {
                                 width: 13.071,
                                 top: 14,
                                 height: 12.621,
-                                child: Image.asset('images2/image_9943719.png', width: 13.071, height: 12.621,),
+                                child: Image.asset(
+                                  'assets/images2/image_9943719.png',
+                                  width: 13.071,
+                                  height: 12.621,
+                                ),
                               ),
                             ],
                           ),
@@ -135,7 +169,11 @@ class BookSessionScreen extends StatelessWidget {
                           width: 7,
                           top: 56,
                           height: 9.357,
-                          child: Image.asset('images2/image2_9943720.png', width: 7, height: 9.357,),
+                          child: Image.asset(
+                            'assets/images2/image2_9943720.png',
+                            width: 7,
+                            height: 9.357,
+                          ),
                         ),
                         Positioned(
                           left: 109,
@@ -143,36 +181,51 @@ class BookSessionScreen extends StatelessWidget {
                           top: 104,
                           height: 25,
                           child: GestureDetector(
-                            onTap:() { Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => const BookingScreen()),
-                            );
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const BookingScreen()),
+                              );
                             },
                             child: Container(
                               width: 69,
                               height: 25,
                               decoration: BoxDecoration(
                                 gradient: const LinearGradient(
-                                  colors: [Color(0xff244599),Color(0xff0C1733)],
+                                  colors: [
+                                    Color(0xff244599),
+                                    Color(0xff0C1733)
+                                  ],
                                 ),
                                 borderRadius: BorderRadius.circular(8),
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.only(left: 81, top: 0, right: 81, bottom: 0),
+                                padding: const EdgeInsets.only(
+                                    left: 81, top: 0, right: 81, bottom: 0),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     GestureDetector(
-                                      onTap:() { Navigator.push(
-                                        context,
-                                        MaterialPageRoute(builder: (context) => const BookingScreen()),
-                                      );
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const BookingScreen()),
+                                        );
                                       },
                                       child: const Text(
                                         'View more',
                                         textAlign: TextAlign.center,
-                                        style: TextStyle(decoration: TextDecoration.none, fontSize: 10, color: Color(0xffffffff), fontFamily: 'NunitoSans-SemiBold', fontWeight: FontWeight.normal),
+                                        style: TextStyle(
+                                            decoration: TextDecoration.none,
+                                            fontSize: 10,
+                                            color: Color(0xffffffff),
+                                            fontFamily: 'NunitoSans-SemiBold',
+                                            fontWeight: FontWeight.normal),
                                         maxLines: 9999,
                                         overflow: TextOverflow.ellipsis,
                                       ),
@@ -203,7 +256,7 @@ class BookSessionScreen extends StatelessWidget {
                             height: 138,
                             decoration: BoxDecoration(
                               gradient: const LinearGradient(
-                                colors: [Color(0xff244599),Color(0xff0C1733)],
+                                colors: [Color(0xff244599), Color(0xff0C1733)],
                               ),
                               borderRadius: BorderRadius.circular(8),
                               //boxShadow: const [BoxShadow(color: const Color(0x3f000000), offset: Offset(0, 0), blurRadius: 54.5),],
@@ -215,7 +268,12 @@ class BookSessionScreen extends StatelessWidget {
                           width: 80,
                           top: 8,
                           height: 96,
-                          child: Image.asset('images2/image1_9943727.png', width: 80, height: 96, fit: BoxFit.cover,),
+                          child: Image.asset(
+                            'assets/images2/image1_9943727.png',
+                            width: 80,
+                            height: 96,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                         const Positioned(
                           left: 109,
@@ -225,7 +283,12 @@ class BookSessionScreen extends StatelessWidget {
                           child: Text(
                             'Dr. Richar Kandowen',
                             textAlign: TextAlign.center,
-                            style: TextStyle(decoration: TextDecoration.none, fontSize: 16, color: Color(0xffffffff), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                            style: TextStyle(
+                                decoration: TextDecoration.none,
+                                fontSize: 16,
+                                color: Color(0xffffffff),
+                                fontFamily: 'NunitoSans-Bold',
+                                fontWeight: FontWeight.normal),
                             maxLines: 9999,
                             overflow: TextOverflow.ellipsis,
                           ),
@@ -236,7 +299,12 @@ class BookSessionScreen extends StatelessWidget {
                           child: Text(
                             'Obstetrician',
                             textAlign: TextAlign.center,
-                            style: TextStyle(decoration: TextDecoration.none, fontSize: 12, color: Color(0xffffffff), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                            style: TextStyle(
+                                decoration: TextDecoration.none,
+                                fontSize: 12,
+                                color: Color(0xffffffff),
+                                fontFamily: 'NunitoSans-Bold',
+                                fontWeight: FontWeight.normal),
                             maxLines: 9999,
                             overflow: TextOverflow.ellipsis,
                           ),
@@ -247,7 +315,12 @@ class BookSessionScreen extends StatelessWidget {
                           child: Text(
                             '116 Abayi, Aba, Abia State',
                             textAlign: TextAlign.center,
-                            style: TextStyle(decoration: TextDecoration.none, fontSize: 12, color: Color(0xffffffff), fontFamily: 'NunitoSans-SemiBold', fontWeight: FontWeight.normal),
+                            style: TextStyle(
+                                decoration: TextDecoration.none,
+                                fontSize: 12,
+                                color: Color(0xffffffff),
+                                fontFamily: 'NunitoSans-SemiBold',
+                                fontWeight: FontWeight.normal),
                             maxLines: 9999,
                             overflow: TextOverflow.ellipsis,
                           ),
@@ -267,7 +340,12 @@ class BookSessionScreen extends StatelessWidget {
                                 child: Text(
                                   '4.5',
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(decoration: TextDecoration.none, fontSize: 10, color: Color(0xffffffff), fontFamily: 'NunitoSans-SemiBold', fontWeight: FontWeight.normal),
+                                  style: TextStyle(
+                                      decoration: TextDecoration.none,
+                                      fontSize: 10,
+                                      color: Color(0xffffffff),
+                                      fontFamily: 'NunitoSans-SemiBold',
+                                      fontWeight: FontWeight.normal),
                                   maxLines: 9999,
                                   overflow: TextOverflow.ellipsis,
                                 ),
@@ -280,7 +358,12 @@ class BookSessionScreen extends StatelessWidget {
                                 child: Text(
                                   '(2k reviews)',
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(decoration: TextDecoration.none, fontSize: 8, color: Color(0xffffffff), fontFamily: 'NunitoSans-SemiBold', fontWeight: FontWeight.normal),
+                                  style: TextStyle(
+                                      decoration: TextDecoration.none,
+                                      fontSize: 8,
+                                      color: Color(0xffffffff),
+                                      fontFamily: 'NunitoSans-SemiBold',
+                                      fontWeight: FontWeight.normal),
                                   maxLines: 9999,
                                   overflow: TextOverflow.ellipsis,
                                 ),
@@ -290,7 +373,11 @@ class BookSessionScreen extends StatelessWidget {
                                 width: 13.071,
                                 top: 14,
                                 height: 12.621,
-                                child: Image.asset('images2/image_9943734.png', width: 13.071, height: 12.621,),
+                                child: Image.asset(
+                                  'assets/images2/image_9943734.png',
+                                  width: 13.071,
+                                  height: 12.621,
+                                ),
                               ),
                             ],
                           ),
@@ -300,7 +387,11 @@ class BookSessionScreen extends StatelessWidget {
                           width: 7,
                           top: 56,
                           height: 9.357,
-                          child: Image.asset('images2/image2_9943735.png', width: 7, height: 9.357,),
+                          child: Image.asset(
+                            'assets/images2/image2_9943735.png',
+                            width: 7,
+                            height: 9.357,
+                          ),
                         ),
                         Positioned(
                           left: 109,
@@ -308,37 +399,51 @@ class BookSessionScreen extends StatelessWidget {
                           top: 104,
                           height: 25,
                           child: GestureDetector(
-                            onTap:() { Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => const BookingScreen()),
-                            );
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const BookingScreen()),
+                              );
                             },
                             child: Container(
                               width: 69,
                               height: 25,
                               decoration: BoxDecoration(
                                 gradient: const LinearGradient(
-                                  colors: [Color(0xff244599),Color(0xff0C1733)],
+                                  colors: [
+                                    Color(0xff244599),
+                                    Color(0xff0C1733)
+                                  ],
                                 ),
                                 borderRadius: BorderRadius.circular(8),
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.only(left: 81, top: 0, right: 81, bottom: 0),
+                                padding: const EdgeInsets.only(
+                                    left: 81, top: 0, right: 81, bottom: 0),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     GestureDetector(
-                                      onTap:() { Navigator.push(
-                                        context,
-                                        MaterialPageRoute(builder: (context) => const BookingScreen()),
-                                      );
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const BookingScreen()),
+                                        );
                                       },
-                                      child:
-                                      const Text(
+                                      child: const Text(
                                         'View more',
                                         textAlign: TextAlign.center,
-                                        style: TextStyle(decoration: TextDecoration.none, fontSize: 10, color: Color(0xffffffff), fontFamily: 'NunitoSans-SemiBold', fontWeight: FontWeight.normal),
+                                        style: TextStyle(
+                                            decoration: TextDecoration.none,
+                                            fontSize: 10,
+                                            color: Color(0xffffffff),
+                                            fontFamily: 'NunitoSans-SemiBold',
+                                            fontWeight: FontWeight.normal),
                                         maxLines: 9999,
                                         overflow: TextOverflow.ellipsis,
                                       ),
@@ -369,7 +474,7 @@ class BookSessionScreen extends StatelessWidget {
                             height: 138,
                             decoration: BoxDecoration(
                               gradient: const LinearGradient(
-                                colors: [Color(0xff244599),Color(0xff0C1733)],
+                                colors: [Color(0xff244599), Color(0xff0C1733)],
                               ),
                               borderRadius: BorderRadius.circular(8),
                               //boxShadow: const [BoxShadow(color: const Color(0x3f000000), offset: Offset(0, 0), blurRadius: 54.5),],
@@ -381,7 +486,12 @@ class BookSessionScreen extends StatelessWidget {
                           width: 80,
                           top: 8,
                           height: 96,
-                          child: Image.asset('images2/image1_9943742.png', width: 80, height: 96, fit: BoxFit.cover,),
+                          child: Image.asset(
+                            'assets/images2/image1_9943742.png',
+                            width: 80,
+                            height: 96,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                         const Positioned(
                           left: 109,
@@ -391,7 +501,12 @@ class BookSessionScreen extends StatelessWidget {
                           child: Text(
                             'Dr. Richar Kandowen',
                             textAlign: TextAlign.center,
-                            style: TextStyle(decoration: TextDecoration.none, fontSize: 16, color: Color(0xffffffff), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                            style: TextStyle(
+                                decoration: TextDecoration.none,
+                                fontSize: 16,
+                                color: Color(0xffffffff),
+                                fontFamily: 'NunitoSans-Bold',
+                                fontWeight: FontWeight.normal),
                             maxLines: 9999,
                             overflow: TextOverflow.ellipsis,
                           ),
@@ -402,7 +517,12 @@ class BookSessionScreen extends StatelessWidget {
                           child: Text(
                             'Obstetrician',
                             textAlign: TextAlign.center,
-                            style: TextStyle(decoration: TextDecoration.none, fontSize: 12, color: Color(0xffffffff), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                            style: TextStyle(
+                                decoration: TextDecoration.none,
+                                fontSize: 12,
+                                color: Color(0xffffffff),
+                                fontFamily: 'NunitoSans-Bold',
+                                fontWeight: FontWeight.normal),
                             maxLines: 9999,
                             overflow: TextOverflow.ellipsis,
                           ),
@@ -413,7 +533,12 @@ class BookSessionScreen extends StatelessWidget {
                           child: Text(
                             '116 Abayi, Aba, Abia State',
                             textAlign: TextAlign.center,
-                            style: TextStyle(decoration: TextDecoration.none, fontSize: 12, color: Color(0xffffffff), fontFamily: 'NunitoSans-SemiBold', fontWeight: FontWeight.normal),
+                            style: TextStyle(
+                                decoration: TextDecoration.none,
+                                fontSize: 12,
+                                color: Color(0xffffffff),
+                                fontFamily: 'NunitoSans-SemiBold',
+                                fontWeight: FontWeight.normal),
                             maxLines: 9999,
                             overflow: TextOverflow.ellipsis,
                           ),
@@ -433,7 +558,12 @@ class BookSessionScreen extends StatelessWidget {
                                 child: Text(
                                   '4.5',
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(decoration: TextDecoration.none, fontSize: 10, color: Color(0xffffffff), fontFamily: 'NunitoSans-SemiBold', fontWeight: FontWeight.normal),
+                                  style: TextStyle(
+                                      decoration: TextDecoration.none,
+                                      fontSize: 10,
+                                      color: Color(0xffffffff),
+                                      fontFamily: 'NunitoSans-SemiBold',
+                                      fontWeight: FontWeight.normal),
                                   maxLines: 9999,
                                   overflow: TextOverflow.ellipsis,
                                 ),
@@ -446,7 +576,12 @@ class BookSessionScreen extends StatelessWidget {
                                 child: Text(
                                   '(2k reviews)',
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(decoration: TextDecoration.none, fontSize: 8, color: Color(0xffffffff), fontFamily: 'NunitoSans-SemiBold', fontWeight: FontWeight.normal),
+                                  style: TextStyle(
+                                      decoration: TextDecoration.none,
+                                      fontSize: 8,
+                                      color: Color(0xffffffff),
+                                      fontFamily: 'NunitoSans-SemiBold',
+                                      fontWeight: FontWeight.normal),
                                   maxLines: 9999,
                                   overflow: TextOverflow.ellipsis,
                                 ),
@@ -456,7 +591,11 @@ class BookSessionScreen extends StatelessWidget {
                                 width: 13.071,
                                 top: 14,
                                 height: 12.621,
-                                child: Image.asset('images2/image_9943749.png', width: 13.071, height: 12.621,),
+                                child: Image.asset(
+                                  'assets/images2/image_9943749.png',
+                                  width: 13.071,
+                                  height: 12.621,
+                                ),
                               ),
                             ],
                           ),
@@ -466,7 +605,11 @@ class BookSessionScreen extends StatelessWidget {
                           width: 7,
                           top: 56,
                           height: 9.357,
-                          child: Image.asset('images2/image2_9943750.png', width: 7, height: 9.357,),
+                          child: Image.asset(
+                            'assets/images2/image2_9943750.png',
+                            width: 7,
+                            height: 9.357,
+                          ),
                         ),
                         Positioned(
                           left: 109,
@@ -474,36 +617,51 @@ class BookSessionScreen extends StatelessWidget {
                           top: 104,
                           height: 25,
                           child: GestureDetector(
-                            onTap:() { Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => const BookingScreen()),
-                            );
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const BookingScreen()),
+                              );
                             },
                             child: Container(
                               width: 69,
                               height: 25,
                               decoration: BoxDecoration(
                                 gradient: const LinearGradient(
-                                  colors: [Color(0xff244599),Color(0xff0C1733)],
+                                  colors: [
+                                    Color(0xff244599),
+                                    Color(0xff0C1733)
+                                  ],
                                 ),
                                 borderRadius: BorderRadius.circular(8),
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.only(left: 81, top: 0, right: 81, bottom: 0),
+                                padding: const EdgeInsets.only(
+                                    left: 81, top: 0, right: 81, bottom: 0),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     GestureDetector(
-                                      onTap:() { Navigator.push(
-                                        context,
-                                        MaterialPageRoute(builder: (context) => const BookingScreen()),
-                                      );
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const BookingScreen()),
+                                        );
                                       },
                                       child: const Text(
                                         'View more',
                                         textAlign: TextAlign.center,
-                                        style: TextStyle(decoration: TextDecoration.none, fontSize: 10, color: Color(0xffffffff), fontFamily: 'NunitoSans-SemiBold', fontWeight: FontWeight.normal),
+                                        style: TextStyle(
+                                            decoration: TextDecoration.none,
+                                            fontSize: 10,
+                                            color: Color(0xffffffff),
+                                            fontFamily: 'NunitoSans-SemiBold',
+                                            fontWeight: FontWeight.normal),
                                         maxLines: 9999,
                                         overflow: TextOverflow.ellipsis,
                                       ),
@@ -534,7 +692,7 @@ class BookSessionScreen extends StatelessWidget {
                             height: 138,
                             decoration: BoxDecoration(
                               gradient: const LinearGradient(
-                                colors: [Color(0xff244599),Color(0xff0C1733)],
+                                colors: [Color(0xff244599), Color(0xff0C1733)],
                               ),
                               borderRadius: BorderRadius.circular(8),
                               //boxShadow: const [BoxShadow(color: const Color(0x3f000000), offset: Offset(0, 0), blurRadius: 54.5),],
@@ -546,7 +704,12 @@ class BookSessionScreen extends StatelessWidget {
                           width: 80,
                           top: 8,
                           height: 96,
-                          child: Image.asset('images/image1_9943757.png', width: 80, height: 96, fit: BoxFit.cover,),
+                          child: Image.asset(
+                            'assets/images/image1_9943757.png',
+                            width: 80,
+                            height: 96,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                         const Positioned(
                           left: 109,
@@ -556,7 +719,12 @@ class BookSessionScreen extends StatelessWidget {
                           child: Text(
                             'Dr. Richar Kandowen',
                             textAlign: TextAlign.center,
-                            style: TextStyle(decoration: TextDecoration.none, fontSize: 16, color: Color(0xffffffff), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                            style: TextStyle(
+                                decoration: TextDecoration.none,
+                                fontSize: 16,
+                                color: Color(0xffffffff),
+                                fontFamily: 'NunitoSans-Bold',
+                                fontWeight: FontWeight.normal),
                             maxLines: 9999,
                             overflow: TextOverflow.ellipsis,
                           ),
@@ -567,7 +735,12 @@ class BookSessionScreen extends StatelessWidget {
                           child: Text(
                             'Obstetrician',
                             textAlign: TextAlign.center,
-                            style: TextStyle(decoration: TextDecoration.none, fontSize: 12, color: Color(0xffffffff), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                            style: TextStyle(
+                                decoration: TextDecoration.none,
+                                fontSize: 12,
+                                color: Color(0xffffffff),
+                                fontFamily: 'NunitoSans-Bold',
+                                fontWeight: FontWeight.normal),
                             maxLines: 9999,
                             overflow: TextOverflow.ellipsis,
                           ),
@@ -578,7 +751,12 @@ class BookSessionScreen extends StatelessWidget {
                           child: Text(
                             '116 Abayi, Aba, Abia State',
                             textAlign: TextAlign.center,
-                            style: TextStyle(decoration: TextDecoration.none, fontSize: 12, color: Color(0xffffffff), fontFamily: 'NunitoSans-SemiBold', fontWeight: FontWeight.normal),
+                            style: TextStyle(
+                                decoration: TextDecoration.none,
+                                fontSize: 12,
+                                color: Color(0xffffffff),
+                                fontFamily: 'NunitoSans-SemiBold',
+                                fontWeight: FontWeight.normal),
                             maxLines: 9999,
                             overflow: TextOverflow.ellipsis,
                           ),
@@ -598,7 +776,12 @@ class BookSessionScreen extends StatelessWidget {
                                 child: Text(
                                   '4.5',
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(decoration: TextDecoration.none, fontSize: 10, color: Color(0xff767676), fontFamily: 'NunitoSans-SemiBold', fontWeight: FontWeight.normal),
+                                  style: TextStyle(
+                                      decoration: TextDecoration.none,
+                                      fontSize: 10,
+                                      color: Color(0xff767676),
+                                      fontFamily: 'NunitoSans-SemiBold',
+                                      fontWeight: FontWeight.normal),
                                   maxLines: 9999,
                                   overflow: TextOverflow.ellipsis,
                                 ),
@@ -611,7 +794,12 @@ class BookSessionScreen extends StatelessWidget {
                                 child: Text(
                                   '(2k reviews)',
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(decoration: TextDecoration.none, fontSize: 8, color: Color(0xff767676), fontFamily: 'NunitoSans-SemiBold', fontWeight: FontWeight.normal),
+                                  style: TextStyle(
+                                      decoration: TextDecoration.none,
+                                      fontSize: 8,
+                                      color: Color(0xff767676),
+                                      fontFamily: 'NunitoSans-SemiBold',
+                                      fontWeight: FontWeight.normal),
                                   maxLines: 9999,
                                   overflow: TextOverflow.ellipsis,
                                 ),
@@ -621,7 +809,11 @@ class BookSessionScreen extends StatelessWidget {
                                 width: 13.071,
                                 top: 14,
                                 height: 12.621,
-                                child: Image.asset('images/image_9943764.png', width: 13.071, height: 12.621,),
+                                child: Image.asset(
+                                  'assets/images/image_9943764.png',
+                                  width: 13.071,
+                                  height: 12.621,
+                                ),
                               ),
                             ],
                           ),
@@ -631,7 +823,11 @@ class BookSessionScreen extends StatelessWidget {
                           width: 7,
                           top: 56,
                           height: 9.357,
-                          child: Image.asset('images/image2_9943765.png', width: 7, height: 9.357,),
+                          child: Image.asset(
+                            'assets/images/image2_9943765.png',
+                            width: 7,
+                            height: 9.357,
+                          ),
                         ),
                         Positioned(
                           left: 109,
@@ -643,12 +839,13 @@ class BookSessionScreen extends StatelessWidget {
                             height: 25,
                             decoration: BoxDecoration(
                               gradient: const LinearGradient(
-                                colors: [Color(0xff244599),Color(0xff0C1733)],
+                                colors: [Color(0xff244599), Color(0xff0C1733)],
                               ),
                               borderRadius: BorderRadius.circular(8),
                             ),
                             child: const Padding(
-                              padding: EdgeInsets.only(left: 81, top: 0, right: 81, bottom: 0),
+                              padding: EdgeInsets.only(
+                                  left: 81, top: 0, right: 81, bottom: 0),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -656,7 +853,12 @@ class BookSessionScreen extends StatelessWidget {
                                   Text(
                                     'View more',
                                     textAlign: TextAlign.center,
-                                    style: TextStyle(decoration: TextDecoration.none, fontSize: 10, color: Color(0xffffffff), fontFamily: 'NunitoSans-SemiBold', fontWeight: FontWeight.normal),
+                                    style: TextStyle(
+                                        decoration: TextDecoration.none,
+                                        fontSize: 10,
+                                        color: Color(0xffffffff),
+                                        fontFamily: 'NunitoSans-SemiBold',
+                                        fontWeight: FontWeight.normal),
                                     maxLines: 9999,
                                     overflow: TextOverflow.ellipsis,
                                   ),
@@ -681,7 +883,12 @@ class BookSessionScreen extends StatelessWidget {
                 height: 97,
                 decoration: const BoxDecoration(
                   color: Color(0xffffffff),
-                  boxShadow: [BoxShadow(color: Color(0x3f000000), offset: Offset(-6, 0), blurRadius: 12),],
+                  boxShadow: [
+                    BoxShadow(
+                        color: Color(0x3f000000),
+                        offset: Offset(-6, 0),
+                        blurRadius: 12),
+                  ],
                 ),
               ),
             ),
@@ -695,9 +902,9 @@ class BookSessionScreen extends StatelessWidget {
                 height: 1,
                 decoration: BoxDecoration(
                   gradient: const LinearGradient(
-                    colors: [Color(0xff244599),Color(0xff0C1733)],
+                    colors: [Color(0xff244599), Color(0xff0C1733)],
                   ),
-                  border: Border.all( width: 4),
+                  border: Border.all(width: 4),
                 ),
               ),
             ),
@@ -707,7 +914,12 @@ class BookSessionScreen extends StatelessWidget {
               child: Text(
                 'Book a Session',
                 textAlign: TextAlign.left,
-                style: TextStyle(decoration: TextDecoration.none, color: Colors.blue, fontSize: 20, fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                style: TextStyle(
+                    decoration: TextDecoration.none,
+                    color: Colors.blue,
+                    fontSize: 20,
+                    fontFamily: 'NunitoSans-Bold',
+                    fontWeight: FontWeight.normal),
                 maxLines: 9999,
                 overflow: TextOverflow.ellipsis,
               ),
@@ -732,7 +944,12 @@ class BookSessionScreen extends StatelessWidget {
               child: Text(
                 'Search for professionals or specialty',
                 textAlign: TextAlign.center,
-                style: TextStyle(decoration: TextDecoration.none, fontSize: 12, color: Color(0xff767676), fontFamily: 'NunitoSans-Regular', fontWeight: FontWeight.normal),
+                style: TextStyle(
+                    decoration: TextDecoration.none,
+                    fontSize: 12,
+                    color: Color(0xff767676),
+                    fontFamily: 'NunitoSans-Regular',
+                    fontWeight: FontWeight.normal),
                 maxLines: 9999,
                 overflow: TextOverflow.ellipsis,
               ),
@@ -742,28 +959,44 @@ class BookSessionScreen extends StatelessWidget {
               width: 19.108,
               top: 165,
               height: 21.814,
-              child: Image.asset('images2/image1_9943778.png', width: 19.108, height: 21.814,),
+              child: Image.asset(
+                'assets/images2/image1_9943778.png',
+                width: 19.108,
+                height: 21.814,
+              ),
             ),
             Positioned(
               left: 320,
               width: 16,
               top: 167,
               height: 18,
-              child: Image.asset('images2/image2_9943781.png', width: 16, height: 18,),
+              child: Image.asset(
+                'assets/images2/image2_9943781.png',
+                width: 16,
+                height: 18,
+              ),
             ),
             Positioned(
               left: 32,
               width: 24,
               top: 75,
               height: 24,
-              child: Image.asset('images2/image3_9943786.png', width: 24, height: 24,),
+              child: Image.asset(
+                'assets/images2/image3_9943786.png',
+                width: 24,
+                height: 24,
+              ),
             ),
             Positioned(
               left: 37.143,
               width: 12.857,
               top: 80.143,
               height: 13.846,
-              child: Image.asset('images2/image4_9943787.png', width: 12.857, height: 13.846,),
+              child: Image.asset(
+                'assets/images2/image4_9943787.png',
+                width: 12.857,
+                height: 13.846,
+              ),
             ),
           ],
         ),
@@ -771,9 +1004,6 @@ class BookSessionScreen extends StatelessWidget {
     );
   }
 }
-
-
-
 
 //
 // class BookSessionScreen extends StatelessWidget {

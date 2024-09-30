@@ -12,6 +12,7 @@ class UserModelEntity {
   String? state;
   String? city;
   String? phone;
+  List<String>? interests;
   double? latitude;
   double? longitude;
 
@@ -24,6 +25,7 @@ class UserModelEntity {
     this.state,
     this.city,
     this.phone,
+    this.interests,
     this.latitude,
     this.longitude,
   });

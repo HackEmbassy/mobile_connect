@@ -13,6 +13,7 @@ class SignUpScreen extends StatefulWidget {
   @override
   _SignUpScreenState createState() => _SignUpScreenState();
 }
+
 class _SignUpScreenState extends State<SignUpScreen> {
   bool _isPasswordVisible = false;
   @override
@@ -36,7 +37,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               const SizedBox(height: 40), // Space for the status bar
               IconButton(
-                icon: const Icon(Icons.arrow_back_ios_new_rounded, color: Colors.black),
+                icon: const Icon(Icons.arrow_back_ios_new_rounded,
+                    color: Colors.black),
                 onPressed: () {
                   // Action for back button
                 },
@@ -87,7 +89,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       obscureText: !_isPasswordVisible,
                       decoration: InputDecoration(
                         prefixIcon: const Icon(Icons.lock_outline),
-                        suffixIcon:  IconButton(
+                        suffixIcon: IconButton(
                           icon: Icon(
                             _isPasswordVisible
                                 ? Icons.visibility
@@ -112,13 +114,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     // Sign Up Button
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) =>    CustomizeInterestsScreen()),
-                        );// Action for sign-up button
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(builder: (context) =>    CustomizeInterestsScreen()),
+                        // );// Action for sign-up button
                       },
                       style: ElevatedButton.styleFrom(
-                        foregroundColor: Colors.black, backgroundColor: Colors.white,
+                        foregroundColor: Colors.black,
+                        backgroundColor: Colors.white,
                         padding: const EdgeInsets.symmetric(
                             horizontal: 120, vertical: 15),
                         shape: RoundedRectangleBorder(
@@ -196,7 +199,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       color: Colors.black,
                     ),
                     const SizedBox(height: 10),
-
                   ],
                 ),
               ),

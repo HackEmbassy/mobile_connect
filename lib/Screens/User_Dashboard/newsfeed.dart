@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
 class NewsFeedScreen extends StatelessWidget {
+  const NewsFeedScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        leading: Icon(Icons.arrow_back_ios, color: Colors.black),
-        title: Row(
+        leading: const Icon(Icons.arrow_back_ios, color: Colors.black),
+        title: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(Icons.search, color: Colors.grey),
@@ -24,14 +26,14 @@ class NewsFeedScreen extends StatelessWidget {
             ),
           ],
         ),
-        actions: [
+        actions: const [
           Icon(Icons.notifications_none, color: Colors.black),
           SizedBox(width: 10),
         ],
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+          padding: EdgeInsets.symmetric(horizontal: 16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -122,8 +124,9 @@ class NewsCard extends StatelessWidget {
   final String subtitle;
   final String date;
 
-  NewsCard(
-      {required this.author,
+  const NewsCard(
+      {super.key,
+      required this.author,
       required this.title,
       required this.subtitle,
       required this.date});
@@ -139,7 +142,7 @@ class NewsCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image.asset(
-              'assets/news_image.jpg', // Replace with the image from your assets
+              'assets/images/news_image.jpg', // Replace with the image from your assets
               fit: BoxFit.cover,
               height: 180,
               width: double.infinity,
@@ -151,20 +154,20 @@ class NewsCard extends StatelessWidget {
                 children: [
                   Text(
                     'by $author',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Text(
                     title,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   if (subtitle != null)
                     Text(
                       subtitle,
@@ -178,7 +181,8 @@ class NewsCard extends StatelessWidget {
                       alignment: Alignment.bottomRight,
                       child: Text(
                         date,
-                        style: TextStyle(fontSize: 14, color: Colors.grey),
+                        style:
+                            const TextStyle(fontSize: 14, color: Colors.grey),
                       ),
                     ),
                 ],
@@ -192,25 +196,27 @@ class NewsCard extends StatelessWidget {
 }
 
 class CategoryChips extends StatelessWidget {
+  const CategoryChips({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Wrap(
       spacing: 8.0,
       children: [
         Chip(
-          label: Text('Healthy'),
+          label: const Text('Healthy'),
           backgroundColor: Colors.blue.shade100,
         ),
         Chip(
-          label: Text('Fitness'),
+          label: const Text('Fitness'),
           backgroundColor: Colors.blue.shade50,
         ),
         Chip(
-          label: Text('Health Tips & Articles'),
+          label: const Text('Health Tips & Articles'),
           backgroundColor: Colors.brown.shade100,
         ),
         Chip(
-          label: Text('Success'),
+          label: const Text('Success'),
           backgroundColor: Colors.green.shade50,
         ),
       ],

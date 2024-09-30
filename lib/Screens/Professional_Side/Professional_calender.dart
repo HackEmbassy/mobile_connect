@@ -9,10 +9,12 @@ class ProfessionalCalendarScreen extends StatefulWidget {
   const ProfessionalCalendarScreen({super.key});
 
   @override
-  _ProfessionalCalendarScreenState createState() => _ProfessionalCalendarScreenState();
+  _ProfessionalCalendarScreenState createState() =>
+      _ProfessionalCalendarScreenState();
 }
 
-class _ProfessionalCalendarScreenState extends State<ProfessionalCalendarScreen> {
+class _ProfessionalCalendarScreenState
+    extends State<ProfessionalCalendarScreen> {
   DateTime focusedDay = DateTime.now();
   DateTime? selectedDay;
 
@@ -33,7 +35,7 @@ class _ProfessionalCalendarScreenState extends State<ProfessionalCalendarScreen>
       ),
       body: Column(
         children: [
-           Padding(
+          Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 10),
             child: Row(
               children: [
@@ -44,23 +46,23 @@ class _ProfessionalCalendarScreenState extends State<ProfessionalCalendarScreen>
                     fontSize: 20,
                   ),
                 ),
-
                 const Spacer(),
-                  IconButton(
-                    icon:  const Icon(Icons.calendar_month),
-                    onPressed: () {
-                      _showPopupMenu(context);
-                    },
-                  ),
-                  IconButton(
-                    icon:  const Icon(Icons.chat),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) =>    ProfessionalChatScreen()),
-                      );
-                    },
-                  ),
+                IconButton(
+                  icon: const Icon(Icons.calendar_month),
+                  onPressed: () {
+                    _showPopupMenu(context);
+                  },
+                ),
+                IconButton(
+                  icon: const Icon(Icons.chat),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ProfessionalChatScreen()),
+                    );
+                  },
+                ),
               ],
             ),
           ),
@@ -77,7 +79,7 @@ class _ProfessionalCalendarScreenState extends State<ProfessionalCalendarScreen>
                 this.focusedDay = focusedDay;
               });
             },
-            calendarStyle:  CalendarStyle(
+            calendarStyle: CalendarStyle(
               todayDecoration: const BoxDecoration(
                 color: Colors.transparent,
               ),
@@ -102,11 +104,13 @@ class _ProfessionalCalendarScreenState extends State<ProfessionalCalendarScreen>
       ),
     );
   }
+
 // Function to show the popup menu
   void _showPopupMenu(BuildContext context) {
     showMenu<String>(
       context: context,
-      position: const RelativeRect.fromLTRB(100, 80, 0, 0), // Adjust position near the icon
+      position: const RelativeRect.fromLTRB(
+          100, 80, 0, 0), // Adjust position near the icon
       items: [
         const PopupMenuItem<String>(
           value: 'Month',
@@ -134,19 +138,22 @@ class _ProfessionalCalendarScreenState extends State<ProfessionalCalendarScreen>
       case 'Month':
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const ProfessionalCalendarScreen()),
+          MaterialPageRoute(
+              builder: (context) => const ProfessionalCalendarScreen()),
         );
         break;
       case 'Week':
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) =>  const ProfessionalCalendarEventScreen()),
+          MaterialPageRoute(
+              builder: (context) => const ProfessionalCalendarEventScreen()),
         );
         break;
       case 'List':
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) =>  const ProfessionalEventList()),
+          MaterialPageRoute(
+              builder: (context) => const ProfessionalEventList()),
         );
         break;
     }

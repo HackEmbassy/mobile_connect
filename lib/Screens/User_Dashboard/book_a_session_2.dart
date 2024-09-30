@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter/material.dart';
 
-
-
-
 class BookingScreen extends StatelessWidget {
   const BookingScreen({super.key});
 
@@ -28,7 +25,12 @@ class BookingScreen extends StatelessWidget {
               child: Text(
                 'Sun ',
                 textAlign: TextAlign.center,
-                style: TextStyle(decoration: TextDecoration.none, fontSize: 12, color: Color(0xffffffff), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                style: TextStyle(
+                    decoration: TextDecoration.none,
+                    fontSize: 12,
+                    color: Color(0xffffffff),
+                    fontFamily: 'NunitoSans-Bold',
+                    fontWeight: FontWeight.normal),
                 maxLines: 9999,
                 overflow: TextOverflow.ellipsis,
               ),
@@ -41,7 +43,12 @@ class BookingScreen extends StatelessWidget {
               child: Text(
                 'Tue ',
                 textAlign: TextAlign.center,
-                style: TextStyle(decoration: TextDecoration.none, fontSize: 12, color: Color(0xff383838), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                style: TextStyle(
+                    decoration: TextDecoration.none,
+                    fontSize: 12,
+                    color: Color(0xff383838),
+                    fontFamily: 'NunitoSans-Bold',
+                    fontWeight: FontWeight.normal),
                 maxLines: 9999,
                 overflow: TextOverflow.ellipsis,
               ),
@@ -54,7 +61,12 @@ class BookingScreen extends StatelessWidget {
               child: Text(
                 'Wed ',
                 textAlign: TextAlign.center,
-                style: TextStyle(decoration: TextDecoration.none, fontSize: 12, color: Color(0xff383838), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                style: TextStyle(
+                    decoration: TextDecoration.none,
+                    fontSize: 12,
+                    color: Color(0xff383838),
+                    fontFamily: 'NunitoSans-Bold',
+                    fontWeight: FontWeight.normal),
                 maxLines: 9999,
                 overflow: TextOverflow.ellipsis,
               ),
@@ -67,7 +79,12 @@ class BookingScreen extends StatelessWidget {
               child: Text(
                 'Thu ',
                 textAlign: TextAlign.center,
-                style: TextStyle(decoration: TextDecoration.none, fontSize: 12, color: Color(0xff484848), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                style: TextStyle(
+                    decoration: TextDecoration.none,
+                    fontSize: 12,
+                    color: Color(0xff484848),
+                    fontFamily: 'NunitoSans-Bold',
+                    fontWeight: FontWeight.normal),
                 maxLines: 9999,
                 overflow: TextOverflow.ellipsis,
               ),
@@ -80,7 +97,12 @@ class BookingScreen extends StatelessWidget {
               child: Text(
                 '7',
                 textAlign: TextAlign.center,
-                style: TextStyle(decoration: TextDecoration.none, fontSize: 16, color: Color(0xffffffff), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                style: TextStyle(
+                    decoration: TextDecoration.none,
+                    fontSize: 16,
+                    color: Color(0xffffffff),
+                    fontFamily: 'NunitoSans-Bold',
+                    fontWeight: FontWeight.normal),
                 maxLines: 9999,
                 overflow: TextOverflow.ellipsis,
               ),
@@ -93,7 +115,12 @@ class BookingScreen extends StatelessWidget {
               child: Text(
                 '9',
                 textAlign: TextAlign.center,
-                style: TextStyle(decoration: TextDecoration.none, fontSize: 16, color: Color(0xff383838), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                style: TextStyle(
+                    decoration: TextDecoration.none,
+                    fontSize: 16,
+                    color: Color(0xff383838),
+                    fontFamily: 'NunitoSans-Bold',
+                    fontWeight: FontWeight.normal),
                 maxLines: 9999,
                 overflow: TextOverflow.ellipsis,
               ),
@@ -106,7 +133,12 @@ class BookingScreen extends StatelessWidget {
               child: Text(
                 '10',
                 textAlign: TextAlign.center,
-                style: TextStyle(decoration: TextDecoration.none, fontSize: 16, color: Color(0xff383838), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                style: TextStyle(
+                    decoration: TextDecoration.none,
+                    fontSize: 16,
+                    color: Color(0xff383838),
+                    fontFamily: 'NunitoSans-Bold',
+                    fontWeight: FontWeight.normal),
                 maxLines: 9999,
                 overflow: TextOverflow.ellipsis,
               ),
@@ -119,7 +151,12 @@ class BookingScreen extends StatelessWidget {
               child: Text(
                 '11',
                 textAlign: TextAlign.center,
-                style: TextStyle(decoration: TextDecoration.none, fontSize: 16, color: Color(0xff484848), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                style: TextStyle(
+                    decoration: TextDecoration.none,
+                    fontSize: 16,
+                    color: Color(0xff484848),
+                    fontFamily: 'NunitoSans-Bold',
+                    fontWeight: FontWeight.normal),
                 maxLines: 9999,
                 overflow: TextOverflow.ellipsis,
               ),
@@ -147,13 +184,12 @@ class BookingScreen extends StatelessWidget {
                         height: 348,
                         decoration: const BoxDecoration(
                           gradient: LinearGradient(
-                            colors: [Color(0xff244599),Color(0xff0C1733)],
+                            colors: [Color(0xff244599), Color(0xff0C1733)],
                           ),
                           //boxShadow: const [BoxShadow(color: const Color(0x3f000000), offset: Offset(0, 0), blurRadius: 54.5),],
                         ),
                       ),
                     ),
-
                     Positioned(
                       left: 138,
                       width: 114,
@@ -163,25 +199,32 @@ class BookingScreen extends StatelessWidget {
                         width: 114,
                         height: 1,
                         decoration: BoxDecoration(
-
-                          border: Border.all(color: const Color(0xff484747), width: 4),
+                          border: Border.all(
+                              color: const Color(0xff484747), width: 4),
                         ),
                       ),
                     ),
-
                     Positioned(
                       left: 24,
                       width: 24,
                       top: 75,
                       height: 24,
-                      child: Image.asset('images/image1_9943793.png', width: 24, height: 24,),
+                      child: Image.asset(
+                        'images/image1_9943793.png',
+                        width: 24,
+                        height: 24,
+                      ),
                     ),
                     Positioned(
                       left: 29.143,
                       width: 12.857,
                       top: 80.143,
                       height: 13.846,
-                      child: Image.asset('images/image2_9943794.png', width: 12.857, height: 13.846,),
+                      child: Image.asset(
+                        'images/image2_9943794.png',
+                        width: 12.857,
+                        height: 13.846,
+                      ),
                     ),
                     const Positioned(
                       left: 166,
@@ -189,7 +232,12 @@ class BookingScreen extends StatelessWidget {
                       child: Text(
                         'Detail',
                         textAlign: TextAlign.left,
-                        style: TextStyle(decoration: TextDecoration.none, fontSize: 20, color: Color(0xffffffff), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                        style: TextStyle(
+                            decoration: TextDecoration.none,
+                            fontSize: 20,
+                            color: Color(0xffffffff),
+                            fontFamily: 'NunitoSans-Bold',
+                            fontWeight: FontWeight.normal),
                         maxLines: 9999,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -199,7 +247,12 @@ class BookingScreen extends StatelessWidget {
                       width: 56,
                       top: 134,
                       height: 55,
-                      child: Image.asset('images/image3_9943796.png', width: 56, height: 55, fit: BoxFit.cover,),
+                      child: Image.asset(
+                        'images/image3_9943796.png',
+                        width: 56,
+                        height: 55,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                     const Positioned(
                       left: 117,
@@ -209,7 +262,12 @@ class BookingScreen extends StatelessWidget {
                       child: Text(
                         'Dr. Richar Kandowen',
                         textAlign: TextAlign.center,
-                        style: TextStyle(decoration: TextDecoration.none, fontSize: 16, color: Color(0xffffffff), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                        style: TextStyle(
+                            decoration: TextDecoration.none,
+                            fontSize: 16,
+                            color: Color(0xffffffff),
+                            fontFamily: 'NunitoSans-Bold',
+                            fontWeight: FontWeight.normal),
                         maxLines: 9999,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -220,7 +278,12 @@ class BookingScreen extends StatelessWidget {
                       child: Text(
                         'Obstetrician',
                         textAlign: TextAlign.center,
-                        style: TextStyle(decoration: TextDecoration.none, fontSize: 12, color: Color(0xffffffff), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                        style: TextStyle(
+                            decoration: TextDecoration.none,
+                            fontSize: 12,
+                            color: Color(0xffffffff),
+                            fontFamily: 'NunitoSans-Bold',
+                            fontWeight: FontWeight.normal),
                         maxLines: 9999,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -259,7 +322,12 @@ class BookingScreen extends StatelessWidget {
                       child: Text(
                         '123 Fitness Avenue, Wellness Clinic, Downtown Branch',
                         textAlign: TextAlign.left,
-                        style: TextStyle(decoration: TextDecoration.none, fontSize: 8, color: Color(0xff484848), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                        style: TextStyle(
+                            decoration: TextDecoration.none,
+                            fontSize: 8,
+                            color: Color(0xff484848),
+                            fontFamily: 'NunitoSans-Bold',
+                            fontWeight: FontWeight.normal),
                         maxLines: 9999,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -269,7 +337,11 @@ class BookingScreen extends StatelessWidget {
                       width: 12.147,
                       top: 248,
                       height: 16.237,
-                      child: Image.asset('images/image4_9943802.png', width: 12.147, height: 16.237,),
+                      child: Image.asset(
+                        'images/image4_9943802.png',
+                        width: 12.147,
+                        height: 16.237,
+                      ),
                     ),
                     Positioned(
                       left: 162,
@@ -280,7 +352,8 @@ class BookingScreen extends StatelessWidget {
                         width: 64,
                         height: 1,
                         decoration: BoxDecoration(
-                          border: Border.all(color: const Color(0xff767676), width: 4),
+                          border: Border.all(
+                              color: const Color(0xff767676), width: 4),
                         ),
                       ),
                     ),
@@ -296,7 +369,8 @@ class BookingScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: const Padding(
-                          padding: EdgeInsets.only(left: 81, top: 0, right: 81, bottom: 0),
+                          padding: EdgeInsets.only(
+                              left: 81, top: 0, right: 81, bottom: 0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -304,7 +378,12 @@ class BookingScreen extends StatelessWidget {
                               Text(
                                 'BOOK A SESSION',
                                 textAlign: TextAlign.center,
-                                style: TextStyle(decoration: TextDecoration.none, fontSize: 16, color: Color(0xffffffff), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                                style: TextStyle(
+                                    decoration: TextDecoration.none,
+                                    fontSize: 16,
+                                    color: Color(0xffffffff),
+                                    fontFamily: 'NunitoSans-Bold',
+                                    fontWeight: FontWeight.normal),
                                 maxLines: 9999,
                                 overflow: TextOverflow.ellipsis,
                               ),
@@ -326,7 +405,12 @@ class BookingScreen extends StatelessWidget {
                             child: Text(
                               'Available time. October 2024',
                               textAlign: TextAlign.center,
-                              style: TextStyle(decoration: TextDecoration.none, fontSize: 16, color: Color(0xff484848), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                              style: TextStyle(
+                                  decoration: TextDecoration.none,
+                                  fontSize: 16,
+                                  color: Color(0xff484848),
+                                  fontFamily: 'NunitoSans-Bold',
+                                  fontWeight: FontWeight.normal),
                               maxLines: 9999,
                               overflow: TextOverflow.ellipsis,
                             ),
@@ -337,7 +421,12 @@ class BookingScreen extends StatelessWidget {
                             child: Text(
                               'Morning Slot',
                               textAlign: TextAlign.center,
-                              style: TextStyle(decoration: TextDecoration.none, fontSize: 16, color: Color(0xff484848), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                              style: TextStyle(
+                                  decoration: TextDecoration.none,
+                                  fontSize: 16,
+                                  color: Color(0xff484848),
+                                  fontFamily: 'NunitoSans-Bold',
+                                  fontWeight: FontWeight.normal),
                               maxLines: 9999,
                               overflow: TextOverflow.ellipsis,
                             ),
@@ -348,7 +437,12 @@ class BookingScreen extends StatelessWidget {
                             child: Text(
                               'Afternoon Slot',
                               textAlign: TextAlign.center,
-                              style: TextStyle(decoration: TextDecoration.none, fontSize: 16, color: Color(0xff484848), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                              style: TextStyle(
+                                  decoration: TextDecoration.none,
+                                  fontSize: 16,
+                                  color: Color(0xff484848),
+                                  fontFamily: 'NunitoSans-Bold',
+                                  fontWeight: FontWeight.normal),
                               maxLines: 9999,
                               overflow: TextOverflow.ellipsis,
                             ),
@@ -389,8 +483,11 @@ class BookingScreen extends StatelessWidget {
                                           width: 44,
                                           height: 60,
                                           decoration: BoxDecoration(
-                                            border: Border.all(color: const Color(0xffcecece), width: 1),
-                                            borderRadius: BorderRadius.circular(8),
+                                            border: Border.all(
+                                                color: const Color(0xffcecece),
+                                                width: 1),
+                                            borderRadius:
+                                                BorderRadius.circular(8),
                                           ),
                                         ),
                                       ),
@@ -400,7 +497,12 @@ class BookingScreen extends StatelessWidget {
                                         child: Text(
                                           'Mon',
                                           textAlign: TextAlign.center,
-                                          style: TextStyle(decoration: TextDecoration.none, fontSize: 12, color: Color(0xff484848), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                                          style: TextStyle(
+                                              decoration: TextDecoration.none,
+                                              fontSize: 12,
+                                              color: Color(0xff484848),
+                                              fontFamily: 'NunitoSans-Bold',
+                                              fontWeight: FontWeight.normal),
                                           maxLines: 9999,
                                           overflow: TextOverflow.ellipsis,
                                         ),
@@ -411,7 +513,12 @@ class BookingScreen extends StatelessWidget {
                                         child: Text(
                                           '8',
                                           textAlign: TextAlign.center,
-                                          style: TextStyle(decoration: TextDecoration.none, fontSize: 16, color: Color(0xff484848), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                                          style: TextStyle(
+                                              decoration: TextDecoration.none,
+                                              fontSize: 16,
+                                              color: Color(0xff484848),
+                                              fontFamily: 'NunitoSans-Bold',
+                                              fontWeight: FontWeight.normal),
                                           maxLines: 9999,
                                           overflow: TextOverflow.ellipsis,
                                         ),
@@ -424,7 +531,9 @@ class BookingScreen extends StatelessWidget {
                                   width: 44,
                                   height: 60,
                                   decoration: BoxDecoration(
-                                    border: Border.all(color: const Color(0xff244599), width: 1),
+                                    border: Border.all(
+                                        color: const Color(0xff244599),
+                                        width: 1),
                                     borderRadius: BorderRadius.circular(8),
                                   ),
                                 ),
@@ -433,7 +542,9 @@ class BookingScreen extends StatelessWidget {
                                   width: 44,
                                   height: 60,
                                   decoration: BoxDecoration(
-                                    border: Border.all(color: const Color(0xff244599), width: 1),
+                                    border: Border.all(
+                                        color: const Color(0xff244599),
+                                        width: 1),
                                     borderRadius: BorderRadius.circular(8),
                                   ),
                                 ),
@@ -442,7 +553,9 @@ class BookingScreen extends StatelessWidget {
                                   width: 44,
                                   height: 60,
                                   decoration: BoxDecoration(
-                                    border: Border.all(color: const Color(0xffcecece), width: 1),
+                                    border: Border.all(
+                                        color: const Color(0xffcecece),
+                                        width: 1),
                                     borderRadius: BorderRadius.circular(8),
                                   ),
                                 ),
@@ -464,8 +577,11 @@ class BookingScreen extends StatelessWidget {
                                           width: 44,
                                           height: 60,
                                           decoration: BoxDecoration(
-                                            border: Border.all(color: const Color(0xff244599), width: 1),
-                                            borderRadius: BorderRadius.circular(8),
+                                            border: Border.all(
+                                                color: const Color(0xff244599),
+                                                width: 1),
+                                            borderRadius:
+                                                BorderRadius.circular(8),
                                           ),
                                         ),
                                       ),
@@ -475,7 +591,12 @@ class BookingScreen extends StatelessWidget {
                                         child: Text(
                                           'Fri ',
                                           textAlign: TextAlign.center,
-                                          style: TextStyle(decoration: TextDecoration.none, fontSize: 12, color: Color(0xff383838), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                                          style: TextStyle(
+                                              decoration: TextDecoration.none,
+                                              fontSize: 12,
+                                              color: Color(0xff383838),
+                                              fontFamily: 'NunitoSans-Bold',
+                                              fontWeight: FontWeight.normal),
                                           maxLines: 9999,
                                           overflow: TextOverflow.ellipsis,
                                         ),
@@ -486,7 +607,12 @@ class BookingScreen extends StatelessWidget {
                                         child: Text(
                                           '12',
                                           textAlign: TextAlign.center,
-                                          style: TextStyle(decoration: TextDecoration.none, fontSize: 16, color: Color(0xff383838), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                                          style: TextStyle(
+                                              decoration: TextDecoration.none,
+                                              fontSize: 16,
+                                              color: Color(0xff383838),
+                                              fontFamily: 'NunitoSans-Bold',
+                                              fontWeight: FontWeight.normal),
                                           maxLines: 9999,
                                           overflow: TextOverflow.ellipsis,
                                         ),
@@ -512,8 +638,11 @@ class BookingScreen extends StatelessWidget {
                                           width: 44,
                                           height: 60,
                                           decoration: BoxDecoration(
-                                            border: Border.all(color: const Color(0xff244599), width: 1),
-                                            borderRadius: BorderRadius.circular(8),
+                                            border: Border.all(
+                                                color: const Color(0xff244599),
+                                                width: 1),
+                                            borderRadius:
+                                                BorderRadius.circular(8),
                                           ),
                                         ),
                                       ),
@@ -523,7 +652,12 @@ class BookingScreen extends StatelessWidget {
                                         child: Text(
                                           'Sat ',
                                           textAlign: TextAlign.center,
-                                          style: TextStyle(decoration: TextDecoration.none, fontSize: 12, color: Color(0xff383838), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                                          style: TextStyle(
+                                              decoration: TextDecoration.none,
+                                              fontSize: 12,
+                                              color: Color(0xff383838),
+                                              fontFamily: 'NunitoSans-Bold',
+                                              fontWeight: FontWeight.normal),
                                           maxLines: 9999,
                                           overflow: TextOverflow.ellipsis,
                                         ),
@@ -534,7 +668,12 @@ class BookingScreen extends StatelessWidget {
                                         child: Text(
                                           '13',
                                           textAlign: TextAlign.center,
-                                          style: TextStyle(decoration: TextDecoration.none, fontSize: 16, color: Color(0xff383838), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                                          style: TextStyle(
+                                              decoration: TextDecoration.none,
+                                              fontSize: 16,
+                                              color: Color(0xff383838),
+                                              fontFamily: 'NunitoSans-Bold',
+                                              fontWeight: FontWeight.normal),
                                           maxLines: 9999,
                                           overflow: TextOverflow.ellipsis,
                                         ),
@@ -554,11 +693,13 @@ class BookingScreen extends StatelessWidget {
                               width: 107,
                               height: 38,
                               decoration: BoxDecoration(
-                                border: Border.all(color: const Color(0xff244599), width: 1),
+                                border: Border.all(
+                                    color: const Color(0xff244599), width: 1),
                                 borderRadius: BorderRadius.circular(31),
                               ),
                               child: const Padding(
-                                padding: EdgeInsets.only(left: 19, top: 2, right: 19, bottom: 2),
+                                padding: EdgeInsets.only(
+                                    left: 19, top: 2, right: 19, bottom: 2),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -566,7 +707,12 @@ class BookingScreen extends StatelessWidget {
                                     Text(
                                       '08:30AM',
                                       textAlign: TextAlign.center,
-                                      style: TextStyle(decoration: TextDecoration.none, fontSize: 16, color: Color(0xff484848), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                                      style: TextStyle(
+                                          decoration: TextDecoration.none,
+                                          fontSize: 16,
+                                          color: Color(0xff484848),
+                                          fontFamily: 'NunitoSans-Bold',
+                                          fontWeight: FontWeight.normal),
                                       maxLines: 9999,
                                       overflow: TextOverflow.ellipsis,
                                     ),
@@ -584,11 +730,13 @@ class BookingScreen extends StatelessWidget {
                               width: 107,
                               height: 38,
                               decoration: BoxDecoration(
-                                border: Border.all(color: const Color(0xff244599), width: 1),
+                                border: Border.all(
+                                    color: const Color(0xff244599), width: 1),
                                 borderRadius: BorderRadius.circular(31),
                               ),
                               child: const Padding(
-                                padding: EdgeInsets.only(left: 19, top: 2, right: 19, bottom: 2),
+                                padding: EdgeInsets.only(
+                                    left: 19, top: 2, right: 19, bottom: 2),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -596,7 +744,12 @@ class BookingScreen extends StatelessWidget {
                                     Text(
                                       '01:30PM',
                                       textAlign: TextAlign.center,
-                                      style: TextStyle(decoration: TextDecoration.none, fontSize: 16, color: Color(0xff767676), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                                      style: TextStyle(
+                                          decoration: TextDecoration.none,
+                                          fontSize: 16,
+                                          color: Color(0xff767676),
+                                          fontFamily: 'NunitoSans-Bold',
+                                          fontWeight: FontWeight.normal),
                                       maxLines: 9999,
                                       overflow: TextOverflow.ellipsis,
                                     ),
@@ -618,7 +771,8 @@ class BookingScreen extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(31),
                               ),
                               child: const Padding(
-                                padding: EdgeInsets.only(left: 19, top: 2, right: 19, bottom: 2),
+                                padding: EdgeInsets.only(
+                                    left: 19, top: 2, right: 19, bottom: 2),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -626,7 +780,12 @@ class BookingScreen extends StatelessWidget {
                                     Text(
                                       '09:00AM',
                                       textAlign: TextAlign.center,
-                                      style: TextStyle(decoration: TextDecoration.none, fontSize: 16, color: Color(0xffffffff), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                                      style: TextStyle(
+                                          decoration: TextDecoration.none,
+                                          fontSize: 16,
+                                          color: Color(0xffffffff),
+                                          fontFamily: 'NunitoSans-Bold',
+                                          fontWeight: FontWeight.normal),
                                       maxLines: 9999,
                                       overflow: TextOverflow.ellipsis,
                                     ),
@@ -648,7 +807,8 @@ class BookingScreen extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(31),
                               ),
                               child: const Padding(
-                                padding: EdgeInsets.only(left: 19, top: 2, right: 19, bottom: 2),
+                                padding: EdgeInsets.only(
+                                    left: 19, top: 2, right: 19, bottom: 2),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -656,7 +816,12 @@ class BookingScreen extends StatelessWidget {
                                     Text(
                                       '02:00PM',
                                       textAlign: TextAlign.center,
-                                      style: TextStyle(decoration: TextDecoration.none, fontSize: 16, color: Color(0xffffffff), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                                      style: TextStyle(
+                                          decoration: TextDecoration.none,
+                                          fontSize: 16,
+                                          color: Color(0xffffffff),
+                                          fontFamily: 'NunitoSans-Bold',
+                                          fontWeight: FontWeight.normal),
                                       maxLines: 9999,
                                       overflow: TextOverflow.ellipsis,
                                     ),
@@ -674,11 +839,13 @@ class BookingScreen extends StatelessWidget {
                               width: 107,
                               height: 38,
                               decoration: BoxDecoration(
-                                border: Border.all(color: const Color(0xff244599), width: 1),
+                                border: Border.all(
+                                    color: const Color(0xff244599), width: 1),
                                 borderRadius: BorderRadius.circular(31),
                               ),
                               child: const Padding(
-                                padding: EdgeInsets.only(left: 19, top: 2, right: 19, bottom: 2),
+                                padding: EdgeInsets.only(
+                                    left: 19, top: 2, right: 19, bottom: 2),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -686,7 +853,12 @@ class BookingScreen extends StatelessWidget {
                                     Text(
                                       '09:30AM',
                                       textAlign: TextAlign.center,
-                                      style: TextStyle(decoration: TextDecoration.none, fontSize: 16, color: Color(0xff484848), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                                      style: TextStyle(
+                                          decoration: TextDecoration.none,
+                                          fontSize: 16,
+                                          color: Color(0xff484848),
+                                          fontFamily: 'NunitoSans-Bold',
+                                          fontWeight: FontWeight.normal),
                                       maxLines: 9999,
                                       overflow: TextOverflow.ellipsis,
                                     ),
@@ -704,11 +876,13 @@ class BookingScreen extends StatelessWidget {
                               width: 107,
                               height: 38,
                               decoration: BoxDecoration(
-                                border: Border.all(color: const Color(0xff244599), width: 1),
+                                border: Border.all(
+                                    color: const Color(0xff244599), width: 1),
                                 borderRadius: BorderRadius.circular(31),
                               ),
                               child: const Padding(
-                                padding: EdgeInsets.only(left: 19, top: 2, right: 19, bottom: 2),
+                                padding: EdgeInsets.only(
+                                    left: 19, top: 2, right: 19, bottom: 2),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -718,7 +892,12 @@ class BookingScreen extends StatelessWidget {
                                       child: Text(
                                         '02:30PM',
                                         textAlign: TextAlign.center,
-                                        style: TextStyle(decoration: TextDecoration.none, fontSize: 16, color: Color(0xff767676), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                                        style: TextStyle(
+                                            decoration: TextDecoration.none,
+                                            fontSize: 16,
+                                            color: Color(0xff767676),
+                                            fontFamily: 'NunitoSans-Bold',
+                                            fontWeight: FontWeight.normal),
                                         maxLines: 9999,
                                         overflow: TextOverflow.ellipsis,
                                       ),
@@ -734,7 +913,12 @@ class BookingScreen extends StatelessWidget {
                             child: Text(
                               'Select service',
                               textAlign: TextAlign.center,
-                              style: TextStyle(decoration: TextDecoration.none, fontSize: 20, color: Color(0xff767676), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                              style: TextStyle(
+                                  decoration: TextDecoration.none,
+                                  fontSize: 20,
+                                  color: Color(0xff767676),
+                                  fontFamily: 'NunitoSans-Bold',
+                                  fontWeight: FontWeight.normal),
                               maxLines: 9999,
                               overflow: TextOverflow.ellipsis,
                             ),
@@ -745,7 +929,12 @@ class BookingScreen extends StatelessWidget {
                             child: Text(
                               'Select service',
                               textAlign: TextAlign.center,
-                              style: TextStyle(decoration: TextDecoration.none, fontSize: 12, color: Color(0xff0c1733), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                              style: TextStyle(
+                                  decoration: TextDecoration.none,
+                                  fontSize: 12,
+                                  color: Color(0xff0c1733),
+                                  fontFamily: 'NunitoSans-Bold',
+                                  fontWeight: FontWeight.normal),
                               maxLines: 9999,
                               overflow: TextOverflow.ellipsis,
                             ),
@@ -756,7 +945,12 @@ class BookingScreen extends StatelessWidget {
                             child: Text(
                               'Select service',
                               textAlign: TextAlign.center,
-                              style: TextStyle(decoration: TextDecoration.none, fontSize: 12, color: Color(0x660c1733), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                              style: TextStyle(
+                                  decoration: TextDecoration.none,
+                                  fontSize: 12,
+                                  color: Color(0x660c1733),
+                                  fontFamily: 'NunitoSans-Bold',
+                                  fontWeight: FontWeight.normal),
                               maxLines: 9999,
                               overflow: TextOverflow.ellipsis,
                             ),
@@ -767,7 +961,12 @@ class BookingScreen extends StatelessWidget {
                             child: Text(
                               'Select service',
                               textAlign: TextAlign.center,
-                              style: TextStyle(decoration: TextDecoration.none, fontSize: 12, color: Color(0x660c1733), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                              style: TextStyle(
+                                  decoration: TextDecoration.none,
+                                  fontSize: 12,
+                                  color: Color(0x660c1733),
+                                  fontFamily: 'NunitoSans-Bold',
+                                  fontWeight: FontWeight.normal),
                               maxLines: 9999,
                               overflow: TextOverflow.ellipsis,
                             ),
@@ -778,7 +977,12 @@ class BookingScreen extends StatelessWidget {
                             child: Text(
                               'Select service',
                               textAlign: TextAlign.center,
-                              style: TextStyle(decoration: TextDecoration.none, fontSize: 12, color: Color(0x660c1733), fontFamily: 'NunitoSans-Bold', fontWeight: FontWeight.normal),
+                              style: TextStyle(
+                                  decoration: TextDecoration.none,
+                                  fontSize: 12,
+                                  color: Color(0x660c1733),
+                                  fontFamily: 'NunitoSans-Bold',
+                                  fontWeight: FontWeight.normal),
                               maxLines: 9999,
                               overflow: TextOverflow.ellipsis,
                             ),
@@ -788,7 +992,11 @@ class BookingScreen extends StatelessWidget {
                             width: 349,
                             top: 39,
                             height: 96,
-                            child: Image.asset('images/image_9943855.png', width: 349, height: 96,),
+                            child: Image.asset(
+                              'images/image_9943855.png',
+                              width: 349,
+                              height: 96,
+                            ),
                           ),
                         ],
                       ),
@@ -803,8 +1011,6 @@ class BookingScreen extends StatelessWidget {
     );
   }
 }
-
-
 
 // class BookingScreen extends StatefulWidget {
 //   const BookingScreen({super.key});

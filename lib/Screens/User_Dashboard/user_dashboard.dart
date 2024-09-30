@@ -22,11 +22,11 @@ class _UserDashboardState extends State<UserDashboard> {
 
   // Define the screens based on the index
   static final List<Widget> _screens = <Widget>[
-    const HomeScreen(),         // Screen 0 - Home
-    BookSessionScreen(),   // Screen 1 - Book a session
+    const HomeScreen(), // Screen 0 - Home
+    BookSessionScreen(), // Screen 1 - Book a session
     const MenstrualTrackingScreen(), // Screen 2 - Menstrual Tracking
-    NewsFeedScreen(),     // Screen 3 - Newsfeed
-    ProfileScreen(),      // Screen 4 - Profile
+    const NewsFeedScreen(), // Screen 3 - Newsfeed
+    ProfileScreen(), // Screen 4 - Profile
   ];
 
   void _onItemTapped(int index) {
@@ -39,15 +39,15 @@ class _UserDashboardState extends State<UserDashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: IndexedStack(
-        index: _selectedIndex,  // Display the selected screen
-        children: _screens,     // Keep all screens loaded and switch between them
+        index: _selectedIndex, // Display the selected screen
+        children: _screens, // Keep all screens loaded and switch between them
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.black87,
         unselectedItemColor: Colors.grey[600],
         currentIndex: _selectedIndex, // Highlight the currently selected item
-        onTap: _onItemTapped,         // Handle tap events to switch screens
+        onTap: _onItemTapped, // Handle tap events to switch screens
         items: [
           BottomNavigationBarItem(
             icon: _buildIcon('assets/images/home.png', 0),

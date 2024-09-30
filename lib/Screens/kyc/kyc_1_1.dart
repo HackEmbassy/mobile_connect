@@ -27,12 +27,12 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
       ),
       child: value
           ? Center(
-        child: Icon(
-          Icons.check,
-          color: Colors.grey,
-          size: 16.0,
-        ),
-      )
+              child: Icon(
+                Icons.check,
+                color: Colors.grey,
+                size: 16.0,
+              ),
+            )
           : SizedBox.shrink(),
     );
   }
@@ -94,7 +94,7 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
               'Schedule Health Appointments',
               'Quickly and easily book a session with a gynecologist, obstetrician, fitness coach, or dietitian',
               scheduleHealthAppointments,
-                  (value) {
+              (value) {
                 setState(() {
                   scheduleHealthAppointments = value!;
                 });
@@ -105,7 +105,7 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
               'Track Menstrual Cycle',
               'Track and manage your menstrual cycle with ease',
               trackMenstrualCycle,
-                  (value) {
+              (value) {
                 setState(() {
                   trackMenstrualCycle = value!;
                 });
@@ -116,7 +116,7 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
               'Improve Physical Fitness',
               'Follow personalized workout plans and access workout tutorials and fitness tips recommended by your fitness coach.',
               improvePhysicalFitness,
-                  (value) {
+              (value) {
                 setState(() {
                   improvePhysicalFitness = value!;
                 });
@@ -127,7 +127,7 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
               'Maintain a Healthy Diet',
               'Get personalized meal plans and access nutritional advice to maintain a balanced and healthy diet.',
               maintainHealthyDiet,
-                  (value) {
+              (value) {
                 setState(() {
                   maintainHealthyDiet = value!;
                 });
@@ -139,7 +139,8 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) =>   PersonalInformation()),
+                    MaterialPageRoute(
+                        builder: (context) => PersonalInformation()),
                   );
 // Handle continue button press
                 },
@@ -161,7 +162,8 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
     );
   }
 
-  Widget _buildInterestItem(String title, String subtitle, bool value, Function(bool?) onChanged) {
+  Widget _buildInterestItem(
+      String title, String subtitle, bool value, Function(bool?) onChanged) {
     return Row(
       children: [
         GestureDetector(
@@ -177,7 +179,8 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
           child: ImageView(
             imageConfig: ImageConfig(
               imageURL: AppImage.kyclogo, // Your image path
-              imageType: ImageType.asset,   // Specify if it's an asset or a network image
+              imageType: ImageType
+                  .asset, // Specify if it's an asset or a network image
             ),
           ),
         ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class  ProfessionalAppointmentsScreen extends StatelessWidget {
-  const  ProfessionalAppointmentsScreen({super.key});
+class ProfessionalAppointmentsScreen extends StatelessWidget {
+  const ProfessionalAppointmentsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +59,8 @@ class  ProfessionalAppointmentsScreen extends StatelessWidget {
                             children: [
                               CircleAvatar(
                                 radius: 30,
-                                backgroundImage: AssetImage('assets/doctor.png'), // Replace with actual image
+                                backgroundImage: AssetImage(
+                                    'assets/doctor.png'), // Replace with actual image
                               ),
                               SizedBox(width: 10),
                               Expanded(

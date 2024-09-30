@@ -47,7 +47,8 @@ class ProfessionalClientScreen extends StatelessWidget {
               itemCount: 10, // Adjust the number of clients as needed
               itemBuilder: (context, index) {
                 return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 16.0, vertical: 8.0),
                   child: Container(
                     decoration: BoxDecoration(
                       color: const Color(0xFFF1F4FB),

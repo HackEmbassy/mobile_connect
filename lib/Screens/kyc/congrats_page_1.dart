@@ -37,15 +37,17 @@ class _CongratsPageState extends State<CongratsPage> {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 50), // Adds space between text and button
+                const SizedBox(
+                    height: 50), // Adds space between text and button
                 SizedBox(
                   width: double.infinity,
                   child: OutlinedButton(
                     onPressed: () {
-                     Navigator.push(
-                       context,
-                       MaterialPageRoute(builder: (context) => UserDashboard()),
-                     ); // Add your navigation logic here
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => UserDashboard()),
+                      ); // Add your navigation logic here
                     },
                     style: OutlinedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(vertical: 16.0),

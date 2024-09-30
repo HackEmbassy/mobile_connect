@@ -16,6 +16,9 @@ UserModelEntity _$UserModelEntityFromJson(Map<String, dynamic> json) =>
       state: json['state'] as String?,
       city: json['city'] as String?,
       phone: json['phone'] as String?,
+      interests: (json['interests'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       latitude: (json['latitude'] as num?)?.toDouble(),
       longitude: (json['longitude'] as num?)?.toDouble(),
     );
@@ -30,6 +33,7 @@ Map<String, dynamic> _$UserModelEntityToJson(UserModelEntity instance) =>
       'state': instance.state,
       'city': instance.city,
       'phone': instance.phone,
+      'interests': instance.interests,
       'latitude': instance.latitude,
       'longitude': instance.longitude,
     };

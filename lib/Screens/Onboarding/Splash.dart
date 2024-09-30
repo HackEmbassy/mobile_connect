@@ -38,8 +38,9 @@ class _SplashScreenState extends State<SplashScreen> {
       constraints: const BoxConstraints.expand(),
       decoration: const BoxDecoration(
         gradient: const LinearGradient(
-        colors: [Color(0xff244599),Color(0xff0C1733)],
-      ),),
+          colors: [Color(0xff244599), Color(0xff0C1733)],
+        ),
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

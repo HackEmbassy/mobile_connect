@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:herhealthconnect/Authentications_Screens/sign_up_as.dart';
-import 'package:herhealthconnect/Components/Button/ButtonWidget.dart';
-import 'package:herhealthconnect/Components/Button/Model/ButtonConfig.dart';
+import 'package:herhealthconnect/Components/Gap.dart';
 import 'package:herhealthconnect/assets/app_colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'; // Import the package
 
@@ -11,13 +8,15 @@ import '../../Components/Image/ImageView.dart';
 import '../../Components/Image/Model/ImageConfig.dart';
 import '../../assets/app_image.dart';
 import '../Authentications_Screens/sign_up_as.dart';
-import '../kyc/kyc_1.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:herhealthconnect/Components/Button/ButtonWidget.dart';
+import 'package:herhealthconnect/Components/Button/Model/ButtonConfig.dart';
 
 class OnboardingScreen extends StatefulWidget {
-  OnboardingScreen({super.key});
+  const OnboardingScreen({super.key});
 
   @override
-  State<OnboardingScreen> createState() => _OnboardingScreenState();
+  _OnboardingScreenState createState() => _OnboardingScreenState();
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
@@ -33,30 +32,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SafeArea(
-            child: Column(
-              children: [
-                const SizedBox(height: 20), // Spacing from the top
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SizedBox(
-                        width: 200, // Set the desired width
-                        height: 200, // Set the desired height
-                        child: ImageView(
-                          imageConfig: ImageConfig(
-                            imageURL: AppImage.applogo,
-                            imageType: ImageType.asset,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 10),
-                    ],
-                  ),
-                ),
-              ],
+          const Gap(height: 30),
+          ImageView(
+            imageConfig: ImageConfig(
+              imageURL: AppImage.applogo,
+              imageType: ImageType.asset,
+              height: 120.h,
+              width: 200.w,
             ),
           ),
           Expanded(
@@ -72,32 +54,30 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 Center(
                   child: Column(
                     children: [
-                      SizedBox(
-                        width: 350, // Set the desired width
-                        height: 350, // Set the desired height
-                        child: ImageView(
-                          imageConfig: ImageConfig(
-                            imageURL: AppImage.onboarding,
-                            imageType: ImageType.asset,
-                          ),
+                      ImageView(
+                        imageConfig: ImageConfig(
+                          imageURL: AppImage.onboarding,
+                          imageType: ImageType.asset,
+                          height: 300.h,
+                          width: 300.w,
                         ),
                       ),
-                      const SizedBox(height: 30),
-                      const Text(
+                      Gap(height: 20.h),
+                      Text(
                         'Book appointments\neasily',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 30,
+                          fontSize: 30.sp,
                           fontWeight: FontWeight.bold,
                           color: Colors.black87,
                         ),
                       ),
-                      const SizedBox(height: 10),
-                      const Text(
+                      Gap(height: 5.h),
+                      Text(
                         'Schedule sessions with gynecologists,\nobstetricians, fitness coaches, and dietitians.',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 16.sp,
                           color: Colors.black54,
                         ),
                       ),
@@ -108,32 +88,30 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 Center(
                   child: Column(
                     children: [
-                      SizedBox(
-                        width: 350, // Set the desired width
-                        height: 350, // Set the desired height
-                        child: ImageView(
-                          imageConfig: ImageConfig(
-                            imageURL: AppImage.onboarding,
-                            imageType: ImageType.asset,
-                          ),
+                      ImageView(
+                        imageConfig: ImageConfig(
+                          imageURL: AppImage.onboarding,
+                          imageType: ImageType.asset,
+                          height: 300.h,
+                          width: 300.w,
                         ),
                       ),
-                      const SizedBox(height: 30),
-                      const Text(
+                      const Gap(height: 30),
+                      Text(
                         'Track Your Health',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 30,
+                          fontSize: 30.sp,
                           fontWeight: FontWeight.bold,
                           color: Colors.black87,
                         ),
                       ),
-                      const SizedBox(height: 10),
-                      const Text(
+                      const Gap(height: 10),
+                      Text(
                         'Monitor your menstrual cycle, fitness progress,\nand dietary habits.',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 16.sp,
                           color: Colors.black54,
                         ),
                       ),
@@ -157,22 +135,22 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           ),
                         ),
                       ),
-                      const SizedBox(height: 30),
-                      const Text(
+                      const Gap(height: 30),
+                      Text(
                         'Connect with our Community',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 35,
+                          fontSize: 35.sp,
                           fontWeight: FontWeight.bold,
                           color: Colors.black87,
                         ),
                       ),
-                      const SizedBox(height: 10),
-                      const Text(
+                      const Gap(height: 10),
+                      Text(
                         'Join discussions, get support, and share\nexperiences with other women.',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 16.sp,
                           color: Colors.black54,
                         ),
                       ),
@@ -200,110 +178,69 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                ButtonWidget(
-                  config: ButtonConfig(
-                      text: "NEXT",
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                      textColor: AppColors.black,
-                      onPressed: () {
-                        _pageController.nextPage(
-                          duration: const Duration(milliseconds: 300),
-                          curve: Curves.easeInOut,
-                        );
-                      },
-                      radius: 30.r,
-                      buttonOutlinedColor: AppColors.black,
-                      buttonColor: AppColors.white,
-                      width: 100.w,
-                      height: 40),
-                ),
-                // ElevatedButton(
-                //   onPressed: () {
-                //     // Navigate to the next screen
-
-                //   },
-                //   style: ElevatedButton.styleFrom(
-                //     padding: const EdgeInsets.symmetric(
-                //         vertical: 15, horizontal: 40),
-                //     shape: RoundedRectangleBorder(
-                //       borderRadius: BorderRadius.circular(30),
-                //       side: const BorderSide(color: Colors.black87),
-                //     ),
-                //     backgroundColor: Colors.white,
-                //     foregroundColor: Colors.black87,
-                //     elevation: 2,
-                //   ),
-                //   child: const Text(
-                //     "NEXT",
-                //     style: TextStyle(
-                //       fontSize: 18,
-                //       fontWeight: FontWeight.bold,
-                //     ),
-                //   ),
-                // ),
-                ButtonWidget(
-                  config: ButtonConfig(
-                      text: "SKIP",
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                )
-                    : SizedBox.shrink(), // Hide the NEXT button on the last page
                 _currentPage < 2 // If the current page is not the last one
-                    ? ElevatedButton(
-                  onPressed: () {
-                    // Skip and navigate to the home screen or other
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SignUpAsScreen()),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                      side: const BorderSide(color: Colors.black87),
-                    ),
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.black87,
-                    elevation: 2,
-                  ),
-                  child: const Text(
-                    "SKIP",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                )
-                    : ElevatedButton(
-                  onPressed: () {
-                    // Navigate to the next screen or home screen
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SignUpAsScreen()),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                      side: const BorderSide(color: Colors.black87),
-                    ),
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.black87,
-                    elevation: 2,
-                  ),
-                  child: const Text(
-                    "CONTINUE",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
+                    ? ButtonWidget(
+                        config: ButtonConfig(
+                          text: "NEXT",
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          textColor: AppColors.black,
+                          onPressed: () {
+                            _pageController.nextPage(
+                              duration: const Duration(milliseconds: 300),
+                              curve: Curves.easeInOut,
+                            );
+                          },
+                          radius: 30.r,
+                          buttonOutlinedColor: AppColors.black,
+                          buttonColor: AppColors.white,
+                          width: 100.w,
+                          height: 50,
+                        ),
+                      )
+                    : const SizedBox
+                        .shrink(), // Hide the NEXT button on the last page
+                _currentPage < 2 // If the current page is not the last one
+                    ? ButtonWidget(
+                        config: ButtonConfig(
+                          text: "SKIP",
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          textColor: AppColors.black,
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const SignUpAsScreen()),
+                            );
+                          },
+                          radius: 30.r,
+                          buttonOutlinedColor: AppColors.black,
+                          buttonColor: AppColors.white,
+                          width: 100.w,
+                          height: 50,
+                        ),
+                      )
+                    : ButtonWidget(
+                        config: ButtonConfig(
+                          text: "CONTINUE",
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          textColor: AppColors.black,
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const SignUpAsScreen()),
+                            );
+                          },
+                          radius: 30.r,
+                          buttonOutlinedColor: AppColors.black,
+                          buttonColor: AppColors.white,
+                          width: 150.w,
+                          height: 50,
+                        ),
+                      ),
               ],
             ),
           ),

@@ -8,10 +8,12 @@ class ProfessionalCalendarEventScreen extends StatefulWidget {
   const ProfessionalCalendarEventScreen({super.key});
 
   @override
-  _ProfessionalCalendarEventScreenState createState() => _ProfessionalCalendarEventScreenState();
+  _ProfessionalCalendarEventScreenState createState() =>
+      _ProfessionalCalendarEventScreenState();
 }
 
-class _ProfessionalCalendarEventScreenState extends State<ProfessionalCalendarEventScreen> {
+class _ProfessionalCalendarEventScreenState
+    extends State<ProfessionalCalendarEventScreen> {
   final DateTime _focusedDay = DateTime.now();
   DateTime? _selectedDay;
 
@@ -56,7 +58,8 @@ class _ProfessionalCalendarEventScreenState extends State<ProfessionalCalendarEv
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => ProfessionalChatScreen()),
+                      MaterialPageRoute(
+                          builder: (context) => ProfessionalChatScreen()),
                     );
                   },
                 ),
@@ -72,8 +75,10 @@ class _ProfessionalCalendarEventScreenState extends State<ProfessionalCalendarEv
               scrollDirection: Axis.horizontal,
               itemCount: 31, // Assuming 31 days for the selected month
               itemBuilder: (context, index) {
-                DateTime date = DateTime(_focusedDay.year, _focusedDay.month, index + 1);
-                bool isSelected = date.day == (_selectedDay?.day ?? 0) && date.month == (_selectedDay?.month ?? 0);
+                DateTime date =
+                    DateTime(_focusedDay.year, _focusedDay.month, index + 1);
+                bool isSelected = date.day == (_selectedDay?.day ?? 0) &&
+                    date.month == (_selectedDay?.month ?? 0);
 
                 return GestureDetector(
                   onTap: () {
@@ -93,7 +98,9 @@ class _ProfessionalCalendarEventScreenState extends State<ProfessionalCalendarEv
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          DateFormat.E().format(date).substring(0, 3), // Day abbreviation (e.g. "Tue")
+                          DateFormat.E()
+                              .format(date)
+                              .substring(0, 3), // Day abbreviation (e.g. "Tue")
                           style: TextStyle(
                             fontSize: 14,
                             color: isSelected ? Colors.white : Colors.black,
@@ -120,9 +127,10 @@ class _ProfessionalCalendarEventScreenState extends State<ProfessionalCalendarEv
           // Events List
           Expanded(
             child: ListView(
-              children:  [
+              children: [
                 ListTile(
-                  leading: const Text("2:00 PM", style: TextStyle(fontWeight: FontWeight.bold)),
+                  leading: const Text("2:00 PM",
+                      style: TextStyle(fontWeight: FontWeight.bold)),
                   title: const Text("Joe's basketball class"),
                   trailing: Row(
                     mainAxisSize: MainAxisSize.min,
@@ -134,7 +142,8 @@ class _ProfessionalCalendarEventScreenState extends State<ProfessionalCalendarEv
                   ),
                 ),
                 ListTile(
-                  leading: const Text("4:10 PM", style: TextStyle(fontWeight: FontWeight.bold)),
+                  leading: const Text("4:10 PM",
+                      style: TextStyle(fontWeight: FontWeight.bold)),
                   title: const Text("Event 2"),
                   trailing: Row(
                     mainAxisSize: MainAxisSize.min,
@@ -157,7 +166,8 @@ class _ProfessionalCalendarEventScreenState extends State<ProfessionalCalendarEv
   void _showPopupMenu(BuildContext context) {
     showMenu<String>(
       context: context,
-      position: const RelativeRect.fromLTRB(100, 80, 0, 0), // Adjust position near the icon
+      position: const RelativeRect.fromLTRB(
+          100, 80, 0, 0), // Adjust position near the icon
       items: const [
         PopupMenuItem<String>(
           value: 'Month',
@@ -185,19 +195,22 @@ class _ProfessionalCalendarEventScreenState extends State<ProfessionalCalendarEv
       case 'Month':
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const ProfessionalCalendarScreen()),
+          MaterialPageRoute(
+              builder: (context) => const ProfessionalCalendarScreen()),
         );
         break;
       case 'Week':
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => ProfessionalCalendarEventScreen()),
+          MaterialPageRoute(
+              builder: (context) => ProfessionalCalendarEventScreen()),
         );
         break;
       case 'List':
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const ProfessionalEventList()),
+          MaterialPageRoute(
+              builder: (context) => const ProfessionalEventList()),
         );
         break;
     }

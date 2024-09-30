@@ -4,7 +4,6 @@ import '../../Components/Image/ImageView.dart';
 import '../../Components/Image/Model/ImageConfig.dart';
 import '../../assets/app_image.dart';
 
-
 class PhoneNumberScreen extends StatelessWidget {
   const PhoneNumberScreen({super.key});
 
@@ -54,7 +53,8 @@ class PhoneNumberScreen extends StatelessWidget {
               children: [
                 // Country Code
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 12.0, vertical: 8.0),
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.grey),
                     borderRadius: BorderRadius.circular(8.0),
@@ -78,7 +78,8 @@ class PhoneNumberScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(8.0),
                         borderSide: const BorderSide(color: Colors.white30),
                       ),
-                      contentPadding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
+                      contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 16.0, vertical: 12.0),
                     ),
                   ),
                 ),
@@ -92,15 +93,15 @@ class PhoneNumberScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) =>  const PhoneVerificationScreen()),
+                    MaterialPageRoute(
+                        builder: (context) => const PhoneVerificationScreen()),
                   );
                 },
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(vertical: 16.0),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(25.0),
-                      side: const BorderSide(color: Colors.black, width: 2)
-                  ),
+                      side: const BorderSide(color: Colors.black, width: 2)),
                   backgroundColor: Colors.white,
                 ),
                 child: const Text(

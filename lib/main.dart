@@ -5,7 +5,6 @@ import 'package:herhealthconnect/Core/AppUtils/app_config.dart';
 import 'package:herhealthconnect/Core/CoreFolder/Manager/shared_preferences.dart';
 import 'package:herhealthconnect/Core/CoreFolder/app.locator.dart';
 import 'package:herhealthconnect/Core/CoreFolder/app.router.dart';
-import 'package:herhealthconnect/Screens/Onboarding/Splash.dart';
 import 'package:overlay_support/overlay_support.dart';
 import 'package:stacked_services/stacked_services.dart';
 
@@ -17,7 +16,7 @@ Future<void> main() async {
       statusBarIconBrightness: Brightness.dark,
       statusBarBrightness: Brightness.light));
   await setupLocator();
-  // await locator<SharedPreferencesService>().initilize();
+  await locator<SharedPreferencesService>().initilize();
   runApp(const MyApp());
 }
 

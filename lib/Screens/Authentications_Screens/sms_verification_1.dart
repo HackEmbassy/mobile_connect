@@ -33,8 +33,7 @@ class PhoneVerificationScreen extends StatelessWidget {
               children: [
                 IconButton(
                   icon: const Icon(Icons.arrow_back_ios_new_rounded),
-                  onPressed: () {
-                  },
+                  onPressed: () {},
                 ),
               ],
             ),
@@ -113,10 +112,10 @@ class PhoneVerificationScreen extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => CustomizeInterestsScreen()),
-                  );// Implement continue button action
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(builder: (context) => CustomizeInterestsScreen()),
+                  // );// Implement continue button action
                 },
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(vertical: 16.0),

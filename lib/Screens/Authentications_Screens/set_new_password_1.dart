@@ -4,6 +4,7 @@ import 'package:herhealthconnect/Screens/Authentications_Screens/successful.dart
 import '../../Components/Image/ImageView.dart';
 import '../../Components/Image/Model/ImageConfig.dart';
 import '../../assets/app_image.dart';
+
 class NewPasswordScreen extends StatefulWidget {
   const NewPasswordScreen({super.key});
 
@@ -40,8 +41,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
               children: [
                 IconButton(
                   icon: const Icon(Icons.arrow_back_ios_new_outlined),
-                  onPressed: () {
-                  },
+                  onPressed: () {},
                 ),
               ],
             ),
@@ -74,7 +74,9 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                 prefixIcon: const Icon(Icons.lock_outline),
                 suffixIcon: IconButton(
                   icon: Icon(
-                    _isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                    _isPasswordVisible
+                        ? Icons.visibility
+                        : Icons.visibility_off,
                   ),
                   onPressed: () {
                     setState(() {
@@ -112,8 +114,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                   ),
                   onPressed: () {
                     setState(() {
-                      _isConfirmPasswordVisible =
-                      !_isConfirmPasswordVisible;
+                      _isConfirmPasswordVisible = !_isConfirmPasswordVisible;
                     });
                   },
                 ),
@@ -131,7 +132,8 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) =>   const ResetSuccessfulScreen()),
+                    MaterialPageRoute(
+                        builder: (context) => const ResetSuccessfulScreen()),
                   );
                 },
                 style: ElevatedButton.styleFrom(

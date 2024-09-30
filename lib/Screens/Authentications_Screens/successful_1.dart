@@ -52,10 +52,10 @@ class ResetSuccessfulScreen extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) =>    CustomizeInterestsScreen()),
-                  );
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(builder: (context) =>    CustomizeInterestsScreen()),
+                  // );
                 },
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.black,

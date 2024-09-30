@@ -12,7 +12,8 @@ class ProfessionalInfoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView( // Wrapping everything inside a scroll view
+      body: SingleChildScrollView(
+        // Wrapping everything inside a scroll view
         child: Padding(
           padding: const EdgeInsets.all(24.0),
           child: Column(
@@ -43,7 +44,7 @@ class ProfessionalInfoScreen extends StatelessWidget {
               const SizedBox(height: 2), // Adding spacing to separate sections
               ShaderMask(
                 shaderCallback: (bounds) => const LinearGradient(
-                  colors: [Color(0xff244599),Color(0xff0C1733)],
+                  colors: [Color(0xff244599), Color(0xff0C1733)],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ).createShader(
@@ -78,9 +79,7 @@ class ProfessionalInfoScreen extends StatelessWidget {
               TextFormField(
                 decoration: const InputDecoration(
                   hintText: 'Eg. Dr., Coach',
-                  border: OutlineInputBorder(
-
-                  ),
+                  border: OutlineInputBorder(),
                 ),
               ),
               const SizedBox(height: 16),
@@ -139,9 +138,9 @@ class ProfessionalInfoScreen extends StatelessWidget {
               ),
               const SizedBox(height: 24),
               Container(
-                decoration:  BoxDecoration(
+                decoration: BoxDecoration(
                   gradient: const LinearGradient(
-                    colors: [Color(0xff244599),Color(0xff0C1733)],
+                    colors: [Color(0xff244599), Color(0xff0C1733)],
                   ),
                   borderRadius: BorderRadius.circular(20),
                 ),
@@ -149,22 +148,26 @@ class ProfessionalInfoScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) =>    ProfessionalServicesAndOpenHoursScreen()),
-                    );// Action for sign-up button
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              ProfessionalServicesAndOpenHoursScreen()),
+                    ); // Action for sign-up button
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.transparent, // Make background transparent
+                    backgroundColor:
+                        Colors.transparent, // Make background transparent
                     shadowColor: Colors.transparent,
                     padding: const EdgeInsets.symmetric(
                         horizontal: 120, vertical: 15),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
-                      side: const BorderSide(color: Color(0xFF3A6EA5), width: 2),
+                      side:
+                          const BorderSide(color: Color(0xFF3A6EA5), width: 2),
                     ),
                   ),
                   child: const Text(
                     'CONTINUE',
-                    style: TextStyle(fontSize: 16,color: Colors.white),
+                    style: TextStyle(fontSize: 16, color: Colors.white),
                   ),
                 ),
               ),

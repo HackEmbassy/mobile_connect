@@ -14,7 +14,7 @@ class ProfessionalCheckInboxScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding:const EdgeInsets.all(30.0),
+        padding: const EdgeInsets.all(30.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -38,7 +38,9 @@ class ProfessionalCheckInboxScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) =>  const ProfessionalNewPasswordScreen()),
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const ProfessionalNewPasswordScreen()),
                     );
                   },
                 ),
@@ -46,7 +48,7 @@ class ProfessionalCheckInboxScreen extends StatelessWidget {
             ),
             ShaderMask(
               shaderCallback: (bounds) => const LinearGradient(
-                colors: [Color(0xff244599),Color(0xff0C1733)],
+                colors: [Color(0xff244599), Color(0xff0C1733)],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ).createShader(
@@ -68,17 +70,15 @@ class ProfessionalCheckInboxScreen extends StatelessWidget {
               'Click the link sent to c*************01@gmail.com\n before reset your password',
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 16,
-                color: Colors.black54,
-                fontWeight: FontWeight.w400
-              ),
+                  fontSize: 16,
+                  color: Colors.black54,
+                  fontWeight: FontWeight.w400),
             ),
-            const SizedBox(
-              height:40,
-              width:50
-            ),
+            const SizedBox(height: 40, width: 50),
             const Spacer(flex: 8),
-            const SizedBox(height: 30,),
+            const SizedBox(
+              height: 30,
+            ),
             SizedBox(
               height: 367.91,
               width: 307.84,

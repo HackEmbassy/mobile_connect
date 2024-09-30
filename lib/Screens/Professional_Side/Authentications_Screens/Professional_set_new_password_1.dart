@@ -5,14 +5,17 @@ import '../../../Components/Image/ImageView.dart';
 import '../../../Components/Image/Model/ImageConfig.dart';
 import '../../../assets/app_image.dart';
 import 'Professional_successful.dart';
+
 class ProfessionalNewPasswordScreen extends StatefulWidget {
   const ProfessionalNewPasswordScreen({super.key});
 
   @override
-  _ProfessionalNewPasswordScreenState createState() => _ProfessionalNewPasswordScreenState();
+  _ProfessionalNewPasswordScreenState createState() =>
+      _ProfessionalNewPasswordScreenState();
 }
 
-class _ProfessionalNewPasswordScreenState extends State<ProfessionalNewPasswordScreen> {
+class _ProfessionalNewPasswordScreenState
+    extends State<ProfessionalNewPasswordScreen> {
   bool _isPasswordVisible = false;
   bool _isConfirmPasswordVisible = false;
 
@@ -41,15 +44,14 @@ class _ProfessionalNewPasswordScreenState extends State<ProfessionalNewPasswordS
               children: [
                 IconButton(
                   icon: const Icon(Icons.arrow_back),
-                  onPressed: () {
-                  },
+                  onPressed: () {},
                 ),
               ],
             ),
             const SizedBox(height: 20),
             ShaderMask(
               shaderCallback: (bounds) => const LinearGradient(
-                colors: [Color(0xff244599),Color(0xff0C1733)],
+                colors: [Color(0xff244599), Color(0xff0C1733)],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ).createShader(
@@ -84,7 +86,9 @@ class _ProfessionalNewPasswordScreenState extends State<ProfessionalNewPasswordS
                 prefixIcon: const Icon(Icons.lock_outline),
                 suffixIcon: IconButton(
                   icon: Icon(
-                    _isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                    _isPasswordVisible
+                        ? Icons.visibility
+                        : Icons.visibility_off,
                   ),
                   onPressed: () {
                     setState(() {
@@ -122,8 +126,7 @@ class _ProfessionalNewPasswordScreenState extends State<ProfessionalNewPasswordS
                   ),
                   onPressed: () {
                     setState(() {
-                      _isConfirmPasswordVisible =
-                      !_isConfirmPasswordVisible;
+                      _isConfirmPasswordVisible = !_isConfirmPasswordVisible;
                     });
                   },
                 ),
@@ -136,9 +139,9 @@ class _ProfessionalNewPasswordScreenState extends State<ProfessionalNewPasswordS
             const SizedBox(height: 300),
 
             Container(
-              decoration:  BoxDecoration(
+              decoration: BoxDecoration(
                 gradient: const LinearGradient(
-                  colors: [Color(0xff244599),Color(0xff0C1733)],
+                  colors: [Color(0xff244599), Color(0xff0C1733)],
                 ),
                 borderRadius: BorderRadius.circular(20),
               ),
@@ -146,14 +149,17 @@ class _ProfessionalNewPasswordScreenState extends State<ProfessionalNewPasswordS
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) =>   const ProfessionalResetSuccessfulScreen()),
-                  );// Action for sign-up button
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const ProfessionalResetSuccessfulScreen()),
+                  ); // Action for sign-up button
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.transparent, // Make background transparent
+                  backgroundColor:
+                      Colors.transparent, // Make background transparent
                   shadowColor: Colors.transparent,
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 100, vertical: 15),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 100, vertical: 15),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                     side: const BorderSide(color: Color(0xFF3A6EA5), width: 2),
@@ -161,7 +167,7 @@ class _ProfessionalNewPasswordScreenState extends State<ProfessionalNewPasswordS
                 ),
                 child: const Text(
                   'RESET PASSWORD',
-                  style: TextStyle(fontSize: 16,color: Colors.white),
+                  style: TextStyle(fontSize: 16, color: Colors.white),
                 ),
               ),
             ),

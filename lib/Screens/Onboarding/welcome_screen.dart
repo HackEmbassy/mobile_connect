@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:herhealthconnect/assets/app_colors.dart';
 
 import '../../Components/Image/ImageView.dart';
 import '../../Components/Image/Model/ImageConfig.dart';
@@ -18,7 +20,8 @@ class WelcomeScreen extends StatelessWidget {
             child: ImageView(
               imageConfig: ImageConfig(
                 imageURL: AppImage.bg, // Your image path
-                imageType: ImageType.asset,   // Specify if it's an asset or a network image
+                imageType: ImageType
+                    .asset, // Specify if it's an asset or a network image
               ),
             ),
           ),
@@ -27,34 +30,34 @@ class WelcomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 // Spacing for the top of the screen
-                Spacer(flex: 20),
+                const Spacer(flex: 20),
                 // Text content
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                  padding: EdgeInsets.symmetric(horizontal: 40.0.w),
                   child: Column(
-                    children: const [
+                    children: [
                       Text(
                         'Book appointments\nwith professionals &\nMonitor your menstrual cycle',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 35,
+                          fontSize: 35.sp,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
                         ),
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Text(
                         'Your personalized guide to better health and fitness.',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 16.sp,
                           color: Colors.white,
                         ),
                       ),
                     ],
                   ),
                 ),
-                Spacer(flex: 3),
+                const Spacer(flex: 3),
                 // Button at the bottom
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -63,7 +66,7 @@ class WelcomeScreen extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => OnboardingScreen()),
+                            builder: (context) => const OnboardingScreen()),
                       );
                     },
                     style: ElevatedButton.styleFrom(
@@ -72,8 +75,8 @@ class WelcomeScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(30),
                         side: const BorderSide(color: Colors.black87),
                       ),
-                      backgroundColor: Color(0xff244599),
-                      foregroundColor: Color(0xff0C1733),
+                      backgroundColor: const Color(0xff244599),
+                      foregroundColor: const Color(0xff0C1733),
                       elevation: 2,
                       minimumSize: const Size(
                           double.infinity, 50), // Make the button full-width
@@ -83,6 +86,7 @@ class WelcomeScreen extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
+                        color: AppColors.white,
                       ),
                     ),
                   ),

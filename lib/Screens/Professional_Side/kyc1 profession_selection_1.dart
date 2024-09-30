@@ -42,14 +42,12 @@ class _ProfessionSelectionPageState extends State<ProfessionSelectionPage> {
             const SizedBox(height: 8),
             const Row(
               mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text('1 of 5 ')
-              ],
+              children: [Text('1 of 5 ')],
             ),
             const SizedBox(height: 5),
             ShaderMask(
               shaderCallback: (bounds) => const LinearGradient(
-                colors: [Color(0xff244599),Color(0xff0C1733)],
+                colors: [Color(0xff244599), Color(0xff0C1733)],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ).createShader(
@@ -69,8 +67,8 @@ class _ProfessionSelectionPageState extends State<ProfessionSelectionPage> {
             const Text(
               'Let us know more about you.',
               style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.blueGrey,
+                fontSize: 16,
+                color: Colors.blueGrey,
                 fontFamily: "NunitoSans",
                 fontWeight: FontWeight.w400,
               ),
@@ -97,7 +95,8 @@ class _ProfessionSelectionPageState extends State<ProfessionSelectionPage> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => ProfessionalInfoScreen(profession: profession),
+            builder: (context) =>
+                ProfessionalInfoScreen(profession: profession),
           ),
         );
       },
@@ -107,25 +106,32 @@ class _ProfessionSelectionPageState extends State<ProfessionSelectionPage> {
         decoration: BoxDecoration(
           gradient: selectedProfession == profession
               ? const LinearGradient(
-            colors: [Color(0xff244599), Color(0xff0C1733)], // Define your gradient colors here
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          )
+                  colors: [
+                    Color(0xff244599),
+                    Color(0xff0C1733)
+                  ], // Define your gradient colors here
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                )
               : LinearGradient(
-            colors: [
-              Colors.lightBlueAccent[300] ?? Colors.lightBlueAccent, // Use default color if null
-              Colors.blueGrey[400] ?? Colors.blueGrey,               // Use default color if null
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
+                  colors: [
+                    Colors.lightBlueAccent[300] ??
+                        Colors.lightBlueAccent, // Use default color if null
+                    Colors.blueGrey[400] ??
+                        Colors.blueGrey, // Use default color if null
+                  ],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
           borderRadius: BorderRadius.circular(8),
         ),
         child: Center(
           child: Text(
             profession,
             style: TextStyle(
-              color: selectedProfession == profession ? Colors.white : const Color(0xff0C1733),
+              color: selectedProfession == profession
+                  ? Colors.white
+                  : const Color(0xff0C1733),
               fontSize: 16,
               fontWeight: FontWeight.bold,
             ),
@@ -135,4 +141,3 @@ class _ProfessionSelectionPageState extends State<ProfessionSelectionPage> {
     );
   }
 }
-

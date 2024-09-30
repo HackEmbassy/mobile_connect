@@ -11,7 +11,7 @@ class CheckInboxScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding:const EdgeInsets.all(30.0),
+        padding: const EdgeInsets.all(30.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -35,7 +35,8 @@ class CheckInboxScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) =>   const NewPasswordScreen()),
+                      MaterialPageRoute(
+                          builder: (context) => const NewPasswordScreen()),
                     );
                   },
                 ),
