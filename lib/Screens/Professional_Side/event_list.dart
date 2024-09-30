@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-class ProfessionalEventListScreen extends StatefulWidget {
+class  ProfessionalEventListScreen extends StatefulWidget {
   const ProfessionalEventListScreen({super.key});
 
   @override

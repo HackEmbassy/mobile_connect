@@ -5,7 +5,7 @@ import 'package:herhealthconnect/Screens/Professional_Side/Authentications_Scree
 import '../../../Components/Image/ImageView.dart';
 import '../../../Components/Image/Model/ImageConfig.dart';
 import '../../../assets/app_image.dart';
-//import '../../Authentications_Screens/login.dart';
+import '../../Authentications_Screens/login.dart';
 import '../../kyc/kyc_1.dart';
 
 class ProfessionalSignUpScreen extends StatefulWidget {

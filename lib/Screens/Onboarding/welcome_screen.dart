@@ -17,9 +17,8 @@ class WelcomeScreen extends StatelessWidget {
           Positioned.fill(
             child: ImageView(
               imageConfig: ImageConfig(
-                imageURL: AppImage.welcomebg, // Your image path
-                imageType: ImageType
-                    .asset, // Specify if it's an asset or a network image
+                imageURL: AppImage.bg, // Your image path
+                imageType: ImageType.asset,   // Specify if it's an asset or a network image
               ),
             ),
           ),
@@ -40,7 +39,7 @@ class WelcomeScreen extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 35,
                           fontWeight: FontWeight.bold,
-                          color: Colors.black87,
+                          color: Colors.white,
                         ),
                       ),
                       SizedBox(height: 10),
@@ -49,7 +48,7 @@ class WelcomeScreen extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 16,
-                          color: Colors.black54,
+                          color: Colors.white,
                         ),
                       ),
                     ],
@@ -73,8 +72,8 @@ class WelcomeScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(30),
                         side: const BorderSide(color: Colors.black87),
                       ),
-                      backgroundColor: Colors.white,
-                      foregroundColor: Colors.black87,
+                      backgroundColor: Color(0xff244599),
+                      foregroundColor: Color(0xff0C1733),
                       elevation: 2,
                       minimumSize: const Size(
                           double.infinity, 50), // Make the button full-width

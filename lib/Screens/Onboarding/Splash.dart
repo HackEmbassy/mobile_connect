@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:herhealthconnect/Authentications_Screens/sign_up_as.dart';
+//import 'package:herhealthconnect/Authentications_Screens/sign_up_as.dart';
 import 'package:herhealthconnect/Components/Image/ImageView.dart';
 import 'package:herhealthconnect/Components/Image/Model/ImageConfig.dart';
 import 'package:herhealthconnect/Screens/Onboarding/welcome_screen.dart';
@@ -36,17 +36,20 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Container(
       constraints: const BoxConstraints.expand(),
-      decoration: const BoxDecoration(color: AppColors.primary50),
+      decoration: const BoxDecoration(
+        gradient: const LinearGradient(
+        colors: [Color(0xff244599),Color(0xff0C1733)],
+      ),),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           // Make sure to affix the right logo image below
           SizedBox(
-            width: 50,
-            height: 50,
+            width: 350,
+            height: 350,
             child: ImageView(
               imageConfig: ImageConfig(
-                imageURL: AppImage.logo,
+                imageURL: AppImage.logoblue,
                 imageType: ImageType.asset,
               ),
             ),

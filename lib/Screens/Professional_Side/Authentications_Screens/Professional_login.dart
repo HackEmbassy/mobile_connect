@@ -1,12 +1,12 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-//import 'package:herhealthconnect/Screens/Authentications_Screens/sign_up.dart';
+import 'package:herhealthconnect/Screens/Authentications_Screens/sign_up.dart';
 import 'package:herhealthconnect/Screens/Professional_Side/Authentications_Screens/Professional_sign_up.dart';
 import 'package:herhealthconnect/Screens/Professional_Side/Professional_home_page.dart';
 import '../../../Components/Image/ImageView.dart';
 import '../../../Components/Image/Model/ImageConfig.dart';
 import '../../../assets/app_image.dart';
-//import '../../Authentications_Screens/forgot_password.dart';
+import '../../Authentications_Screens/forgot_password.dart';
 import '../../kyc/kyc_1.dart';
 import 'Professional_forgot_password.dart';
 

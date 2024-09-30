@@ -34,12 +34,12 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
       ),
       child: value
           ? const Center(
-              child: Icon(
-                Icons.check,
-                color: Colors.grey,
-                size: 16.0,
-              ),
-            )
+        child: Icon(
+          Icons.check,
+          color: Colors.grey,
+          size: 16.0,
+        ),
+      )
           : const SizedBox.shrink(),
     );
   }
@@ -79,21 +79,22 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
                 // Handle back button press
               },
             ),
-            TextView(
-              config: TextViewConfig(
-                text: "What will you love to use HerHealth for today?",
+            const Text(
+              'What will you love to use HerHealth for today?',
+              style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const Gap(height: 16),
-            TextView(
-              config: TextViewConfig(
-                  text: "Customize your interests",
-                  fontSize: 16,
-                  color: Colors.grey),
+            const SizedBox(height: 16),
+            const Text(
+              'Customize your interests',
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.grey,
+              ),
             ),
-            const Gap(height: 16),
+            const SizedBox(height: 16),
             _buildInterestItem(
               'Schedule Health Appointments',
               'Quickly and easily book a session with a gynecologist, obstetrician, fitness coach, or dietitian',
@@ -104,7 +105,7 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
                 });
               },
             ),
-            const Gap(height: 16),
+            const SizedBox(height: 16),
             _buildInterestItem(
               'Track Menstrual Cycle',
               'Track and manage your menstrual cycle with ease',
@@ -115,7 +116,7 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
                 });
               },
             ),
-            const Gap(height: 16),
+            const SizedBox(height: 16),
             _buildInterestItem(
               'Improve Physical Fitness',
               'Follow personalized workout plans and access workout tutorials and fitness tips recommended by your fitness coach.',
@@ -126,7 +127,7 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
                 });
               },
             ),
-            const Gap(height: 16),
+            const SizedBox(height: 16),
             _buildInterestItem(
               'Maintain a Healthy Diet',
               'Get personalized meal plans and access nutritional advice to maintain a balanced and healthy diet.',
@@ -143,21 +144,20 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => const PersonalInformation()),
+                    MaterialPageRoute(builder: (context) =>   const PersonalInformation()),
                   );
 // Handle continue button press
                 },
                 style: ElevatedButton.styleFrom(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 80.w, vertical: 16.h),
+                  padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 16),
+                  textStyle: const TextStyle(
+                    fontSize: 18,
+                  ),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
                 ),
-                child: TextView(
-                  config: TextViewConfig(text: 'CONTINUE', fontSize: 14.sp),
-                ),
+                child: const Text('CONTINUE'),
               ),
             ),
           ],
@@ -176,7 +176,7 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
           },
           child: _buildCircularCheckbox(value),
         ),
-        const Gap(width: 16),
+        const SizedBox(width: 16),
         SizedBox(
           width: 50, // Set the desired width
           height: 50,
@@ -188,19 +188,19 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
             ),
           ),
         ),
-        const Gap(width: 16),
+        const SizedBox(width: 16),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              TextView(
-                  config: TextViewConfig(
-                      text: title, fontSize: 16, fontWeight: FontWeight.bold)),
-              TextView(
-                  config: TextViewConfig(
-                      text: subtitle,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold)),
+              Text(
+                title,
+                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+              Text(
+                subtitle,
+                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
+              ),
             ],
           ),
         ),

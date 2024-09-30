@@ -8,13 +8,11 @@ import 'package:herhealthconnect/Screens/User_Dashboard/user_homescreen.dart';
 
 import 'book_a_session.dart';
 import 'menstrual_tracking.dart';
-import 'calendar.dart';
 import 'newsfeed.dart';
-import 'record.dart';
-import 'analysis.dart';
-import 'add_period.dart';
 
 class UserDashboard extends StatefulWidget {
+  const UserDashboard({super.key});
+
   @override
   _UserDashboardState createState() => _UserDashboardState();
 }
@@ -23,16 +21,12 @@ class _UserDashboardState extends State<UserDashboard> {
   int _selectedIndex = 0; // Track the selected index
 
   // Define the screens based on the index
-  static List<Widget> _screens = <Widget>[
-    HomeScreen(), // Screen 0 - Home
-    BookSessionScreen(), // Screen 1 - Book a session
-    MenstrualTrackingScreen(),
-    CalendarScreen(), // Add other screens here if needed
-    RecordScreen(),
-    AddPeriodScreen(),
-    AnalysisScreen(),
-    NewsFeedScreen(),
-    ProfileScreen(),
+  static final List<Widget> _screens = <Widget>[
+    const HomeScreen(),         // Screen 0 - Home
+    BookSessionScreen(),   // Screen 1 - Book a session
+    const MenstrualTrackingScreen(), // Screen 2 - Menstrual Tracking
+    NewsFeedScreen(),     // Screen 3 - Newsfeed
+    ProfileScreen(),      // Screen 4 - Profile
   ];
 
   void _onItemTapped(int index) {
@@ -44,36 +38,52 @@ class _UserDashboardState extends State<UserDashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _screens[
-          _selectedIndex], // Display the screen based on selected index
+      body: IndexedStack(
+        index: _selectedIndex,  // Display the selected screen
+        children: _screens,     // Keep all screens loaded and switch between them
+      ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.black87,
         unselectedItemColor: Colors.grey[600],
         currentIndex: _selectedIndex, // Highlight the currently selected item
-        onTap: _onItemTapped, // Handle tap events to switch screens
-        items: const [
+        onTap: _onItemTapped,         // Handle tap events to switch screens
+        items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: _buildIcon('assets/images/home.png', 0),
             label: "Home",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.people_outline),
+            icon: _buildIcon('assets/images/book_session.png', 1),
             label: "Book a session",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_today),
+            icon: _buildIcon('assets/images/menstrual_tracking.png', 2),
             label: "Menstrual Tracking",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.newspaper),
+            icon: _buildIcon('assets/images/newsfeed.png', 3),
             label: "Newsfeed",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
+            icon: _buildIcon('assets/images/profile.png', 4),
             label: "Profile",
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildIcon(String assetPath, int index) {
+    return ColorFiltered(
+      colorFilter: ColorFilter.mode(
+        _selectedIndex == index ? Colors.black87 : Colors.grey[600]!,
+        BlendMode.srcIn,
+      ),
+      child: Image.asset(
+        assetPath,
+        width: 24,
+        height: 24,
       ),
     );
   }

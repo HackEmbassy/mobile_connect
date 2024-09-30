@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-//import 'package:herhealthconnect/Screens/Professional_Side/Authentications_Screens/professional_set_new_password.dart';
+import 'package:herhealthconnect/Screens/Authentications_Screens/set_new_password.dart';
 import '../../../Components/Image/ImageView.dart';
 import '../../../Components/Image/Model/ImageConfig.dart';
 import '../../../assets/app_image.dart';
-//import 'Professional_set_new_password.dart';
-import 'package:herhealthconnect/Screens/Professional_Side/Authentications_Screens/Professional_set_new_password.dart';
-//import 'package:herhealthconnect/Screens/Professional_Side/Authentications_Screens/professional_set_new_password.dart;
-
+import 'Professional_set_new_password.dart';
 class ProfessionalCheckInboxScreen extends StatelessWidget {
   const ProfessionalCheckInboxScreen({super.key});
 
@@ -38,9 +35,7 @@ class ProfessionalCheckInboxScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              ProfessionalNewPasswordScreen()),
+                      MaterialPageRoute(builder: (context) =>   const ProfessionalNewPasswordScreen()),
                     );
                   },
                 ),

@@ -6,10 +6,11 @@ import 'package:herhealthconnect/Components/Button/Model/ButtonConfig.dart';
 import 'package:herhealthconnect/assets/app_colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'; // Import the package
 
-import '../../Authentications_Screens/sign_up_as.dart';
+//import '../../Authentications_Screens/sign_up_as.dart';
 import '../../Components/Image/ImageView.dart';
 import '../../Components/Image/Model/ImageConfig.dart';
 import '../../assets/app_image.dart';
+import '../Authentications_Screens/sign_up_as.dart';
 import '../kyc/kyc_1.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -42,8 +43,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SizedBox(
-                        width: 180, // Set the desired width
-                        height: 180, // Set the desired height
+                        width: 200, // Set the desired width
+                        height: 200, // Set the desired height
                         child: ImageView(
                           imageConfig: ImageConfig(
                             imageURL: AppImage.applogo,
@@ -71,17 +72,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 Center(
                   child: Column(
                     children: [
-                      Container(
-                        width: 300, // Width of the circular container
-                        height: 300, // Height of the circular container
-                        decoration: BoxDecoration(
-                          color: Colors.grey[200],
-                          shape: BoxShape.circle,
-                        ),
-                        child: Center(
-                          child: Icon(Icons.image,
-                              size: 75,
-                              color: Colors.grey[400]), // Reduced icon size
+                      SizedBox(
+                        width: 350, // Set the desired width
+                        height: 350, // Set the desired height
+                        child: ImageView(
+                          imageConfig: ImageConfig(
+                            imageURL: AppImage.onboarding,
+                            imageType: ImageType.asset,
+                          ),
                         ),
                       ),
                       const SizedBox(height: 30),
@@ -110,17 +108,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 Center(
                   child: Column(
                     children: [
-                      Container(
-                        width: 300, // Width of the circular container
-                        height: 300, // Height of the circular container
-                        decoration: BoxDecoration(
-                          color: Colors.grey[200],
-                          shape: BoxShape.circle,
-                        ),
-                        child: Center(
-                          child: Icon(Icons.image,
-                              size: 75,
-                              color: Colors.grey[400]), // Reduced icon size
+                      SizedBox(
+                        width: 350, // Set the desired width
+                        height: 350, // Set the desired height
+                        child: ImageView(
+                          imageConfig: ImageConfig(
+                            imageURL: AppImage.onboarding,
+                            imageType: ImageType.asset,
+                          ),
                         ),
                       ),
                       const SizedBox(height: 30),
@@ -151,17 +146,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                        child: Container(
-                          width: 300, // Width of the circular container
-                          height: 300, // Height of the circular container
-                          decoration: BoxDecoration(
-                            color: Colors.grey[200],
-                            shape: BoxShape.circle,
-                          ),
-                          child: Center(
-                            child: Icon(Icons.image,
-                                size: 75,
-                                color: Colors.grey[400]), // Reduced icon size
+                        child: SizedBox(
+                          width: 350, // Set the desired width
+                          height: 350, // Set the desired height
+                          child: ImageView(
+                            imageConfig: ImageConfig(
+                              imageURL: AppImage.onboarding,
+                              imageType: ImageType.asset,
+                            ),
                           ),
                         ),
                       ),
@@ -254,43 +246,64 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   config: ButtonConfig(
                       text: "SKIP",
                       fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                      textColor: AppColors.black,
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const SignUpAsScreen()));
-                      },
-                      radius: 30.r,
-                      buttonOutlinedColor: AppColors.black,
-                      buttonColor: AppColors.white,
-                      width: 100.w,
-                      height: 40),
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                )
+                    : SizedBox.shrink(), // Hide the NEXT button on the last page
+                _currentPage < 2 // If the current page is not the last one
+                    ? ElevatedButton(
+                  onPressed: () {
+                    // Skip and navigate to the home screen or other
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SignUpAsScreen()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                      side: const BorderSide(color: Colors.black87),
+                    ),
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.black87,
+                    elevation: 2,
+                  ),
+                  child: const Text(
+                    "SKIP",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                )
+                    : ElevatedButton(
+                  onPressed: () {
+                    // Navigate to the next screen or home screen
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SignUpAsScreen()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                      side: const BorderSide(color: Colors.black87),
+                    ),
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.black87,
+                    elevation: 2,
+                  ),
+                  child: const Text(
+                    "CONTINUE",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
-                // ElevatedButton(
-                //   onPressed: () {
-                //     // Navigate to the next screen
-                //   },
-                //   style: ElevatedButton.styleFrom(
-                //     padding: const EdgeInsets.symmetric(
-                //         vertical: 15, horizontal: 40),
-                //     shape: RoundedRectangleBorder(
-                //       borderRadius: BorderRadius.circular(30),
-                //       side: const BorderSide(color: Colors.black87),
-                //     ),
-                //     backgroundColor: Colors.white,
-                //     foregroundColor: Colors.black87,
-                //     elevation: 2,
-                //   ),
-                //   child: const Text(
-                //     "SKIP",
-                //     style: TextStyle(
-                //       fontSize: 18,
-                //       fontWeight: FontWeight.bold,
-                //     ),
-                //   ),
-                // ),
               ],
             ),
           ),

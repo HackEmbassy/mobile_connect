@@ -8,12 +8,12 @@ import 'calender.dart';
 import 'chat.dart';
 import 'event_list.dart';
 
-class ProfessionalDashboard extends StatefulWidget {
+class UserDashboard extends StatefulWidget {
   @override
-  _ProfessionalDashboardState createState() => _ProfessionalDashboardState();
+  _UserDashboardState createState() => _UserDashboardState();
 }
 
-class _ProfessionalDashboardState extends State<ProfessionalDashboard> {
+class _UserDashboardState extends State<UserDashboard> {
   int _selectedIndex = 0; // Track the selected index
 
   // Define the screens based on the index
