@@ -44,17 +44,17 @@ class _LoginPageState extends State<LoginPage> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         const Gap(
-                          height: 40,
+                          height: 30,
                         ),
                         ImageView(
                           imageConfig: ImageConfig(
-                            imageURL: AppImage.logo,
-                            height: 40.97,
+                            imageURL: AppImage.applogo,
+                            height: 60.97,
                             width: 140.62,
                             imageType: ImageType.asset,
                           ),
                         ),
-                        const Gap(height: 60),
+                        const Gap(height: 50),
                         Row(
                           children: [
                             IconButton(
@@ -66,12 +66,22 @@ class _LoginPageState extends State<LoginPage> {
                           ],
                         ),
                         const Gap(height: 10),
-                        const Gap(height: 20),
-                        const Text(
-                          'Welcome back',
-                          style: TextStyle(
-                            fontSize: 28,
-                            fontWeight: FontWeight.bold,
+                        ShaderMask(
+                          shaderCallback: (bounds) => const LinearGradient(
+                            colors: [Color(0xff244599),Color(0xff0C1733)],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ).createShader(
+                            Rect.fromLTWH(0, 0, bounds.width, bounds.height),
+                          ),
+                          child: const Text(
+                            'Welcome back',
+                            style: TextStyle(
+                              fontSize: 28,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'NunitoSans',
+                              color: Color(0xff244599),
+                            ),
                           ),
                         ),
                         const SizedBox(height: 40),
@@ -133,37 +143,59 @@ class _LoginPageState extends State<LoginPage> {
                                           const ForgotPassword()),
                                 );
                               },
-                              child: const Text('Forgot password'),
+                              child: ShaderMask(
+                                shaderCallback: (bounds) => const LinearGradient(
+                                  colors: [Color(0xff244599),Color(0xff0C1733)],
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.bottomRight,
+                                ).createShader(
+                                  Rect.fromLTWH(0, 0, bounds.width, bounds.height),
+                                ),
+                                child: const Text(
+                                  'Forgot password',
+                                  style: TextStyle(
+                                  ),
+                                ),
+                              ),
                             ),
                           ],
                         ),
                         const SizedBox(height: 20),
-                        ElevatedButton(
-                          onPressed: () {
-                            if (email.text.isNotEmpty &&
-                                password.text.isNotEmpty) {
-                              model.login(LoginModelEntity(
-                                email: email.text,
-                                password: password.text,
-                              ));
-                            } else {
-                              AppUiComponents.triggerNotification(
-                                  "Input Email and Password",
-                                  error: true);
-                            }
-                          },
-                          style: ElevatedButton.styleFrom(
-                            foregroundColor: Colors.black,
-                            backgroundColor: Colors.white,
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 120, vertical: 15),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12),
-                              side: const BorderSide(
-                                  color: Colors.black, width: 2),
+                        Container(
+                          decoration:  BoxDecoration(
+                            gradient: const LinearGradient(
+                              colors: [Color(0xff244599),Color(0xff0C1733)],
+                            ),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              if (email.text.isNotEmpty &&
+                                  password.text.isNotEmpty) {
+                                model.login(LoginModelEntity(
+                                  email: email.text,
+                                  password: password.text,
+                                ));
+                              } else {
+                                AppUiComponents.triggerNotification(
+                                    "Input Email and Password",
+                                    error: true);
+                              }
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.transparent, // Make background transparent
+                              shadowColor: Colors.transparent,
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 120, vertical: 10),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(25),
+                              ),
+                            ),
+                            child: const Text(
+                              'LOGIN',
+                              style: TextStyle(fontSize: 15,color: Colors.white),
                             ),
                           ),
-                          child: const Text('LOG IN'),
                         ),
                         const Gap(height: 20),
                         const Text('or continue with'),
@@ -171,21 +203,26 @@ class _LoginPageState extends State<LoginPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            IconButton(
-                              icon: const Icon(
-                                  Icons.search_rounded), // Google icon
-                              iconSize: 40,
-                              onPressed: () {
-                                // Google sign-in functionality
-                              },
+                            SizedBox(
+                              height: 40,
+                              width: 40,
+                              child: ImageView(
+                                imageConfig: ImageConfig(
+                                  imageURL: AppImage.google,
+                                  imageType: ImageType.asset,
+                                ),
+                              ),
                             ),
-                            const Gap(width: 20),
-                            IconButton(
-                              icon: const Icon(Icons.facebook), // Facebook icon
-                              iconSize: 40,
-                              onPressed: () {
-                                // Facebook sign-in functionality
-                              },
+                            const SizedBox(width: 20),
+                            SizedBox(
+                              height: 40,
+                              width: 40,
+                              child: ImageView(
+                                imageConfig: ImageConfig(
+                                  imageURL: AppImage.facebook,
+                                  imageType: ImageType.asset,
+                                ),
+                              ),
                             ),
                           ],
                         ),
@@ -198,7 +235,7 @@ class _LoginPageState extends State<LoginPage> {
                               TextSpan(
                                 text: 'Sign up',
                                 style: const TextStyle(
-                                  color: Colors.blue,
+                                  color: Color(0xff26144B),
                                   fontWeight: FontWeight.bold,
                                 ),
                                 recognizer: TapGestureRecognizer()
@@ -217,11 +254,6 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                         const Gap(height: 70),
-                        Container(
-                          height: 2,
-                          width: 80,
-                          color: Colors.black,
-                        ),
                       ],
                     ),
                   ),

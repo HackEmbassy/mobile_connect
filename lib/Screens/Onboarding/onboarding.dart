@@ -29,6 +29,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffE5F5FC),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -192,8 +193,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             );
                           },
                           radius: 30.r,
-                          buttonOutlinedColor: AppColors.black,
-                          buttonColor: AppColors.white,
+                          buttonOutlinedColor: Color(0xffE5F5FC),
+                          buttonColor: Color(0xff244599),
                           width: 100.w,
                           height: 50,
                         ),
@@ -215,8 +216,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             );
                           },
                           radius: 30.r,
-                          buttonOutlinedColor: AppColors.black,
-                          buttonColor: AppColors.white,
+                          buttonOutlinedColor: Color(0xff244599),
+                          buttonColor: Color(0xffE5F5FC),
                           width: 100.w,
                           height: 50,
                         ),
@@ -235,8 +236,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             );
                           },
                           radius: 30.r,
-                          buttonOutlinedColor: AppColors.black,
-                          buttonColor: AppColors.white,
+                          buttonOutlinedColor: Color(0xffE5F5FC),
+                          buttonColor: Color(0xff244599),
                           width: 150.w,
                           height: 50,
                         ),

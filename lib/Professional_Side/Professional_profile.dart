@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:herhealthconnect/Professional_Side/Professional_edit_profile.dart';
+import 'package:herhealthconnect/Professional_Side/Professional_language.dart';
 
-import '../Authentications_Screens/sign_up.dart';
-import 'change_password.dart';
-import 'edit_profile.dart';
-import 'language.dart';
+import '../Screens/Professional_Side/Authentications_Screens/Professional_sign_up.dart';
+import 'Professional_change_password.dart';
 
-
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+class ProfessionalProfileScreen extends StatelessWidget {
+  const ProfessionalProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +102,7 @@ class ProfileScreen extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
-                                  const EditProfileScreen(),
+                                  const ProfessionalEditProfileScreen(),
                                 ),
                               );
                             },
@@ -124,7 +123,7 @@ class ProfileScreen extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
-                                  const ChangePassword(),
+                                  const ProfessionalChangePassword(),
                                 ),
                               );
                             },
@@ -162,17 +161,17 @@ class ProfileScreen extends StatelessWidget {
                             leading: const Icon(Icons.language),
                             title: const Text('Language',
                                 style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w700,
-                                    color: Color(0xff484848),
-                                    fontFamily: 'NunitoSans')),
+                                fontSize: 20,
+                                fontWeight: FontWeight.w700,
+                                color: Color(0xff484848),
+                                fontFamily: 'NunitoSans')),
                             trailing: const Icon(Icons.arrow_forward_ios),
                             onTap: () {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
-                                  const Language(),
+                                  const ProfessionalLanguage(),
                                 ),
                               );
                             },
@@ -207,7 +206,7 @@ class ProfileScreen extends StatelessWidget {
                           ListTile(
                             leading: const Icon(Icons.policy),
                             title: const Text(
-                              'Legal and Policy',
+                                'Legal and Policy',
                               style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.w700,
@@ -250,7 +249,7 @@ class ProfileScreen extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
-                                  const SignUpScreen(),
+                                  const ProfessionalSignUpScreen(),
                                 ),
                               );
                             },

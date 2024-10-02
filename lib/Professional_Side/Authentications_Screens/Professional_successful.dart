@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import '../../../Components/Image/ImageView.dart';
 import '../../../Components/Image/Model/ImageConfig.dart';
 import '../../../assets/app_image.dart';
-import '../User_Dashboard/user_dashboard.dart';
-class ResetSuccessfulScreen extends StatelessWidget {
-   const ResetSuccessfulScreen({super.key});
+import '../Professional_dashboard.dart';
+class ProfessionalResetSuccessfulScreen extends StatelessWidget {
+  const ProfessionalResetSuccessfulScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,10 +31,10 @@ class ResetSuccessfulScreen extends StatelessWidget {
             const Text(
               'Reset Successful!',
               style: TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.black,
-                  fontFamily: 'NunitoSans'
+                fontSize: 32,
+                fontWeight: FontWeight.w700,
+                color: Colors.black,
+                fontFamily: 'NunitoSans'
               ),
             ),
             const SizedBox(height: 20),
@@ -59,7 +59,7 @@ class ResetSuccessfulScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) =>   const UserDashboard()),
+                    MaterialPageRoute(builder: (context) =>   const ProfessionalDashboard()),
                   );// Action for sign-up button
                 },
                 style: ElevatedButton.styleFrom(

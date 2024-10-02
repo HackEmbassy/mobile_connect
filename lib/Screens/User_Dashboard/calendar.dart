@@ -5,19 +5,6 @@ class CalendarScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: Icon(Icons.arrow_back_ios, color: Colors.black),
-        title: Text(
-          'Wed, 11 sept 2024',
-          style: TextStyle(color: Colors.black, fontSize: 16),
-        ),
-        centerTitle: true,
-        actions: [
-          Icon(Icons.arrow_forward_ios, color: Colors.black),
-        ],
-      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -26,6 +13,7 @@ class CalendarScreen extends StatelessWidget {
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 children: [
+                  const SizedBox(height: 60),
                   Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
@@ -34,6 +22,22 @@ class CalendarScreen extends StatelessWidget {
                     padding: EdgeInsets.all(16),
                     child: Column(
                       children: [
+                        Row(
+                          children: [
+                            IconButton(
+                              icon: Icon(Icons.arrow_back, color: Colors.black),
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                            ),
+                            const SizedBox(width: 67),
+                            Text(
+                              'Wed, 11 sept 2024',
+                              style: TextStyle(color: Color(0xff244599), fontSize: 14),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 40),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [

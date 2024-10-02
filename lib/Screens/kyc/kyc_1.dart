@@ -61,13 +61,13 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
       height: 24.0,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        border: Border.all(color: Colors.grey),
+        border: Border.all(color: Color(0xff244599)),
       ),
       child: value
           ? const Center(
               child: Icon(
                 Icons.check,
-                color: Colors.grey,
+                color: Color(0xff244599),
                 size: 16.0,
               ),
             )
@@ -107,18 +107,14 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
                       ),
                     ],
                   ),
-                  IconButton(
-                    icon: const Icon(Icons.arrow_back_ios),
-                    color: Colors.black,
-                    onPressed: () {
-                      // Handle back button press
-                    },
-                  ),
                   const Text(
                     'What will you love to use HerHealth for today?',
+                    textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
+                      color: Color(0xff244599),
+                      fontFamily: 'NunitoSans-Bold',
                     ),
                   ),
                   const SizedBox(height: 16),
@@ -127,6 +123,8 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.grey,
+                      fontFamily: 'NunitoSans-Regular',
+
                     ),
                   ),
                   const SizedBox(height: 16),
@@ -225,9 +223,9 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
                         text: "CONTINUE",
                         height: 50.h,
                         fontSize: 18.sp,
-                        textColor: AppColors.black,
-                        buttonColor: AppColors.white,
-                        buttonOutlinedColor: AppColors.white),
+                        textColor: AppColors.white,
+                        buttonColor:Color(0xff244599),
+                        buttonOutlinedColor: Color(0xff0C1733)),
                   ),
 //                   Center(
 //                     child: ElevatedButton(

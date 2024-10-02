@@ -1,111 +1,123 @@
 import 'package:flutter/material.dart';
+import 'package:herhealthconnect/Screens/User_Dashboard/user_homescreen.dart';
 
 class BookingSuccessPage extends StatelessWidget {
-  const BookingSuccessPage({super.key});
+  const BookingSuccessPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.grey[200],
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.close, color: Colors.black),
-          onPressed: () {
-            // Handle close action
-          },
-        ),
-      ),
+      backgroundColor: Colors.white,
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24.0),
+        padding: const EdgeInsets.all(24.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            const Spacer(),
+
+            // Checkmark Icon
             CircleAvatar(
-              radius: 50,
-              backgroundColor: Colors.blue[800],
-              child: const Icon(Icons.check, size: 50, color: Colors.white),
+              radius: 45,
+              backgroundColor: const Color(0xff244599), // Blue circle background
+              child: const Icon(
+                Icons.check,
+                color: Colors.white,
+                size: 48,
+              ),
             ),
-            const SizedBox(
-              height: 60,
-            ),
+            const SizedBox(height: 24),
 
             // Success Message
             const Text(
-              'Booking Successful !',
+              "Request Successful!",
               style: TextStyle(
+                color: Colors.green,
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
-                color: Colors.green,
               ),
             ),
             const SizedBox(height: 16),
 
-            // Details Text
+            // Booking Details
             RichText(
               textAlign: TextAlign.center,
               text: const TextSpan(
-                style: TextStyle(fontSize: 16, color: Colors.black),
-                children: <TextSpan>[
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.black,
+                  height: 1.5,
+                ),
+                children: [
+                  TextSpan(text: "Dear Kaka you have successfully booked a session with "),
+                  TextSpan(
+                    text: "Dr. Richar Kandowen",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(text: " for a "),
+                  TextSpan(
+                    text: "Full Body Check up",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(text: " on the upcoming date "),
+                  TextSpan(
+                    text: "7th October by 02:00pm.",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
                   TextSpan(
                       text:
-                          'Dear Kaka, you have successfully booked a session with '),
-                  TextSpan(
-                      text: 'Dr. Richar Kandowen',
-                      style: TextStyle(fontWeight: FontWeight.bold)),
-                  TextSpan(text: ' for a '),
-                  TextSpan(
-                      text: 'Full Body Check up',
-                      style: TextStyle(fontWeight: FontWeight.bold)),
-                  TextSpan(text: ' on the upcoming date '),
-                  TextSpan(
-                      text: '7th October by 02:00pm.',
-                      style: TextStyle(fontWeight: FontWeight.bold)),
-                  TextSpan(text: ' You’ll get a reminder 1hr to the meeting.'),
+                      " You’ll get a reminder 1hr to the meeting."),
                 ],
               ),
             ),
-            const SizedBox(height: 300),
 
-            // Buttons (Add to Calendar and Go to Home Page)
+            const Spacer(),
+
+            // Buttons
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 // Add to Calendar Button
                 OutlinedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    // Handle adding to calendar
+                  },
                   style: OutlinedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 24, vertical: 12),
+                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
+                      borderRadius: BorderRadius.circular(12),
                     ),
+                    side: const BorderSide(color: Colors.blueAccent),
                   ),
-                  child: Text(
-                    'Add to Calendar',
-                    style: TextStyle(fontSize: 16, color: Colors.grey[700]),
+                  child: const Text(
+                    "Add to Calendar",
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 16,
+                    ),
                   ),
                 ),
 
                 // Go to Home Page Button
                 ElevatedButton(
                   onPressed: () {
-                    //   Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(builder: (context) => const ProfessionSelectionPage()),
-                    //   );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) =>   const HomeScreen()),
+                    );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue[800],
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 24, vertical: 12),
+                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16), backgroundColor: const Color(0xff244599),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
+                      borderRadius: BorderRadius.circular(12),
                     ),
                   ),
                   child: const Text(
-                    'Go to Home Page',
-                    style: TextStyle(fontSize: 16, color: Colors.white),
+                    "Go to Home Page",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                    ),
                   ),
                 ),
               ],

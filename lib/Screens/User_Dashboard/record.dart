@@ -5,26 +5,28 @@ class RecordScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios, color: Colors.black),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-        title: Text(
-          'RECORD',
-          style: TextStyle(color: Colors.black, fontSize: 14),
-        ),
-        centerTitle: false,
-      ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
+        child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const SizedBox(height: 60),
+            Row(
+              children: [
+            IconButton(
+              icon: Icon(Icons.arrow_back, color: Colors.black),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+                const SizedBox(width: 95),
+            Text(
+              'RECORD',
+              style: TextStyle(color: Color(0xff244599), fontSize: 14),
+            ),
+              ],
+            ),
             // Greeting Text
             RichText(
               text: TextSpan(
@@ -38,7 +40,7 @@ class RecordScreen extends StatelessWidget {
                   TextSpan(
                     text: 'KaKa',
                     style: TextStyle(
-                      color: Colors.pink[400],
+                      color: Color(0xff244599),
                       fontSize: 26,
                       fontWeight: FontWeight.w500,
                     ),
@@ -140,6 +142,7 @@ class RecordScreen extends StatelessWidget {
             ),
           ],
         ),
+      ),
       ),
       // bottomNavigationBar: BottomNavigationBar(
       //   currentIndex: 2, // Menstrual Tracking is selected

@@ -109,270 +109,303 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 child: Form(
                   key: model.formKey,
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       const Gap(
                         height: 50,
                       ),
                       ImageView(
                         imageConfig: ImageConfig(
-                          imageURL: AppImage.logo,
-                          height: 40.97,
-                          width: 140.62,
+                          imageURL: AppImage.applogo,
+                          height: 80.97,
+                          width: 150.62,
                           imageType: ImageType.asset,
                         ),
                       ),
                       const Gap(height: 40), // Space for the status bar
-                      IconButton(
-                        icon: const Icon(Icons.arrow_back_ios_new_rounded,
-                            color: Colors.black),
-                        onPressed: () {
-                          // Action for back button
-                          Navigator.pop(context);
-                        },
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          IconButton(
+                            icon: const Icon(Icons.arrow_back,
+                                color: Colors.black),
+                            onPressed: () {
+                              // Action for back button
+                              Navigator.pop(context);
+                            },
+                          ),
+                        ],
                       ),
                       Center(
                         child: Column(
-                          children: [
-                            const SizedBox(height: 20),
-                            const Text(
-                              'Create account',
-                              style: TextStyle(
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black,
-                              ),
-                            ),
-                            const Gap(height: 20),
-                            // Full Name TextField
-                            TextFormField(
-                              controller: fullname,
-                              validator: FieldValidator.validateName(),
-                              decoration: InputDecoration(
-                                prefixIcon: const Icon(Icons.person_outline),
-                                labelText: 'Full name',
-                                filled: true,
-                                fillColor: Colors.grey[200],
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12),
-                                  borderSide: BorderSide.none,
-                                ),
-                              ),
-                            ),
-                            const Gap(height: 15),
-                            // Email TextField
-                            TextFormField(
-                              controller: email,
-                              validator: FieldValidator.validateEmail(),
-                              decoration: InputDecoration(
-                                prefixIcon: const Icon(Icons.mail_outline),
-                                labelText: 'Email',
-                                filled: true,
-                                fillColor: Colors.grey[200],
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12),
-                                  borderSide: BorderSide.none,
-                                ),
-                              ),
-                            ),
-                            const Gap(height: 15),
-                            // Password TextField
-                            TextFormField(
-                              obscureText: !_isPasswordVisible,
-                              controller: password,
-                              validator:
-                                  FieldValidator.validatePassword(password),
-                              decoration: InputDecoration(
-                                prefixIcon: const Icon(Icons.lock_outline),
-                                suffixIcon: IconButton(
-                                  icon: Icon(
-                                    _isPasswordVisible
-                                        ? Icons.visibility
-                                        : Icons.visibility_off,
+                            children: [
+                              const SizedBox(height: 20),
+                              ShaderMask(
+                                shaderCallback: (bounds) =>
+                                    const LinearGradient(
+                                      colors: [
+                                        Color(0xff244599),
+                                        Color(0xff0C1733)
+                                      ],
+                                      begin: Alignment.topLeft,
+                                      end: Alignment.bottomRight,
+                                    ).createShader(
+                                      Rect.fromLTWH(
+                                          0, 0, bounds.width, bounds.height),
+                                    ),
+                                child: const Text(
+                                  'Create account',
+                                  style: TextStyle(
+                                    fontSize: 24,
+                                    color: Color(0xff244599),
+                                    fontFamily: 'NunitoSans',
+                                    fontWeight: FontWeight.bold,
                                   ),
-                                  onPressed: () {
-                                    setState(() {
-                                      _isPasswordVisible = !_isPasswordVisible;
-                                    });
-                                  },
-                                ),
-                                labelText: 'Password',
-                                filled: true,
-                                fillColor: Colors.grey[200],
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12),
-                                  borderSide: BorderSide.none,
                                 ),
                               ),
-                            ),
-                            const Gap(height: 15),
-                            TextFormField(
-                              controller: age,
-                              validator: FieldValidator.validateString(),
-                              keyboardType: TextInputType.number,
-                              decoration: InputDecoration(
-                                prefixIcon: const Icon(Icons.person_2_outlined),
-                                labelText: 'Age',
-                                filled: true,
-                                fillColor: Colors.grey[200],
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12),
-                                  borderSide: BorderSide.none,
+                              const Gap(height: 20),
+                              // Full Name TextField
+                              TextFormField(
+                                controller: fullname,
+                                validator: FieldValidator.validateName(),
+                                decoration: InputDecoration(
+                                  prefixIcon: const Icon(Icons.person_outline),
+                                  labelText: 'Full name',
+                                  filled: true,
+                                  fillColor: Colors.grey[200],
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(12),
+                                    borderSide: BorderSide.none,
+                                  ),
                                 ),
                               ),
-                            ),
-                            const Gap(height: 15),
-                            TextFormField(
-                              controller: state,
-                              validator: FieldValidator.validateString(),
-                              decoration: InputDecoration(
-                                prefixIcon:
-                                    const Icon(Icons.location_on_outlined),
-                                labelText: 'State',
-                                filled: true,
-                                fillColor: Colors.grey[200],
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12),
-                                  borderSide: BorderSide.none,
+                              const Gap(height: 15),
+                              // Email TextField
+                              TextFormField(
+                                controller: email,
+                                validator: FieldValidator.validateEmail(),
+                                decoration: InputDecoration(
+                                  prefixIcon: const Icon(Icons.mail_outline),
+                                  labelText: 'Email',
+                                  filled: true,
+                                  fillColor: Colors.grey[200],
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(12),
+                                    borderSide: BorderSide.none,
+                                  ),
                                 ),
                               ),
-                            ),
-                            const Gap(height: 15),
-                            TextFormField(
-                              controller: city,
-                              validator: FieldValidator.validateString(),
-                              decoration: InputDecoration(
-                                prefixIcon:
-                                    const Icon(Icons.location_on_outlined),
-                                labelText: 'City',
-                                filled: true,
-                                fillColor: Colors.grey[200],
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12),
-                                  borderSide: BorderSide.none,
+                              const Gap(height: 15),
+                              // Password TextField
+                              TextFormField(
+                                obscureText: !_isPasswordVisible,
+                                controller: password,
+                                validator:
+                                FieldValidator.validatePassword(password),
+                                decoration: InputDecoration(
+                                  prefixIcon: const Icon(Icons.lock_outline),
+                                  suffixIcon: IconButton(
+                                    icon: Icon(
+                                      _isPasswordVisible
+                                          ? Icons.visibility
+                                          : Icons.visibility_off,
+                                    ),
+                                    onPressed: () {
+                                      setState(() {
+                                        _isPasswordVisible =
+                                        !_isPasswordVisible;
+                                      });
+                                    },
+                                  ),
+                                  labelText: 'Password',
+                                  filled: true,
+                                  fillColor: Colors.grey[200],
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(12),
+                                    borderSide: BorderSide.none,
+                                  ),
                                 ),
                               ),
-                            ),
-                            const Gap(height: 15),
-                            TextFormField(
-                              controller: phone,
-                              keyboardType: TextInputType.number,
-                              validator: FieldValidator.validateString(),
-                              decoration: InputDecoration(
-                                prefixIcon:
-                                    const Icon(Icons.location_on_outlined),
-                                labelText: 'Phone Number',
-                                filled: true,
-                                fillColor: Colors.grey[200],
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12),
-                                  borderSide: BorderSide.none,
+                              const Gap(height: 15),
+                              TextFormField(
+                                controller: age,
+                                validator: FieldValidator.validateString(),
+                                keyboardType: TextInputType.number,
+                                decoration: InputDecoration(
+                                  prefixIcon: const Icon(
+                                      Icons.person_2_outlined),
+                                  labelText: 'Age',
+                                  filled: true,
+                                  fillColor: Colors.grey[200],
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(12),
+                                    borderSide: BorderSide.none,
+                                  ),
                                 ),
                               ),
-                            ),
-                            const Gap(height: 30),
-                            // Sign Up Button
-                            ButtonWidget(
-                                config: ButtonConfig(
-                              text: "SIGN UP",
-                              loading: model.isLoading ?? false,
-                              onPressed: () {
-                                if (model.formKey.currentState!.validate()) {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            CustomizeInterestsScreen(
-                                              fname: fullname.text,
-                                              email: email.text,
-                                              password: password.text,
-                                              age: age.text,
-                                              state: state.text,
-                                              city: city.text,
-                                              phone: phone.text,
-                                              gender: gender.text,
-                                              long: long.toString(),
-                                              latitude: latitude.toString(),
-                                            )),
-                                  );
-                                }
-                              },
-                              height: 50,
-                              // width: 120,
-                              textColor: AppColors.black,
-                              buttonColor: AppColors.white,
-                              buttonOutlinedColor: AppColors.black,
-                              radius: 12.r,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                            )),
-                            const Gap(height: 20),
-                            const Text(
-                              'or continue with',
-                              style: TextStyle(color: Colors.black54),
-                            ),
-                            const SizedBox(height: 15),
-                            // Social Media Buttons
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                IconButton(
-                                  icon: const Icon(Icons.search_rounded),
-                                  // Google logo asset
-                                  iconSize: 40,
-                                  onPressed: () {
-                                    // Google sign-in action
-                                  },
+                              const Gap(height: 15),
+                              TextFormField(
+                                controller: state,
+                                validator: FieldValidator.validateString(),
+                                decoration: InputDecoration(
+                                  prefixIcon:
+                                  const Icon(Icons.location_on_outlined),
+                                  labelText: 'State',
+                                  filled: true,
+                                  fillColor: Colors.grey[200],
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(12),
+                                    borderSide: BorderSide.none,
+                                  ),
                                 ),
-                                const SizedBox(width: 20),
-                                IconButton(
-                                  icon: const Icon(Icons.facebook),
-                                  // Facebook logo asset
-                                  iconSize: 40,
-                                  onPressed: () {
-                                    // Facebook sign-in action
-                                  },
+                              ),
+                              const Gap(height: 15),
+                              TextFormField(
+                                controller: city,
+                                validator: FieldValidator.validateString(),
+                                decoration: InputDecoration(
+                                  prefixIcon:
+                                  const Icon(Icons.location_on_outlined),
+                                  labelText: 'City',
+                                  filled: true,
+                                  fillColor: Colors.grey[200],
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(12),
+                                    borderSide: BorderSide.none,
+                                  ),
                                 ),
-                              ],
-                            ),
-                            const SizedBox(height: 30),
-                            Center(
-                              child: RichText(
-                                text: TextSpan(
-                                  text: 'Already have an account? ',
-                                  style: const TextStyle(color: Colors.black),
-                                  children: [
-                                    TextSpan(
-                                      text: 'Log in',
-                                      style: const TextStyle(
-                                        color: Colors.blue,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                      recognizer: TapGestureRecognizer()
-                                        ..onTap = () {
-                                          // Navigate to login page
+                              ),
+                              const Gap(height: 15),
+                              TextFormField(
+                                controller: phone,
+                                keyboardType: TextInputType.number,
+                                validator: FieldValidator.validateString(),
+                                decoration: InputDecoration(
+                                  prefixIcon:
+                                  const Icon(Icons.location_on_outlined),
+                                  labelText: 'Phone Number',
+                                  filled: true,
+                                  fillColor: Colors.grey[200],
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(12),
+                                    borderSide: BorderSide.none,
+                                  ),
+                                ),
+                              ),
+                              const Gap(height: 30),
+                              // Sign Up Button
+                              Container(
+                                decoration: BoxDecoration(
+                                  gradient: const LinearGradient(
+                                    colors: [
+                                      Color(0xff244599),
+                                      Color(0xff0C1733)
+                                    ], // Example gradient colors
+                                    begin: Alignment.topLeft,
+                                    end: Alignment.bottomRight,
+                                  ),
+                                  borderRadius: BorderRadius.circular(
+                                      12.r), // Use radius from config
+                                ),
+                                child: ButtonWidget(
+                                    config: ButtonConfig(
+                                      text: "SIGN UP",
+                                      loading: model.isLoading ?? false,
+                                      onPressed: () {
+                                        if (model.formKey.currentState!
+                                            .validate()) {
                                           Navigator.push(
                                             context,
                                             MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const LoginPage(),
-                                            ),
+                                                builder: (context) =>
+                                                    CustomizeInterestsScreen(
+                                                      fname: fullname.text,
+                                                      email: email.text,
+                                                      password: password.text,
+                                                      age: age.text,
+                                                      state: state.text,
+                                                      city: city.text,
+                                                      phone: phone.text,
+                                                      gender: gender.text,
+                                                      long: long.toString(),
+                                                      latitude: latitude
+                                                          .toString(),
+                                                    )),
                                           );
-                                        },
+                                        }
+                                      },
+                                      height: 50,
+                                      // width: 120,
+                                      textColor: AppColors.white,
+                                      buttonOutlinedColor: AppColors.black,
+                                      radius: 12.r,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500,
+                                    )),
+                              ),
+                              const Gap(height: 20),
+                              const Text(
+                                'or continue with',
+                                style: TextStyle(color: Colors.black54),
+                              ),
+                              const SizedBox(height: 15),
+                              // Social Media Buttons
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  SizedBox(
+                                    height: 40,
+                                    width: 40,
+                                    child: ImageView(
+                                      imageConfig: ImageConfig(
+                                        imageURL: AppImage.google,
+                                        imageType: ImageType.asset,
+                                      ),
                                     ),
-                                  ],
+                                  ),
+                                  const SizedBox(width: 20),
+                                  SizedBox(
+                                    height: 40,
+                                    width: 40,
+                                    child: ImageView(
+                                      imageConfig: ImageConfig(
+                                        imageURL: AppImage.facebook,
+                                        imageType: ImageType.asset,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 30),
+                              Center(
+                                child: RichText(
+                                  text: TextSpan(
+                                    text: 'Already have an account? ',
+                                    style: const TextStyle(color: Colors.black),
+                                    children: [
+                                      TextSpan(
+                                        text: 'Log in',
+                                        style: const TextStyle(
+                                          color: Color(0xff26144B),
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                        recognizer: TapGestureRecognizer()
+                                          ..onTap = () {
+                                            // Navigate to login page
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (
+                                                    context) => const LoginPage(),
+                                              ),
+                                            );
+                                          },
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                            const SizedBox(height: 70),
-                            // Line at the bottom
-                            Container(
-                              height: 2,
-                              width: 80,
-                              color: Colors.black,
-                            ),
-                            const SizedBox(height: 10),
-                          ],
+                            ]
                         ),
                       ),
                     ],

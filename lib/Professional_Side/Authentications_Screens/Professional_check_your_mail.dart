@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:herhealthconnect/Screens/Authentications_Screens/set_new_password.dart';
 import '../../../Components/Image/ImageView.dart';
 import '../../../Components/Image/Model/ImageConfig.dart';
 import '../../../assets/app_image.dart';
-class CheckInboxScreen extends StatelessWidget {
-  const CheckInboxScreen({super.key});
+import 'Professional_set_new_password.dart';
+
+class ProfessionalCheckInboxScreen extends StatelessWidget {
+  const ProfessionalCheckInboxScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +35,7 @@ class CheckInboxScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) =>  const NewPasswordScreen()),
+                      MaterialPageRoute(builder: (context) =>  const ProfessionalNewPasswordScreen()),
                     );
                   },
                 ),
@@ -64,19 +65,19 @@ class CheckInboxScreen extends StatelessWidget {
               'Click the link sent to c*************01@gmail.com\n before reset your password',
               textAlign: TextAlign.center,
               style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.black54,
-                  fontWeight: FontWeight.w400
+                fontSize: 16,
+                color: Colors.black54,
+                fontWeight: FontWeight.w400
               ),
             ),
             const SizedBox(
-                height:40,
-                width:50
+              height:40,
+              width:50
             ),
             const Spacer(flex: 8),
-            const SizedBox(height: 30),
+            const SizedBox(height: 30,),
             SizedBox(
-              height: 300.91,
+              height: 367.91,
               width: 307.84,
               child: ImageView(
                 imageConfig: ImageConfig(

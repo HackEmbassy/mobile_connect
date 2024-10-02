@@ -1,1311 +1,349 @@
 import 'package:flutter/material.dart';
-
-import 'package:flutter/material.dart';
-
-class BookingScreen extends StatelessWidget {
+import 'package:herhealthconnect/Screens/User_Dashboard/summary_booking.dart';
+class BookingScreen extends StatefulWidget {
   const BookingScreen({super.key});
 
   @override
+  _BookingScreenState createState() => _BookingScreenState();
+}
+
+class _BookingScreenState extends State<BookingScreen> {
+  int _selectedService = 0;
+  int _selectedDateIndex = 2; // Default selected date (Wednesday)
+  int _selectedTimeSlot = -1;
+
+  final List<String> _days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  final List<int> _dates = [7, 8, 9, 10, 11, 12, 13]; // Example dates
+
+  final List<String> _morningSlots = ["08:30 AM", "09:00 AM", "09:30 AM"];
+  final List<String> _afternoonSlots = ["01:30 PM", "02:00 PM", "02:30 PM"];
+
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      child: Container(
-        width: 390,
-        height: 844,
-        decoration: const BoxDecoration(
-          color: Color(0xffffffff),
+    return Scaffold(
+      backgroundColor: const Color(0xFF001F60), // Dark blue
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {},
         ),
-        child: Stack(
-          children: [
-            const Positioned(
-              left: 31,
-              width: 22,
-              top: 552,
-              height: 34,
-              child: Text(
-                'Sun ',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    decoration: TextDecoration.none,
-                    fontSize: 12,
-                    color: Color(0xffffffff),
-                    fontFamily: 'NunitoSans-Bold',
-                    fontWeight: FontWeight.normal),
-                maxLines: 9999,
-                overflow: TextOverflow.ellipsis,
-              ),
-            ),
-            const Positioned(
-              left: 141,
-              width: 21,
-              top: 546,
-              height: 34,
-              child: Text(
-                'Tue ',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    decoration: TextDecoration.none,
-                    fontSize: 12,
-                    color: Color(0xff383838),
-                    fontFamily: 'NunitoSans-Bold',
-                    fontWeight: FontWeight.normal),
-                maxLines: 9999,
-                overflow: TextOverflow.ellipsis,
-              ),
-            ),
-            const Positioned(
-              left: 193,
-              width: 27,
-              top: 546,
-              height: 34,
-              child: Text(
-                'Wed ',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    decoration: TextDecoration.none,
-                    fontSize: 12,
-                    color: Color(0xff383838),
-                    fontFamily: 'NunitoSans-Bold',
-                    fontWeight: FontWeight.normal),
-                maxLines: 9999,
-                overflow: TextOverflow.ellipsis,
-              ),
-            ),
-            const Positioned(
-              left: 251,
-              width: 22,
-              top: 546,
-              height: 34,
-              child: Text(
-                'Thu ',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    decoration: TextDecoration.none,
-                    fontSize: 12,
-                    color: Color(0xff484848),
-                    fontFamily: 'NunitoSans-Bold',
-                    fontWeight: FontWeight.normal),
-                maxLines: 9999,
-                overflow: TextOverflow.ellipsis,
-              ),
-            ),
-            const Positioned(
-              left: 37,
-              width: 10,
-              top: 572,
-              height: 34,
-              child: Text(
-                '7',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    decoration: TextDecoration.none,
-                    fontSize: 16,
-                    color: Color(0xffffffff),
-                    fontFamily: 'NunitoSans-Bold',
-                    fontWeight: FontWeight.normal),
-                maxLines: 9999,
-                overflow: TextOverflow.ellipsis,
-              ),
-            ),
-            const Positioned(
-              left: 146,
-              width: 10,
-              top: 566,
-              height: 34,
-              child: Text(
-                '9',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    decoration: TextDecoration.none,
-                    fontSize: 16,
-                    color: Color(0xff383838),
-                    fontFamily: 'NunitoSans-Bold',
-                    fontWeight: FontWeight.normal),
-                maxLines: 9999,
-                overflow: TextOverflow.ellipsis,
-              ),
-            ),
-            const Positioned(
-              left: 196,
-              width: 20,
-              top: 566,
-              height: 34,
-              child: Text(
-                '10',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    decoration: TextDecoration.none,
-                    fontSize: 16,
-                    color: Color(0xff383838),
-                    fontFamily: 'NunitoSans-Bold',
-                    fontWeight: FontWeight.normal),
-                maxLines: 9999,
-                overflow: TextOverflow.ellipsis,
-              ),
-            ),
-            const Positioned(
-              left: 252,
-              width: 20,
-              top: 566,
-              height: 34,
-              child: Text(
-                '11',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    decoration: TextDecoration.none,
-                    fontSize: 16,
-                    color: Color(0xff484848),
-                    fontFamily: 'NunitoSans-Bold',
-                    fontWeight: FontWeight.normal),
-                maxLines: 9999,
-                overflow: TextOverflow.ellipsis,
-              ),
-            ),
-            Positioned(
-              left: 0,
-              width: 390,
-              top: 0,
-              height: 844,
-              child: Container(
-                width: 390,
-                height: 844,
-                decoration: const BoxDecoration(
-                  color: Color(0xffffffff),
+        title: const Text("Detail",
+            style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w700,
+                color: Colors.white,
+                fontFamily: 'NunitoSans'
+            )),
+        centerTitle: true,
+      ),
+      body: Column(
+        children: [
+          // Doctor Info Section
+          _buildDoctorInfoSection(),
+
+          // Add a space between the blue section and the white section
+          const SizedBox(height: 20), // Adjust this value to your preference
+
+          // White rounded container at the bottom
+          Expanded(
+            child: Container(
+              padding: const EdgeInsets.all(16),
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(40),
+                  topRight: Radius.circular(40),
                 ),
-                child: Stack(
-                  children: [
-                    Positioned(
-                      left: 0,
-                      width: 390,
-                      top: 54,
-                      height: 348,
-                      child: Container(
-                        width: 390,
-                        height: 348,
-                        decoration: const BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [Color(0xff244599), Color(0xff0C1733)],
-                          ),
-                          //boxShadow: const [BoxShadow(color: const Color(0x3f000000), offset: Offset(0, 0), blurRadius: 54.5),],
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      left: 138,
-                      width: 114,
-                      top: 820,
-                      height: 1,
-                      child: Container(
-                        width: 114,
-                        height: 1,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                              color: const Color(0xff484747), width: 4),
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      left: 24,
-                      width: 24,
-                      top: 75,
-                      height: 24,
-                      child: Image.asset(
-                        'images/image1_9943793.png',
-                        width: 24,
-                        height: 24,
-                      ),
-                    ),
-                    Positioned(
-                      left: 29.143,
-                      width: 12.857,
-                      top: 80.143,
-                      height: 13.846,
-                      child: Image.asset(
-                        'images/image2_9943794.png',
-                        width: 12.857,
-                        height: 13.846,
-                      ),
-                    ),
-                    const Positioned(
-                      left: 166,
-                      top: 70,
-                      child: Text(
-                        'Detail',
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                            decoration: TextDecoration.none,
-                            fontSize: 20,
-                            color: Color(0xffffffff),
-                            fontFamily: 'NunitoSans-Bold',
-                            fontWeight: FontWeight.normal),
-                        maxLines: 9999,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                    Positioned(
-                      left: 167,
-                      width: 56,
-                      top: 134,
-                      height: 55,
-                      child: Image.asset(
-                        'images/image3_9943796.png',
-                        width: 56,
-                        height: 55,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    const Positioned(
-                      left: 117,
-                      width: 157,
-                      top: 187,
-                      height: 24,
-                      child: Text(
-                        'Dr. Richar Kandowen',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            decoration: TextDecoration.none,
-                            fontSize: 16,
-                            color: Color(0xffffffff),
-                            fontFamily: 'NunitoSans-Bold',
-                            fontWeight: FontWeight.normal),
-                        maxLines: 9999,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                    const Positioned(
-                      left: 161,
-                      top: 204,
-                      child: Text(
-                        'Obstetrician',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            decoration: TextDecoration.none,
-                            fontSize: 12,
-                            color: Color(0xffffffff),
-                            fontFamily: 'NunitoSans-Bold',
-                            fontWeight: FontWeight.normal),
-                        maxLines: 9999,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                    Positioned(
-                      left: 0,
-                      width: 389,
-                      top: 304,
-                      height: 540,
-                      child: Container(
-                        width: 389,
-                        height: 540,
-                        decoration: const BoxDecoration(
-                          color: Color(0xffffffff),
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      left: 118,
-                      width: 155,
-                      top: 238,
-                      height: 37,
-                      child: Container(
-                        width: 155,
-                        height: 37,
-                        decoration: BoxDecoration(
-                          color: const Color(0xffffffff),
-                          borderRadius: BorderRadius.circular(6.526),
-                        ),
-                      ),
-                    ),
-                    const Positioned(
-                      left: 150.184,
-                      width: 117.658,
-                      top: 243,
-                      child: Text(
-                        '123 Fitness Avenue, Wellness Clinic, Downtown Branch',
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                            decoration: TextDecoration.none,
-                            fontSize: 8,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 20),
+                  _buildServiceSelection(),
+                  const SizedBox(height: 30),
+                  _buildDateSelector(),
+                  const SizedBox(height: 20),
+                  _buildTimeSlots(),
+                  const Spacer(),
+                  _buildBookButton(),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  // Doctor Info Section at the Top
+  Widget _buildDoctorInfoSection() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      child: Column(
+        children: [
+          const CircleAvatar(
+            radius: 40,
+            // backgroundImage: AssetImage('assets/doctor_image.png'), // Placeholder image
+          ),
+          const SizedBox(height: 10),
+          const Text(
+            "Dr. Richar Kandowen",
+            style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w700,
+                color: Colors.white,
+                fontFamily: 'NunitoSans'
+            ),
+          ),
+          const Text(
+            "Obstetrician",
+            style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w700,
+                color: Colors.white,
+                fontFamily: 'NunitoSans'
+            ),
+          ),
+          const SizedBox(height: 5),
+          SizedBox(
+            height: 70, // Adjust height to fit both texts
+            width: 220,
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 7),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(6.53),
+              ),
+              child: const Row(
+                children: [
+                  Icon(Icons.location_on, color: Colors.redAccent, size: 16), // Icon applies to both texts
+                  SizedBox(width: 5), // Spacing between icon and text
+                  Expanded( // Expanded to ensure texts fit in the available space
+                    child: Column( // Stack the two lines of text vertically
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(height: 10,),
+                        Text(
+                          "123 Fitness Avenue, Wellness \nClinic, Downtown Branch",
+                          style: TextStyle(
                             color: Color(0xff484848),
-                            fontFamily: 'NunitoSans-Bold',
-                            fontWeight: FontWeight.normal),
-                        maxLines: 9999,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                    Positioned(
-                      left: 127,
-                      width: 12.147,
-                      top: 248,
-                      height: 16.237,
-                      child: Image.asset(
-                        'images/image4_9943802.png',
-                        width: 12.147,
-                        height: 16.237,
-                      ),
-                    ),
-                    Positioned(
-                      left: 162,
-                      width: 64,
-                      top: 322,
-                      height: 1,
-                      child: Container(
-                        width: 64,
-                        height: 1,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                              color: const Color(0xff767676), width: 4),
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      left: 19,
-                      width: 350,
-                      top: 774,
-                      height: 48,
-                      child: Container(
-                        width: 350,
-                        height: 48,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: const Padding(
-                          padding: EdgeInsets.only(
-                              left: 81, top: 0, right: 81, bottom: 0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Text(
-                                'BOOK A SESSION',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    decoration: TextDecoration.none,
-                                    fontSize: 16,
-                                    color: Color(0xffffffff),
-                                    fontFamily: 'NunitoSans-Bold',
-                                    fontWeight: FontWeight.normal),
-                                maxLines: 9999,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ],
+                            fontSize: 12,
                           ),
                         ),
-                      ),
+                      ],
                     ),
-                    Positioned(
-                      left: 19,
-                      width: 351,
-                      top: 351,
-                      height: 409,
-                      child: Stack(
-                        children: [
-                          const Positioned(
-                            left: 0,
-                            top: 159,
-                            child: Text(
-                              'Available time. October 2024',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  decoration: TextDecoration.none,
-                                  fontSize: 16,
-                                  color: Color(0xff484848),
-                                  fontFamily: 'NunitoSans-Bold',
-                                  fontWeight: FontWeight.normal),
-                              maxLines: 9999,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                          const Positioned(
-                            left: 0,
-                            top: 278,
-                            child: Text(
-                              'Morning Slot',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  decoration: TextDecoration.none,
-                                  fontSize: 16,
-                                  color: Color(0xff484848),
-                                  fontFamily: 'NunitoSans-Bold',
-                                  fontWeight: FontWeight.normal),
-                              maxLines: 9999,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                          const Positioned(
-                            left: 0,
-                            top: 363,
-                            child: Text(
-                              'Afternoon Slot',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  decoration: TextDecoration.none,
-                                  fontSize: 16,
-                                  color: Color(0xff484848),
-                                  fontFamily: 'NunitoSans-Bold',
-                                  fontWeight: FontWeight.normal),
-                              maxLines: 9999,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                          Positioned(
-                            left: 1,
-                            width: 359,
-                            top: 192,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Expanded(
-                                  child: Container(
-                                    width: 44,
-                                    height: 60,
-                                    decoration: BoxDecoration(
-                                      color: const Color(0xff244599),
-                                      borderRadius: BorderRadius.circular(8),
-                                    ),
-                                  ),
-                                ),
-                                const SizedBox(width: 11),
-                                Container(
-                                  width: 44,
-                                  height: 60,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
-                                  child: Stack(
-                                    children: [
-                                      Positioned(
-                                        left: 0,
-                                        width: 44,
-                                        top: 0,
-                                        height: 60,
-                                        child: Container(
-                                          width: 44,
-                                          height: 60,
-                                          decoration: BoxDecoration(
-                                            border: Border.all(
-                                                color: const Color(0xffcecece),
-                                                width: 1),
-                                            borderRadius:
-                                                BorderRadius.circular(8),
-                                          ),
-                                        ),
-                                      ),
-                                      const Positioned(
-                                        left: 10,
-                                        top: 3,
-                                        child: Text(
-                                          'Mon',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                              decoration: TextDecoration.none,
-                                              fontSize: 12,
-                                              color: Color(0xff484848),
-                                              fontFamily: 'NunitoSans-Bold',
-                                              fontWeight: FontWeight.normal),
-                                          maxLines: 9999,
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                      ),
-                                      const Positioned(
-                                        left: 17,
-                                        top: 23,
-                                        child: Text(
-                                          '8',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                              decoration: TextDecoration.none,
-                                              fontSize: 16,
-                                              color: Color(0xff484848),
-                                              fontFamily: 'NunitoSans-Bold',
-                                              fontWeight: FontWeight.normal),
-                                          maxLines: 9999,
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                const SizedBox(width: 11),
-                                Container(
-                                  width: 44,
-                                  height: 60,
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                        color: const Color(0xff244599),
-                                        width: 1),
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
-                                ),
-                                const SizedBox(width: 11),
-                                Container(
-                                  width: 44,
-                                  height: 60,
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                        color: const Color(0xff244599),
-                                        width: 1),
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
-                                ),
-                                const SizedBox(width: 11),
-                                Container(
-                                  width: 44,
-                                  height: 60,
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                        color: const Color(0xffcecece),
-                                        width: 1),
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
-                                ),
-                                const SizedBox(width: 11),
-                                Container(
-                                  width: 44,
-                                  height: 60,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
-                                  child: Stack(
-                                    children: [
-                                      Positioned(
-                                        left: 0,
-                                        width: 44,
-                                        top: 0,
-                                        height: 60,
-                                        child: Container(
-                                          width: 44,
-                                          height: 60,
-                                          decoration: BoxDecoration(
-                                            border: Border.all(
-                                                color: const Color(0xff244599),
-                                                width: 1),
-                                            borderRadius:
-                                                BorderRadius.circular(8),
-                                          ),
-                                        ),
-                                      ),
-                                      const Positioned(
-                                        left: 15,
-                                        top: 3,
-                                        child: Text(
-                                          'Fri ',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                              decoration: TextDecoration.none,
-                                              fontSize: 12,
-                                              color: Color(0xff383838),
-                                              fontFamily: 'NunitoSans-Bold',
-                                              fontWeight: FontWeight.normal),
-                                          maxLines: 9999,
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                      ),
-                                      const Positioned(
-                                        left: 12,
-                                        top: 23,
-                                        child: Text(
-                                          '12',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                              decoration: TextDecoration.none,
-                                              fontSize: 16,
-                                              color: Color(0xff383838),
-                                              fontFamily: 'NunitoSans-Bold',
-                                              fontWeight: FontWeight.normal),
-                                          maxLines: 9999,
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                const SizedBox(width: 11),
-                                Container(
-                                  width: 44,
-                                  height: 60,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
-                                  child: Stack(
-                                    children: [
-                                      Positioned(
-                                        left: 0,
-                                        width: 44,
-                                        top: 0,
-                                        height: 60,
-                                        child: Container(
-                                          width: 44,
-                                          height: 60,
-                                          decoration: BoxDecoration(
-                                            border: Border.all(
-                                                color: const Color(0xff244599),
-                                                width: 1),
-                                            borderRadius:
-                                                BorderRadius.circular(8),
-                                          ),
-                                        ),
-                                      ),
-                                      const Positioned(
-                                        left: 13,
-                                        top: 3,
-                                        child: Text(
-                                          'Sat ',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                              decoration: TextDecoration.none,
-                                              fontSize: 12,
-                                              color: Color(0xff383838),
-                                              fontFamily: 'NunitoSans-Bold',
-                                              fontWeight: FontWeight.normal),
-                                          maxLines: 9999,
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                      ),
-                                      const Positioned(
-                                        left: 12,
-                                        top: 23,
-                                        child: Text(
-                                          '13',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                              decoration: TextDecoration.none,
-                                              fontSize: 16,
-                                              color: Color(0xff383838),
-                                              fontFamily: 'NunitoSans-Bold',
-                                              fontWeight: FontWeight.normal),
-                                          maxLines: 9999,
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Positioned(
-                            left: 1,
-                            width: 107,
-                            top: 312,
-                            height: 38,
-                            child: Container(
-                              width: 107,
-                              height: 38,
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                    color: const Color(0xff244599), width: 1),
-                                borderRadius: BorderRadius.circular(31),
-                              ),
-                              child: const Padding(
-                                padding: EdgeInsets.only(
-                                    left: 19, top: 2, right: 19, bottom: 2),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      '08:30AM',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          decoration: TextDecoration.none,
-                                          fontSize: 16,
-                                          color: Color(0xff484848),
-                                          fontFamily: 'NunitoSans-Bold',
-                                          fontWeight: FontWeight.normal),
-                                      maxLines: 9999,
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 1,
-                            width: 107,
-                            top: 397,
-                            height: 38,
-                            child: Container(
-                              width: 107,
-                              height: 38,
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                    color: const Color(0xff244599), width: 1),
-                                borderRadius: BorderRadius.circular(31),
-                              ),
-                              child: const Padding(
-                                padding: EdgeInsets.only(
-                                    left: 19, top: 2, right: 19, bottom: 2),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      '01:30PM',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          decoration: TextDecoration.none,
-                                          fontSize: 16,
-                                          color: Color(0xff767676),
-                                          fontFamily: 'NunitoSans-Bold',
-                                          fontWeight: FontWeight.normal),
-                                      maxLines: 9999,
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 127,
-                            width: 107,
-                            top: 312,
-                            height: 38,
-                            child: Container(
-                              width: 107,
-                              height: 38,
-                              decoration: BoxDecoration(
-                                color: const Color(0xff244599),
-                                borderRadius: BorderRadius.circular(31),
-                              ),
-                              child: const Padding(
-                                padding: EdgeInsets.only(
-                                    left: 19, top: 2, right: 19, bottom: 2),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      '09:00AM',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          decoration: TextDecoration.none,
-                                          fontSize: 16,
-                                          color: Color(0xffffffff),
-                                          fontFamily: 'NunitoSans-Bold',
-                                          fontWeight: FontWeight.normal),
-                                      maxLines: 9999,
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 127,
-                            width: 107,
-                            top: 397,
-                            height: 38,
-                            child: Container(
-                              width: 107,
-                              height: 38,
-                              decoration: BoxDecoration(
-                                color: const Color(0xff244599),
-                                borderRadius: BorderRadius.circular(31),
-                              ),
-                              child: const Padding(
-                                padding: EdgeInsets.only(
-                                    left: 19, top: 2, right: 19, bottom: 2),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      '02:00PM',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          decoration: TextDecoration.none,
-                                          fontSize: 16,
-                                          color: Color(0xffffffff),
-                                          fontFamily: 'NunitoSans-Bold',
-                                          fontWeight: FontWeight.normal),
-                                      maxLines: 9999,
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 253,
-                            width: 107,
-                            top: 311,
-                            height: 38,
-                            child: Container(
-                              width: 107,
-                              height: 38,
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                    color: const Color(0xff244599), width: 1),
-                                borderRadius: BorderRadius.circular(31),
-                              ),
-                              child: const Padding(
-                                padding: EdgeInsets.only(
-                                    left: 19, top: 2, right: 19, bottom: 2),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      '09:30AM',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          decoration: TextDecoration.none,
-                                          fontSize: 16,
-                                          color: Color(0xff484848),
-                                          fontFamily: 'NunitoSans-Bold',
-                                          fontWeight: FontWeight.normal),
-                                      maxLines: 9999,
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 253,
-                            width: 107,
-                            top: 396,
-                            height: 38,
-                            child: Container(
-                              width: 107,
-                              height: 38,
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                    color: const Color(0xff244599), width: 1),
-                                borderRadius: BorderRadius.circular(31),
-                              ),
-                              child: const Padding(
-                                padding: EdgeInsets.only(
-                                    left: 19, top: 2, right: 19, bottom: 2),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    SizedBox(width: 10),
-                                    Expanded(
-                                      child: Text(
-                                        '02:30PM',
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                            decoration: TextDecoration.none,
-                                            fontSize: 16,
-                                            color: Color(0xff767676),
-                                            fontFamily: 'NunitoSans-Bold',
-                                            fontWeight: FontWeight.normal),
-                                        maxLines: 9999,
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                          const Positioned(
-                            left: 1,
-                            top: 0,
-                            child: Text(
-                              'Select service',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  decoration: TextDecoration.none,
-                                  fontSize: 20,
-                                  color: Color(0xff767676),
-                                  fontFamily: 'NunitoSans-Bold',
-                                  fontWeight: FontWeight.normal),
-                              maxLines: 9999,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                          const Positioned(
-                            left: 8,
-                            top: 130,
-                            child: Text(
-                              'Select service',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  decoration: TextDecoration.none,
-                                  fontSize: 12,
-                                  color: Color(0xff0c1733),
-                                  fontFamily: 'NunitoSans-Bold',
-                                  fontWeight: FontWeight.normal),
-                              maxLines: 9999,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                          const Positioned(
-                            left: 117,
-                            top: 130,
-                            child: Text(
-                              'Select service',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  decoration: TextDecoration.none,
-                                  fontSize: 12,
-                                  color: Color(0x660c1733),
-                                  fontFamily: 'NunitoSans-Bold',
-                                  fontWeight: FontWeight.normal),
-                              maxLines: 9999,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                          const Positioned(
-                            left: 226,
-                            top: 130,
-                            child: Text(
-                              'Select service',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  decoration: TextDecoration.none,
-                                  fontSize: 12,
-                                  color: Color(0x660c1733),
-                                  fontFamily: 'NunitoSans-Bold',
-                                  fontWeight: FontWeight.normal),
-                              maxLines: 9999,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                          const Positioned(
-                            left: 330,
-                            top: 130,
-                            child: Text(
-                              'Select service',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  decoration: TextDecoration.none,
-                                  fontSize: 12,
-                                  color: Color(0x660c1733),
-                                  fontFamily: 'NunitoSans-Bold',
-                                  fontWeight: FontWeight.normal),
-                              maxLines: 9999,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                          Positioned(
-                            left: 1,
-                            width: 349,
-                            top: 39,
-                            height: 96,
-                            child: Image.asset(
-                              'images/image_9943855.png',
-                              width: 349,
-                              height: 96,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
-          ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  // Service Selection Widget (with selectable icons)
+  Widget _buildServiceSelection() {
+    List<String> serviceImages = [
+      'assets/images/services.png',  // Example images (make sure they're in the right path)
+      'assets/images/services.png',
+      'assets/images/services.png',
+      'assets/images/services.png',
+      'assets/images/services.png',
+    ];
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          "Select service",
+          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        ),
+        const SizedBox(height: 10),
+        // Scrollable row of services with images
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: List.generate(serviceImages.length, (index) {
+              return GestureDetector(
+                onTap: () {
+                  setState(() {
+                    _selectedService = index;
+                  });
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Column(
+                    children: [
+                      // Use Image.asset for local images or Image.network for network images
+                      Image.asset(
+                        serviceImages[index],
+                        height: 50,  // Adjust the size as needed
+                        width: 50,   // Adjust the size as needed
+                        fit: BoxFit.cover, // Ensures the image fills the space
+                      ),
+                      const SizedBox(height: 5),
+                      Text(
+                        "Select service",
+                        style: TextStyle(
+                          color: _selectedService == index ?  const Color(0xff244599) : const Color(0xff244599),
+                          fontWeight: _selectedService == index
+                              ? FontWeight.bold
+                              : FontWeight.normal,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            }),
+          ),
+        ),
+      ],
+    );
+  }
+
+  // Horizontal Date Selector Widget
+  Widget _buildDateSelector() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          "Available time, October 2024",
+          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        ),
+        const SizedBox(height: 10),
+        SizedBox(
+          height: 60,
+          width: 359,
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: _dates.length,
+            itemBuilder: (context, index) {
+              bool isSelected = _selectedDateIndex == index;
+              return GestureDetector(
+                onTap: () {
+                  setState(() {
+                    _selectedDateIndex = index;
+                  });
+                },
+                child: Container(
+                  width: 60,
+                  margin: const EdgeInsets.symmetric(horizontal: 8),
+                  decoration: BoxDecoration(
+                    color: isSelected ? Colors.blue : Colors.white,
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(
+                        color: isSelected ? const Color(0xff244599) : const Color(0xff244599)),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        _days[index % 7], // Repeat days of the week
+                        style: TextStyle(
+                          color: isSelected ? Colors.white : Colors.grey,
+                        ),
+                      ),
+                      const SizedBox(height: 5),
+                      Text(
+                        _dates[index].toString(),
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: isSelected ? Colors.white : Colors.black,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            },
+          ),
+        ),
+      ],
+    );
+  }
+
+  // Time Slot Selection (Morning & Afternoon)
+  Widget _buildTimeSlots() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text("Morning Slot", style: TextStyle(fontSize: 16)),
+        const SizedBox(height: 10),
+        _buildTimeSlotRow(_morningSlots),
+        const SizedBox(height: 20),
+        const Text("Afternoon Slot", style: TextStyle(fontSize: 16)),
+        const SizedBox(height: 10),
+        _buildTimeSlotRow(_afternoonSlots),
+      ],
+    );
+  }
+
+  // Helper function to build the time slot row
+  Widget _buildTimeSlotRow(List<String> slots) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: List.generate(slots.length, (index) {
+        bool isSelected = _selectedTimeSlot == index;
+        return GestureDetector(
+          onTap: () {
+            setState(() {
+              _selectedTimeSlot = index;
+            });
+          },
+          child: Container(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+            decoration: BoxDecoration(
+              color: isSelected ? Colors.blue : Colors.grey[200],
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Text(
+              slots[index],
+              style: TextStyle(
+                color: isSelected ? Colors.white : Colors.black,
+              ),
+            ),
+          ),
+        );
+      }),
+    );
+  }
+
+  // Book a Session Button
+  Widget _buildBookButton() {
+    return Container(
+      decoration:  BoxDecoration(
+        gradient: const LinearGradient(
+          colors: [Color(0xff244599),Color(0xff0C1733)],
+        ),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: ElevatedButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) =>   const BookingSummaryPage()),
+          );// Action for sign-up button
+        },
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.transparent, // Make background transparent
+          shadowColor: Colors.transparent,
+          padding: const EdgeInsets.symmetric(
+              horizontal: 100, vertical: 15),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+            side: const BorderSide(color: Color(0xFF3A6EA5), width: 2),
+          ),
+        ),
+        child: const Text(
+          'BOOK A SESSION',
+          style: TextStyle(fontSize: 16,color: Colors.white),
         ),
       ),
     );
   }
 }
-
-// class BookingScreen extends StatefulWidget {
-//   const BookingScreen({super.key});
-//
-//   @override
-//   _BookingScreenState createState() => _BookingScreenState();
-// }
-//
-// class _BookingScreenState extends State<BookingScreen> {
-//   int selectedServiceIndex = -1;
-//   int selectedDateIndex = 0;
-//   int selectedTimeSlotIndex = -1;
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Column(
-//         children: [
-//           const SizedBox(height: 10),
-//           // Doctor details
-//           _buildDoctorDetails(),
-//           const SizedBox(height: 10),
-//           // Service Selection
-//           Expanded(
-//             child: SingleChildScrollView(
-//               child: Column(
-//                 crossAxisAlignment: CrossAxisAlignment.start,
-//                 children: [
-//                   _buildServiceSelection(),
-//                   const SizedBox(height: 20),
-//                   _buildDateSelectionBox(),
-//                   if (selectedServiceIndex != -1) ...[
-//                     // Display Time Slots after selecting a service
-//                     const SizedBox(height: 20),
-//                     _buildTimeSlotSelection(),
-//                   ],
-//                 ],
-//               ),
-//             ),
-//           ),
-//           // Book a Session Button
-//           Padding(
-//             padding: const EdgeInsets.all(16.0),
-//             child: ElevatedButton(
-//               onPressed: selectedServiceIndex == -1 || selectedTimeSlotIndex == -1
-//                   ? null
-//                   : () {
-//                 Navigator.push(
-//                   context,
-//                   MaterialPageRoute(builder: (context) => const BookingSummaryPage()),
-//                 );
-//               },
-//               style: ElevatedButton.styleFrom(
-//                 padding: const EdgeInsets.symmetric(vertical: 15),
-//                 backgroundColor: Colors.lightBlue,
-//                 shape: RoundedRectangleBorder(
-//                   borderRadius: BorderRadius.circular(10),
-//                 ),
-//               ),
-//               child: const Center(
-//                 child: Text(
-//                   'BOOK A SESSION',
-//                   style: TextStyle(fontWeight: FontWeight.bold),
-//                 ),
-//               ),
-//             ),
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-//
-//   Widget _buildDoctorDetails() {
-//     return Container(
-//       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-//       child: Column(
-//         children: [
-//           CircleAvatar(radius: 30, backgroundColor: Colors.grey[400]),
-//           const SizedBox(height: 10),
-//           const Text(
-//             'Dr. Richard Kandowen',
-//             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-//           ),
-//           const Text(
-//             'Obstetrician',
-//             style: TextStyle(color: Colors.grey),
-//           ),
-//           const SizedBox(height: 10),
-//           const Text(
-//             '123 Peace Avenue, Wellness Clinic, Downtown Branch',
-//             textAlign: TextAlign.center,
-//             style: TextStyle(color: Colors.grey),
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-//
-//   Widget _buildServiceSelection() {
-//     return Column(
-//       crossAxisAlignment: CrossAxisAlignment.start,
-//       children: [
-//         const Padding(
-//           padding: EdgeInsets.symmetric(horizontal: 16),
-//           child: Text(
-//             'Select Service',
-//             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-//           ),
-//         ),
-//         const SizedBox(height: 10),
-//         SizedBox(
-//           height: 150, // Increased height for bigger box
-//           child: ListView.builder(
-//             scrollDirection: Axis.horizontal,
-//             itemCount: 5, // Replace with actual service count
-//             itemBuilder: (context, index) {
-//               return GestureDetector(
-//                 onTap: () {
-//                   setState(() {
-//                     selectedServiceIndex = index;
-//                     selectedTimeSlotIndex = -1; // Reset time selection
-//                   });
-//                 },
-//                 child: Padding(
-//                   padding: const EdgeInsets.symmetric(horizontal: 8),
-//                   child: Container(
-//                     width: 100, // Wider service box
-//                     decoration: BoxDecoration(
-//                       color: selectedServiceIndex == index
-//                           ? Colors.grey[400]
-//                           : Colors.grey[300],
-//                       borderRadius: BorderRadius.circular(8),
-//                     ),
-//                     child: const Column(
-//                       mainAxisAlignment: MainAxisAlignment.center,
-//                       children: [
-//                         Icon(Icons.medical_services_outlined, size: 30),
-//                         SizedBox(height: 10),
-//                         Text(
-//                           'Service',
-//                           style: TextStyle(fontSize: 14), // Larger font size
-//                           textAlign: TextAlign.center,
-//                         ),
-//                       ],
-//                     ),
-//                   ),
-//                 ),
-//               );
-//             },
-//           ),
-//         ),
-//       ],
-//     );
-//   }
-//
-//   Widget _buildDateSelectionBox() {
-//     return Padding(
-//       padding: const EdgeInsets.symmetric(horizontal: 16),
-//       child: Container(
-//         padding: const EdgeInsets.all(16),
-//         decoration: BoxDecoration(
-//           color: Colors.white,
-//           borderRadius: BorderRadius.circular(8),
-//           border: Border.all(color: Colors.grey[300]!),
-//         ),
-//         child: Column(
-//           crossAxisAlignment: CrossAxisAlignment.start,
-//           children: [
-//             const Text(
-//               'Select Date',
-//               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-//             ),
-//             const SizedBox(height: 10),
-//             SingleChildScrollView(
-//               scrollDirection: Axis.horizontal,
-//               child: Row(
-//                 children: List.generate(30, (index) {
-//                   return GestureDetector(
-//                     onTap: () {
-//                       setState(() {
-//                         selectedDateIndex = index;
-//                       });
-//                     },
-//                     child: Container(
-//                       margin: const EdgeInsets.symmetric(horizontal: 4),
-//                       padding: const EdgeInsets.all(8),
-//                       decoration: BoxDecoration(
-//                         color: selectedDateIndex == index
-//                             ? Colors.grey[400]
-//                             : Colors.grey[200],
-//                         borderRadius: BorderRadius.circular(8),
-//                       ),
-//                       child: Column(
-//                         mainAxisAlignment: MainAxisAlignment.center,
-//                         children: [
-//                           Text(
-//                             ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-//                             [index % 7], // Day of the week
-//                             style: const TextStyle(fontSize: 10),
-//                           ),
-//                           Text(
-//                             (index + 1).toString(), // Day of the month
-//                             style: const TextStyle(
-//                                 fontSize: 16, fontWeight: FontWeight.bold),
-//                           ),
-//                         ],
-//                       ),
-//                     ),
-//                   );
-//                 }),
-//               ),
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-//
-//   Widget _buildTimeSlotSelection() {
-//     return Padding(
-//       padding: const EdgeInsets.symmetric(horizontal: 16),
-//       child: Column(
-//         crossAxisAlignment: CrossAxisAlignment.start,
-//         children: [
-//           const Text(
-//             'Morning Slot',
-//             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-//           ),
-//           const SizedBox(height: 10),
-//           Row(
-//             children: [
-//               _buildTimeSlot(context, '08:30 AM', 0),
-//               _buildTimeSlot(context, '09:00 AM', 1),
-//               _buildTimeSlot(context, '09:30 AM', 2),
-//             ],
-//           ),
-//           const SizedBox(height: 20),
-//           const Text(
-//             'Afternoon Slot',
-//             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-//           ),
-//           const SizedBox(height: 10),
-//           Row(
-//             children: [
-//               _buildTimeSlot(context, '01:30 PM', 3),
-//               _buildTimeSlot(context, '02:00 PM', 4),
-//               _buildTimeSlot(context, '02:30 PM', 5),
-//             ],
-//           ),
-//           const SizedBox(height: 20),
-//           const Text(
-//             'Evening Slot',
-//             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-//           ),
-//           const SizedBox(height: 10),
-//           Row(
-//             children: [
-//               _buildTimeSlot(context, '06:00 PM', 6),
-//               _buildTimeSlot(context, '06:30 PM', 7),
-//               _buildTimeSlot(context, '07:00 PM', 8),
-//             ],
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-//
-//   Widget _buildTimeSlot(BuildContext context, String time, int index) {
-//     return GestureDetector(
-//       onTap: () {
-//         setState(() {
-//           selectedTimeSlotIndex = index;
-//         });
-//       },
-//       child: Padding(
-//         padding: const EdgeInsets.only(right: 8.0),
-//         child: Container(
-//           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-//           decoration: BoxDecoration(
-//             color: selectedTimeSlotIndex == index
-//                 ? Colors.grey[400]
-//                 : Colors.grey[200],
-//             borderRadius: BorderRadius.circular(8),
-//           ),
-//           child: Text(
-//             time,
-//             style: TextStyle(
-//               fontWeight: FontWeight.bold,
-//               color: selectedTimeSlotIndex == index
-//                   ? Colors.black
-//                   : Colors.grey[600],
-//             ),
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }

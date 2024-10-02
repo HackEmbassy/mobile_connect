@@ -13,8 +13,10 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffE5F5FC),
       body: Stack(
         children: [
+
           // Background image using ImageView
           Positioned.fill(
             child: ImageView(
@@ -26,42 +28,56 @@ class WelcomeScreen extends StatelessWidget {
             ),
           ),
           SafeArea(
+
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 // Spacing for the top of the screen
-                const Spacer(flex: 20),
+                const Spacer(flex: 5),
                 // Text content
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 40.0.w),
-                  child: Column(
-                    children: [
-                      Text(
+                Container (
+                  width: 700,
+                  height: 400,
+                  decoration: BoxDecoration(
+                    color: Color(0xcc000000), // Black with 80% opacity
+
+                  ),
+                 child: Column (
+                   mainAxisAlignment: MainAxisAlignment.center,
+                     children: [
+                       const SizedBox(height: 5),
+                  Padding(
+                      padding: const EdgeInsets.all(16.0),
+                       child: Text(
                         'Book appointments\nwith professionals &\nMonitor your menstrual cycle',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 35.sp,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                          fontSize: 32.sp,
+                          //fontWeight: FontWeight.normal,
+                          color: Color(0xffE5F5FC),
+                            fontFamily: 'NunitoSans-Regular'
                         ),
                       ),
-                      const SizedBox(height: 10),
-                      Text(
+                  ),
+                      const SizedBox(height: 3),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Text(
                         'Your personalized guide to better health and fitness.',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 16.sp,
-                          color: Colors.white,
+                          color: Color(0xffE5F5FC),
+                            fontFamily: 'NunitoSans-Regular'
                         ),
                       ),
-                    ],
                   ),
-                ),
-                const Spacer(flex: 3),
+                       const SizedBox(height: 10),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child:
                 // Button at the bottom
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: ElevatedButton(
+                   ElevatedButton(
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -90,11 +106,18 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                ),
-                const SizedBox(height: 30), // Additional spacing at the bottom
+                  ),
+                       const SizedBox(height: 4),
+                     ],
+              ),
+
+    ),
+                 // Additional spacing at the bottom
               ],
+    ),
             ),
-          ),
+
+
         ],
       ),
     );

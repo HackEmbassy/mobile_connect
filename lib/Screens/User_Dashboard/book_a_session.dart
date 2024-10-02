@@ -1,1009 +1,267 @@
 import 'package:flutter/material.dart';
-
 import 'book_a_session_2.dart';
 
 class BookSessionScreen extends StatelessWidget {
+  const BookSessionScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      child: Container(
-        width: 390,
-        height: 844,
-        decoration: const BoxDecoration(
-          color: Color(0xffffffff),
-        ),
-        child: Stack(
-          children: [
-            Positioned(
-              left: 32,
-              width: 326,
-              top: 214,
-              height: 507,
-              child: Stack(
-                children: [
-                  Positioned(
-                    left: 0,
-                    width: 326,
-                    top: 0,
-                    height: 138,
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          left: 0,
-                          width: 326,
-                          top: 0,
-                          height: 138,
-                          child: Container(
-                            width: 326,
-                            height: 138,
-                            decoration: BoxDecoration(
-                              gradient: const LinearGradient(
-                                colors: [Color(0xff244599), Color(0xff0C1733)],
-                              ),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          left: 9,
-                          width: 80,
-                          top: 8,
-                          height: 96,
-                          child: Image.asset(
-                            'assets/images2/image1_9943712.png',
-                            width: 80,
-                            height: 96,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        const Positioned(
-                          left: 109,
-                          width: 157,
-                          top: 8,
-                          height: 24,
-                          child: Text(
-                            'Dr. Richar Kandowen',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                decoration: TextDecoration.none,
-                                fontSize: 16,
-                                color: Color(0xffffffff),
-                                fontFamily: 'NunitoSans-Bold',
-                                fontWeight: FontWeight.normal),
-                            maxLines: 9999,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                        const Positioned(
-                          left: 109,
-                          top: 27,
-                          child: Text(
-                            'Obstetrician',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                decoration: TextDecoration.none,
-                                fontSize: 12,
-                                color: Color(0xffffffff),
-                                fontFamily: 'NunitoSans-Bold',
-                                fontWeight: FontWeight.normal),
-                            maxLines: 9999,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                        const Positioned(
-                          left: 120,
-                          top: 44,
-                          child: Text(
-                            '116 Abayi, Aba, Abia State',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                decoration: TextDecoration.none,
-                                fontSize: 12,
-                                color: Color(0xffffffff),
-                                fontFamily: 'NunitoSans-SemiBold',
-                                fontWeight: FontWeight.normal),
-                            maxLines: 9999,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                        Positioned(
-                          left: 9,
-                          width: 62,
-                          top: 98,
-                          height: 30,
-                          child: Stack(
-                            children: [
-                              const Positioned(
-                                left: 15,
-                                width: 18,
-                                top: 0,
-                                height: 21,
-                                child: Text(
-                                  '4.5',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      decoration: TextDecoration.none,
-                                      fontSize: 10,
-                                      color: Color(0xffffffff),
-                                      fontFamily: 'NunitoSans-SemiBold',
-                                      fontWeight: FontWeight.normal),
-                                  maxLines: 9999,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ),
-                              const Positioned(
-                                left: 13,
-                                width: 49,
-                                top: 10,
-                                height: 20,
-                                child: Text(
-                                  '(2k reviews)',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      decoration: TextDecoration.none,
-                                      fontSize: 8,
-                                      color: Color(0xffffffff),
-                                      fontFamily: 'NunitoSans-SemiBold',
-                                      fontWeight: FontWeight.normal),
-                                  maxLines: 9999,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ),
-                              Positioned(
-                                left: 0,
-                                width: 13.071,
-                                top: 14,
-                                height: 12.621,
-                                child: Image.asset(
-                                  'assets/images2/image_9943719.png',
-                                  width: 13.071,
-                                  height: 12.621,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Positioned(
-                          left: 109,
-                          width: 7,
-                          top: 56,
-                          height: 9.357,
-                          child: Image.asset(
-                            'assets/images2/image2_9943720.png',
-                            width: 7,
-                            height: 9.357,
-                          ),
-                        ),
-                        Positioned(
-                          left: 109,
-                          width: 69,
-                          top: 104,
-                          height: 25,
-                          child: GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const BookingScreen()),
-                              );
-                            },
-                            child: Container(
-                              width: 69,
-                              height: 25,
-                              decoration: BoxDecoration(
-                                gradient: const LinearGradient(
-                                  colors: [
-                                    Color(0xff244599),
-                                    Color(0xff0C1733)
-                                  ],
-                                ),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 81, top: 0, right: 81, bottom: 0),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    GestureDetector(
-                                      onTap: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const BookingScreen()),
-                                        );
-                                      },
-                                      child: const Text(
-                                        'View more',
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                            decoration: TextDecoration.none,
-                                            fontSize: 10,
-                                            color: Color(0xffffffff),
-                                            fontFamily: 'NunitoSans-SemiBold',
-                                            fontWeight: FontWeight.normal),
-                                        maxLines: 9999,
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Positioned(
-                    left: 0,
-                    width: 326,
-                    top: 153,
-                    height: 138,
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          left: 0,
-                          width: 326,
-                          top: 0,
-                          height: 138,
-                          child: Container(
-                            width: 326,
-                            height: 138,
-                            decoration: BoxDecoration(
-                              gradient: const LinearGradient(
-                                colors: [Color(0xff244599), Color(0xff0C1733)],
-                              ),
-                              borderRadius: BorderRadius.circular(8),
-                              //boxShadow: const [BoxShadow(color: const Color(0x3f000000), offset: Offset(0, 0), blurRadius: 54.5),],
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          left: 9,
-                          width: 80,
-                          top: 8,
-                          height: 96,
-                          child: Image.asset(
-                            'assets/images2/image1_9943727.png',
-                            width: 80,
-                            height: 96,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        const Positioned(
-                          left: 109,
-                          width: 157,
-                          top: 8,
-                          height: 24,
-                          child: Text(
-                            'Dr. Richar Kandowen',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                decoration: TextDecoration.none,
-                                fontSize: 16,
-                                color: Color(0xffffffff),
-                                fontFamily: 'NunitoSans-Bold',
-                                fontWeight: FontWeight.normal),
-                            maxLines: 9999,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                        const Positioned(
-                          left: 109,
-                          top: 27,
-                          child: Text(
-                            'Obstetrician',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                decoration: TextDecoration.none,
-                                fontSize: 12,
-                                color: Color(0xffffffff),
-                                fontFamily: 'NunitoSans-Bold',
-                                fontWeight: FontWeight.normal),
-                            maxLines: 9999,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                        const Positioned(
-                          left: 120,
-                          top: 44,
-                          child: Text(
-                            '116 Abayi, Aba, Abia State',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                decoration: TextDecoration.none,
-                                fontSize: 12,
-                                color: Color(0xffffffff),
-                                fontFamily: 'NunitoSans-SemiBold',
-                                fontWeight: FontWeight.normal),
-                            maxLines: 9999,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                        Positioned(
-                          left: 9,
-                          width: 62,
-                          top: 98,
-                          height: 30,
-                          child: Stack(
-                            children: [
-                              const Positioned(
-                                left: 15,
-                                width: 18,
-                                top: 0,
-                                height: 21,
-                                child: Text(
-                                  '4.5',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      decoration: TextDecoration.none,
-                                      fontSize: 10,
-                                      color: Color(0xffffffff),
-                                      fontFamily: 'NunitoSans-SemiBold',
-                                      fontWeight: FontWeight.normal),
-                                  maxLines: 9999,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ),
-                              const Positioned(
-                                left: 13,
-                                width: 49,
-                                top: 10,
-                                height: 20,
-                                child: Text(
-                                  '(2k reviews)',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      decoration: TextDecoration.none,
-                                      fontSize: 8,
-                                      color: Color(0xffffffff),
-                                      fontFamily: 'NunitoSans-SemiBold',
-                                      fontWeight: FontWeight.normal),
-                                  maxLines: 9999,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ),
-                              Positioned(
-                                left: 0,
-                                width: 13.071,
-                                top: 14,
-                                height: 12.621,
-                                child: Image.asset(
-                                  'assets/images2/image_9943734.png',
-                                  width: 13.071,
-                                  height: 12.621,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Positioned(
-                          left: 109,
-                          width: 7,
-                          top: 56,
-                          height: 9.357,
-                          child: Image.asset(
-                            'assets/images2/image2_9943735.png',
-                            width: 7,
-                            height: 9.357,
-                          ),
-                        ),
-                        Positioned(
-                          left: 109,
-                          width: 69,
-                          top: 104,
-                          height: 25,
-                          child: GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const BookingScreen()),
-                              );
-                            },
-                            child: Container(
-                              width: 69,
-                              height: 25,
-                              decoration: BoxDecoration(
-                                gradient: const LinearGradient(
-                                  colors: [
-                                    Color(0xff244599),
-                                    Color(0xff0C1733)
-                                  ],
-                                ),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 81, top: 0, right: 81, bottom: 0),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    GestureDetector(
-                                      onTap: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const BookingScreen()),
-                                        );
-                                      },
-                                      child: const Text(
-                                        'View more',
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                            decoration: TextDecoration.none,
-                                            fontSize: 10,
-                                            color: Color(0xffffffff),
-                                            fontFamily: 'NunitoSans-SemiBold',
-                                            fontWeight: FontWeight.normal),
-                                        maxLines: 9999,
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Positioned(
-                    left: 0,
-                    width: 326,
-                    top: 306,
-                    height: 138,
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          left: 0,
-                          width: 326,
-                          top: 0,
-                          height: 138,
-                          child: Container(
-                            width: 326,
-                            height: 138,
-                            decoration: BoxDecoration(
-                              gradient: const LinearGradient(
-                                colors: [Color(0xff244599), Color(0xff0C1733)],
-                              ),
-                              borderRadius: BorderRadius.circular(8),
-                              //boxShadow: const [BoxShadow(color: const Color(0x3f000000), offset: Offset(0, 0), blurRadius: 54.5),],
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          left: 9,
-                          width: 80,
-                          top: 8,
-                          height: 96,
-                          child: Image.asset(
-                            'assets/images2/image1_9943742.png',
-                            width: 80,
-                            height: 96,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        const Positioned(
-                          left: 109,
-                          width: 157,
-                          top: 8,
-                          height: 24,
-                          child: Text(
-                            'Dr. Richar Kandowen',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                decoration: TextDecoration.none,
-                                fontSize: 16,
-                                color: Color(0xffffffff),
-                                fontFamily: 'NunitoSans-Bold',
-                                fontWeight: FontWeight.normal),
-                            maxLines: 9999,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                        const Positioned(
-                          left: 109,
-                          top: 27,
-                          child: Text(
-                            'Obstetrician',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                decoration: TextDecoration.none,
-                                fontSize: 12,
-                                color: Color(0xffffffff),
-                                fontFamily: 'NunitoSans-Bold',
-                                fontWeight: FontWeight.normal),
-                            maxLines: 9999,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                        const Positioned(
-                          left: 120,
-                          top: 44,
-                          child: Text(
-                            '116 Abayi, Aba, Abia State',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                decoration: TextDecoration.none,
-                                fontSize: 12,
-                                color: Color(0xffffffff),
-                                fontFamily: 'NunitoSans-SemiBold',
-                                fontWeight: FontWeight.normal),
-                            maxLines: 9999,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                        Positioned(
-                          left: 9,
-                          width: 62,
-                          top: 98,
-                          height: 30,
-                          child: Stack(
-                            children: [
-                              const Positioned(
-                                left: 15,
-                                width: 18,
-                                top: 0,
-                                height: 21,
-                                child: Text(
-                                  '4.5',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      decoration: TextDecoration.none,
-                                      fontSize: 10,
-                                      color: Color(0xffffffff),
-                                      fontFamily: 'NunitoSans-SemiBold',
-                                      fontWeight: FontWeight.normal),
-                                  maxLines: 9999,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ),
-                              const Positioned(
-                                left: 13,
-                                width: 49,
-                                top: 10,
-                                height: 20,
-                                child: Text(
-                                  '(2k reviews)',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      decoration: TextDecoration.none,
-                                      fontSize: 8,
-                                      color: Color(0xffffffff),
-                                      fontFamily: 'NunitoSans-SemiBold',
-                                      fontWeight: FontWeight.normal),
-                                  maxLines: 9999,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ),
-                              Positioned(
-                                left: 0,
-                                width: 13.071,
-                                top: 14,
-                                height: 12.621,
-                                child: Image.asset(
-                                  'assets/images2/image_9943749.png',
-                                  width: 13.071,
-                                  height: 12.621,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Positioned(
-                          left: 109,
-                          width: 7,
-                          top: 56,
-                          height: 9.357,
-                          child: Image.asset(
-                            'assets/images2/image2_9943750.png',
-                            width: 7,
-                            height: 9.357,
-                          ),
-                        ),
-                        Positioned(
-                          left: 109,
-                          width: 69,
-                          top: 104,
-                          height: 25,
-                          child: GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const BookingScreen()),
-                              );
-                            },
-                            child: Container(
-                              width: 69,
-                              height: 25,
-                              decoration: BoxDecoration(
-                                gradient: const LinearGradient(
-                                  colors: [
-                                    Color(0xff244599),
-                                    Color(0xff0C1733)
-                                  ],
-                                ),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 81, top: 0, right: 81, bottom: 0),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    GestureDetector(
-                                      onTap: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const BookingScreen()),
-                                        );
-                                      },
-                                      child: const Text(
-                                        'View more',
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                            decoration: TextDecoration.none,
-                                            fontSize: 10,
-                                            color: Color(0xffffffff),
-                                            fontFamily: 'NunitoSans-SemiBold',
-                                            fontWeight: FontWeight.normal),
-                                        maxLines: 9999,
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Positioned(
-                    left: 0,
-                    width: 326,
-                    top: 459,
-                    height: 138,
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          left: 0,
-                          width: 326,
-                          top: 0,
-                          height: 138,
-                          child: Container(
-                            width: 326,
-                            height: 138,
-                            decoration: BoxDecoration(
-                              gradient: const LinearGradient(
-                                colors: [Color(0xff244599), Color(0xff0C1733)],
-                              ),
-                              borderRadius: BorderRadius.circular(8),
-                              //boxShadow: const [BoxShadow(color: const Color(0x3f000000), offset: Offset(0, 0), blurRadius: 54.5),],
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          left: 9,
-                          width: 80,
-                          top: 8,
-                          height: 96,
-                          child: Image.asset(
-                            'assets/images/image1_9943757.png',
-                            width: 80,
-                            height: 96,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        const Positioned(
-                          left: 109,
-                          width: 157,
-                          top: 8,
-                          height: 24,
-                          child: Text(
-                            'Dr. Richar Kandowen',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                decoration: TextDecoration.none,
-                                fontSize: 16,
-                                color: Color(0xffffffff),
-                                fontFamily: 'NunitoSans-Bold',
-                                fontWeight: FontWeight.normal),
-                            maxLines: 9999,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                        const Positioned(
-                          left: 109,
-                          top: 27,
-                          child: Text(
-                            'Obstetrician',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                decoration: TextDecoration.none,
-                                fontSize: 12,
-                                color: Color(0xffffffff),
-                                fontFamily: 'NunitoSans-Bold',
-                                fontWeight: FontWeight.normal),
-                            maxLines: 9999,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                        const Positioned(
-                          left: 120,
-                          top: 44,
-                          child: Text(
-                            '116 Abayi, Aba, Abia State',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                decoration: TextDecoration.none,
-                                fontSize: 12,
-                                color: Color(0xffffffff),
-                                fontFamily: 'NunitoSans-SemiBold',
-                                fontWeight: FontWeight.normal),
-                            maxLines: 9999,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                        Positioned(
-                          left: 9,
-                          width: 62,
-                          top: 98,
-                          height: 30,
-                          child: Stack(
-                            children: [
-                              const Positioned(
-                                left: 15,
-                                width: 18,
-                                top: 0,
-                                height: 21,
-                                child: Text(
-                                  '4.5',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      decoration: TextDecoration.none,
-                                      fontSize: 10,
-                                      color: Color(0xff767676),
-                                      fontFamily: 'NunitoSans-SemiBold',
-                                      fontWeight: FontWeight.normal),
-                                  maxLines: 9999,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ),
-                              const Positioned(
-                                left: 13,
-                                width: 49,
-                                top: 10,
-                                height: 20,
-                                child: Text(
-                                  '(2k reviews)',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      decoration: TextDecoration.none,
-                                      fontSize: 8,
-                                      color: Color(0xff767676),
-                                      fontFamily: 'NunitoSans-SemiBold',
-                                      fontWeight: FontWeight.normal),
-                                  maxLines: 9999,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ),
-                              Positioned(
-                                left: 0,
-                                width: 13.071,
-                                top: 14,
-                                height: 12.621,
-                                child: Image.asset(
-                                  'assets/images/image_9943764.png',
-                                  width: 13.071,
-                                  height: 12.621,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Positioned(
-                          left: 109,
-                          width: 7,
-                          top: 56,
-                          height: 9.357,
-                          child: Image.asset(
-                            'assets/images/image2_9943765.png',
-                            width: 7,
-                            height: 9.357,
-                          ),
-                        ),
-                        Positioned(
-                          left: 109,
-                          width: 69,
-                          top: 104,
-                          height: 25,
-                          child: Container(
-                            width: 69,
-                            height: 25,
-                            decoration: BoxDecoration(
-                              gradient: const LinearGradient(
-                                colors: [Color(0xff244599), Color(0xff0C1733)],
-                              ),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: const Padding(
-                              padding: EdgeInsets.only(
-                                  left: 81, top: 0, right: 81, bottom: 0),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    'View more',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        decoration: TextDecoration.none,
-                                        fontSize: 10,
-                                        color: Color(0xffffffff),
-                                        fontFamily: 'NunitoSans-SemiBold',
-                                        fontWeight: FontWeight.normal),
-                                    maxLines: 9999,
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(16.0), // Add padding to all sides
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const SizedBox(height: 60),
+              _buildTitle(),
+              const SizedBox(height: 20),
+              _buildSearchBar(),
+              const SizedBox(height: 20),
+              _buildDoctorProfile(
+                context,
+                'Dr. Richar Kandowen',
+                'Obstetrician',
+                '116 Abayi, Aba, Abia State',
+                'assets/images2/image1_9943742.png',
+                4.5,
+                '2k reviews',
               ),
-            ),
-            Positioned(
-              left: 0,
-              width: 390,
-              top: 747,
-              height: 97,
-              child: Container(
-                width: 390,
-                height: 97,
-                decoration: const BoxDecoration(
-                  color: Color(0xffffffff),
-                  boxShadow: [
-                    BoxShadow(
-                        color: Color(0x3f000000),
-                        offset: Offset(-6, 0),
-                        blurRadius: 12),
-                  ],
-                ),
+              const SizedBox(height: 20),
+              _buildDoctorProfile(
+                context,
+                'Dr. Richar Kandowen',
+                'Obstetrician',
+                '116 Abayi, Aba, Abia State',
+                'assets/images2/image1_9943742.png',
+                4.5,
+                '2k reviews',
               ),
-            ),
-            Positioned(
-              left: 138,
-              width: 114,
-              top: 820,
-              height: 1,
-              child: Container(
-                width: 114,
-                height: 1,
-                decoration: BoxDecoration(
-                  gradient: const LinearGradient(
-                    colors: [Color(0xff244599), Color(0xff0C1733)],
-                  ),
-                  border: Border.all(width: 4),
-                ),
+              const SizedBox(height: 20),
+              _buildDoctorProfile(
+                context,
+                'Dr. Richar Kandowen',
+                'Obstetrician',
+                '116 Abayi, Aba, Abia State',
+                'assets/images2/image1_9943742.png',
+                4.5,
+                '2k reviews',
               ),
-            ),
-            const Positioned(
-              left: 124,
-              top: 70,
-              child: Text(
-                'Book a Session',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                    decoration: TextDecoration.none,
-                    color: Colors.blue,
-                    fontSize: 20,
-                    fontFamily: 'NunitoSans-Bold',
-                    fontWeight: FontWeight.normal),
-                maxLines: 9999,
-                overflow: TextOverflow.ellipsis,
+              const SizedBox(height: 20),
+              _buildDoctorProfile(
+                context,
+                'Dr. Richar Kandowen',
+                'Obstetrician',
+                '116 Abayi, Aba, Abia State',
+                'assets/images2/image1_9943742.png',
+                4.5,
+                '2k reviews',
               ),
-            ),
-            Positioned(
-              left: 30,
-              width: 329,
-              top: 158,
-              height: 36,
-              child: Container(
-                width: 329,
-                height: 36,
-                decoration: BoxDecoration(
-                  color: const Color(0xfff2f6ff),
-                  borderRadius: BorderRadius.circular(27),
-                ),
+              const SizedBox(height: 20),
+              _buildDoctorProfile(
+                context,
+                'Dr. Richar Kandowen',
+                'Obstetrician',
+                '116 Abayi, Aba, Abia State',
+                'assets/images2/image1_9943742.png',
+                4.5,
+                '2k reviews',
               ),
-            ),
-            const Positioned(
-              left: 70,
-              top: 158,
-              child: Text(
-                'Search for professionals or specialty',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    decoration: TextDecoration.none,
-                    fontSize: 12,
-                    color: Color(0xff767676),
-                    fontFamily: 'NunitoSans-Regular',
-                    fontWeight: FontWeight.normal),
-                maxLines: 9999,
-                overflow: TextOverflow.ellipsis,
-              ),
-            ),
-            Positioned(
-              left: 46,
-              width: 19.108,
-              top: 165,
-              height: 21.814,
-              child: Image.asset(
-                'assets/images2/image1_9943778.png',
-                width: 19.108,
-                height: 21.814,
-              ),
-            ),
-            Positioned(
-              left: 320,
-              width: 16,
-              top: 167,
-              height: 18,
-              child: Image.asset(
-                'assets/images2/image2_9943781.png',
-                width: 16,
-                height: 18,
-              ),
-            ),
-            Positioned(
-              left: 32,
-              width: 24,
-              top: 75,
-              height: 24,
-              child: Image.asset(
-                'assets/images2/image3_9943786.png',
-                width: 24,
-                height: 24,
-              ),
-            ),
-            Positioned(
-              left: 37.143,
-              width: 12.857,
-              top: 80.143,
-              height: 13.846,
-              child: Image.asset(
-                'assets/images2/image4_9943787.png',
-                width: 12.857,
-                height: 13.846,
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
   }
+
+  Widget _buildTitle() {
+    return Row(
+      children: [
+        Image.asset(
+          'assets/images/arrow_back.png',
+          width: 24,
+          height: 24,
+        ),
+        const SizedBox(width: 85),
+        const Text(
+          'Book a Session',
+          style: TextStyle(
+            fontSize: 20,
+            color: Color(0xff244599),
+            fontFamily: 'NunitoSans-Bold',
+          ),
+        ),
+
+      ],
+    );
+  }
+
+  Widget _buildSearchBar() {
+    return Container(
+      width: 380,
+      height: 36,
+      decoration: BoxDecoration(
+        color: const Color(0xfff2f6ff),
+        borderRadius: BorderRadius.circular(27),
+      ),
+      child: Row(
+        children: [
+          Image.asset(
+            'assets/images2/image1_9943778.png',
+            width: 24,
+            height: 24,
+          ),
+          const SizedBox(width: 15),
+          Expanded( // Use Expanded to allow the text to fill the available space
+            child: const Text('Search for professionals or specialty',
+              style: TextStyle(
+                fontSize: 12,
+                color: Color(0xff767676),
+                fontFamily: 'NunitoSans-Regular',
+              ),
+            ),
+          ),
+          const SizedBox(width: 2),
+          Image.asset(
+            'assets/images/stroke.png',
+            width: 24,
+            height: 24,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildDoctorProfile(
+      BuildContext context,
+      String name,
+      String specialty,
+      String address,
+      String imageUrl,
+      double rating,
+      String reviews) {
+    return Container(
+      width: 400,
+      height: 138,
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          colors: [Color(0xff244599), Color(0xff0C1733)],
+        ),
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Stack(
+        children: [
+          Positioned(
+            left: 9,
+            top: 8,
+            child: Image.asset(
+              imageUrl,
+              width: 80,
+              height: 96,
+              fit: BoxFit.cover,
+            ),
+          ),
+          Positioned(
+            left: 109,
+            top: 8,
+            child: Text(
+              name,
+              style: const TextStyle(
+                fontSize: 16,
+                color: Color(0xffffffff),
+                fontFamily: 'NunitoSans-Bold',
+              ),
+            ),
+          ),
+          Positioned(
+            left: 109,
+            top: 35,
+            child: Text(
+              specialty,
+              style: const TextStyle(
+                fontSize: 12,
+                color: Color(0xffffffff),
+                fontFamily: 'NunitoSans-Bold',
+              ),
+            ),
+          ),
+          Positioned(
+            left: 109,
+            top: 65,
+            child: Text(
+              address,
+              style: const TextStyle(
+                fontSize: 12,
+                color: Color(0xffffffff),
+                fontFamily: 'NunitoSans-SemiBold',
+              ),
+            ),
+          ),
+          Positioned(
+            left: 9,
+            top: 110,
+            child: Row(
+              children: [
+                const Icon(Icons.star, color: Colors.white, size: 14),
+                const SizedBox(width: 4),
+                Text(
+                  '$rating',
+                  style: const TextStyle(
+                    fontSize: 10,
+                    color: Color(0xffffffff),
+                    fontFamily: 'NunitoSans-SemiBold',
+                  ),
+                ),
+                const SizedBox(width: 4),
+                Text(
+                  '($reviews)',
+                  style: const TextStyle(
+                    fontSize: 8,
+                    color: Color(0xffffffff),
+                    fontFamily: 'NunitoSans-SemiBold',
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Positioned(
+            left: 109,
+            top: 104,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const BookingScreen()),
+                );
+              },
+              child: Container(
+                width: 69,
+                height: 25,
+                decoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                    colors: [Color(0xff244599), Color(0xff0C1733)],
+                  ),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: const Center(
+                  child: Text(
+                    'View more',
+                    style: TextStyle(
+                      fontSize: 10,
+                      color: Color(0xffffffff),
+                      fontFamily: 'NunitoSans-SemiBold',
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }
+
+
 
 //
 // class BookSessionScreen extends StatelessWidget {
