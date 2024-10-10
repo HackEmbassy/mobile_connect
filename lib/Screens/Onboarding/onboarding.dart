@@ -195,7 +195,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           radius: 30.r,
                           buttonOutlinedColor: const Color(0xffE5F5FC),
                           buttonColor: const Color(0xff244599),
-                          width: 100.w,
+                          width: 130.w,
                           height: 50,
                         ),
                       )
@@ -218,7 +218,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           radius: 30.r,
                           buttonOutlinedColor: const Color(0xff244599),
                           buttonColor: const Color(0xffE5F5FC),
-                          width: 100.w,
+                          width: 130.w,
                           height: 50,
                         ),
                       )
@@ -238,7 +238,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           radius: 30.r,
                           buttonOutlinedColor: const Color(0xffE5F5FC),
                           buttonColor: const Color(0xff244599),
-                          width: 150.w,
+                          width: 190.w,
                           height: 50,
                         ),
                       ),
