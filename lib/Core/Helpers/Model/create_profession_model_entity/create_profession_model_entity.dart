@@ -12,6 +12,8 @@ class CreateProfessionModelEntity {
   String? specialty;
   String? clinicOrGym;
   String? city;
+  String? state;
+  String? address;
   double? latitude;
   double? longitude;
   String? bio;
@@ -26,6 +28,8 @@ class CreateProfessionModelEntity {
     this.specialty,
     this.clinicOrGym,
     this.city,
+    this.state,
+    this.address,
     this.latitude,
     this.longitude,
     this.bio,

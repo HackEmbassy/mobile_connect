@@ -24,8 +24,8 @@ class ProfessionalChatScreen extends StatelessWidget {
         ),
         title: const Text(
           'Mrs Nkechi Akuchinyere',
-          style: TextStyle(
-              color: Colors.blueAccent, fontWeight: FontWeight.bold),
+          style:
+              TextStyle(color: Colors.blueAccent, fontWeight: FontWeight.bold),
         ),
         actions: [
           IconButton(
@@ -98,6 +98,7 @@ class ProfessionalChatScreen extends StatelessWidget {
     );
   }
 }
+
 class ChatBubble extends StatelessWidget {
   final String sender;
   final String message;
@@ -117,7 +118,7 @@ class ChatBubble extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 16.0),
       child: Column(
         crossAxisAlignment:
-        isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+            isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
         children: [
           Text(
             time,
@@ -125,7 +126,7 @@ class ChatBubble extends StatelessWidget {
           ),
           Row(
             mainAxisAlignment:
-            isMe ? MainAxisAlignment.end : MainAxisAlignment.start,
+                isMe ? MainAxisAlignment.end : MainAxisAlignment.start,
             children: [
               if (!isMe) CircleAvatar(child: Text(sender[0])),
               SizedBox(width: 10),
@@ -136,12 +137,14 @@ class ChatBubble extends StatelessWidget {
                 ),
                 padding: const EdgeInsets.all(20.0),
                 constraints: const BoxConstraints(
-                  maxWidth: 1000,  // Increased max width to make the chat bubble wider
-                  minHeight: 20,  // Set a minimum height for larger chat boxes
+                  maxWidth:
+                      1000, // Increased max width to make the chat bubble wider
+                  minHeight: 20, // Set a minimum height for larger chat boxes
                 ), // Increased padding
                 child: Text(
                   message,
-                  style: TextStyle(color: isMe ? Colors.black : Colors.black, fontSize: 16),
+                  style: TextStyle(
+                      color: isMe ? Colors.black : Colors.black, fontSize: 16),
                 ),
               ),
               const SizedBox(width: 10),

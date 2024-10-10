@@ -68,7 +68,7 @@ class _LoginPageState extends State<LoginPage> {
                         const Gap(height: 10),
                         ShaderMask(
                           shaderCallback: (bounds) => const LinearGradient(
-                            colors: [Color(0xff244599),Color(0xff0C1733)],
+                            colors: [Color(0xff244599), Color(0xff0C1733)],
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
                           ).createShader(
@@ -144,17 +144,21 @@ class _LoginPageState extends State<LoginPage> {
                                 );
                               },
                               child: ShaderMask(
-                                shaderCallback: (bounds) => const LinearGradient(
-                                  colors: [Color(0xff244599),Color(0xff0C1733)],
+                                shaderCallback: (bounds) =>
+                                    const LinearGradient(
+                                  colors: [
+                                    Color(0xff244599),
+                                    Color(0xff0C1733)
+                                  ],
                                   begin: Alignment.topLeft,
                                   end: Alignment.bottomRight,
                                 ).createShader(
-                                  Rect.fromLTWH(0, 0, bounds.width, bounds.height),
+                                  Rect.fromLTWH(
+                                      0, 0, bounds.width, bounds.height),
                                 ),
                                 child: const Text(
                                   'Forgot password',
-                                  style: TextStyle(
-                                  ),
+                                  style: TextStyle(),
                                 ),
                               ),
                             ),
@@ -162,9 +166,9 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         const SizedBox(height: 20),
                         Container(
-                          decoration:  BoxDecoration(
+                          decoration: BoxDecoration(
                             gradient: const LinearGradient(
-                              colors: [Color(0xff244599),Color(0xff0C1733)],
+                              colors: [Color(0xff244599), Color(0xff0C1733)],
                             ),
                             borderRadius: BorderRadius.circular(20),
                           ),
@@ -183,7 +187,8 @@ class _LoginPageState extends State<LoginPage> {
                               }
                             },
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.transparent, // Make background transparent
+                              backgroundColor: Colors
+                                  .transparent, // Make background transparent
                               shadowColor: Colors.transparent,
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 120, vertical: 10),
@@ -193,7 +198,8 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             child: const Text(
                               'LOGIN',
-                              style: TextStyle(fontSize: 15,color: Colors.white),
+                              style:
+                                  TextStyle(fontSize: 15, color: Colors.white),
                             ),
                           ),
                         ),

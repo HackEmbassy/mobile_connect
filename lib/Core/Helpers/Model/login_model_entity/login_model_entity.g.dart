@@ -8,12 +8,12 @@ part of 'login_model_entity.dart';
 
 LoginModelEntity _$LoginModelEntityFromJson(Map<String, dynamic> json) =>
     LoginModelEntity(
-email: json['email'] as String?,
+      email: json['email'] as String?,
       password: json['password'] as String?,
-);
+    );
 
 Map<String, dynamic> _$LoginModelEntityToJson(LoginModelEntity instance) =>
     <String, dynamic>{
-'email': instance.email,
+      'email': instance.email,
       'password': instance.password,
-};
+    };

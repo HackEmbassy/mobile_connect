@@ -33,20 +33,16 @@ class ProfessionalEventList extends StatelessWidget {
                   onChanged: (newValue) {
                     // Handle month selection
                   },
-
                 ),
                 Row(
                   children: [
                     IconButton(
                       icon: Icon(Icons.calendar_month),
-                      onPressed: () {
-                      },
+                      onPressed: () {},
                     ),
                     IconButton(
                       icon: const Icon(Icons.chat),
-                      onPressed: () {
-
-                      },
+                      onPressed: () {},
                     ),
                   ],
                 ),
@@ -59,19 +55,23 @@ class ProfessionalEventList extends StatelessWidget {
             child: ListView(
               children: [
                 buildDateSection(context, 'Tue, Dec 26, 2024', [
-                  buildEventItem(context, '2:00 PM', '3:00 PM', "Joe's basketball class"),
+                  buildEventItem(
+                      context, '2:00 PM', '3:00 PM', "Joe's basketball class"),
                   buildEventItem(context, '4:10 PM', '5:00 PM', 'Event 2'),
                   buildEventItem(context, '6:00 PM', '8:00 PM', 'Event 3'),
                   buildEventItem(context, '9:10 PM', '11:00 PM', 'Event 4'),
                 ]),
                 buildDateSection(context, 'Wed, Dec 27, 2024', [
-                  buildEventItem(context, '2:00 PM', '3:00 PM', "Joe's basketball class"),
+                  buildEventItem(
+                      context, '2:00 PM', '3:00 PM', "Joe's basketball class"),
                 ]),
                 buildDateSection(context, 'Thu, Dec 28, 2024', [
-                  buildEventItem(context, '2:00 PM', '3:00 PM', "Joe's basketball class"),
+                  buildEventItem(
+                      context, '2:00 PM', '3:00 PM', "Joe's basketball class"),
                 ]),
                 buildDateSection(context, 'Fri, Dec 29, 2024', [
-                  buildEventItem(context, '2:00 PM', '3:00 PM', "Joe's basketball class"),
+                  buildEventItem(
+                      context, '2:00 PM', '3:00 PM', "Joe's basketball class"),
                 ]),
               ],
             ),
@@ -81,7 +81,8 @@ class ProfessionalEventList extends StatelessWidget {
     );
   }
 
-  Widget buildDateSection(BuildContext context, String date, List<Widget> events) {
+  Widget buildDateSection(
+      BuildContext context, String date, List<Widget> events) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -104,7 +105,8 @@ class ProfessionalEventList extends StatelessWidget {
     );
   }
 
-  Widget buildEventItem(BuildContext context, String startTime, String endTime, String title) {
+  Widget buildEventItem(
+      BuildContext context, String startTime, String endTime, String title) {
     return InkWell(
       onTap: () {
         // Show the event details in a custom popup dialog
@@ -151,7 +153,6 @@ class ProfessionalEventList extends StatelessWidget {
                               ),
                             ),
                             SizedBox(height: 5),
-
                           ],
                         ),
                         const Icon(Icons.arrow_forward),
@@ -167,7 +168,6 @@ class ProfessionalEventList extends StatelessWidget {
                               ),
                             ),
                             const SizedBox(height: 5),
-
                           ],
                         ),
                       ],
@@ -194,7 +194,8 @@ class ProfessionalEventList extends StatelessWidget {
                       children: [
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blueAccent[100], // Delete button style
+                            backgroundColor:
+                                Colors.blueAccent[100], // Delete button style
                             elevation: 0,
                           ),
                           onPressed: () {},
@@ -205,7 +206,8 @@ class ProfessionalEventList extends StatelessWidget {
                         ),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blue[800], // Edit button style
+                            backgroundColor:
+                                Colors.blue[800], // Edit button style
                             elevation: 0,
                           ),
                           onPressed: () {},

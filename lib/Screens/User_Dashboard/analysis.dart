@@ -1,38 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:herhealthconnect/Components/TextView/Models/TextViewConfig.dart';
+import 'package:herhealthconnect/Components/TextView/TextView.dart';
+import 'package:herhealthconnect/assets/app_colors.dart';
 
 class AnalysisScreen extends StatelessWidget {
+  const AnalysisScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.white,
+      appBar: AppBar(
+        title: TextView(
+            config: TextViewConfig(
+          text: "Analysis",
+          fontSize: 20,
+          fontWeight: FontWeight.w800,
+          color: const Color(0xff244599),
+        )),
+        centerTitle: true,
+        backgroundColor: AppColors.white,
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
-              const SizedBox(height: 60),
-              Row(
-                children: [
-                  IconButton(
-                    icon: Icon(Icons.arrow_back, color: Colors.black),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                  ),
-                  const SizedBox(width: 110),
-                  Text(
-                    'Analysis',
-                    style: TextStyle(color: Color(0xff244599), fontSize: 14),
-                  ),
-                ],
-              ),
+              const SizedBox(height: 30),
               // Profile section
-              Center(
+              const Center(
                 child: Column(
                   children: [
                     CircleAvatar(
                       radius: 50,
-                      backgroundImage: NetworkImage(
-                          'https://example.com/profile.jpg'), // Replace with the actual image URL
+                      backgroundImage: AssetImage(
+                          'assets/images/profile_image.png'), // Replace with the actual image URL
                     ),
                     SizedBox(height: 10),
                     Text(
@@ -49,7 +51,7 @@ class AnalysisScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
 
               // Cycle Data section
               Row(
@@ -73,7 +75,7 @@ class AnalysisScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
 
               // Height and Weight section
               Row(
@@ -93,22 +95,22 @@ class AnalysisScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
 
               // Graph Section
               Container(
-                padding: EdgeInsets.all(16),
+                padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: Column(
                   children: [
-                    Text(
+                    const Text(
                       "July-August 2024",
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     // Graph bars (simulated here with containers)
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -142,7 +144,7 @@ class AnalysisScreen extends StatelessWidget {
   }) {
     return Container(
       width: 150,
-      padding: EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: cardColor,
         borderRadius: BorderRadius.circular(16),
@@ -159,21 +161,22 @@ class AnalysisScreen extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: const TextStyle(fontWeight: FontWeight.bold),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Text.rich(
             TextSpan(
               children: [
                 TextSpan(
                   text: "$value ",
-                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                      fontSize: 28, fontWeight: FontWeight.bold),
                 ),
                 TextSpan(text: unit),
               ],
             ),
           ),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
           Row(
             children: [
               Icon(
@@ -183,7 +186,7 @@ class AnalysisScreen extends StatelessWidget {
                 color: changeDirection == "up" ? Colors.green : Colors.red,
                 size: 16,
               ),
-              SizedBox(width: 5),
+              const SizedBox(width: 5),
               Text(
                 change,
                 style: TextStyle(
@@ -207,7 +210,7 @@ class AnalysisScreen extends StatelessWidget {
   }) {
     return Container(
       width: 150,
-      padding: EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: color,
         borderRadius: BorderRadius.circular(16),
@@ -223,10 +226,10 @@ class AnalysisScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Icon(icon, color: Colors.white, size: 24),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Text(
             value,
-            style: TextStyle(fontSize: 28, color: Colors.white),
+            style: const TextStyle(fontSize: 28, color: Colors.white),
           ),
         ],
       ),
@@ -240,7 +243,7 @@ class AnalysisScreen extends StatelessWidget {
         Container(
           width: 10,
           height: 60,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             gradient: LinearGradient(
               colors: [Colors.red, Colors.blue, Colors.grey],
               begin: Alignment.topCenter,
@@ -249,7 +252,7 @@ class AnalysisScreen extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 5),
+        const SizedBox(height: 5),
         Text(month),
         Text(day),
       ],

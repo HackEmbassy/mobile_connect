@@ -6,11 +6,11 @@ part 'login_model_entity.g.dart';
 class LoginModelEntity {
   String? email;
   String? password;
-  
+
   LoginModelEntity({
     this.email,
     this.password,
-    });
+  });
 
   factory LoginModelEntity.fromJson(Map<String, dynamic> json) {
     return _$LoginModelEntityFromJson(json);

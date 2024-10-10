@@ -185,7 +185,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           text: "NEXT",
                           fontSize: 18,
                           fontWeight: FontWeight.w500,
-                          textColor: AppColors.black,
+                          textColor: AppColors.white,
                           onPressed: () {
                             _pageController.nextPage(
                               duration: const Duration(milliseconds: 300),
@@ -193,8 +193,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             );
                           },
                           radius: 30.r,
-                          buttonOutlinedColor: Color(0xffE5F5FC),
-                          buttonColor: Color(0xff244599),
+                          buttonOutlinedColor: const Color(0xffE5F5FC),
+                          buttonColor: const Color(0xff244599),
                           width: 100.w,
                           height: 50,
                         ),
@@ -216,8 +216,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             );
                           },
                           radius: 30.r,
-                          buttonOutlinedColor: Color(0xff244599),
-                          buttonColor: Color(0xffE5F5FC),
+                          buttonOutlinedColor: const Color(0xff244599),
+                          buttonColor: const Color(0xffE5F5FC),
                           width: 100.w,
                           height: 50,
                         ),
@@ -227,7 +227,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           text: "CONTINUE",
                           fontSize: 18,
                           fontWeight: FontWeight.w500,
-                          textColor: AppColors.black,
+                          textColor: AppColors.white,
                           onPressed: () {
                             Navigator.push(
                               context,
@@ -236,8 +236,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             );
                           },
                           radius: 30.r,
-                          buttonOutlinedColor: Color(0xffE5F5FC),
-                          buttonColor: Color(0xff244599),
+                          buttonOutlinedColor: const Color(0xffE5F5FC),
+                          buttonColor: const Color(0xff244599),
                           width: 150.w,
                           height: 50,
                         ),

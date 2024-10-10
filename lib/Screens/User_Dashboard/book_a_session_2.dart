@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:herhealthconnect/Core/router/page_router.dart';
 import 'package:herhealthconnect/Screens/User_Dashboard/summary_booking.dart';
+
 class BookingScreen extends StatefulWidget {
-  const BookingScreen({super.key});
+  const BookingScreen(
+      {super.key,
+      required this.name,
+      required this.specialty,
+      required this.address});
+  final String name, specialty, address;
 
   @override
   _BookingScreenState createState() => _BookingScreenState();
@@ -27,21 +35,26 @@ class _BookingScreenState extends State<BookingScreen> {
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () {},
+          onPressed: () {
+            PageRouter.pop();
+          },
         ),
         title: const Text("Detail",
             style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w700,
                 color: Colors.white,
-                fontFamily: 'NunitoSans'
-            )),
+                fontFamily: 'NunitoSans')),
         centerTitle: true,
       ),
       body: Column(
         children: [
           // Doctor Info Section
-          _buildDoctorInfoSection(),
+          _buildDoctorInfoSection(
+            widget.name,
+            widget.specialty,
+            widget.address,
+          ),
 
           // Add a space between the blue section and the white section
           const SizedBox(height: 20), // Adjust this value to your preference
@@ -49,6 +62,7 @@ class _BookingScreenState extends State<BookingScreen> {
           // White rounded container at the bottom
           Expanded(
             child: Container(
+              width: double.infinity,
               padding: const EdgeInsets.all(16),
               decoration: const BoxDecoration(
                 color: Colors.white,
@@ -78,55 +92,61 @@ class _BookingScreenState extends State<BookingScreen> {
   }
 
   // Doctor Info Section at the Top
-  Widget _buildDoctorInfoSection() {
+  Widget _buildDoctorInfoSection(
+      String name, String specialty, String address) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: Column(
         children: [
           const CircleAvatar(
             radius: 40,
-            // backgroundImage: AssetImage('assets/doctor_image.png'), // Placeholder image
+            backgroundImage: AssetImage(
+                'assets/images/profile_image.png'), // Placeholder image
           ),
           const SizedBox(height: 10),
-          const Text(
-            "Dr. Richar Kandowen",
+          Text(
+            name,
             style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w700,
                 color: Colors.white,
-                fontFamily: 'NunitoSans'
-            ),
+                fontFamily: 'NunitoSans'),
           ),
-          const Text(
-            "Obstetrician",
+          Text(
+            specialty,
             style: TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.w700,
                 color: Colors.white,
-                fontFamily: 'NunitoSans'
-            ),
+                fontFamily: 'NunitoSans'),
           ),
           const SizedBox(height: 5),
           SizedBox(
             height: 70, // Adjust height to fit both texts
             width: 220,
             child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 7),
+              padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 7.h),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(6.53),
               ),
-              child: const Row(
+              child: Row(
                 children: [
-                  Icon(Icons.location_on, color: Colors.redAccent, size: 16), // Icon applies to both texts
+                  Icon(Icons.location_on,
+                      color: Colors.redAccent,
+                      size: 16), // Icon applies to both texts
                   SizedBox(width: 5), // Spacing between icon and text
-                  Expanded( // Expanded to ensure texts fit in the available space
-                    child: Column( // Stack the two lines of text vertically
+                  Expanded(
+                    // Expanded to ensure texts fit in the available space
+                    child: Column(
+                      // Stack the two lines of text vertically
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(height: 10,),
+                        SizedBox(
+                          height: 10,
+                        ),
                         Text(
-                          "123 Fitness Avenue, Wellness \nClinic, Downtown Branch",
+                          address,
                           style: TextStyle(
                             color: Color(0xff484848),
                             fontSize: 12,
@@ -147,7 +167,7 @@ class _BookingScreenState extends State<BookingScreen> {
   // Service Selection Widget (with selectable icons)
   Widget _buildServiceSelection() {
     List<String> serviceImages = [
-      'assets/images/services.png',  // Example images (make sure they're in the right path)
+      'assets/images/services.png', // Example images (make sure they're in the right path)
       'assets/images/services.png',
       'assets/images/services.png',
       'assets/images/services.png',
@@ -180,15 +200,17 @@ class _BookingScreenState extends State<BookingScreen> {
                       // Use Image.asset for local images or Image.network for network images
                       Image.asset(
                         serviceImages[index],
-                        height: 50,  // Adjust the size as needed
-                        width: 50,   // Adjust the size as needed
+                        height: 50, // Adjust the size as needed
+                        width: 50, // Adjust the size as needed
                         fit: BoxFit.cover, // Ensures the image fills the space
                       ),
                       const SizedBox(height: 5),
                       Text(
                         "Select service",
                         style: TextStyle(
-                          color: _selectedService == index ?  const Color(0xff244599) : const Color(0xff244599),
+                          color: _selectedService == index
+                              ? const Color(0xff244599)
+                              : const Color(0xff244599),
                           fontWeight: _selectedService == index
                               ? FontWeight.bold
                               : FontWeight.normal,
@@ -236,7 +258,9 @@ class _BookingScreenState extends State<BookingScreen> {
                     color: isSelected ? Colors.blue : Colors.white,
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(
-                        color: isSelected ? const Color(0xff244599) : const Color(0xff244599)),
+                        color: isSelected
+                            ? const Color(0xff244599)
+                            : const Color(0xff244599)),
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -316,9 +340,10 @@ class _BookingScreenState extends State<BookingScreen> {
   // Book a Session Button
   Widget _buildBookButton() {
     return Container(
-      decoration:  BoxDecoration(
+      width: double.infinity,
+      decoration: BoxDecoration(
         gradient: const LinearGradient(
-          colors: [Color(0xff244599),Color(0xff0C1733)],
+          colors: [Color(0xff244599), Color(0xff0C1733)],
         ),
         borderRadius: BorderRadius.circular(20),
       ),
@@ -326,14 +351,13 @@ class _BookingScreenState extends State<BookingScreen> {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) =>   const BookingSummaryPage()),
-          );// Action for sign-up button
+            MaterialPageRoute(builder: (context) => const BookingSummaryPage()),
+          ); // Action for sign-up button
         },
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.transparent, // Make background transparent
           shadowColor: Colors.transparent,
-          padding: const EdgeInsets.symmetric(
-              horizontal: 100, vertical: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 15),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
             side: const BorderSide(color: Color(0xFF3A6EA5), width: 2),
@@ -341,7 +365,7 @@ class _BookingScreenState extends State<BookingScreen> {
         ),
         child: const Text(
           'BOOK A SESSION',
-          style: TextStyle(fontSize: 16,color: Colors.white),
+          style: TextStyle(fontSize: 16, color: Colors.white),
         ),
       ),
     );

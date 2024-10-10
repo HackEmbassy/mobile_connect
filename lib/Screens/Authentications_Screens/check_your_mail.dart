@@ -3,6 +3,7 @@ import 'package:herhealthconnect/Screens/Authentications_Screens/set_new_passwor
 import '../../../Components/Image/ImageView.dart';
 import '../../../Components/Image/Model/ImageConfig.dart';
 import '../../../assets/app_image.dart';
+
 class CheckInboxScreen extends StatelessWidget {
   const CheckInboxScreen({super.key});
 
@@ -10,7 +11,7 @@ class CheckInboxScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding:const EdgeInsets.all(30.0),
+        padding: const EdgeInsets.all(30.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -34,7 +35,8 @@ class CheckInboxScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) =>  const NewPasswordScreen()),
+                      MaterialPageRoute(
+                          builder: (context) => const NewPasswordScreen()),
                     );
                   },
                 ),
@@ -42,7 +44,7 @@ class CheckInboxScreen extends StatelessWidget {
             ),
             ShaderMask(
               shaderCallback: (bounds) => const LinearGradient(
-                colors: [Color(0xff244599),Color(0xff0C1733)],
+                colors: [Color(0xff244599), Color(0xff0C1733)],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ).createShader(
@@ -66,13 +68,9 @@ class CheckInboxScreen extends StatelessWidget {
               style: TextStyle(
                   fontSize: 16,
                   color: Colors.black54,
-                  fontWeight: FontWeight.w400
-              ),
+                  fontWeight: FontWeight.w400),
             ),
-            const SizedBox(
-                height:40,
-                width:50
-            ),
+            const SizedBox(height: 40, width: 50),
             const Spacer(flex: 8),
             const SizedBox(height: 30),
             SizedBox(

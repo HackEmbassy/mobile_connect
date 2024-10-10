@@ -3,8 +3,9 @@ import '../../../Components/Image/ImageView.dart';
 import '../../../Components/Image/Model/ImageConfig.dart';
 import '../../../assets/app_image.dart';
 import '../User_Dashboard/user_dashboard.dart';
+
 class ResetSuccessfulScreen extends StatelessWidget {
-   const ResetSuccessfulScreen({super.key});
+  const ResetSuccessfulScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,9 @@ class ResetSuccessfulScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SizedBox(height: 200,),
+            const SizedBox(
+              height: 200,
+            ),
             const Spacer(flex: 2),
             SizedBox(
               height: 251,
@@ -34,8 +37,7 @@ class ResetSuccessfulScreen extends StatelessWidget {
                   fontSize: 32,
                   fontWeight: FontWeight.w700,
                   color: Colors.black,
-                  fontFamily: 'NunitoSans'
-              ),
+                  fontFamily: 'NunitoSans'),
             ),
             const SizedBox(height: 20),
             const Text(
@@ -47,11 +49,13 @@ class ResetSuccessfulScreen extends StatelessWidget {
               ),
             ),
             const Spacer(flex: 3),
-            SizedBox(height: 100,),
+            SizedBox(
+              height: 100,
+            ),
             Container(
-              decoration:  BoxDecoration(
+              decoration: BoxDecoration(
                 gradient: const LinearGradient(
-                  colors: [Color(0xff244599),Color(0xff0C1733)],
+                  colors: [Color(0xff244599), Color(0xff0C1733)],
                 ),
                 borderRadius: BorderRadius.circular(20),
               ),
@@ -59,14 +63,16 @@ class ResetSuccessfulScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) =>   const UserDashboard()),
-                  );// Action for sign-up button
+                    MaterialPageRoute(
+                        builder: (context) => const UserDashboard()),
+                  ); // Action for sign-up button
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.transparent, // Make background transparent
+                  backgroundColor:
+                      Colors.transparent, // Make background transparent
                   shadowColor: Colors.transparent,
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 150, vertical: 20),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 150, vertical: 20),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                     side: const BorderSide(color: Color(0xFF3A6EA5), width: 2),
@@ -74,7 +80,7 @@ class ResetSuccessfulScreen extends StatelessWidget {
                 ),
                 child: const Text(
                   'LOG IN ',
-                  style: TextStyle(fontSize: 16,color: Colors.white),
+                  style: TextStyle(fontSize: 16, color: Colors.white),
                 ),
               ),
             ),

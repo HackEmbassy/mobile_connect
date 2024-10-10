@@ -1,30 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:herhealthconnect/Components/Gap.dart';
+import 'package:herhealthconnect/assets/app_colors.dart';
 
-class  ProfessionalAppointmentsScreen extends StatelessWidget {
-  const  ProfessionalAppointmentsScreen({super.key});
+class ProfessionalAppointmentsScreen extends StatelessWidget {
+  const ProfessionalAppointmentsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.grey[200],
+        backgroundColor: Colors.white,
         elevation: 0,
+        automaticallyImplyLeading: false,
         toolbarHeight: 60,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black87),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
         title: const Text(
           'Appointments',
-          style: TextStyle(color: Colors.black87, fontSize: 20),
+          style: TextStyle(
+            color: AppColors.tPrimary,
+            fontSize: 20,
+            fontWeight: FontWeight.w800,
+          ),
         ),
         centerTitle: true,
       ),
+      backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const Gap(height: 30),
             TextField(
               decoration: InputDecoration(
                 hintText: "Search for professionals or specialty",
@@ -59,7 +64,8 @@ class  ProfessionalAppointmentsScreen extends StatelessWidget {
                             children: [
                               CircleAvatar(
                                 radius: 30,
-                                backgroundImage: AssetImage('assets/doctor.png'), // Replace with actual image
+                                backgroundImage: AssetImage(
+                                    'assets/images/profile_image.png'), // Replace with actual image
                               ),
                               SizedBox(width: 10),
                               Expanded(

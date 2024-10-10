@@ -124,7 +124,6 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
                       fontSize: 16,
                       color: Colors.grey,
                       fontFamily: 'NunitoSans-Regular',
-
                     ),
                   ),
                   const SizedBox(height: 16),
@@ -224,7 +223,7 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
                         height: 50.h,
                         fontSize: 18.sp,
                         textColor: AppColors.white,
-                        buttonColor:Color(0xff244599),
+                        buttonColor: Color(0xff244599),
                         buttonOutlinedColor: Color(0xff0C1733)),
                   ),
 //                   Center(

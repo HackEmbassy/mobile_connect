@@ -12,9 +12,11 @@ import 'package:stacked_services/src/snackbar/snackbar_service.dart';
 import 'package:stacked_shared/stacked_shared.dart';
 
 import '../Api/auth_api.dart';
+import '../Api/workApi.dart';
 import '../Helpers/Contract/contract-implementation.dart';
 import '../Helpers/Repository/repository_implementation.dart';
 import '../Helpers/veiwModel/auth_viewmodel.dart';
+import '../Helpers/veiwModel/profile_viewmodel.dart';
 import '../Network/Network_Service.dart';
 import 'Manager/shared_preferences.dart';
 
@@ -34,8 +36,10 @@ Future<void> setupLocator({
   locator.registerLazySingleton(() => SnackbarService());
   locator.registerLazySingleton(() => SharedPreferencesService());
   locator.registerLazySingleton(() => AuthApi());
+  locator.registerLazySingleton(() => WorkApi());
   locator.registerLazySingleton(() => NetworkService());
   locator.registerLazySingleton(() => AuthContractsImpl());
   locator.registerLazySingleton(() => AuthRepoImpl());
   locator.registerLazySingleton(() => AuthViewmodel());
+  locator.registerLazySingleton(() => ProfileViewmodel());
 }

@@ -91,13 +91,10 @@ class Loader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: ImageView(
-          imageConfig: ImageConfig(
-              imageURL: AppImage.logowhite,
-              boxFit: BoxFit.contain,
-              height: size?.w,
-              imageType: ImageType.asset)),
+    return const Center(
+      child: CircularProgressIndicator(
+        color: AppColors.black,
+      ),
     );
   }
 }

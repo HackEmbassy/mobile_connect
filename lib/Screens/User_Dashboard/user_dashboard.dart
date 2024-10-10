@@ -5,6 +5,7 @@ import 'package:herhealthconnect/Screens/User_Dashboard/calendar.dart';
 import 'package:herhealthconnect/Screens/User_Dashboard/profile.dart';
 import 'package:herhealthconnect/Screens/User_Dashboard/record.dart';
 import 'package:herhealthconnect/Screens/User_Dashboard/user_homescreen.dart';
+import 'package:herhealthconnect/assets/app_colors.dart';
 
 import 'book_a_session.dart';
 import 'menstrual_tracking.dart';
@@ -23,10 +24,10 @@ class _UserDashboardState extends State<UserDashboard> {
   // Define the screens based on the index
   static final List<Widget> _screens = <Widget>[
     const HomeScreen(), // Screen 0 - Home
-    BookSessionScreen(), // Screen 1 - Book a session
+    const BookSessionScreen(), // Screen 1 - Book a session
     const MenstrualTrackingScreen(), // Screen 2 - Menstrual Tracking
-     NewsFeedScreen(), // Screen 3 - Newsfeed
-    ProfileScreen(), // Screen 4 - Profile
+    const NewsFeedScreen(), // Screen 3 - Newsfeed
+    const ProfileScreen(), // Screen 4 - Profile
   ];
 
   void _onItemTapped(int index) {
@@ -43,6 +44,7 @@ class _UserDashboardState extends State<UserDashboard> {
         children: _screens, // Keep all screens loaded and switch between them
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: AppColors.white,
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.black87,
         unselectedItemColor: Colors.grey[600],

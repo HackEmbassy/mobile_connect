@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class ProfessionalLanguage extends StatefulWidget {
   const ProfessionalLanguage({super.key});
 
@@ -13,14 +14,15 @@ class _ProfessionalLanguageState extends State<ProfessionalLanguage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child:
-        Text(
+        title: const Center(
+          child: Text(
             'Language',
-            style: TextStyle(fontSize: 16,
+            style: TextStyle(
+                fontSize: 16,
                 fontWeight: FontWeight.w600,
                 color: Color(0xff000000),
                 fontFamily: 'NunitoSans'),
-        ),
+          ),
         ), // Center the title
         leading: Container(
           padding: EdgeInsets.all(8.0),
@@ -30,9 +32,7 @@ class _ProfessionalLanguageState extends State<ProfessionalLanguage> {
           ),
           child: IconButton(
             icon: Icon(Icons.arrow_back, size: 10),
-            onPressed: () {
-
-            },
+            onPressed: () {},
           ),
         ),
         backgroundColor: Colors.white,

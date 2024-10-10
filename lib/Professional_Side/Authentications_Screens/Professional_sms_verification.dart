@@ -3,6 +3,7 @@ import '../../../Components/Image/ImageView.dart';
 import '../../../Components/Image/Model/ImageConfig.dart';
 import '../../../assets/app_image.dart';
 import '../kyc1 profession_selection.dart';
+
 class ProfessionalPhoneVerificationScreen extends StatelessWidget {
   const ProfessionalPhoneVerificationScreen({super.key});
 
@@ -30,15 +31,14 @@ class ProfessionalPhoneVerificationScreen extends StatelessWidget {
               children: [
                 IconButton(
                   icon: const Icon(Icons.arrow_back),
-                  onPressed: () {
-                  },
+                  onPressed: () {},
                 ),
               ],
             ),
             const SizedBox(height: 16.0),
             ShaderMask(
               shaderCallback: (bounds) => const LinearGradient(
-                colors: [Color(0xff244599),Color(0xff0C1733)],
+                colors: [Color(0xff244599), Color(0xff0C1733)],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ).createShader(
@@ -47,16 +47,20 @@ class ProfessionalPhoneVerificationScreen extends StatelessWidget {
               child: const Text(
                 'We just sent you an SMS',
                 style: TextStyle(
-                    fontSize: 24,
-                    color: Color(0xff244599),
-                    fontWeight: FontWeight.w700,
-                  fontFamily: 'NunitoSans', ),
+                  fontSize: 24,
+                  color: Color(0xff244599),
+                  fontWeight: FontWeight.w700,
+                  fontFamily: 'NunitoSans',
+                ),
               ),
             ),
             const SizedBox(height: 20.0),
             const Text(
               'Enter the security code we sent to ********234',
-              style: TextStyle(fontSize: 14, color: Color(0xff484848),fontWeight: FontWeight.w900),
+              style: TextStyle(
+                  fontSize: 14,
+                  color: Color(0xff484848),
+                  fontWeight: FontWeight.w900),
             ),
             const SizedBox(height: 24.0),
             // Security Code Fields
@@ -80,12 +84,14 @@ class ProfessionalPhoneVerificationScreen extends StatelessWidget {
                 );
               }),
             ),
-            const SizedBox(height: 30,),
-             Row(
+            const SizedBox(
+              height: 30,
+            ),
+            Row(
               children: [
                 ShaderMask(
                   shaderCallback: (bounds) => const LinearGradient(
-                    colors: [Color(0xff244599),Color(0xff0C1733)],
+                    colors: [Color(0xff244599), Color(0xff0C1733)],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ).createShader(
@@ -106,9 +112,9 @@ class ProfessionalPhoneVerificationScreen extends StatelessWidget {
             const Spacer(),
             // Continue Button
             Container(
-              decoration:  BoxDecoration(
+              decoration: BoxDecoration(
                 gradient: const LinearGradient(
-                  colors: [Color(0xff244599),Color(0xff0C1733)],
+                  colors: [Color(0xff244599), Color(0xff0C1733)],
                 ),
                 borderRadius: BorderRadius.circular(20),
               ),
@@ -116,14 +122,16 @@ class ProfessionalPhoneVerificationScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) =>   const ProfessionSelectionPage()),
-                  );// Action for sign-up button
+                    MaterialPageRoute(
+                        builder: (context) => const ProfessionSelectionPage()),
+                  ); // Action for sign-up button
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.transparent, // Make background transparent
+                  backgroundColor:
+                      Colors.transparent, // Make background transparent
                   shadowColor: Colors.transparent,
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 120, vertical: 15),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 120, vertical: 15),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                     side: const BorderSide(color: Color(0xFF3A6EA5), width: 2),
@@ -131,7 +139,7 @@ class ProfessionalPhoneVerificationScreen extends StatelessWidget {
                 ),
                 child: const Text(
                   'CONTINUE',
-                  style: TextStyle(fontSize: 16,color: Colors.white),
+                  style: TextStyle(fontSize: 16, color: Colors.white),
                 ),
               ),
             ),

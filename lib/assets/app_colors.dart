@@ -7,6 +7,8 @@ class AppColors {
   static const Color textlight = Color(0xff514848);
   static const Color textgreyscale = Color(0xff575758);
   static const Color primary = Color(0xff092F70);
+  static const Color tPrimary = Color(0xff244599);
+  static const Color boldBlue = Color(0xff0C1733);
   static const Color lightprimary = Color(0xffC7DDFF);
   static const Color primaryButton = Color(0xff0261EF);
   static const Color inter = Color(0xffF7F9FA);
@@ -17,6 +19,7 @@ class AppColors {
   static const Color joined = Color(0xffEBF3FF);
   static const Color load = Color(0xff4BADFD);
   static const Color chook = Color.fromRGBO(192, 216, 255, 0.70);
+  static const Color tund = Color(0xffF2F6FF);
   static const Color primaryAccent = Color(0xffD4C5FF);
   static const Color primary50 = Color(0xffF7F4FF);
   static const Color primaryLight = Color(0xff8CB976);

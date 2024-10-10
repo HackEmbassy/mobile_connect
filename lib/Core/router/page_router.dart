@@ -5,7 +5,6 @@ import 'package:herhealthconnect/Core/CoreFolder/app.locator.dart';
 import 'package:herhealthconnect/Screens/User_Dashboard/user_dashboard.dart';
 import 'package:stacked_services/stacked_services.dart';
 
-
 class PageRouter {
   static final _navigation = locator<NavigationService>();
   static NavigationService get navigation => _navigation;

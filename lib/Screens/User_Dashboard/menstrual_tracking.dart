@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:herhealthconnect/Screens/User_Dashboard/add_period.dart';
 import 'package:herhealthconnect/Screens/User_Dashboard/record.dart';
 import 'package:intl/intl.dart';
 
 import 'analysis.dart';
 import 'calendar.dart';
-import 'newsfeed.dart';
 
 class MenstrualTrackingScreen extends StatefulWidget {
-  const MenstrualTrackingScreen({Key? key}) : super(key: key);
+  const MenstrualTrackingScreen({super.key});
 
   @override
   _MenstrualTrackingScreenState createState() =>
@@ -18,10 +18,15 @@ class MenstrualTrackingScreen extends StatefulWidget {
 class _MenstrualTrackingScreenState extends State<MenstrualTrackingScreen> {
   DateTime? _nextPeriod = DateTime(2024, 9, 28);
   DateTime? _nextFertile = DateTime(2024, 10, 28);
-
+  DateTime? today = DateTime.now();
   String formatDate(DateTime? date) {
     if (date == null) return 'Unknown';
     return DateFormat('d MMM').format(date);
+  }
+
+  String format(DateTime? date) {
+    if (date == null) return 'Unknown';
+    return DateFormat('d MMM y').format(date);
   }
 
   @override
@@ -40,16 +45,6 @@ class _MenstrualTrackingScreenState extends State<MenstrualTrackingScreen> {
               padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
               child: Stack(
                 children: [
-                  Positioned(
-                    left: 15,
-                    width: 24,
-                    top: 60,
-                    height: 24,
-                    child: IconButton(
-                      icon: const Icon(Icons.arrow_back, color: Colors.white),
-                      onPressed: () {},
-                    ),
-                  ),
                   const Positioned(
                     left: 150,
                     top: 65,
@@ -88,13 +83,13 @@ class _MenstrualTrackingScreenState extends State<MenstrualTrackingScreen> {
                       height: 17.043,
                     ),
                   ),
-                  const Positioned(
+                  Positioned(
                     left: 124,
                     top: 132,
                     child: Text(
-                      'Wed, 11 sept 2024',
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
+                      format(today),
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
                           decoration: TextDecoration.none,
                           fontSize: 16,
                           color: Color(0xffffffff),
@@ -142,7 +137,7 @@ class _MenstrualTrackingScreenState extends State<MenstrualTrackingScreen> {
                         borderRadius: BorderRadius.circular(43),
                         boxShadow: const [
                           BoxShadow(
-                              color: const Color(0x3f000000),
+                              color: Color(0x3f000000),
                               offset: Offset(0, 4),
                               blurRadius: 4),
                         ],
@@ -244,13 +239,13 @@ class _MenstrualTrackingScreenState extends State<MenstrualTrackingScreen> {
                       ),
                     ),
                   ),
-                  const Positioned(
+                  Positioned(
                     left: 107,
                     top: 521,
                     child: Text(
-                      '28 SEP ',
+                      formatDate(_nextPeriod),
                       textAlign: TextAlign.left,
-                      style: TextStyle(
+                      style: const TextStyle(
                           decoration: TextDecoration.none,
                           fontSize: 15.762,
                           color: Color(0xffffffff),
@@ -260,15 +255,15 @@ class _MenstrualTrackingScreenState extends State<MenstrualTrackingScreen> {
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
-                  const Positioned(
+                  Positioned(
                     left: 229,
                     width: 57,
                     top: 521,
                     height: 29,
                     child: Text(
-                      '28 OCT',
+                      formatDate(_nextFertile),
                       textAlign: TextAlign.left,
-                      style: TextStyle(
+                      style: const TextStyle(
                           decoration: TextDecoration.none,
                           fontSize: 15.76,
                           color: Color(0xffffffff),
@@ -480,7 +475,10 @@ class _MenstrualTrackingScreenState extends State<MenstrualTrackingScreen> {
           ),
           Container(
             height: 150,
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.symmetric(
+              horizontal: 20.w,
+              vertical: 15.h,
+            ),
             decoration: const BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
@@ -492,11 +490,11 @@ class _MenstrualTrackingScreenState extends State<MenstrualTrackingScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 _buildBottomIcon(context, 'assets/images/calendar_icon.png',
-                    CalendarScreen()),
-                _buildBottomIcon(
-                    context, 'assets/images/record_icon.png', RecordScreen()),
+                    const CalendarScreen()),
+                _buildBottomIcon(context, 'assets/images/record_icon.png',
+                    const RecordScreen()),
                 _buildBottomIcon(context, 'assets/images/analysis_icon.png',
-                    AnalysisScreen()),
+                    const AnalysisScreen()),
               ],
             ),
           ),

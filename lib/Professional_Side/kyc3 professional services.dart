@@ -16,7 +16,8 @@ class ProfessionalServicesAndOpenHoursScreen extends StatefulWidget {
 }
 
 class _ProfessionalServicesAndOpenHoursScreenState
-    extends State<ProfessionalServicesAndOpenHoursScreen> with SingleTickerProviderStateMixin {
+    extends State<ProfessionalServicesAndOpenHoursScreen>
+    with SingleTickerProviderStateMixin {
   late TabController _tabController;
   List<String> services = [];
 
@@ -42,7 +43,8 @@ class _ProfessionalServicesAndOpenHoursScreenState
       initialTime: TimeOfDay.now(),
     );
     if (selectedTime != null) {
-      final formattedDate = "${selectedDate.day}/${selectedDate.month}/${selectedDate.year}";
+      final formattedDate =
+          "${selectedDate.day}/${selectedDate.month}/${selectedDate.year}";
       final formattedTime = "${selectedTime.hour}:${selectedTime.minute}";
 
       ScaffoldMessenger.of(context).showSnackBar(
@@ -76,12 +78,12 @@ class _ProfessionalServicesAndOpenHoursScreenState
                     ),
                   ),
                   const SizedBox(height: 8),
-                   Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       ShaderMask(
                         shaderCallback: (bounds) => const LinearGradient(
-                          colors: [Color(0xff244599),Color(0xff0C1733)],
+                          colors: [Color(0xff244599), Color(0xff0C1733)],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                         ).createShader(
@@ -163,9 +165,9 @@ class _ProfessionalServicesAndOpenHoursScreenState
                         ),
                         const SizedBox(height: 10),
                         Container(
-                          decoration:  BoxDecoration(
+                          decoration: BoxDecoration(
                             gradient: const LinearGradient(
-                              colors: [Color(0xff244599),Color(0xff0C1733)],
+                              colors: [Color(0xff244599), Color(0xff0C1733)],
                             ),
                             borderRadius: BorderRadius.circular(20),
                           ),
@@ -173,22 +175,27 @@ class _ProfessionalServicesAndOpenHoursScreenState
                             onPressed: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) =>   const ProfessionalCongratsPage()),
-                              );// Action for sign-up button
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const ProfessionalCongratsPage()),
+                              ); // Action for sign-up button
                             },
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.transparent, // Make background transparent
+                              backgroundColor: Colors
+                                  .transparent, // Make background transparent
                               shadowColor: Colors.transparent,
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 100, vertical: 15),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
-                                side: const BorderSide(color: Color(0xFF3A6EA5), width: 2),
+                                side: const BorderSide(
+                                    color: Color(0xFF3A6EA5), width: 2),
                               ),
                             ),
                             child: const Text(
                               'CONTINUE',
-                              style: TextStyle(fontSize: 16,color: Colors.white),
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.white),
                             ),
                           ),
                         ),
@@ -214,7 +221,8 @@ class _ProfessionalServicesAndOpenHoursScreenState
                                 _selectedDay = selectedDay;
                                 _focusedDay = focusedDay;
                               });
-                              _showTimePicker(selectedDay); // Show time picker when a day is selected
+                              _showTimePicker(
+                                  selectedDay); // Show time picker when a day is selected
                             },
                             calendarFormat: CalendarFormat.month,
                             headerStyle: const HeaderStyle(
@@ -235,9 +243,9 @@ class _ProfessionalServicesAndOpenHoursScreenState
                         ),
                         const SizedBox(height: 10),
                         Container(
-                          decoration:  BoxDecoration(
+                          decoration: BoxDecoration(
                             gradient: const LinearGradient(
-                              colors: [Color(0xff244599),Color(0xff0C1733)],
+                              colors: [Color(0xff244599), Color(0xff0C1733)],
                             ),
                             borderRadius: BorderRadius.circular(20),
                           ),
@@ -245,22 +253,27 @@ class _ProfessionalServicesAndOpenHoursScreenState
                             onPressed: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) =>   const ProfessionalCongratsPage()),
-                              );// Action for sign-up button
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const ProfessionalCongratsPage()),
+                              ); // Action for sign-up button
                             },
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.transparent, // Make background transparent
+                              backgroundColor: Colors
+                                  .transparent, // Make background transparent
                               shadowColor: Colors.transparent,
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 100, vertical: 15),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
-                                side: const BorderSide(color: Color(0xFF3A6EA5), width: 2),
+                                side: const BorderSide(
+                                    color: Color(0xFF3A6EA5), width: 2),
                               ),
                             ),
                             child: const Text(
                               'CONTINUE',
-                              style: TextStyle(fontSize: 16,color: Colors.white),
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.white),
                             ),
                           ),
                         ),

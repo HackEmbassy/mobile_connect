@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CalendarScreen extends StatelessWidget {
+  const CalendarScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,26 +21,28 @@ class CalendarScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(15),
                       border: Border.all(color: Colors.grey.shade300),
                     ),
-                    padding: EdgeInsets.all(16),
+                    padding: const EdgeInsets.all(16),
                     child: Column(
                       children: [
                         Row(
                           children: [
                             IconButton(
-                              icon: Icon(Icons.arrow_back, color: Colors.black),
+                              icon: const Icon(Icons.arrow_back,
+                                  color: Colors.black),
                               onPressed: () {
                                 Navigator.pop(context);
                               },
                             ),
                             const SizedBox(width: 67),
-                            Text(
+                            const Text(
                               'Wed, 11 sept 2024',
-                              style: TextStyle(color: Color(0xff244599), fontSize: 14),
+                              style: TextStyle(
+                                  color: Color(0xff244599), fontSize: 14),
                             ),
                           ],
                         ),
                         const SizedBox(height: 40),
-                        Row(
+                        const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Icon(Icons.calendar_today_outlined,
@@ -54,7 +58,7 @@ class CalendarScreen extends StatelessWidget {
                                 width: 24), // placeholder to align center text
                           ],
                         ),
-                        SizedBox(height: 16),
+                        const SizedBox(height: 16),
                         Table(
                           children: [
                             TableRow(
@@ -63,7 +67,7 @@ class CalendarScreen extends StatelessWidget {
                                 (index) => Center(
                                   child: Text(
                                     ['S', 'M', 'T', 'W', 'T', 'F', 'S'][index],
-                                    style: TextStyle(color: Colors.black),
+                                    style: const TextStyle(color: Colors.black),
                                   ),
                                 ),
                               ),
@@ -159,7 +163,8 @@ class CalendarScreen extends StatelessWidget {
                                     radius: 18,
                                     child: Text(
                                       (index + 23).toString(),
-                                      style: TextStyle(color: Colors.black),
+                                      style:
+                                          const TextStyle(color: Colors.black),
                                     ),
                                   ),
                                 ),
@@ -167,7 +172,7 @@ class CalendarScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                        SizedBox(height: 16),
+                        const SizedBox(height: 16),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -185,7 +190,7 @@ class CalendarScreen extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
 
             // Mood, Symptoms, Note Section
             Container(
@@ -194,32 +199,32 @@ class CalendarScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     "ADD MOOD, SYMPTOMS & NOTE",
                     style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
-                  SizedBox(height: 16),
-                  Divider(color: Colors.white54),
-                  SizedBox(height: 8),
-                  Text("Note", style: TextStyle(color: Colors.white)),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 16),
+                  const Divider(color: Colors.white54),
+                  const SizedBox(height: 8),
+                  const Text("Note", style: TextStyle(color: Colors.white)),
+                  const SizedBox(height: 8),
                   Container(
                     height: 50,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                    child: const Padding(
+                      padding: EdgeInsets.all(8.0),
                       child: TextField(
                         decoration: InputDecoration.collapsed(
                             hintText: "Enter note here"),
                       ),
                     ),
                   ),
-                  SizedBox(height: 16),
-                  Text("MOOD", style: TextStyle(color: Colors.white)),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 16),
+                  const Text("MOOD", style: TextStyle(color: Colors.white)),
+                  const SizedBox(height: 8),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
@@ -260,12 +265,12 @@ class CalendarScreen extends StatelessWidget {
       children: [
         isDotted
             ? CustomPaint(
-                size: Size(20, 2),
+                size: const Size(20, 2),
                 painter: DashedLinePainter(color: color),
               )
             : CircleAvatar(radius: 5, backgroundColor: color),
-        SizedBox(width: 8),
-        Text(text, style: TextStyle(color: Colors.grey)),
+        const SizedBox(width: 8),
+        Text(text, style: const TextStyle(color: Colors.grey)),
       ],
     );
   }
