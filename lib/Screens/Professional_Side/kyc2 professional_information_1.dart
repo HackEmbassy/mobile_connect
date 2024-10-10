@@ -78,7 +78,7 @@ class ProfessionalInfoScreen extends StatelessWidget {
               const SizedBox(height: 8),
               TextFormField(
                 decoration: const InputDecoration(
-                  hintText: 'Eg. Dr., Coach',
+                  hintText: 'Eg. Doctor, Fitness Coach, Dietitian',
                   border: OutlineInputBorder(),
                 ),
               ),
