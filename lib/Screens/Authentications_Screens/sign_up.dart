@@ -274,7 +274,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             validator: FieldValidator.validateString(),
                             decoration: InputDecoration(
                               prefixIcon:
-                                  const Icon(Icons.location_on_outlined),
+                                  const Icon(Icons.phone),
                               labelText: 'Phone Number',
                               filled: true,
                               fillColor: Colors.grey[200],
