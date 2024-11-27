@@ -34,7 +34,7 @@ class ProfessionalProfileScreen extends StatelessWidget {
             child: Column(
               children: [
                 // Profile section
-                const Padding(
+                Padding(
                   padding: EdgeInsets.all(16.0),
                   child: Column(
                     children: [
@@ -45,7 +45,7 @@ class ProfessionalProfileScreen extends StatelessWidget {
                       ),
                       SizedBox(height: 10),
                       Text(
-                        'Mrs. Akuchinyere Njoku',
+                        '${model.fullName}',
                         style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.w700,

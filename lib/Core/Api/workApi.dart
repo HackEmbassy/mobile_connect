@@ -1,4 +1,5 @@
 import 'package:herhealthconnect/Core/Helpers/Model/get_all_professiona_response_model/get_all_professiona_response_model.dart';
+import 'package:herhealthconnect/Core/Helpers/Model/get_prof_res_model/get_prof_res_model.dart';
 import 'package:herhealthconnect/Core/Helpers/Model/get_user_profile_response_model/get_user_profile_response_model.dart';
 import 'package:herhealthconnect/Core/Network/Network_Service.dart';
 import 'package:herhealthconnect/Core/Network/UrlPath.dart';
@@ -28,6 +29,17 @@ class WorkApi {
           await _service.call(UrlConfig.getUserProfile, RequestMethod.get);
       print(response.data);
       return GetUserProfileResponseModel.fromJson(response.data);
+    } catch (e) {
+      logger.d(e);
+      rethrow;
+    }
+  }
+  Future<GetProfResModel> professionalView() async {
+    try {
+      final response =
+          await _service.call(UrlConfig.getProfileProf, RequestMethod.get);
+      print(response.data);
+      return GetProfResModel.fromJson(response.data);
     } catch (e) {
       logger.d(e);
       rethrow;

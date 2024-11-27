@@ -5,6 +5,7 @@ import 'package:herhealthconnect/Core/Helpers/Contract/Contract.dart';
 import 'package:herhealthconnect/Core/Helpers/Model/create_profession_model_entity/create_profession_model_entity.dart';
 import 'package:herhealthconnect/Core/Helpers/Model/create_profession_response_model/create_profession_response_model.dart';
 import 'package:herhealthconnect/Core/Helpers/Model/get_all_professiona_response_model/get_all_professiona_response_model.dart';
+import 'package:herhealthconnect/Core/Helpers/Model/get_prof_res_model/get_prof_res_model.dart';
 import 'package:herhealthconnect/Core/Helpers/Model/get_user_profile_response_model/get_user_profile_response_model.dart';
 import 'package:herhealthconnect/Core/Helpers/Model/login_model_entity/login_model_entity.dart';
 import 'package:herhealthconnect/Core/Helpers/Model/login_response_model/login_response_model.dart';
@@ -43,7 +44,12 @@ class AuthContractsImpl implements Contracts {
   }
 
   @override
-  Future<GetUserProfileResponseModel> getUserProfile() async{
+  Future<GetUserProfileResponseModel> getUserProfile() async {
     return await test.userProfile();
+  }
+
+  @override
+  Future<GetProfResModel> getProfprofile() async {
+    return await test.professionalView();
   }
 }

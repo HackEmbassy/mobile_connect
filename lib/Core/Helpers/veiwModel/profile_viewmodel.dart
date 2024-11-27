@@ -4,6 +4,7 @@ import 'package:herhealthconnect/Core/CoreFolder/app.locator.dart';
 import 'package:herhealthconnect/Core/CoreFolder/app.logger.dart';
 import 'package:herhealthconnect/Core/CoreFolder/app.router.dart';
 import 'package:herhealthconnect/Core/Helpers/Model/get_all_professiona_response_model/get_all_professiona_response_model.dart';
+import 'package:herhealthconnect/Core/Helpers/Model/get_prof_res_model/get_prof_res_model.dart';
 import 'package:herhealthconnect/Core/Helpers/Model/get_user_profile_response_model/get_user_profile_response_model.dart';
 import 'package:herhealthconnect/Core/Helpers/Repository/repository_implementation.dart';
 import 'package:herhealthconnect/Core/router/page_router.dart';
@@ -19,6 +20,7 @@ class ProfileViewmodel extends IndexTrackingViewModel {
 
   String get fullName => _session.usersData["fullName"] ?? '';
   String get email => _session.usersData["email"] ?? '';
+  String get profession => _session.usersData["profession"] ?? '';
   String get phoneNumber => _session.usersData["phone"] ?? '';
   String get state => _session.usersData["state"] ?? '';
   String get gender => _session.usersData["gender"] ?? '';
@@ -58,6 +60,26 @@ class ProfileViewmodel extends IndexTrackingViewModel {
         throwException: true,
       );
       _session.usersData = _getProfile?.data?.toJson();
+      _isLoading = false;
+      notifyListeners();
+    } catch (e) {
+      _isLoading = false;
+      logger.d(e);
+      AppUiComponents.triggerNotification(e.toString(), error: true);
+    }
+    notifyListeners();
+  }
+
+  GetProfResModel? _profeModel;
+  GetProfResModel? get profeModel => _profeModel;
+  Future<void> profView() async {
+    try {
+      _isLoading = true;
+      _profeModel = await runBusyFuture(
+        repositoryImply.getProfprofile(),
+        throwException: true,
+      );
+      _session.usersData = _profeModel?.data?.toJson();
       _isLoading = false;
       notifyListeners();
     } catch (e) {

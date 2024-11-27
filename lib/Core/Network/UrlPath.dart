@@ -12,6 +12,7 @@ class UrlConfig {
   static const String getPlan = 'api/v1/search?goal';
   static const String gethealthTip = 'api/v1/reproductive-health-tips/puberty';
   static const String getUserProfile = 'api/v1/profile';
+  static const String getProfileProf = 'api/v1/prof-profile';
   static const String searchProfessionals =
       'api/v1/search-professionals?specialty=gynecology&city=aba';
 }
