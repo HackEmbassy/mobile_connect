@@ -47,46 +47,51 @@ class _BookingScreenState extends State<BookingScreen> {
                 fontFamily: 'NunitoSans')),
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-          // Doctor Info Section
-          _buildDoctorInfoSection(
-            widget.name,
-            widget.specialty,
-            widget.address,
-          ),
+      body: SingleChildScrollView(
+        child: SizedBox(
+          height: 800,
+          child: Column(
+            children: [
+              // Doctor Info Section
+              _buildDoctorInfoSection(
+                widget.name,
+                widget.specialty,
+                widget.address,
+              ),
 
-          // Add a space between the blue section and the white section
-          const SizedBox(height: 20), // Adjust this value to your preference
+              // Add a space between the blue section and the white section
+              const SizedBox(height: 20), // Adjust this value to your preference
 
-          // White rounded container at the bottom
-          Expanded(
-            child: Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(16),
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(40),
-                  topRight: Radius.circular(40),
+              // White rounded container at the bottom
+              Expanded(
+                child: Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(16),
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(40),
+                      topRight: Radius.circular(40),
+                    ),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(height: 20),
+                      _buildServiceSelection(),
+                      const SizedBox(height: 30),
+                      _buildDateSelector(),
+                      const SizedBox(height: 20),
+                      _buildTimeSlots(),
+                      const Spacer(),
+                      _buildBookButton(),
+                    ],
+                  ),
                 ),
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(height: 20),
-                  _buildServiceSelection(),
-                  const SizedBox(height: 30),
-                  _buildDateSelector(),
-                  const SizedBox(height: 20),
-                  _buildTimeSlots(),
-                  const Spacer(),
-                  _buildBookButton(),
-                ],
-              ),
-            ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }

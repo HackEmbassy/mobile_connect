@@ -122,7 +122,7 @@ class ProfessionalInfoScreen extends StatelessWidget {
                         validator: FieldValidator.validateString(),
                         controller: profession,
                         decoration: const InputDecoration(
-                          hintText: 'Eg. Dr., Nurse, Coach',
+                          hintText: 'Eg. Doctor, Coach, Dietitian',
                           border: OutlineInputBorder(),
                         ),
                       ),
