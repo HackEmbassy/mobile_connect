@@ -1,4 +1,5 @@
 import 'package:herhealthconnect/Core/Helpers/Model/get_all_professiona_response_model/get_all_professiona_response_model.dart';
+import 'package:herhealthconnect/Core/Helpers/Model/get_user_profile_response_model/get_user_profile_response_model.dart';
 import 'package:herhealthconnect/Core/Network/Network_Service.dart';
 import 'package:herhealthconnect/Core/Network/UrlPath.dart';
 import 'package:injectable/injectable.dart';
@@ -12,9 +13,21 @@ class WorkApi {
 
   Future<GetAllProfessionaResponseModel> getProfessional() async {
     try {
-      final response = await _service.call(
-          UrlConfig.getProfessional, RequestMethod.get);
+      final response =
+          await _service.call(UrlConfig.getProfessional, RequestMethod.get);
       return GetAllProfessionaResponseModel.fromJson(response.data);
+    } catch (e) {
+      logger.d(e);
+      rethrow;
+    }
+  }
+
+  Future<GetUserProfileResponseModel> userProfile() async {
+    try {
+      final response =
+          await _service.call(UrlConfig.getUserProfile, RequestMethod.get);
+      print(response.data);
+      return GetUserProfileResponseModel.fromJson(response.data);
     } catch (e) {
       logger.d(e);
       rethrow;

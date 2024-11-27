@@ -30,6 +30,7 @@ class HomeScreen extends StatelessWidget {
         onViewModelReady: (model) {
           WidgetsBinding.instance.addPostFrameCallback((_) async {
             await model.professional();
+            await model.userProf();
           });
         },
         builder: (_, model, __) {
@@ -66,7 +67,7 @@ class HomeScreen extends StatelessWidget {
                               children: [
                                 TextView(
                                   config: TextViewConfig(
-                                    text: "Welcome Kaka!",
+                                    text: "Welcome ${model.fullName}",
                                     fontSize: 20,
                                     fontWeight: FontWeight.w700,
                                     color: AppColors.tPrimary,
