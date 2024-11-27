@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:herhealthconnect/Screens/Professional_Side/kyc1%20profession_selection.dart';
 
-import 'Professional_dashboard.dart';
-
 class ProfessionalCongratsPage extends StatefulWidget {
   const ProfessionalCongratsPage({super.key});
 

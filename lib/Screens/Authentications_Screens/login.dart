@@ -5,8 +5,10 @@ import 'package:herhealthconnect/Components/Body/Model/BodyConfig.dart';
 import 'package:herhealthconnect/Components/Gap.dart';
 import 'package:herhealthconnect/Core/AppUtils/app_ui_components.dart';
 import 'package:herhealthconnect/Core/CoreFolder/app.locator.dart';
+import 'package:herhealthconnect/Core/CoreFolder/app.router.dart';
 import 'package:herhealthconnect/Core/Helpers/Model/login_model_entity/login_model_entity.dart';
 import 'package:herhealthconnect/Core/Helpers/veiwModel/auth_viewmodel.dart';
+import 'package:herhealthconnect/Core/router/page_router.dart';
 import 'package:herhealthconnect/Screens/Authentications_Screens/sign_up.dart';
 import 'package:stacked/stacked.dart';
 import '../../Components/Image/ImageView.dart';
@@ -180,6 +182,8 @@ class _LoginPageState extends State<LoginPage> {
                                   email: email.text,
                                   password: password.text,
                                 ));
+                                // PageRouter.pushReplacement(
+                                //     Routes.userDashboard);
                               } else {
                                 AppUiComponents.triggerNotification(
                                     "Input Email and Password",

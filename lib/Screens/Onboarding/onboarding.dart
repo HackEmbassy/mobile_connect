@@ -30,222 +30,225 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffE5F5FC),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const Gap(height: 30),
-          ImageView(
-            imageConfig: ImageConfig(
-              imageURL: AppImage.applogo,
-              imageType: ImageType.asset,
-              height: 120.h,
-              width: 200.w,
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Gap(height: 30),
+            ImageView(
+              imageConfig: ImageConfig(
+                imageURL: AppImage.applogo,
+                imageType: ImageType.asset,
+                height: 100.h,
+                width: 150.w,
+              ),
             ),
-          ),
-          Expanded(
-            child: PageView(
-              controller: _pageController,
-              onPageChanged: (index) {
-                setState(() {
-                  _currentPage = index;
-                });
-              },
-              children: [
-                // First page
-                Center(
-                  child: Column(
-                    children: [
-                      ImageView(
-                        imageConfig: ImageConfig(
-                          imageURL: AppImage.onboarding,
-                          imageType: ImageType.asset,
-                          height: 300.h,
-                          width: 300.w,
+            SizedBox(
+              height: 530.h,
+              child: PageView(
+                controller: _pageController,
+                onPageChanged: (index) {
+                  setState(() {
+                    _currentPage = index;
+                  });
+                },
+                children: [
+                  // First page
+                  Center(
+                    child: Column(
+                      children: [
+                        ImageView(
+                          imageConfig: ImageConfig(
+                            imageURL: AppImage.onboarding,
+                            imageType: ImageType.asset,
+                            height: 250.h,
+                            width: 250.w,
+                          ),
                         ),
-                      ),
-                      Gap(height: 20.h),
-                      Text(
-                        'Book appointments\neasily',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 30.sp,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black87,
+                        Gap(height: 20.h),
+                        Text(
+                          'Book appointments\neasily',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 30.sp,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black87,
+                          ),
                         ),
-                      ),
-                      Gap(height: 5.h),
-                      Text(
-                        'Schedule sessions with gynecologists,\nobstetricians, fitness coaches, and dietitians.',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 16.sp,
-                          color: Colors.black54,
+                        Gap(height: 5.h),
+                        Text(
+                          'Schedule sessions with gynecologists,\nobstetricians, fitness coaches, and dietitians.',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 16.sp,
+                            color: Colors.black54,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-                // Second page
-                Center(
-                  child: Column(
-                    children: [
-                      ImageView(
-                        imageConfig: ImageConfig(
-                          imageURL: AppImage.onboarding,
-                          imageType: ImageType.asset,
-                          height: 300.h,
-                          width: 300.w,
+                  // Second page
+                  Center(
+                    child: Column(
+                      children: [
+                        ImageView(
+                          imageConfig: ImageConfig(
+                            imageURL: AppImage.onboarding,
+                            imageType: ImageType.asset,
+                            height: 250.h,
+                            width: 250.w,
+                          ),
                         ),
-                      ),
-                      const Gap(height: 30),
-                      Text(
-                        'Track Your Health',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 30.sp,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black87,
+                        const Gap(height: 20),
+                        Text(
+                          'Track Your Health',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 30.sp,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black87,
+                          ),
                         ),
-                      ),
-                      const Gap(height: 10),
-                      Text(
-                        'Monitor your menstrual cycle, fitness progress,\nand dietary habits.',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 16.sp,
-                          color: Colors.black54,
+                        const Gap(height: 10),
+                        Text(
+                          'Monitor your menstrual cycle, fitness progress,\nand dietary habits.',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 16.sp,
+                            color: Colors.black54,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-                // Third page (new screen)
-                Center(
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                        child: SizedBox(
-                          width: 350, // Set the desired width
-                          height: 350, // Set the desired height
+                  // Third page (new screen)
+                  Center(
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20.0),
                           child: ImageView(
                             imageConfig: ImageConfig(
                               imageURL: AppImage.onboarding,
                               imageType: ImageType.asset,
+                              width: 250, // Set the desired width
+                              height: 250, // Set the desired height
                             ),
                           ),
                         ),
-                      ),
-                      const Gap(height: 30),
-                      Text(
-                        'Connect with our Community',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 35.sp,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black87,
+                        const Gap(height: 20),
+                        Text(
+                          'Connect with our Community',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 35.sp,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black87,
+                          ),
                         ),
-                      ),
-                      const Gap(height: 10),
-                      Text(
-                        'Join discussions, get support, and share\nexperiences with other women.',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 16.sp,
-                          color: Colors.black54,
+                        const Gap(height: 10),
+                        Text(
+                          'Join discussions, get support, and share\nexperiences with other women.',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 16.sp,
+                            color: Colors.black54,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          SmoothPageIndicator(
-            controller: _pageController, // Attach the PageController
-            count: 3, // Number of pages
-            effect: const WormEffect(
-              // Customize the indicator effect
-              dotWidth: 10.0,
-              dotHeight: 10.0,
-              spacing: 16.0,
-              dotColor: Colors.grey,
-              activeDotColor: Colors.black87,
+            SmoothPageIndicator(
+              controller: _pageController, // Attach the PageController
+              count: 3, // Number of pages
+              effect: const WormEffect(
+                // Customize the indicator effect
+                dotWidth: 10.0,
+                dotHeight: 10.0,
+                spacing: 16.0,
+                dotColor: Colors.grey,
+                activeDotColor: Colors.black87,
+              ),
             ),
-          ),
-          Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                _currentPage < 2 // If the current page is not the last one
-                    ? ButtonWidget(
-                        config: ButtonConfig(
-                          text: "NEXT",
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500,
-                          textColor: AppColors.white,
-                          onPressed: () {
-                            _pageController.nextPage(
-                              duration: const Duration(milliseconds: 300),
-                              curve: Curves.easeInOut,
-                            );
-                          },
-                          radius: 30.r,
-                          buttonOutlinedColor: const Color(0xffE5F5FC),
-                          buttonColor: const Color(0xff244599),
-                          width: 100.w,
-                          height: 50,
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  _currentPage < 2 // If the current page is not the last one
+                      ? ButtonWidget(
+                          config: ButtonConfig(
+                            text: "NEXT",
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
+                            textColor: AppColors.white,
+                            onPressed: () {
+                              _pageController.nextPage(
+                                duration: const Duration(milliseconds: 300),
+                                curve: Curves.easeInOut,
+                              );
+                            },
+                            radius: 30.r,
+                            buttonOutlinedColor: const Color(0xffE5F5FC),
+                            buttonColor: const Color(0xff244599),
+                            width: 100.w,
+                            height: 50,
+                          ),
+                        )
+                      : Container(), // Hide the NEXT button on the last page
+                  _currentPage < 2 // If the current page is not the last one
+                      ? ButtonWidget(
+                          config: ButtonConfig(
+                            text: "SKIP",
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
+                            textColor: AppColors.black,
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const SignUpAsScreen()),
+                              );
+                            },
+                            radius: 30.r,
+                            buttonOutlinedColor: const Color(0xff244599),
+                            buttonColor: const Color(0xffE5F5FC),
+                            width: 100.w,
+                            height: 50,
+                          ),
+                        )
+                      : ButtonWidget(
+                          config: ButtonConfig(
+                            text: "CONTINUE",
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
+                            textColor: AppColors.white,
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const SignUpAsScreen()),
+                              );
+                            },
+                            radius: 30.r,
+                            buttonOutlinedColor: const Color(0xffE5F5FC),
+                            buttonColor: const Color(0xff244599),
+                            width: 150.w,
+                            height: 50,
+                          ),
                         ),
-                      )
-                    : const SizedBox
-                        .shrink(), // Hide the NEXT button on the last page
-                _currentPage < 2 // If the current page is not the last one
-                    ? ButtonWidget(
-                        config: ButtonConfig(
-                          text: "SKIP",
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500,
-                          textColor: AppColors.black,
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const SignUpAsScreen()),
-                            );
-                          },
-                          radius: 30.r,
-                          buttonOutlinedColor: const Color(0xff244599),
-                          buttonColor: const Color(0xffE5F5FC),
-                          width: 100.w,
-                          height: 50,
-                        ),
-                      )
-                    : ButtonWidget(
-                        config: ButtonConfig(
-                          text: "CONTINUE",
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500,
-                          textColor: AppColors.white,
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const SignUpAsScreen()),
-                            );
-                          },
-                          radius: 30.r,
-                          buttonOutlinedColor: const Color(0xffE5F5FC),
-                          buttonColor: const Color(0xff244599),
-                          width: 150.w,
-                          height: 50,
-                        ),
-                      ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

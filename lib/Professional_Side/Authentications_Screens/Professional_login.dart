@@ -7,8 +7,10 @@ import 'package:herhealthconnect/Components/Button/Model/ButtonConfig.dart';
 import 'package:herhealthconnect/Components/Gap.dart';
 import 'package:herhealthconnect/Core/AppUtils/Form_Validator.dart';
 import 'package:herhealthconnect/Core/CoreFolder/app.locator.dart';
+import 'package:herhealthconnect/Core/CoreFolder/app.router.dart';
 import 'package:herhealthconnect/Core/Helpers/Model/login_model_entity/login_model_entity.dart';
 import 'package:herhealthconnect/Core/Helpers/veiwModel/auth_viewmodel.dart';
+import 'package:herhealthconnect/Core/router/page_router.dart';
 import 'package:herhealthconnect/assets/app_colors.dart';
 import 'package:stacked/stacked.dart';
 import '../../../Components/Image/ImageView.dart';
@@ -179,6 +181,8 @@ class _ProfessionalLoginPageState extends State<ProfessionalLoginPage> {
                                       password: password.text,
                                     ),
                                   );
+                                  // PageRouter.pushReplacement(
+                                  //     Routes.professionalDashboard);
                                 }
                               },
                               buttonColor: Colors.transparent,
@@ -189,34 +193,34 @@ class _ProfessionalLoginPageState extends State<ProfessionalLoginPage> {
                           ),
                         ),
                         const SizedBox(height: 40),
-                        const Text('or continue with'),
-                        const SizedBox(height: 40),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SizedBox(
-                              height: 40,
-                              width: 40,
-                              child: ImageView(
-                                imageConfig: ImageConfig(
-                                  imageURL: AppImage.google,
-                                  imageType: ImageType.asset,
-                                ),
-                              ),
-                            ),
-                            const SizedBox(width: 20),
-                            SizedBox(
-                              height: 40,
-                              width: 40,
-                              child: ImageView(
-                                imageConfig: ImageConfig(
-                                  imageURL: AppImage.facebook,
-                                  imageType: ImageType.asset,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
+                        // const Text('or continue with'),
+                        // const SizedBox(height: 40),
+                        // Row(
+                        //   mainAxisAlignment: MainAxisAlignment.center,
+                        //   children: [
+                        //     SizedBox(
+                        //       height: 40,
+                        //       width: 40,
+                        //       child: ImageView(
+                        //         imageConfig: ImageConfig(
+                        //           imageURL: AppImage.google,
+                        //           imageType: ImageType.asset,
+                        //         ),
+                        //       ),
+                        //     ),
+                        //     const SizedBox(width: 20),
+                        //     SizedBox(
+                        //       height: 40,
+                        //       width: 40,
+                        //       child: ImageView(
+                        //         imageConfig: ImageConfig(
+                        //           imageURL: AppImage.facebook,
+                        //           imageType: ImageType.asset,
+                        //         ),
+                        //       ),
+                        //     ),
+                        //   ],
+                        // ),
                         const SizedBox(height: 100),
                         RichText(
                           text: TextSpan(

@@ -7,8 +7,10 @@ import 'package:herhealthconnect/Components/TextView/Models/TextViewConfig.dart'
 import 'package:herhealthconnect/Components/TextView/TextView.dart';
 import 'package:herhealthconnect/Core/AppUtils/app_ui_components.dart';
 import 'package:herhealthconnect/Core/CoreFolder/app.locator.dart';
+import 'package:herhealthconnect/Core/CoreFolder/app.router.dart';
 import 'package:herhealthconnect/Core/Helpers/Model/user_model_entity/user_model_entity.dart';
 import 'package:herhealthconnect/Core/Helpers/veiwModel/auth_viewmodel.dart';
+import 'package:herhealthconnect/Core/router/page_router.dart';
 import 'package:herhealthconnect/assets/app_colors.dart';
 import 'package:stacked/stacked.dart';
 
@@ -199,19 +201,20 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
                     config: ButtonConfig(
                         onPressed: () async {
                           if (selectedValues.isNotEmpty) {
-                            await model.signUpUser(UserModelEntity(
-                              fullName: widget.fname,
-                              age: int.parse(widget.age),
-                              city: widget.city,
-                              gender: "female",
-                              state: widget.state,
-                              email: widget.email,
-                              password: widget.password,
-                              phone: "+234${widget.phone}",
-                              longitude: double.parse(widget.long),
-                              latitude: double.parse(widget.latitude),
-                              interests: selectedValues,
-                            ));
+                            PageRouter.pushReplacement(Routes.userDashboard);
+                            // await model.signUpUser(UserModelEntity(
+                            //   fullName: widget.fname,
+                            //   age: int.parse(widget.age),
+                            //   city: widget.city,
+                            //   gender: "female",
+                            //   state: widget.state,
+                            //   email: widget.email,
+                            //   password: widget.password,
+                            //   phone: "+234${widget.phone}",
+                            //   longitude: double.parse(widget.long),
+                            //   latitude: double.parse(widget.latitude),
+                            //   interests: selectedValues,
+                            // ));
                           } else {
                             AppUiComponents.triggerNotification(
                                 "Please select Interest to Proceed",

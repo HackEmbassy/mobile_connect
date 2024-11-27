@@ -5,9 +5,12 @@ import 'package:herhealthconnect/Components/Body/Model/BodyConfig.dart';
 import 'package:herhealthconnect/Components/Button/ButtonWidget.dart';
 import 'package:herhealthconnect/Components/Button/Model/ButtonConfig.dart';
 import 'package:herhealthconnect/Core/AppUtils/Form_Validator.dart';
+import 'package:herhealthconnect/Core/AppUtils/app_ui_components.dart';
 import 'package:herhealthconnect/Core/CoreFolder/app.locator.dart';
+import 'package:herhealthconnect/Core/CoreFolder/app.router.dart';
 import 'package:herhealthconnect/Core/Helpers/Model/create_profession_model_entity/create_profession_model_entity.dart';
 import 'package:herhealthconnect/Core/Helpers/veiwModel/auth_viewmodel.dart';
+import 'package:herhealthconnect/Core/router/page_router.dart';
 import 'package:herhealthconnect/assets/app_colors.dart';
 import 'package:stacked/stacked.dart';
 
@@ -196,6 +199,11 @@ class ProfessionalInfoScreen extends StatelessWidget {
                             text: "CONTINUE",
                             onPressed: () {
                               if (model.activeKey.currentState!.validate()) {
+                                // AppUiComponents.triggerNotification(
+                                //     "Account Created",
+                                //     error: false);
+                                // PageRouter.pushReplacement(
+                                //     Routes.professionalDashboard);
                                 model.signUpProf(CreateProfessionModelEntity(
                                   address: address,
                                   bio: bio.text,
@@ -222,32 +230,6 @@ class ProfessionalInfoScreen extends StatelessWidget {
                             buttonOutlinedColor: Colors.transparent,
                           ),
                         ),
-                        // ElevatedButton(
-                        //   onPressed: () {
-                        //     Navigator.push(
-                        //       context,
-                        //       MaterialPageRoute(
-                        //           builder: (context) =>
-                        //               ProfessionalServicesAndOpenHoursScreen()),
-                        //     ); // Action for sign-up button
-                        //   },
-                        //   style: ElevatedButton.styleFrom(
-                        //     backgroundColor:
-                        //         Colors.transparent, // Make background transparent
-                        //     shadowColor: Colors.transparent,
-                        //     padding: const EdgeInsets.symmetric(
-                        //         horizontal: 120, vertical: 15),
-                        //     shape: RoundedRectangleBorder(
-                        //       borderRadius: BorderRadius.circular(20),
-                        //       side: const BorderSide(
-                        //           color: Color(0xFF3A6EA5), width: 2),
-                        //     ),
-                        //   ),
-                        //   child: const Text(
-                        //     'CONTINUE',
-                        //     style: TextStyle(fontSize: 16, color: Colors.white),
-                        //   ),
-                        // ),
                       ),
                     ],
                   ),

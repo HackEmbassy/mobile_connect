@@ -17,7 +17,9 @@ class BookSessionScreen extends StatelessWidget {
         viewModelBuilder: () => locator<ProfileViewmodel>(),
         disposeViewModel: false,
         onViewModelReady: (model) {
-          model.professional();
+          WidgetsBinding.instance.addPostFrameCallback((_) async {
+        await  model.professional();
+          });
         },
         builder: (_, model, __) {
           return BodyWidget(

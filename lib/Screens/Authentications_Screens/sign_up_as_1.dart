@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:herhealthconnect/Professional_Side/Authentications_Screens/Professional_sign_up.dart';
 import 'package:herhealthconnect/Screens/Authentications_Screens/sign_up.dart';
 //import 'package:herhealthconnect/Screens/book_a_session.dart';
 
 import '../../Components/Image/ImageView.dart';
 import '../../Components/Image/Model/ImageConfig.dart';
 import '../../assets/app_image.dart';
-import '../Professional_Side/Authentications_Screens/Professional_sign_up.dart';
-import '../Professional_Side/kyc1 profession_selection.dart';
 
 class SignUpAsScreen extends StatefulWidget {
   const SignUpAsScreen({super.key});

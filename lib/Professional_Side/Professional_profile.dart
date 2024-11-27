@@ -3,6 +3,7 @@ import 'package:herhealthconnect/Core/CoreFolder/app.locator.dart';
 import 'package:herhealthconnect/Core/Helpers/veiwModel/profile_viewmodel.dart';
 import 'package:herhealthconnect/Professional_Side/Professional_edit_profile.dart';
 import 'package:herhealthconnect/Professional_Side/Professional_language.dart';
+import 'package:herhealthconnect/Professional_Side/professional_wallet_view.dart';
 import 'package:herhealthconnect/assets/app_colors.dart';
 import 'package:stacked/stacked.dart';
 import 'Professional_change_password.dart';
@@ -97,6 +98,27 @@ class ProfessionalProfileScreen extends StatelessWidget {
                           ),
                           child: Column(
                             children: [
+                              ListTile(
+                                leading: const Icon(Icons.wallet),
+                                title: const Text(
+                                  'Wallet',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w700,
+                                      color: Color(0xff484848),
+                                      fontFamily: 'NunitoSans'),
+                                ),
+                                trailing: const Icon(Icons.arrow_forward_ios),
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          const ProfessionalWalletView(),
+                                    ),
+                                  );
+                                },
+                              ),
                               ListTile(
                                 leading: const Icon(Icons.edit),
                                 title: const Text(

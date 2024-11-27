@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:herhealthconnect/Components/Gap.dart';
 import 'package:herhealthconnect/Components/Image/ImageView.dart';
 import 'package:herhealthconnect/Components/Image/Model/ImageConfig.dart';
@@ -72,73 +73,79 @@ class _SignUpAsScreenState extends State<SignUpAsScreen> {
 
           // Buttons
           Center(
-            child: Column(
-              children: [
-                // Health & Fitness Support Button
-                Container(
-                  width: 250, // Adjusted width
-                  height: 55, // Adjusted height
-                  decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                      colors: [Color(0xff244599), Color(0xff0C1733)],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    ),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      PageRouter.pushNamed(Routes.signUpScreen);
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.transparent,
-                      shadowColor: Colors.transparent,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 20.w,
+              ),
+              child: Column(
+                children: [
+                  // Health & Fitness Support Button
+                  Container(
+                    width: double.infinity, // Adjusted width
+                    height: 55, // Adjusted height
+                    decoration: BoxDecoration(
+                      gradient: const LinearGradient(
+                        colors: [Color(0xff244599), Color(0xff0C1733)],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
                       ),
-                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      borderRadius: BorderRadius.circular(20),
                     ),
-                    child: const Text(
-                      'Health & Fitness Support',
-                      style: TextStyle(fontSize: 16, color: Colors.white),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        PageRouter.pushNamed(Routes.signUpScreen);
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.transparent,
+                        shadowColor: Colors.transparent,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        padding: const EdgeInsets.symmetric(vertical: 10),
+                      ),
+                      child: const Text(
+                        'Health & Fitness Support',
+                        style: TextStyle(fontSize: 16, color: Colors.white),
+                      ),
                     ),
                   ),
-                ),
 
-                const Gap(height: 20),
+                  const Gap(height: 20),
 
-                // Provide Professional Services Button
-                Container(
-                  width: 250, // Matching the size to the top button
-                  height: 55,
-                  decoration: BoxDecoration(
-                    border:
-                        Border.all(color: const Color(0xff3A6EA5), width: 2),
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.white,
-                  ),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      PageRouter.pushNamed(Routes.professionalSignUpScreen);
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      shadowColor: Colors.transparent,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      padding: const EdgeInsets.symmetric(vertical: 10),
+                  // Provide Professional Services Button
+                  Container(
+                    width:
+                        double.infinity, // Matching the size to the top button
+                    height: 55,
+                    decoration: BoxDecoration(
+                      border:
+                          Border.all(color: const Color(0xff3A6EA5), width: 2),
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.white,
                     ),
-                    child: const Text(
-                      'Provide Professional Services',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.black,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        PageRouter.pushNamed(Routes.professionalSignUpScreen);
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        shadowColor: Colors.transparent,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        padding: const EdgeInsets.symmetric(vertical: 10),
+                      ),
+                      child: const Text(
+                        'Provide Professional Services',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.black,
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ],

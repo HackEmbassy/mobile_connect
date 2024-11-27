@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:herhealthconnect/Screens/User_Dashboard/call_connect_view.dart';
 
 class ProfessionalHomePage extends StatelessWidget {
   const ProfessionalHomePage({super.key});
@@ -110,7 +111,7 @@ class ProfessionalHomePage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       padding: const EdgeInsets.all(20),
-                      child: const Column(
+                      child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Row(
@@ -124,7 +125,21 @@ class ProfessionalHomePage extends StatelessWidget {
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              Icon(Icons.chevron_right, color: Colors.white),
+                              InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          ProfessionalCallConnectingScreen(),
+                                    ),
+                                  );
+                                },
+                                child: Icon(
+                                  Icons.chevron_right,
+                                  color: Colors.white,
+                                ),
+                              ),
                             ],
                           ),
                           SizedBox(height: 20),

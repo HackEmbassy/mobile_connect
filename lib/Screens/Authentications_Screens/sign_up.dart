@@ -333,38 +333,38 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             )),
                           ),
                           const Gap(height: 20),
-                          const Text(
-                            'or continue with',
-                            style: TextStyle(color: Colors.black54),
-                          ),
-                          const SizedBox(height: 15),
-                          // Social Media Buttons
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                height: 40,
-                                width: 40,
-                                child: ImageView(
-                                  imageConfig: ImageConfig(
-                                    imageURL: AppImage.google,
-                                    imageType: ImageType.asset,
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(width: 20),
-                              SizedBox(
-                                height: 40,
-                                width: 40,
-                                child: ImageView(
-                                  imageConfig: ImageConfig(
-                                    imageURL: AppImage.facebook,
-                                    imageType: ImageType.asset,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
+                          // const Text(
+                          //   'or continue with',
+                          //   style: TextStyle(color: Colors.black54),
+                          // ),
+                          // const SizedBox(height: 15),
+                          // // Social Media Buttons
+                          // Row(
+                          //   mainAxisAlignment: MainAxisAlignment.center,
+                          //   children: [
+                          //     SizedBox(
+                          //       height: 40,
+                          //       width: 40,
+                          //       child: ImageView(
+                          //         imageConfig: ImageConfig(
+                          //           imageURL: AppImage.google,
+                          //           imageType: ImageType.asset,
+                          //         ),
+                          //       ),
+                          //     ),
+                          //     const SizedBox(width: 20),
+                          //     SizedBox(
+                          //       height: 40,
+                          //       width: 40,
+                          //       child: ImageView(
+                          //         imageConfig: ImageConfig(
+                          //           imageURL: AppImage.facebook,
+                          //           imageType: ImageType.asset,
+                          //         ),
+                          //       ),
+                          //     ),
+                          //   ],
+                          // ),
                           const SizedBox(height: 30),
                           Center(
                             child: RichText(

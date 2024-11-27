@@ -14,6 +14,7 @@ import 'package:herhealthconnect/Core/AppUtils/app_ui_components.dart';
 import 'package:herhealthconnect/Core/CoreFolder/app.locator.dart';
 import 'package:herhealthconnect/Core/Helpers/veiwModel/profile_viewmodel.dart';
 import 'package:herhealthconnect/Screens/User_Dashboard/book_a_session_2.dart';
+import 'package:herhealthconnect/Screens/User_Dashboard/call_connect_view.dart';
 import 'package:herhealthconnect/assets/app_colors.dart';
 import 'package:herhealthconnect/assets/app_image.dart';
 import 'package:stacked/stacked.dart';
@@ -27,7 +28,9 @@ class HomeScreen extends StatelessWidget {
         viewModelBuilder: () => locator<ProfileViewmodel>(),
         disposeViewModel: false,
         onViewModelReady: (model) {
-          model.professional();
+          WidgetsBinding.instance.addPostFrameCallback((_) async {
+            await model.professional();
+          });
         },
         builder: (_, model, __) {
           return BodyWidget(
@@ -314,65 +317,76 @@ class HomeScreen extends StatelessWidget {
                             ),
                             Padding(
                               padding: EdgeInsets.symmetric(horizontal: 20.w),
-                              child: Container(
-                                width: double.infinity,
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: 17.w, vertical: 14.h),
-                                transform:
-                                    Matrix4.translationValues(0.0, -40, 0),
-                                decoration: BoxDecoration(
-                                  color: AppColors.white,
-                                  borderRadius: BorderRadius.circular(10.r),
-                                ),
-                                child: Row(
-                                  children: [
-                                    ImageView(
-                                      imageConfig: ImageConfig(
-                                        imageURL: AppImage.kaka,
-                                        imageType: ImageType.asset,
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          ProfessionalCallConnectingScreen(),
+                                    ),
+                                  );
+                                },
+                                child: Container(
+                                  width: double.infinity,
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 17.w, vertical: 14.h),
+                                  transform:
+                                      Matrix4.translationValues(0.0, -40, 0),
+                                  decoration: BoxDecoration(
+                                    color: AppColors.white,
+                                    borderRadius: BorderRadius.circular(10.r),
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      ImageView(
+                                        imageConfig: ImageConfig(
+                                          imageURL: AppImage.kaka,
+                                          imageType: ImageType.asset,
+                                        ),
                                       ),
-                                    ),
-                                    const Gap(
-                                      width: 6,
-                                    ),
-                                    Expanded(
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          TextView(
-                                            config: TextViewConfig(
-                                              text: "Dr. Richard Kandowen",
-                                              fontSize: 12,
-                                              color: const Color(0xff484848),
-                                              fontWeight: FontWeight.w700,
+                                      const Gap(
+                                        width: 6,
+                                      ),
+                                      Expanded(
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            TextView(
+                                              config: TextViewConfig(
+                                                text: "Dr. Richard Kandowen",
+                                                fontSize: 12,
+                                                color: const Color(0xff484848),
+                                                fontWeight: FontWeight.w700,
+                                              ),
                                             ),
-                                          ),
-                                          TextView(
-                                            config: TextViewConfig(
-                                              text: "Obstetrician",
-                                              fontSize: 10,
-                                              color: const Color(0xff484848),
-                                              fontWeight: FontWeight.w700,
+                                            TextView(
+                                              config: TextViewConfig(
+                                                text: "Obstetrician",
+                                                fontSize: 10,
+                                                color: const Color(0xff484848),
+                                                fontWeight: FontWeight.w700,
+                                              ),
                                             ),
-                                          ),
-                                        ],
+                                          ],
+                                        ),
                                       ),
-                                    ),
-                                    ImageView(
-                                      imageConfig: ImageConfig(
-                                        imageURL: AppImage.vid,
-                                        imageType: ImageType.asset,
-                                        height: 30.h,
-                                        width: 30.w,
-                                        onTap: () {
-                                          AppUiComponents.triggerNotification(
-                                              'Video Call Scheduled for Next Week',
-                                              error: false);
-                                        },
+                                      ImageView(
+                                        imageConfig: ImageConfig(
+                                          imageURL: AppImage.vid,
+                                          imageType: ImageType.asset,
+                                          height: 30.h,
+                                          width: 30.w,
+                                          onTap: () {
+                                            AppUiComponents.triggerNotification(
+                                                'Video Call Scheduled for Next Week',
+                                                error: false);
+                                          },
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
