@@ -79,58 +79,40 @@ class _MenstrualTrackingScreenState extends State<MenstrualTrackingScreen> {
                         decoration: TextDecoration.none,
                         fontSize: 16.sp,
                         color: const Color(0xffffffff),
-                        border: Border.all(
-                            color: const Color(0xffffffff),
-                            width: 1.0118764638900757),
-                        borderRadius: BorderRadius.circular(43),
-                        boxShadow: const [
-                          BoxShadow(
-                              color: Color(0x3f000000),
-                              offset: Offset(0, 4),
-                              blurRadius: 4),
-                        ],
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.only(
-                            left: 32, top: 5, right: 12, bottom: 5),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            GestureDetector(
-                              child: const Text(
-                                'ADD PERIOD',
-                                textAlign: TextAlign.left,
-                                style: TextStyle(
-                                    decoration: TextDecoration.none,
-                                    fontSize: 13.125,
-                                    color: Color(0xff484848),
-                                    fontFamily: 'NunitoSans-Bold',
-                                    fontWeight: FontWeight.normal),
-                                maxLines: 9999,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const AddPeriodScreen()),
-                                );
-                              },
-                            ),
-                          ],
-                        ),
+                        fontFamily: 'NunitoSans-Bold',
+                        fontWeight: FontWeight.normal,
                       ),
                     ),
+                    SizedBox(width: 10.w),
+                    Image.asset(
+                      'assets/images/image3_80214642.png',
+                      width: 8.w,
+                      height: 17.h,
+                    ),
+                  ],
+                ),
+                SizedBox(height: 40.h),
+                Container(
+                  width: 250.w,
+                  height: 250.w, // Square container, responsive to width
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      colors: [Color(0xff244599), Color(0xff0C1733)],
+                    ),
+                    borderRadius: BorderRadius.circular(125.w),
+                    border: Border.all(
+                      color: Colors.white,
+                      width: 6.w,
+                    ),
                   ),
-                  const Positioned(
-                    left: 154,
-                    top: 257,
-                    child: Text(
-                      'OVULATION IN',
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(height: 30.h),
+                      Text(
+                        'OVULATION IN',
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
                           decoration: TextDecoration.none,
                           fontSize: 11.sp,
                           color: const Color(0xffffffff),

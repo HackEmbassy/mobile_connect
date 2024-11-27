@@ -204,20 +204,20 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
                         config: ButtonConfig(
                             onPressed: () async {
                               if (selectedValues.isNotEmpty) {
-                                PageRouter.pushReplacement(Routes.userDashboard);
-                            // await model.signUpUser(UserModelEntity(
-                                //   fullName: widget.fname,
-                                //   age: int.parse(widget.age),
-                                //   city: widget.city,
-                                //   gender: "female",
-                                //   state: widget.state,
-                                //   email: widget.email,
-                                //   password: widget.password,
-                                //   phone: "+234${widget.phone}",
-                                //   longitude: double.parse(widget.long),
-                                //   latitude: double.parse(widget.latitude),
-                                //   interests: selectedValues,
-                                // ));
+                                // PageRouter.pushReplacement(Routes.userDashboard);
+                            await model.signUpUser(UserModelEntity(
+                                  fullName: widget.fname,
+                                  age: int.parse(widget.age),
+                                  city: widget.city,
+                                  gender: "female",
+                                  state: widget.state,
+                                  email: widget.email,
+                                  password: widget.password,
+                                  phone: "+234${widget.phone}",
+                                  longitude: double.parse(widget.long),
+                                  latitude: double.parse(widget.latitude),
+                                  interests: selectedValues,
+                                ));
                               } else {
                                 AppUiComponents.triggerNotification(
                                     "Please select Interest to Proceed",
@@ -226,7 +226,7 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
                             },
                             loading: model.isLoading ?? false,
                             text: "CONTINUE",
-                            height: 50.h,
+                            height: 50,
                             fontSize: 18.sp,
                             textColor: AppColors.white,
                             buttonColor: Color(0xff244599),
