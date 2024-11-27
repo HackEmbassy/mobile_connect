@@ -15,6 +15,7 @@ class UserModelEntity {
   List<String>? interests;
   double? latitude;
   double? longitude;
+  String? dateOfBirth;
 
   UserModelEntity({
     this.fullName,
@@ -28,6 +29,7 @@ class UserModelEntity {
     this.interests,
     this.latitude,
     this.longitude,
+    this.dateOfBirth,
   });
 
   factory UserModelEntity.fromJson(Map<String, dynamic> json) {

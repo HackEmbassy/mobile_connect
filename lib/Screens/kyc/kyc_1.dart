@@ -202,10 +202,9 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
                       const Spacer(),
                       ButtonWidget(
                         config: ButtonConfig(
-                            onPressed: () async {
+                            onPressed: () {
                               if (selectedValues.isNotEmpty) {
-                                // PageRouter.pushReplacement(Routes.userDashboard);
-                            await model.signUpUser(UserModelEntity(
+                                model.signUpUser(UserModelEntity(
                                   fullName: widget.fname,
                                   age: int.parse(widget.age),
                                   city: widget.city,
@@ -217,6 +216,7 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
                                   longitude: double.parse(widget.long),
                                   latitude: double.parse(widget.latitude),
                                   interests: selectedValues,
+                                  dateOfBirth: '1999-04-07',
                                 ));
                               } else {
                                 AppUiComponents.triggerNotification(
@@ -232,49 +232,49 @@ class _CustomizeInterestsScreenState extends State<CustomizeInterestsScreen> {
                             buttonColor: Color(0xff244599),
                             buttonOutlinedColor: Color(0xff0C1733)),
                       ),
-                  //                   Center(
-                  //                     child: ElevatedButton(
-                  //                       onPressed: () {
-                  //                         if (selectedValues.isNotEmpty) {
-                  //                           model.signUpUser(UserModelEntity(
-                  //                             fullName: widget.fname,
-                  //                             age: int.parse(widget.age),
-                  //                             city: widget.city,
-                  //                             gender: "female",
-                  //                             state: widget.state,
-                  //                             email: widget.email,
-                  //                             password: widget.password,
-                  //                             phone: "+234${widget.phone}",
-                  //                             longitude: double.parse(widget.long),
-                  //                             latitude: double.parse(widget.latitude),
-                  //                             interests: selectedValues,
-                  //                           ));
-                  //                         } else {
-                  //                           AppUiComponents.triggerNotification(
-                  //                               "Please select Interest to Proceed",
-                  //                               error: true);
-                  //                         }
-                  //                         // Navigator.push(
-                  //                         //   context,
-                  //                         //   MaterialPageRoute(
-                  //                         //       builder: (context) =>
-                  //                         //           const PersonalInformation()),
-                  //                         // );
-                  // // Handle continue button press
-                  //                       },
-                  //                       style: ElevatedButton.styleFrom(
-                  //                         padding: const EdgeInsets.symmetric(
-                  //                             horizontal: 80, vertical: 16),
-                  //                         textStyle: const TextStyle(
-                  //                           fontSize: 18,
-                  //                         ),
-                  //                         shape: RoundedRectangleBorder(
-                  //                           borderRadius: BorderRadius.circular(8),
-                  //                         ),
-                  //                       ),
-                  //                       child: const Text('CONTINUE'),
-                  //                     ),
-                  //                   ),
+                      //                   Center(
+                      //                     child: ElevatedButton(
+                      //                       onPressed: () {
+                      //                         if (selectedValues.isNotEmpty) {
+                      //                           model.signUpUser(UserModelEntity(
+                      //                             fullName: widget.fname,
+                      //                             age: int.parse(widget.age),
+                      //                             city: widget.city,
+                      //                             gender: "female",
+                      //                             state: widget.state,
+                      //                             email: widget.email,
+                      //                             password: widget.password,
+                      //                             phone: "+234${widget.phone}",
+                      //                             longitude: double.parse(widget.long),
+                      //                             latitude: double.parse(widget.latitude),
+                      //                             interests: selectedValues,
+                      //                           ));
+                      //                         } else {
+                      //                           AppUiComponents.triggerNotification(
+                      //                               "Please select Interest to Proceed",
+                      //                               error: true);
+                      //                         }
+                      //                         // Navigator.push(
+                      //                         //   context,
+                      //                         //   MaterialPageRoute(
+                      //                         //       builder: (context) =>
+                      //                         //           const PersonalInformation()),
+                      //                         // );
+                      // // Handle continue button press
+                      //                       },
+                      //                       style: ElevatedButton.styleFrom(
+                      //                         padding: const EdgeInsets.symmetric(
+                      //                             horizontal: 80, vertical: 16),
+                      //                         textStyle: const TextStyle(
+                      //                           fontSize: 18,
+                      //                         ),
+                      //                         shape: RoundedRectangleBorder(
+                      //                           borderRadius: BorderRadius.circular(8),
+                      //                         ),
+                      //                       ),
+                      //                       child: const Text('CONTINUE'),
+                      //                     ),
+                      //                   ),
                     ],
                   ),
                 ),

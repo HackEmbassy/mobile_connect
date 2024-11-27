@@ -102,6 +102,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         viewModelBuilder: () => locator<AuthViewmodel>(),
         builder: (_, model, __) {
           return Scaffold(
+            backgroundColor:Colors.white,
             body: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: SingleChildScrollView(
